@@ -1,60 +1,72 @@
 ; VePseu's controller input
 
     LDA SWCHA
-    EOR #SWGET
     AND #FFORD
-    CMP #NOIN
+    CMP #FFORD
     BEQ CIN2
 
     LDA mapWidth
     STA yLoss
     LDA #ONE
     STA xGain
+    LDA #WCOLU
+    STA wallColour
+    LDA #SCOLU
+    STA shadowColour
     LDA #NULL
     STA yGain
     STA xLoss
 
 CIN2:
     LDA SWCHA
-    EOR #SWGET
     AND #FBACK
-    CMP #NOIN
+    CMP #FBACK
     BEQ CIN3
 
     LDA mapWidth
     STA yGain
     LDA #ONE
     STA xLoss
+    LDA #WCOLU
+    STA wallColour
+    LDA #SCOLU
+    STA shadowColour
     LDA #NULL
     STA yLoss
     STA xGain
 
 CIN3:
     LDA SWCHA
-    EOR #SWGET
     AND #FLEFT
-    CMP #NOIN
+    CMP #FLEFT
     BEQ CIN4
 
     LDA mapWidth
     STA xLoss
     LDA #ONE
     STA yGain
+    LDA #SCOLU
+    STA wallColour
+    LDA #WCOLU
+    STA shadowColour
     LDA #NULL
     STA yLoss
     STA xGain
 
 CIN4:
     LDA SWCHA
-    EOR #SWGET
     AND #FRIGT
-    CMP #NOIN
+    CMP #FRIGT
     BEQ CTRIG
 
     LDA mapWidth
     STA xGain
     LDA #ONE
     STA yLoss
+    LDA #SCOLU
+    STA wallColour
+    LDA #WCOLU
+    STA shadowColour
     LDA #NULL
     STA yGain
     STA xLoss
@@ -62,9 +74,8 @@ CIN4:
 CTRIG:
 
     LDA INPT4
-    EOR #SWGET
     AND #ITRIG
-    CMP #NOIN
+    CMP #ITRIG
     BEQ CNOTRIG
 
     LDA playerPos

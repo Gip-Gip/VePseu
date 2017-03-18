@@ -52,6 +52,8 @@ drawStart:
 
     JMP stop
 
+; Draws only the first wall and it's shadow
+
 otherWall:
 
     LDX #INDEXINIT
@@ -60,7 +62,7 @@ _otherWall_loop:
 
     STA WSYNC
 
-    LDA #MCOLU
+    LDA wallColour
     STA COLUPF
     LDA wall1a
     STA PF1
@@ -74,11 +76,12 @@ _otherWall_loop:
     STA PF1
     STA PF2
 
+    STY shift
+
     STA WSYNC
 
-    LDA #SCOLU
+    LDA shadowColour
     STA COLUPF
-    STY shift
     LDA shadow1a
     AND shift
     STA PF1
@@ -100,7 +103,7 @@ _otherWall_loop:
 
     RTS
 
-; Every other wall drawing
+; Can draw every wall and it's shadow
 
 medWall:
 
@@ -109,7 +112,7 @@ medWall:
 _medWall_loop:
 
     STA WSYNC
-    LDA #MCOLU
+    LDA wallColour
     STA COLUPF
     LDA wall2a,X
     STA PF1
@@ -124,7 +127,7 @@ _medWall_loop:
     STA PF2
     STA WSYNC
 
-    LDA #SCOLU
+    LDA shadowColour
     STA COLUPF
     LDA shadow2a,X
     STA PF1

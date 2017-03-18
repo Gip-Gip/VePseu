@@ -2,11 +2,9 @@
 
     processor 6502
 
-    INCLUDE "vepseu.h"
+    INCLUDE "include/vepseu.h"
 
     SEG
-
-;Initialize everything
 
     ORG $F000
 
@@ -15,6 +13,8 @@
     ORG $F800
 
 start:
+
+; Initialize everything
 
     INCLUDE "init.asm"
 
@@ -55,19 +55,28 @@ upperPad:
 
     INCLUDE "dispkern.asm" ; 121 Scanlines
 
+
+; Start VBLANK
+
     LDA #VBLANK_SET
     STA VBLANK
 
+; Process input
+
     INCLUDE "input.asm"
+
+; Pad again
 
     LDX #INDEXINIT
 
-lowerPad: ;Pad everything else
+lowerPad:
     STA WSYNC
 
     INX
     CPX #LOPAD_LIMIT
     BNE lowerPad
+
+; Get everything ready for VSYNC
 
     LDA #NULL
     STA VBLANK

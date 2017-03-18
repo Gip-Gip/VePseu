@@ -22,69 +22,35 @@ mergeLoop:
 
 ; Merge wall a
 
-    LDA wall1a,X ; 17 cycles
-    DEX
-    ORA wall1a,X
-    INX
-    STA wall1a,X
+    MRGWLL wall1a ; 17 cycles
 
 ; Make shadow a
 
-    LSR ; 21 cycles
-    DEX
-    ORA shadow1a,X
-    INX
-    ORA shadow1a,X
-    STA shadow1a,X
+    MKSHAD shadow1a ; 21 cycles
 
 ; Overlap wall a
 
-    LDA wall1a,X ; 22 cycles
-    DEX
-    ORA shadow1a,X
-    EOR shadow1a,X
-    INX
-    STA wall1a,X
+    OVLWLL wall1a, shadow1a ; 22 cycles
 
 ; Overlap shadow a
 
-    LDA shadow1a,X ; 20 cycles
-    ORA wall1a,X
-    EOR wall1a,X
-    STA shadow1a,X
+    OVLSHD wall1a, shadow1a ; 21 cycles
 
 ; Merge wall b
 
-    LDA wall1b,X ; 17 cycles
-    DEX
-    ORA wall1b,X
-    INX
-    STA wall1b,X
+    MRGWLL wall1b ; 17 cycles
 
 ; Make shadow b
 
-    LSR ; 31 cycles
-    DEX
-    ORA shadow1b,X
-    INX
-    ORA shadow1b,X
-    STA shadow1b,X
+    MKSHAD shadow1b ; 21 cycles
 
 ; Overlap wall b
 
-    LDA wall1b,X ; 22 cycles
-    DEX
-    ORA shadow1b,X
-    EOR shadow1b,X
-    INX
-    STA wall1b,X
+    OVLWLL wall1b, shadow1b ; 22 cycles
 
 ; Overlap shadow b
 
-    LDA shadow1b,X ; 20 cycles
-    ORA wall1b,X
-    EOR wall1b,X
-    STA shadow1b,X
+    OVLSHD wall1b, shadow1b ; 20 cycles
 
 ; Loop if not done
 

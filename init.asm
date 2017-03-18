@@ -29,3 +29,8 @@ cleanLoop:
     LDA #NULL
     STA yGain
     STA xLoss
+
+    LDA #WCOLU
+    STA wallColour
+    LDA #SCOLU
+    STA shadowColour
