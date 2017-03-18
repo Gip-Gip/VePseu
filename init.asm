@@ -3,13 +3,14 @@
     LDX #stack
     TXS
 
-    LDX #INDEXINIT
     LDA #NULL
 
     CLD
     CLC
     CLI
     CLV
+
+    LDX #INDEXINIT
 
 cleanLoop:
 

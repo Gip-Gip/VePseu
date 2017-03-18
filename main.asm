@@ -14,18 +14,6 @@
 
     ORG $F800
 
-clear: ; Clear all wall values (199 cycles)
-    LDX #INDEXINIT
-    LDA #NULL
-
-_clear_loop:
-
-    STA wall1a,X
-    INX
-    CPX #WALLCNT
-    BNE _clear_loop
-    RTS
-
 start:
 
     INCLUDE "init.asm"
@@ -67,16 +55,19 @@ upperPad:
 
     INCLUDE "dispkern.asm" ; 121 Scanlines
 
-; Pad even more!
-
     LDA #VBLANK_SET
     STA VBLANK
 
-    REPEAT 99
+    INCLUDE "input.asm"
 
+    LDX #INDEXINIT
+
+lowerPad: ;Pad everything else
     STA WSYNC
 
-    REPEND
+    INX
+    CPX #LOPAD_LIMIT
+    BNE lowerPad
 
     LDA #NULL
     STA VBLANK
@@ -86,14 +77,8 @@ upperPad:
 
     ORG $FFFA
 
-
-
-            .word start          ; NMI
-
-            .word start          ; RESET
-
-            .word screenStart          ; IRQ
-
-
+    DC.W start ; Something
+    DC.W start ; Entrypoint
+    DC.W screenStart ; Something else
 
     END
