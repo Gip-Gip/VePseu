@@ -1,34 +1,31 @@
-; Second Layer (76 cycles)
+; Second Layer (148 cycles)
 
-    TXA ; 9 cycles
-    SEC
-    SBC mapWidth
-    TAX
+    Y_POS_ADV ; 14 cycles
 
-    DEX ; 12 cycles
-    LDA map,X
+    X_POS_LOS ; 25 cycles
+    LDA (mapPtr),Y
     AND #LAYER2_AND_0
     STA shadow2a
 
-    INX ; 12 cycles
-    LDA map,X
+    X_POS_GAN ; 25 cycles
+    LDA (mapPtr),Y
     AND #LAYER2_AND_1
     STA wall2a
 
-    INX ; 17 cycles
-    LDA map,X
+    X_POS_GAN ; 31 cycles
+    LDA (mapPtr),Y
     AND #LAYER2_AND_2
     STA wall2b
     ORA wall2a
     STA wall2a
 
-    INX ; 14 cycles
-    LDA map,X
+    X_POS_GAN ; 28 cycles
+    LDA (mapPtr),Y
     AND #LAYER2_AND_1
     ORA wall2b
     STA wall2b
 
-    INX ; 12 cycles
-    LDA map,X
+    X_POS_GAN ; 25 cycles
+    LDA (mapPtr),Y
     AND #LAYER2_AND_0
     STA shadow2b

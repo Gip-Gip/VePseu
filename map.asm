@@ -1,6 +1,6 @@
 ; VePseu's maps
 
-MAP_01_POS = $54
+MAP_01_POS = $44
 MAP_01_WDTH = $10
 MAP_01_SZ = $100
 

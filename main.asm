@@ -65,14 +65,14 @@ upperPad:
 
 ; Draw everything
 
-    INCLUDE "dispkern.asm" ; 136 Scanlines
+    INCLUDE "dispkern.asm" ; 121 Scanlines
 
 ; Pad even more!
 
     LDA #VBLANK_SET
     STA VBLANK
 
-    REPEAT 86
+    REPEAT 99
 
     STA WSYNC
 
