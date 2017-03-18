@@ -137,7 +137,7 @@
       0  f000					      INCLUDE	"map.asm"
       1  f000							; VePseu's maps
       2  f000
-      3  f000		       00 44	   MAP_01_POS =	$44
+      3  f000		       00 61	   MAP_01_POS =	$61
       4  f000		       00 10	   MAP_01_WDTH =	$10
       5  f000		       01 00	   MAP_01_SZ  =	$100
       6  f000
@@ -145,35 +145,34 @@
       8  f000		       02 f0		      DC.W	map_01
       9  f002
      10  f002				   map_01
-     11  f002							;	 0  1  2  3  4	5  6  7  8  9  A  B  C	D  E  F
-     12  f002		       ff ff ff ff*	      HEX	FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF	; 0
-     13  f012		       ff 00 00 00*	      HEX	FF 00 00 00 FF 00 00 00 00 00 00 00 00 00 00 FF	; 1
-     14  f022		       ff 00 00 ff*	      HEX	FF 00 00 FF 00 FF 00 00 00 00 00 00 00 00 00 FF	; 2
-     15  f032		       ff 00 00 ff*	      HEX	FF 00 00 FF 00 FF 00 00 00 00 00 00 00 00 00 FF	; 3
-     16  f042		       ff 00 00 ff*	      HEX	FF 00 00 FF 00 FF 00 00 00 00 00 00 00 00 00 FF	; 4
-     17  f052		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF	; 5
-     18  f062		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF	; 6
-     19  f072		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF	; 7
-     20  f082		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF	; 8
-     21  f092		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF	; 9
-     22  f0a2		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF	; A
-     23  f0b2		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF	; B
-     24  f0c2		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF	; C
-     25  f0d2		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF	; D
-     26  f0e2		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF	; E
-     27  f0f2		       ff ff ff ff*	      HEX	FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF	; F
-     28  f102
-     29  f102				   map_01_load
-     30  f102		       a9 44		      LDA	#MAP_01_POS
-     31  f104		       85 91		      STA	playerPos
-     32  f106		       a9 10		      LDA	#MAP_01_WDTH
-     33  f108		       85 92		      STA	mapWidth
-     34  f10a		       ad 00 f0 	      LDA	mapList
-     35  f10d		       85 97		      STA	mapPtr
-     36  f10f		       e8		      INX
-     37  f110		       ad 01 f0 	      LDA	mapList + 1
-     38  f113		       85 98		      STA	mapPtr + 1
-     39  f115		       60		      RTS
+     11  f002		       ff ff ff ff*	      HEX	FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+     12  f012		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF
+     13  f022		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 00 FF 00 00 00 00 00 FF 00 FF
+     14  f032		       ff 00 ff ff*	      HEX	FF 00 FF FF 00 00 00 FF 00 00 00 00 FF FF 00 FF
+     15  f042		       ff 00 00 ff*	      HEX	FF 00 00 FF 00 00 00 FF 00 00 00 00 FF 00 00 FF
+     16  f052		       ff 00 ff ff*	      HEX	FF 00 FF FF 00 00 00 FF 00 00 00 00 FF FF 00 FF
+     17  f062		       ff 00 ff ff*	      HEX	FF 00 FF FF 00 00 00 FF 00 00 00 00 FF FF 00 FF
+     18  f072		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 FF 00 FF 00 FF 00 00 00 FF 00 FF
+     19  f082		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 FF 00 FF 00 FF 00 00 FF 00 FF
+     20  f092		       ff 00 ff ff*	      HEX	FF 00 FF FF 00 00 00 00 FF 00 00 00 FF FF 00 FF
+     21  f0a2		       ff 00 ff ff*	      HEX	FF 00 FF FF 00 00 00 00 FF 00 00 00 FF FF 00 FF
+     22  f0b2		       ff 00 00 ff*	      HEX	FF 00 00 FF 00 00 00 00 FF 00 00 00 FF 00 00 FF
+     23  f0c2		       ff 00 ff ff*	      HEX	FF 00 FF FF 00 00 00 00 FF 00 00 00 FF FF 00 FF
+     24  f0d2		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 00 00 FF 00 00 00 00 FF 00 FF
+     25  f0e2		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF
+     26  f0f2		       ff ff ff ff*	      HEX	FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF FF
+     27  f102
+     28  f102				   map_01_load
+     29  f102		       a9 61		      LDA	#MAP_01_POS
+     30  f104		       85 91		      STA	playerPos
+     31  f106		       a9 10		      LDA	#MAP_01_WDTH
+     32  f108		       85 92		      STA	mapWidth
+     33  f10a		       ad 00 f0 	      LDA	mapList
+     34  f10d		       85 97		      STA	mapPtr
+     35  f10f		       e8		      INX
+     36  f110		       ad 01 f0 	      LDA	mapList + 1
+     37  f113		       85 98		      STA	mapPtr + 1
+     38  f115		       60		      RTS
 ------- FILE main.asm
      14  f116
      15  f800					      ORG	$F800
@@ -527,301 +526,298 @@
      43  f933		       85 8a		      STA	shadow3a
 ------- FILE walrend.asm
      43  f935
-     44  f935		       85 02		      STA	WSYNC	; By this time 2 scanlines have passed
+------- FILE r_layers/layer4.asm LEVEL 3 PASS 2
+      0  f935					      INCLUDE	"r_layers/layer4.asm"	; 8 cycles
+      1  f935							; Since layer four is the last layer, it is always set to full(it looks better)
+      2  f935
+      3  f935		       a9 ff		      LDA	#$FF
+      4  f937		       85 83		      STA	wall4a
+      5  f939		       85 87		      STA	wall4b
+------- FILE walrend.asm
+     45  f93b
+     46  f93b		       85 02		      STA	WSYNC	; By this time 2 scanlines have passed
 ------- FILE main.asm
-     50  f937
+     50  f93d
 ------- FILE scrend.asm LEVEL 2 PASS 2
-      0  f937					      INCLUDE	"scrend.asm"	; 6 Scanlines
-      1  f937							; VePseu's screen renderer
-      2  f937
-      3  f937							; Remove the shadows incase only 1 wall is drawn (22 cycles)
-      4  f937		       a5 88		      LDA	shadow1a
-      5  f939		       05 80		      ORA	wall1a
-      6  f93b		       45 80		      EOR	wall1a
-      7  f93d		       29 f8		      AND	#%11111000
-      8  f93f		       85 88		      STA	shadow1a
-      9  f941
-     10  f941		       a5 8c		      LDA	shadow1b
-     11  f943		       05 84		      ORA	wall1b
-     12  f945		       45 84		      EOR	wall1b
-     13  f947		       29 f8		      AND	#%11111000
-     14  f949		       85 8c		      STA	shadow1b
-     15  f94b
-     16  f94b
-     17  f94b							; Merge walls (approx 381 cycles)
-     18  f94b
-     19  f94b		       a2 01		      LDX	#1
-     20  f94d
-     21  f94d				   mergeLoop
-     22  f94d
-     23  f94d							; Merge wall a
-     24  f94d
-     25  f94d		       b5 80		      LDA	wall1a,X	; 17 cycles
-     26  f94f		       ca		      DEX
-     27  f950		       15 80		      ORA	wall1a,X
-     28  f952		       e8		      INX
-     29  f953		       95 80		      STA	wall1a,X
-     30  f955
-     31  f955							; Make shadow a
-     32  f955
-     33  f955		       4a		      LSR		; 21 cycles
-     34  f956		       ca		      DEX
-     35  f957		       15 88		      ORA	shadow1a,X
-     36  f959		       e8		      INX
-     37  f95a		       15 88		      ORA	shadow1a,X
-     38  f95c		       95 88		      STA	shadow1a,X
-     39  f95e
-     40  f95e							; Overlap wall a
-     41  f95e
-     42  f95e		       b5 80		      LDA	wall1a,X	; 22 cycles
-     43  f960		       ca		      DEX
-     44  f961		       15 88		      ORA	shadow1a,X
-     45  f963		       55 88		      EOR	shadow1a,X
-     46  f965		       e8		      INX
-     47  f966		       95 80		      STA	wall1a,X
-     48  f968
-     49  f968							; Overlap shadow a
-     50  f968
-     51  f968		       b5 88		      LDA	shadow1a,X	; 20 cycles
-     52  f96a		       15 80		      ORA	wall1a,X
-     53  f96c		       55 80		      EOR	wall1a,X
-     54  f96e		       95 88		      STA	shadow1a,X
-     55  f970
-     56  f970							; Merge wall b
-     57  f970
-     58  f970		       b5 84		      LDA	wall1b,X	; 17 cycles
-     59  f972		       ca		      DEX
-     60  f973		       15 84		      ORA	wall1b,X
-     61  f975		       e8		      INX
-     62  f976		       95 84		      STA	wall1b,X
-     63  f978
-     64  f978							; Make shadow b
-     65  f978
-     66  f978		       4a		      LSR		; 31 cycles
-     67  f979		       ca		      DEX
-     68  f97a		       15 8c		      ORA	shadow1b,X
-     69  f97c		       e8		      INX
-     70  f97d		       15 8c		      ORA	shadow1b,X
-     71  f97f		       95 8c		      STA	shadow1b,X
-     72  f981
-     73  f981							; Overlap wall b
-     74  f981
-     75  f981		       b5 84		      LDA	wall1b,X	; 22 cycles
-     76  f983		       ca		      DEX
-     77  f984		       15 8c		      ORA	shadow1b,X
-     78  f986		       55 8c		      EOR	shadow1b,X
-     79  f988		       e8		      INX
-     80  f989		       95 84		      STA	wall1b,X
-     81  f98b
-     82  f98b							; Overlap shadow b
-     83  f98b
-     84  f98b		       b5 8c		      LDA	shadow1b,X	; 20 cycles
-     85  f98d		       15 84		      ORA	wall1b,X
-     86  f98f		       55 84		      EOR	wall1b,X
-     87  f991		       95 8c		      STA	shadow1b,X
-     88  f993
-     89  f993							; Loop if not done
-     90  f993
-     91  f993		       e8		      INX		; 7 or 6 cycles
-     92  f994		       e0 04		      CPX	#4
-     93  f996		       d0 b5		      BNE	mergeLoop
-     94  f998
-     95  f998		       85 02		      STA	WSYNC
-     96  f99a
-     97  f99a							; By this time, we know approx 6 scanlines have passed
+      0  f93d					      INCLUDE	"scrend.asm"	; 6 Scanlines
+      1  f93d							; VePseu's screen renderer
+      2  f93d
+      3  f93d							; Remove the shadows incase only 1 wall is drawn (22 cycles)
+      4  f93d		       a5 88		      LDA	shadow1a
+      5  f93f		       05 80		      ORA	wall1a
+      6  f941		       45 80		      EOR	wall1a
+      7  f943		       29 f8		      AND	#%11111000
+      8  f945		       85 88		      STA	shadow1a
+      9  f947
+     10  f947		       a5 8c		      LDA	shadow1b
+     11  f949		       05 84		      ORA	wall1b
+     12  f94b		       45 84		      EOR	wall1b
+     13  f94d		       29 f8		      AND	#%11111000
+     14  f94f		       85 8c		      STA	shadow1b
+     15  f951
+     16  f951
+     17  f951							; Merge walls (approx 381 cycles)
+     18  f951
+     19  f951		       a2 01		      LDX	#1
+     20  f953
+     21  f953				   mergeLoop
+     22  f953
+     23  f953							; Merge wall a
+     24  f953
+     25  f953		       b5 80		      LDA	wall1a,X	; 17 cycles
+     26  f955		       ca		      DEX
+     27  f956		       15 80		      ORA	wall1a,X
+     28  f958		       e8		      INX
+     29  f959		       95 80		      STA	wall1a,X
+     30  f95b
+     31  f95b							; Make shadow a
+     32  f95b
+     33  f95b		       4a		      LSR		; 21 cycles
+     34  f95c		       ca		      DEX
+     35  f95d		       15 88		      ORA	shadow1a,X
+     36  f95f		       e8		      INX
+     37  f960		       15 88		      ORA	shadow1a,X
+     38  f962		       95 88		      STA	shadow1a,X
+     39  f964
+     40  f964							; Overlap wall a
+     41  f964
+     42  f964		       b5 80		      LDA	wall1a,X	; 22 cycles
+     43  f966		       ca		      DEX
+     44  f967		       15 88		      ORA	shadow1a,X
+     45  f969		       55 88		      EOR	shadow1a,X
+     46  f96b		       e8		      INX
+     47  f96c		       95 80		      STA	wall1a,X
+     48  f96e
+     49  f96e							; Overlap shadow a
+     50  f96e
+     51  f96e		       b5 88		      LDA	shadow1a,X	; 20 cycles
+     52  f970		       15 80		      ORA	wall1a,X
+     53  f972		       55 80		      EOR	wall1a,X
+     54  f974		       95 88		      STA	shadow1a,X
+     55  f976
+     56  f976							; Merge wall b
+     57  f976
+     58  f976		       b5 84		      LDA	wall1b,X	; 17 cycles
+     59  f978		       ca		      DEX
+     60  f979		       15 84		      ORA	wall1b,X
+     61  f97b		       e8		      INX
+     62  f97c		       95 84		      STA	wall1b,X
+     63  f97e
+     64  f97e							; Make shadow b
+     65  f97e
+     66  f97e		       4a		      LSR		; 31 cycles
+     67  f97f		       ca		      DEX
+     68  f980		       15 8c		      ORA	shadow1b,X
+     69  f982		       e8		      INX
+     70  f983		       15 8c		      ORA	shadow1b,X
+     71  f985		       95 8c		      STA	shadow1b,X
+     72  f987
+     73  f987							; Overlap wall b
+     74  f987
+     75  f987		       b5 84		      LDA	wall1b,X	; 22 cycles
+     76  f989		       ca		      DEX
+     77  f98a		       15 8c		      ORA	shadow1b,X
+     78  f98c		       55 8c		      EOR	shadow1b,X
+     79  f98e		       e8		      INX
+     80  f98f		       95 84		      STA	wall1b,X
+     81  f991
+     82  f991							; Overlap shadow b
+     83  f991
+     84  f991		       b5 8c		      LDA	shadow1b,X	; 20 cycles
+     85  f993		       15 84		      ORA	wall1b,X
+     86  f995		       55 84		      EOR	wall1b,X
+     87  f997		       95 8c		      STA	shadow1b,X
+     88  f999
+     89  f999							; Loop if not done
+     90  f999
+     91  f999		       e8		      INX		; 7 or 6 cycles
+     92  f99a		       e0 04		      CPX	#4
+     93  f99c		       d0 b5		      BNE	mergeLoop
+     94  f99e
+     95  f99e		       85 02		      STA	WSYNC
+     96  f9a0
+     97  f9a0							; By this time, we know approx 6 scanlines have passed
 ------- FILE main.asm
-     52  f99a
-     53  f99a							; Pad!
-     54  f99a
-     55  f99a		       a2 00		      LDX	#INDEXINIT
-     56  f99c
-     57  f99c				   upperPad
-     58  f99c		       85 02		      STA	WSYNC
-     59  f99e
-     60  f99e		       e8		      INX
-     61  f99f		       e0 18		      CPX	#UPPAD_LIMIT
-     62  f9a1		       d0 f9		      BNE	upperPad
-     63  f9a3
-     64  f9a3		       85 02		      STA	WSYNC
-     65  f9a5
-     66  f9a5							; Draw everything
-     67  f9a5
+     52  f9a0
+     53  f9a0							; Pad!
+     54  f9a0
+     55  f9a0		       a2 00		      LDX	#INDEXINIT
+     56  f9a2
+     57  f9a2				   upperPad
+     58  f9a2		       85 02		      STA	WSYNC
+     59  f9a4
+     60  f9a4		       e8		      INX
+     61  f9a5		       e0 18		      CPX	#UPPAD_LIMIT
+     62  f9a7		       d0 f9		      BNE	upperPad
+     63  f9a9
+     64  f9a9		       85 02		      STA	WSYNC
+     65  f9ab
+     66  f9ab							; Draw everything
+     67  f9ab
 ------- FILE dispkern.asm LEVEL 2 PASS 2
-      0  f9a5					      INCLUDE	"dispkern.asm"	; 121 Scanlines
-      1  f9a5							; VePseu's display kernel
-      2  f9a5
-      3  f9a5							; This actually draws 136 lines to the screen instead of the usual 196. The
-      4  f9a5							; only reason being it looks better with the small horizontal size of the
-      5  f9a5							; picture
-      6  f9a5
-      7  f9a5		       4c ae f9 	      JMP	drawStart
-      8  f9a8
-      9  f9a8				   wait 		; Waits the right amount of time to blank the mirrored playfield
-     10  f9a8		       ea		      NOP
-     11  f9a9		       ea		      NOP
-     12  f9aa		       ea		      NOP
-     13  f9ab		       ea		      NOP
-     14  f9ac		       60		      RTS
-     15  f9ad
-     16  f9ad				   wait2		; Waits the right amount of time to blank the mirrored playfield
-     17  f9ad		       60		      RTS
-     18  f9ae
-     19  f9ae
-     20  f9ae				   drawStart
-     21  f9ae
-     22  f9ae		       a0 80		      LDY	#SHAD_AND_0
-     23  f9b0		       20 fc f9 	      JSR	otherWall
-     24  f9b3		       a0 c0		      LDY	#SHAD_AND_1
-     25  f9b5		       20 fc f9 	      JSR	otherWall
-     26  f9b8		       a0 e0		      LDY	#SHAD_AND_2
-     27  f9ba		       20 fc f9 	      JSR	otherWall
-     28  f9bd		       a0 f0		      LDY	#SHAD_AND_3
-     29  f9bf		       20 fc f9 	      JSR	otherWall
-     30  f9c2		       a0 f8		      LDY	#SHAD_AND_4
-     31  f9c4		       20 fc f9 	      JSR	otherWall
-     32  f9c7		       a2 00		      LDX	#0
-     33  f9c9		       20 3c fa 	      JSR	medWall
-     34  f9cc		       a2 01		      LDX	#1
-     35  f9ce		       20 3c fa 	      JSR	medWall
-     36  f9d1		       a2 02		      LDX	#2
-     37  f9d3		       20 3c fa 	      JSR	medWall
-     38  f9d6		       a2 01		      LDX	#1
-     39  f9d8		       20 3c fa 	      JSR	medWall
-     40  f9db		       a2 00		      LDX	#0
-     41  f9dd		       20 3c fa 	      JSR	medWall
-     42  f9e0		       a0 f8		      LDY	#SHAD_AND_4
-     43  f9e2		       20 fc f9 	      JSR	otherWall
-     44  f9e5		       a0 f0		      LDY	#SHAD_AND_3
-     45  f9e7		       20 fc f9 	      JSR	otherWall
-     46  f9ea		       a0 e0		      LDY	#SHAD_AND_2
-     47  f9ec		       20 fc f9 	      JSR	otherWall
-     48  f9ef		       a0 c0		      LDY	#SHAD_AND_1
-     49  f9f1		       20 fc f9 	      JSR	otherWall
-     50  f9f4		       a0 80		      LDY	#SHAD_AND_0
-     51  f9f6		       20 fc f9 	      JSR	otherWall
-     52  f9f9
-     53  f9f9		       4c 74 fa 	      JMP	stop
-     54  f9fc
-     55  f9fc				   otherWall
-     56  f9fc
-     57  f9fc		       a2 00		      LDX	#INDEXINIT
-     58  f9fe
-     59  f9fe				   _otherWall_loop
-     60  f9fe
-     61  f9fe		       85 02		      STA	WSYNC
-     62  fa00
-     63  fa00		       a9 0e		      LDA	#MCOLU
-     64  fa02		       85 08		      STA	COLUPF
-     65  fa04		       a5 80		      LDA	wall1a
-     66  fa06		       85 0e		      STA	PF1
-     67  fa08		       a5 84		      LDA	wall1b
-     68  fa0a		       4a		      LSR
-     69  fa0b		       85 0f		      STA	PF2
-     70  fa0d
-     71  fa0d		       20 a8 f9 	      JSR	wait
-     72  fa10
-     73  fa10		       a9 00		      LDA	#NULL
-     74  fa12		       85 0e		      STA	PF1
-     75  fa14		       85 0f		      STA	PF2
-     76  fa16
-     77  fa16		       85 02		      STA	WSYNC
-     78  fa18
-     79  fa18		       a9 06		      LDA	#SCOLU
-     80  fa1a		       85 08		      STA	COLUPF
-     81  fa1c		       84 90		      STY	shift
-     82  fa1e		       a5 88		      LDA	shadow1a
-     83  fa20		       25 90		      AND	shift
-     84  fa22		       85 0e		      STA	PF1
-     85  fa24		       85 0e		      STA	PF1
-     86  fa26		       a5 8c		      LDA	shadow1b
-     87  fa28		       25 90		      AND	shift
-     88  fa2a		       4a		      LSR
-     89  fa2b		       85 0f		      STA	PF2
-     90  fa2d
-     91  fa2d		       20 ad f9 	      JSR	wait2
-     92  fa30
-     93  fa30		       a9 00		      LDA	#NULL
-     94  fa32		       85 0e		      STA	PF1
-     95  fa34		       85 0f		      STA	PF2
-     96  fa36
-     97  fa36		       e8		      INX
-     98  fa37		       e0 04		      CPX	#PIXH
-     99  fa39		       d0 c3		      BNE	_otherWall_loop
-    100  fa3b
-    101  fa3b		       60		      RTS
-    102  fa3c
-    103  fa3c							; Every other wall drawing
-    104  fa3c
-    105  fa3c				   medWall
-    106  fa3c
-    107  fa3c		       a0 00		      LDY	#INDEXINIT
-    108  fa3e
-    109  fa3e				   _medWall_loop
-    110  fa3e
-    111  fa3e		       85 02		      STA	WSYNC
-    112  fa40		       a9 0e		      LDA	#MCOLU
-    113  fa42		       85 08		      STA	COLUPF
-    114  fa44		       b5 81		      LDA	wall2a,X
-    115  fa46		       85 0e		      STA	PF1
-    116  fa48		       b5 85		      LDA	wall2b,X
-    117  fa4a		       4a		      LSR
-    118  fa4b		       85 0f		      STA	PF2
-    119  fa4d
-    120  fa4d		       20 a8 f9 	      JSR	wait
-    121  fa50
-    122  fa50		       a9 00		      LDA	#NULL
-    123  fa52		       85 0e		      STA	PF1
-    124  fa54		       85 0f		      STA	PF2
-    125  fa56		       85 02		      STA	WSYNC
-    126  fa58
-    127  fa58		       a9 06		      LDA	#SCOLU
-    128  fa5a		       85 08		      STA	COLUPF
-    129  fa5c		       b5 89		      LDA	shadow2a,X
-    130  fa5e		       85 0e		      STA	PF1
-    131  fa60		       b5 8d		      LDA	shadow2b,X
-    132  fa62		       4a		      LSR
-    133  fa63		       85 0f		      STA	PF2
-    134  fa65
-    135  fa65		       20 a8 f9 	      JSR	wait
-    136  fa68
-    137  fa68		       a9 00		      LDA	#NULL
-    138  fa6a		       85 0e		      STA	PF1
-    139  fa6c		       85 0f		      STA	PF2
-    140  fa6e
-    141  fa6e		       c8		      INY
-    142  fa6f
-    143  fa6f		       c0 04		      CPY	#PIXH
-    144  fa71		       d0 cb		      BNE	_medWall_loop
-    145  fa73
-    146  fa73		       60		      RTS
-    147  fa74
-    148  fa74				   stop
-    149  fa74
-    150  fa74		       85 02		      STA	WSYNC
-    151  fa76
-    152  fa76		       a9 00		      LDA	#NULL
-    153  fa78		       85 0e		      STA	PF1
-    154  fa7a		       85 0f		      STA	PF2
+      0  f9ab					      INCLUDE	"dispkern.asm"	; 121 Scanlines
+      1  f9ab							; VePseu's display kernel
+      2  f9ab
+      3  f9ab							; This actually draws 121 lines to the screen instead of the usual 196. The
+      4  f9ab							; only reason being it looks better with the small horizontal size of the
+      5  f9ab							; picture
+      6  f9ab
+      7  f9ab		       4c b4 f9 	      JMP	drawStart
+      8  f9ae
+      9  f9ae				   wait 		; Waits the right amount of time to blank the mirrored playfield
+     10  f9ae		       ea		      NOP
+     11  f9af		       ea		      NOP
+     12  f9b0		       ea		      NOP
+     13  f9b1		       ea		      NOP
+     14  f9b2		       60		      RTS
+     15  f9b3
+     16  f9b3				   wait2		; Waits the right amount of time to blank the mirrored playfield
+     17  f9b3		       60		      RTS
+     18  f9b4
+     19  f9b4
+     20  f9b4				   drawStart
+     21  f9b4
+     22  f9b4		       a0 80		      LDY	#SHAD_AND_0
+     23  f9b6		       20 02 fa 	      JSR	otherWall
+     24  f9b9		       a0 c0		      LDY	#SHAD_AND_1
+     25  f9bb		       20 02 fa 	      JSR	otherWall
+     26  f9be		       a0 e0		      LDY	#SHAD_AND_2
+     27  f9c0		       20 02 fa 	      JSR	otherWall
+     28  f9c3		       a0 f0		      LDY	#SHAD_AND_3
+     29  f9c5		       20 02 fa 	      JSR	otherWall
+     30  f9c8		       a0 f8		      LDY	#SHAD_AND_4
+     31  f9ca		       20 02 fa 	      JSR	otherWall
+     32  f9cd		       a2 00		      LDX	#0
+     33  f9cf		       20 42 fa 	      JSR	medWall
+     34  f9d2		       a2 01		      LDX	#1
+     35  f9d4		       20 42 fa 	      JSR	medWall
+     36  f9d7		       a2 02		      LDX	#2
+     37  f9d9		       20 42 fa 	      JSR	medWall
+     38  f9dc		       a2 01		      LDX	#1
+     39  f9de		       20 42 fa 	      JSR	medWall
+     40  f9e1		       a2 00		      LDX	#0
+     41  f9e3		       20 42 fa 	      JSR	medWall
+     42  f9e6		       a0 f8		      LDY	#SHAD_AND_4
+     43  f9e8		       20 02 fa 	      JSR	otherWall
+     44  f9eb		       a0 f0		      LDY	#SHAD_AND_3
+     45  f9ed		       20 02 fa 	      JSR	otherWall
+     46  f9f0		       a0 e0		      LDY	#SHAD_AND_2
+     47  f9f2		       20 02 fa 	      JSR	otherWall
+     48  f9f5		       a0 c0		      LDY	#SHAD_AND_1
+     49  f9f7		       20 02 fa 	      JSR	otherWall
+     50  f9fa		       a0 80		      LDY	#SHAD_AND_0
+     51  f9fc		       20 02 fa 	      JSR	otherWall
+     52  f9ff
+     53  f9ff		       4c 7a fa 	      JMP	stop
+     54  fa02
+     55  fa02				   otherWall
+     56  fa02
+     57  fa02		       a2 00		      LDX	#INDEXINIT
+     58  fa04
+     59  fa04				   _otherWall_loop
+     60  fa04
+     61  fa04		       85 02		      STA	WSYNC
+     62  fa06
+     63  fa06		       a9 0e		      LDA	#MCOLU
+     64  fa08		       85 08		      STA	COLUPF
+     65  fa0a		       a5 80		      LDA	wall1a
+     66  fa0c		       85 0e		      STA	PF1
+     67  fa0e		       a5 84		      LDA	wall1b
+     68  fa10		       4a		      LSR
+     69  fa11		       85 0f		      STA	PF2
+     70  fa13
+     71  fa13		       20 ae f9 	      JSR	wait
+     72  fa16
+     73  fa16		       a9 00		      LDA	#NULL
+     74  fa18		       85 0e		      STA	PF1
+     75  fa1a		       85 0f		      STA	PF2
+     76  fa1c
+     77  fa1c		       85 02		      STA	WSYNC
+     78  fa1e
+     79  fa1e		       a9 06		      LDA	#SCOLU
+     80  fa20		       85 08		      STA	COLUPF
+     81  fa22		       84 90		      STY	shift
+     82  fa24		       a5 88		      LDA	shadow1a
+     83  fa26		       25 90		      AND	shift
+     84  fa28		       85 0e		      STA	PF1
+     85  fa2a		       85 0e		      STA	PF1
+     86  fa2c		       a5 8c		      LDA	shadow1b
+     87  fa2e		       25 90		      AND	shift
+     88  fa30		       4a		      LSR
+     89  fa31		       85 0f		      STA	PF2
+     90  fa33
+     91  fa33		       20 b3 f9 	      JSR	wait2
+     92  fa36
+     93  fa36		       a9 00		      LDA	#NULL
+     94  fa38		       85 0e		      STA	PF1
+     95  fa3a		       85 0f		      STA	PF2
+     96  fa3c
+     97  fa3c		       e8		      INX
+     98  fa3d		       e0 04		      CPX	#PIXH
+     99  fa3f		       d0 c3		      BNE	_otherWall_loop
+    100  fa41
+    101  fa41		       60		      RTS
+    102  fa42
+    103  fa42							; Every other wall drawing
+    104  fa42
+    105  fa42				   medWall
+    106  fa42
+    107  fa42		       a0 00		      LDY	#INDEXINIT
+    108  fa44
+    109  fa44				   _medWall_loop
+    110  fa44
+    111  fa44		       85 02		      STA	WSYNC
+    112  fa46		       a9 0e		      LDA	#MCOLU
+    113  fa48		       85 08		      STA	COLUPF
+    114  fa4a		       b5 81		      LDA	wall2a,X
+    115  fa4c		       85 0e		      STA	PF1
+    116  fa4e		       b5 85		      LDA	wall2b,X
+    117  fa50		       4a		      LSR
+    118  fa51		       85 0f		      STA	PF2
+    119  fa53
+    120  fa53		       20 ae f9 	      JSR	wait
+    121  fa56
+    122  fa56		       a9 00		      LDA	#NULL
+    123  fa58		       85 0e		      STA	PF1
+    124  fa5a		       85 0f		      STA	PF2
+    125  fa5c		       85 02		      STA	WSYNC
+    126  fa5e
+    127  fa5e		       a9 06		      LDA	#SCOLU
+    128  fa60		       85 08		      STA	COLUPF
+    129  fa62		       b5 89		      LDA	shadow2a,X
+    130  fa64		       85 0e		      STA	PF1
+    131  fa66		       b5 8d		      LDA	shadow2b,X
+    132  fa68		       4a		      LSR
+    133  fa69		       85 0f		      STA	PF2
+    134  fa6b
+    135  fa6b		       20 ae f9 	      JSR	wait
+    136  fa6e
+    137  fa6e		       a9 00		      LDA	#NULL
+    138  fa70		       85 0e		      STA	PF1
+    139  fa72		       85 0f		      STA	PF2
+    140  fa74
+    141  fa74		       c8		      INY
+    142  fa75
+    143  fa75		       c0 04		      CPY	#PIXH
+    144  fa77		       d0 cb		      BNE	_medWall_loop
+    145  fa79
+    146  fa79		       60		      RTS
+    147  fa7a
+    148  fa7a				   stop
+    149  fa7a
+    150  fa7a		       85 02		      STA	WSYNC
+    151  fa7c
+    152  fa7c		       a9 00		      LDA	#NULL
+    153  fa7e		       85 0e		      STA	PF1
+    154  fa80		       85 0f		      STA	PF2
 ------- FILE main.asm
-     69  fa7c
-     70  fa7c							; Pad even more!
-     71  fa7c
-     72  fa7c		       a9 c2		      LDA	#VBLANK_SET
-     73  fa7e		       85 01		      STA	VBLANK
-     74  fa80
-     75  fa80					      REPEAT	99
-     76  fa80
-     77  fa80		       85 02		      STA	WSYNC
-     78  fa82
-     75  fa82					      REPEND
-     76  fa82
-     77  fa82		       85 02		      STA	WSYNC
-     78  fa84
-     75  fa84					      REPEND
-     76  fa84
-     77  fa84		       85 02		      STA	WSYNC
-     78  fa86
-     75  fa86					      REPEND
+     69  fa82
+     70  fa82							; Pad even more!
+     71  fa82
+     72  fa82		       a9 c2		      LDA	#VBLANK_SET
+     73  fa84		       85 01		      STA	VBLANK
+     74  fa86
+     75  fa86					      REPEAT	99
      76  fa86
      77  fa86		       85 02		      STA	WSYNC
      78  fa88
@@ -1205,14 +1201,26 @@
      76  fb44
      77  fb44		       85 02		      STA	WSYNC
      78  fb46
-     79  fb46					      REPEND
-     80  fb46
-     81  fb46		       a9 00		      LDA	#NULL
-     82  fb48		       85 01		      STA	VBLANK
-     83  fb4a		       a9 02		      LDA	#VSYNC_SET
-     84  fb4c		       85 02		      STA	WSYNC
-     85  fb4e		       4c 31 f8 	      JMP	screenStart
-     86  fb51
+     75  fb46					      REPEND
+     76  fb46
+     77  fb46		       85 02		      STA	WSYNC
+     78  fb48
+     75  fb48					      REPEND
+     76  fb48
+     77  fb48		       85 02		      STA	WSYNC
+     78  fb4a
+     75  fb4a					      REPEND
+     76  fb4a
+     77  fb4a		       85 02		      STA	WSYNC
+     78  fb4c
+     79  fb4c					      REPEND
+     80  fb4c
+     81  fb4c		       a9 00		      LDA	#NULL
+     82  fb4e		       85 01		      STA	VBLANK
+     83  fb50		       a9 02		      LDA	#VSYNC_SET
+     84  fb52		       85 02		      STA	WSYNC
+     85  fb54		       4c 31 f8 	      JMP	screenStart
+     86  fb57
      87  fffa					      ORG	$FFFA
      88  fffa
      89  fffa

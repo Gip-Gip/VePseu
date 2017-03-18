@@ -1,6 +1,6 @@
 ; VePseu's display kernel
 
-; This actually draws 136 lines to the screen instead of the usual 196. The
+; This actually draws 121 lines to the screen instead of the usual 196. The
 ; only reason being it looks better with the small horizontal size of the
 ; picture
 
