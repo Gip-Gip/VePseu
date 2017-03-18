@@ -23,11 +23,22 @@ WAITTIME = 4
 
 WALLCNT = 16
 
-UPPAD_LIMIT = 25
+UPPAD_LIMIT = 29
 
 LAYER2_AND_0 = %10000000
 LAYER2_AND_1 = %11111000
 LAYER2_AND_2 = %00000111
+
+LAYER3_AND_0 = %10000000
+LAYER3_AND_1 = %11100000
+LAYER3_AND_2 = %00011100
+LAYER3_AND_3 = %00000011
+
+SHAD_AND_0 = %10000000
+SHAD_AND_1 = %11000000
+SHAD_AND_2 = %11100000
+SHAD_AND_3 = %11110000
+SHAD_AND_4 = %11111000
 
 VSYNC = $00
 VBLANK = $01
@@ -75,6 +86,9 @@ HMOVE
 HMCLR
 CXCLR
 
+cleanStart = 0
+cleanEnd = 0
+
 ; Variables...
 
 wall1a = $80
@@ -97,5 +111,10 @@ shadow4b = $8F
 shift = $90
 playerPos = $91
 mapWidth = $92
+xGain = $93
+xLoss = $94
+yGain = $95
+yLoss = $96
+mapPtr = $97
 
-map = $9B
+stack = $FF

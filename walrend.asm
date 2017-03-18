@@ -1,43 +1,44 @@
-
-
 ; VePseu's wall renderer
 
-    JSR clear
-    LDX playerPos
+    MAC Y_POS_ADV ; 14 cycles
 
-; First layer
+        TYA
+        CLC
+        ADC yGain
+        SEC
+        SBC yLoss
+        TAY
 
-    TXA
-    SBC mapWidth
-    TAX
+    ENDM
 
-    INX
-    LDA map,X
-    STA shadow1b
+    MAC X_POS_GAN ; 14 cycles
 
-    DEX
-    LDA map,X
-    STA wall1a
-    STA wall1b
+        TYA
+        CLC
+        ADC xGain
+        SEC
+        SBC xLoss
+        TAY
 
-    DEX
-    LDA map,X
-    STA shadow1a
+    ENDM
 
-; Second Layer
+    MAC X_POS_LOS ; 14 cycles
 
-    TXA
-    SBC mapWidth
-    TAX
+        TYA
+        CLC
+        ADC xLoss
+        SEC
+        SBC xGain
+        TAY
 
-    DEX
-    LDA map,X
-    AND LAYER2_AND_0
-    STA shadow2a
+    ENDM
 
-    INX
-    LDA map,X
-    AND #LAYER2_AND_1
-    STA wall2a
+    LDY playerPos ; 202 cycles
 
-    STA WSYNC
+    INCLUDE "r_layers/layer1.asm" ; 86 cycles
+
+    ;INCLUDE "r_layers/layer2.asm" ; 76 cycles
+
+    ;INCLUDE "r_layers/layer3.asm" ; 104 cycles
+
+    STA WSYNC ; By this time 2 scanlines have passed

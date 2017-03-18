@@ -44,9 +44,9 @@ screenStart:
 
     STA VSYNC
 
-; Render everything (10 scanlines)
+; Render everything (12 scanlines)
 
-    INCLUDE "walrend.asm" ; 4 scanlines
+    INCLUDE "walrend.asm" ; 6 scanlines
 
     INCLUDE "scrend.asm" ; 6 Scanlines
 

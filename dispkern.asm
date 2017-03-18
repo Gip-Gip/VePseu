@@ -11,22 +11,23 @@ wait: ; Waits the right amount of time to blank the mirrored playfield
     NOP
     NOP
     NOP
-    NOP
+    RTS
+
+wait2: ; Waits the right amount of time to blank the mirrored playfield
     RTS
 
 
 drawStart:
 
-    LDA shadow1a
-    AND #%10000000
-    STA shadow1a
-
-    LDA shadow1b
-    AND #%10000000
-    STA shadow1b
-
-    LDA #RSHIFT
-    STA shift
+    LDY #SHAD_AND_0
+    JSR otherWall
+    LDY #SHAD_AND_1
+    JSR otherWall
+    LDY #SHAD_AND_2
+    JSR otherWall
+    LDY #SHAD_AND_3
+    JSR otherWall
+    LDY #SHAD_AND_4
     JSR otherWall
     LDX #0
     JSR medWall
@@ -38,30 +39,22 @@ drawStart:
     JSR medWall
     LDX #0
     JSR medWall
-    LDA #LSHIFT
-    STA shift
+    LDY #SHAD_AND_4
+    JSR otherWall
+    LDY #SHAD_AND_3
+    JSR otherWall
+    LDY #SHAD_AND_2
+    JSR otherWall
+    LDY #SHAD_AND_1
+    JSR otherWall
+    LDY #SHAD_AND_0
     JSR otherWall
 
     JMP stop
 
-; Upper wall and shadows
-
-_otherWall_rShift:
-    LDA shadow1a
-    LSR
-    ORA shadow1a
-    STA shadow1a
-
-    LDA shadow1b
-    LSR
-    ORA shadow1b
-    STA shadow1b
-
-    JMP _otherWall_end
-
 otherWall:
+
     LDX #INDEXINIT
-    LDY #INDEXINIT
 
 _otherWall_loop:
 
@@ -85,13 +78,17 @@ _otherWall_loop:
 
     LDA #SCOLU
     STA COLUPF
+    STY shift
     LDA shadow1a
+    AND shift
+    STA PF1
     STA PF1
     LDA shadow1b
+    AND shift
     LSR
     STA PF2
 
-    JSR wait
+    JSR wait2
 
     LDA #NULL
     STA PF1
@@ -100,41 +97,6 @@ _otherWall_loop:
     INX
     CPX #PIXH
     BNE _otherWall_loop
-
-; Extend the shadows
-
-    LDX #INDEXINIT
-
-    LDA shift
-    CMP #RSHIFT
-    BEQ _otherWall_rShift
-
-    LDA shadow1a
-    CLC
-    ROL
-    STA shadow1a
-
-    LDA shadow1b
-    CLC
-    ROL
-    STA shadow1b
-
-_otherWall_end:
-
-    INY
-    CPY #NWH
-    BNE _otherWall_loop
-
-    LDA shadow1a
-    CLC
-    ROL
-    STA shadow1a
-
-    LDA shadow1b
-    CLC
-    ROL
-    STA shadow1b
-
 
     RTS
 

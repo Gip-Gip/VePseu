@@ -14,49 +14,81 @@
     STA shadow1b
 
 
-; Merge walls (approx 382 cycles)
+; Merge walls (approx 381 cycles)
 
     LDX #1
 
 mergeLoop:
 
-; Make shadows
-    LDA wall1a,X
-    LSR
-    ORA wall1a,X
-    EOR wall1a,X
-    DEX
-    ORA shadow1a,X
-    INX
-    STA shadow1a,X
+; Merge wall a
 
-    LDA wall1b,X
-    LSR
-    ORA wall1b,X
-    EOR wall1b,X
-    DEX
-    ORA shadow1b,X
-    INX
-    STA shadow1b,X
-
-; Merge walls
-    LDA wall1a,X
+    LDA wall1a,X ; 17 cycles
     DEX
     ORA wall1a,X
     INX
-    ORA shadow1a,X
-    EOR shadow1a,X
     STA wall1a,X
 
-    LDA wall1b,X
+; Make shadow a
+
+    LSR ; 21 cycles
+    DEX
+    ORA shadow1a,X
+    INX
+    ORA shadow1a,X
+    STA shadow1a,X
+
+; Overlap wall a
+
+    LDA wall1a,X ; 22 cycles
+    DEX
+    ORA shadow1a,X
+    EOR shadow1a,X
+    INX
+    STA wall1a,X
+
+; Overlap shadow a
+
+    LDA shadow1a,X ; 20 cycles
+    ORA wall1a,X
+    EOR wall1a,X
+    STA shadow1a,X
+
+; Merge wall b
+
+    LDA wall1b,X ; 17 cycles
     DEX
     ORA wall1b,X
     INX
-    ORA shadow1b,X
-    EOR shadow1b,X
     STA wall1b,X
 
+; Make shadow b
+
+    LSR ; 31 cycles
+    DEX
+    ORA shadow1b,X
     INX
+    ORA shadow1b,X
+    STA shadow1b,X
+
+; Overlap wall b
+
+    LDA wall1b,X ; 22 cycles
+    DEX
+    ORA shadow1b,X
+    EOR shadow1b,X
+    INX
+    STA wall1b,X
+
+; Overlap shadow b
+
+    LDA shadow1b,X ; 20 cycles
+    ORA wall1b,X
+    EOR wall1b,X
+    STA shadow1b,X
+
+; Loop if not done
+
+    INX ; 7 or 6 cycles
     CPX #4
     BNE mergeLoop
 

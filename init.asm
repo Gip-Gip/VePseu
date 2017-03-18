@@ -1,11 +1,30 @@
 ; VePseu's init file
 
-    LDA #NULL
-    STA VBLANK
-    STA shift
-    STA playerPos
-    STA mapWidth
+    LDX #stack
+    TXS
 
-    JSR clear
+    LDX #INDEXINIT
+    LDA #NULL
+
+    CLD
+    CLC
+    CLI
+    CLV
+
+cleanLoop:
+
+    STA cleanStart,X
+    INX
+
+    CPX #cleanEnd
+    BNE cleanLoop
 
     JSR map_01_load
+
+    LDA mapWidth
+    STA yLoss
+    LDA #ONE
+    STA xGain
+    LDA #NULL
+    STA yGain
+    STA xLoss
