@@ -42,7 +42,7 @@ CIN3:
     BEQ CIN4
 
     LDA mapWidth
-    STA xLoss
+    STA xGain
     LDA #ONE
     STA yGain
     LDA #SCOLU
@@ -51,7 +51,7 @@ CIN3:
     STA shadowColour
     LDA #NULL
     STA yLoss
-    STA xGain
+    STA xLoss
 
 CIN4:
     LDA SWCHA
@@ -60,7 +60,7 @@ CIN4:
     BEQ CTRIG
 
     LDA mapWidth
-    STA xGain
+    STA xLoss
     LDA #ONE
     STA yLoss
     LDA #SCOLU
@@ -69,7 +69,7 @@ CIN4:
     STA shadowColour
     LDA #NULL
     STA yGain
-    STA xLoss
+    STA xGain
 
 CTRIG:
 

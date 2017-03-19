@@ -187,12 +187,17 @@
      29 U0097		       00	   trigPressed DC	0
      30 U0098		       00	   wallColour DC	0
      31 U0099		       00	   shadowColour DC	0
-     32 U009a		       00 00	   mapPtr     DC.W	0
+     32 U009a		       00	   horzPos_mA DC	0
+     33 U009b		       00	   horzPos_mB DC	0
+     34 U009c		       00	   horzPos_plyr DC	0
+     35 U009d		       00	   drawingPlyr DC	0
+     36 U009e		       00 00	   miniMapPtr DC.W	0
+     37 U00a0		       00 00	   mapPtr     DC.W	0
 ------- FILE include/vepseu.h
 ------- FILE include/pia_addr.h LEVEL 3 PASS 2
-      0 U009c					      INCLUDE	"include/pia_addr.h"
-      1 U009c							; PIA addresses
-      2 U009c
+      0 U00a2					      INCLUDE	"include/pia_addr.h"
+      1 U00a2							; PIA addresses
+      2 U00a2
       3 U0280					      ORG	$0280
       4 U0280
       5 U0280		       00	   SWCHA      DC	0
@@ -213,42 +218,47 @@
       3 U028a
       4 U028a		       00 04	   PIXH       =	4	; The height of each pixel in scanlines (x2)
       5 U028a
-      6 U028a		       00 0e	   WCOLU      =	$0E	; The initial colour of walls
-      7 U028a		       00 06	   SCOLU      =	$06	; The initial colour of shadows
+      6 U028a		       00 00	   HADJ_A     =	$00
+      7 U028a		       00 10	   HADJ_B     =	$10
       8 U028a
-      9 U028a		       00 c2	   VBLANK_SET =	%11000010	; The value to push to the vblank register
-     10 U028a		       00 02	   VSYNC_SET  =	2	; The value to push to the vsync register
-     11 U028a
-     12 U028a		       00 00	   INDEXINIT  =	0	; The value to initialize indexes to
+      9 U028a		       00 86	   WCOLU      =	$86	; The initial colour of walls
+     10 U028a		       00 82	   SCOLU      =	$82	; The initial colour of shadows
+     11 U028a		       00 0e	   MAPCOLU    =	$0E	; The colour of the map on the minimap
+     12 U028a		       00 cc	   PLYRCOLU   =	$CC	; The colour of the player on the minimap
      13 U028a
-     14 U028a		       00 18	   UPPAD_LIMIT =	24	; The upper pad amount
-     15 U028a		       00 61	   LOPAD_LIMIT =	97	; The lower pad amount
+     14 U028a		       00 c2	   VBLANK_SET =	%11000010	; The value to push to the vblank register
+     15 U028a		       00 02	   VSYNC_SET  =	2	; The value to push to the vsync register
      16 U028a
-     17 U028a		       00 e0	   LAYER2_AND_0 =	%11100000	; The pattern layer 2's shadow takes on
-     18 U028a		       00 f8	   LAYER2_AND_1 =	%11111000	; The pattern layer 2's first wall takes on
-     19 U028a		       00 07	   LAYER2_AND_2 =	%00000111	; The pattern layer 2's second wall takes on
-     20 U028a
-     21 U028a		       00 80	   LAYER3_AND_0 =	%10000000	; The pattern layer 3's shadow takes on
-     22 U028a		       00 e0	   LAYER3_AND_1 =	%11100000	; The pattern layer 3's first wall takes on
-     23 U028a		       00 1c	   LAYER3_AND_2 =	%00011100	; The pattern layer 3's second wall takes on
-     24 U028a		       00 03	   LAYER3_AND_3 =	%00000011	; The pattern layer 3's third wall takes on
+     17 U028a		       00 00	   INDEXINIT  =	0	; The value to initialize indexes to
+     18 U028a
+     19 U028a		       00 18	   UPPAD_LIMIT =	24	; The upper pad amount
+     20 U028a		       00 4d	   LOPAD_LIMIT =	77	; The lower pad amount
+     21 U028a
+     22 U028a		       00 e0	   LAYER2_AND_0 =	%11100000	; The pattern layer 2's shadow takes on
+     23 U028a		       00 f8	   LAYER2_AND_1 =	%11111000	; The pattern layer 2's first wall takes on
+     24 U028a		       00 07	   LAYER2_AND_2 =	%00000111	; The pattern layer 2's second wall takes on
      25 U028a
-     26 U028a		       00 80	   SHAD_AND_0 =	%10000000	; Patterns of the 1st shadow
-     27 U028a		       00 c0	   SHAD_AND_1 =	%11000000
-     28 U028a		       00 e0	   SHAD_AND_2 =	%11100000
-     29 U028a		       00 f0	   SHAD_AND_3 =	%11110000
-     30 U028a		       00 f8	   SHAD_AND_4 =	%11111000
-     31 U028a
-     32 U028a		       00 10	   FFORD      =	%00010000	; The bit set when the joystick is in the forward position
-     33 U028a		       00 20	   FBACK      =	%00100000	; The bit set when the joystick is in the backward position
-     34 U028a		       00 80	   FLEFT      =	%10000000	; The bit set when the joystick is in the left position
-     35 U028a		       00 40	   FRIGT      =	%01000000	; The bit set when the joystick is in the right position
-     36 U028a		       00 80	   ITRIG      =	%10000000	; The bit set when the trigger is set
-     37 U028a
-     38 U028a		       00 00	   cleanStart =	0	; The value to initialize X to in clearLoop
-     39 U028a		       00 00	   cleanEnd   =	0	; The value of X to stop the loop at in clearLoop
-     40 U028a
-     41 U028a		       00 ff	   stack      =	$FF	; The address of the stack
+     26 U028a		       00 80	   LAYER3_AND_0 =	%10000000	; The pattern layer 3's shadow takes on
+     27 U028a		       00 e0	   LAYER3_AND_1 =	%11100000	; The pattern layer 3's first wall takes on
+     28 U028a		       00 1c	   LAYER3_AND_2 =	%00011100	; The pattern layer 3's second wall takes on
+     29 U028a		       00 03	   LAYER3_AND_3 =	%00000011	; The pattern layer 3's third wall takes on
+     30 U028a
+     31 U028a		       00 80	   SHAD_AND_0 =	%10000000	; Patterns of the 1st shadow
+     32 U028a		       00 c0	   SHAD_AND_1 =	%11000000
+     33 U028a		       00 e0	   SHAD_AND_2 =	%11100000
+     34 U028a		       00 f0	   SHAD_AND_3 =	%11110000
+     35 U028a		       00 f8	   SHAD_AND_4 =	%11111000
+     36 U028a
+     37 U028a		       00 10	   FFORD      =	%00010000	; The bit set when the joystick is in the forward position
+     38 U028a		       00 20	   FBACK      =	%00100000	; The bit set when the joystick is in the backward position
+     39 U028a		       00 80	   FLEFT      =	%10000000	; The bit set when the joystick is in the left position
+     40 U028a		       00 40	   FRIGT      =	%01000000	; The bit set when the joystick is in the right position
+     41 U028a		       00 80	   ITRIG      =	%10000000	; The bit set when the trigger is set
+     42 U028a
+     43 U028a		       00 00	   cleanStart =	0	; The value to initialize X to in clearLoop
+     44 U028a		       00 00	   cleanEnd   =	0	; The value of X to stop the loop at in clearLoop
+     45 U028a
+     46 U028a		       00 ff	   stack      =	$FF	; The address of the stack
 ------- FILE include/vepseu.h
      11 U028a
      12 U028a
@@ -267,39 +277,66 @@
       5  f000		       01 00	   MAP_01_SZ  =	$100
       6  f000
       7  f000				   mapList
-      8  f000		       02 f0		      DC.W	map_01
+      8  f000		       04 f0		      DC.W	map_01
       9  f002
-     10  f002				   map_01
-     11  f002		       ff ff ff 00*	      HEX	FF FF FF 00 00 00 00 00 00 00 00 00 00 FF FF FF
-     12  f012		       ff 00 ff ff*	      HEX	FF 00 FF FF FF FF FF FF FF FF FF FF FF FF 00 FF
-     13  f022		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF
-     14  f032		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF
-     15  f042		       ff 00 ff ff*	      HEX	FF 00 FF FF FF FF FF 00 FF 00 FF FF FF FF 00 FF
-     16  f052		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 FF 00 FF 00 FF 00 00 FF 00 FF
-     17  f062		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 FF 00 FF 00 FF 00 00 FF FF FF
-     18  f072		       ff ff ff 00*	      HEX	FF FF FF 00 00 00 FF 00 FF 00 FF 00 00 FF FF FF
-     19  f082		       ff ff ff 00*	      HEX	FF FF FF 00 00 00 FF 00 FF 00 FF 00 00 FF 00 FF
-     20  f092		       ff 00 ff ff*	      HEX	FF 00 FF FF FF FF FF 00 FF 00 FF FF FF FF 00 FF
-     21  f0a2		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 FF 00 00 00 00 00 00 FF
-     22  f0b2		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 FF 00 00 00 00 00 00 FF
-     23  f0c2		       ff 00 ff ff*	      HEX	FF 00 FF FF FF FF FF FF FF FF FF FF FF FF 00 FF
-     24  f0d2		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 00 00 00 00 00 00 00 FF 00 FF
-     25  f0e2		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 00 00 00 00 00 00 00 FF 00 FF
-     26  f0f2		       ff ff ff 00*	      HEX	FF FF FF 00 00 00 00 00 00 00 00 00 00 FF FF FF
-     27  f102
-     28  f102				   map_01_load
-     29  f102		       a9 d1		      LDA	#MAP_01_POS
-     30  f104		       85 91		      STA	playerPos
-     31  f106		       a9 10		      LDA	#MAP_01_WDTH
-     32  f108		       85 92		      STA	mapWidth
-     33  f10a		       ad 00 f0 	      LDA	mapList
-     34  f10d		       85 9a		      STA	mapPtr
-     35  f10f		       e8		      INX
-     36  f110		       ad 01 f0 	      LDA	mapList + 1
-     37  f113		       85 9b		      STA	mapPtr + 1
-     38  f115		       60		      RTS
+     10  f002				   miniMapList
+     11  f002		       04 f1		      DC.W	map_01_miniMap
+     12  f004
+     13  f004				   map_01
+     14  f004		       ff ff ff 00*	      HEX	FF FF FF 00 00 00 00 00 00 00 00 00 00 FF FF FF
+     15  f014		       ff 00 ff ff*	      HEX	FF 00 FF FF FF FF FF FF FF FF FF FF FF FF 00 FF
+     16  f024		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF
+     17  f034		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF
+     18  f044		       ff 00 ff ff*	      HEX	FF 00 FF FF FF FF FF 00 FF 00 FF FF FF FF 00 FF
+     19  f054		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 FF 00 FF 00 FF 00 00 FF 00 FF
+     20  f064		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 FF 00 FF 00 FF 00 00 FF FF FF
+     21  f074		       ff ff ff 00*	      HEX	FF FF FF 00 00 00 FF 00 FF 00 FF 00 00 FF FF FF
+     22  f084		       ff ff ff 00*	      HEX	FF FF FF 00 00 00 FF 00 FF 00 FF 00 00 FF 00 FF
+     23  f094		       ff 00 ff ff*	      HEX	FF 00 FF FF FF FF FF 00 FF 00 FF FF FF FF 00 FF
+     24  f0a4		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 FF 00 00 00 00 00 00 FF
+     25  f0b4		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 FF 00 00 00 00 00 00 FF
+     26  f0c4		       ff 00 ff ff*	      HEX	FF 00 FF FF FF FF FF FF FF FF FF FF FF FF 00 FF
+     27  f0d4		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 00 00 00 00 00 00 00 FF 00 FF
+     28  f0e4		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 00 00 00 00 00 00 00 FF 00 FF
+     29  f0f4		       ff ff ff 00*	      HEX	FF FF FF 00 00 00 00 00 00 00 00 00 00 FF FF FF
+     30  f104
+     31  f104				   map_01_miniMap
+     32  f104		       e0 07		      DC.W	%0000011111100000
+     33  f106		       bf fd		      DC.W	%1111110110111111
+     34  f108		       80 01		      DC.W	%0000000110000000
+     35  f10a		       80 01		      DC.W	%0000000110000000
+     36  f10c		       be bd		      DC.W	%1011110110111110
+     37  f10e		       a2 a5		      DC.W	%1010010110100010
+     38  f110		       a2 a7		      DC.W	%1010011110100010
+     39  f112		       e2 a7		      DC.W	%1010011111100010
+     40  f114		       e2 a5		      DC.W	%1010010111100010
+     41  f116		       be bd		      DC.W	%1011110110111110
+     42  f118		       80 81		      DC.W	%1000000110000000
+     43  f11a		       80 81		      DC.W	%1000000110000000
+     44  f11c		       bf fd		      DC.W	%1111110110111111
+     45  f11e		       a0 05		      DC.W	%0000010110100000
+     46  f120		       a0 05		      DC.W	%0000010110100000
+     47  f122		       e0 07		      DC.W	%0000011111100000
+     48  f124
+     49  f124
+     50  f124				   map_01_load
+     51  f124		       a9 d1		      LDA	#MAP_01_POS
+     52  f126		       85 91		      STA	playerPos
+     53  f128		       a9 10		      LDA	#MAP_01_WDTH
+     54  f12a		       85 92		      STA	mapWidth
+     55  f12c
+     56  f12c		       ad 00 f0 	      LDA	mapList
+     57  f12f		       85 a0		      STA	mapPtr
+     58  f131		       ad 01 f0 	      LDA	mapList + 1
+     59  f134		       85 a1		      STA	mapPtr + 1
+     60  f136
+     61  f136		       ad 02 f0 	      LDA	miniMapList
+     62  f139		       85 9e		      STA	miniMapPtr
+     63  f13b		       ad 03 f0 	      LDA	miniMapList + 1
+     64  f13e		       85 9f		      STA	miniMapPtr + 1
+     65  f140		       60		      RTS
 ------- FILE main.asm
-     12  f116
+     12  f141
      13  f800					      ORG	$F800
      14  f800
      15  f800				   start
@@ -330,7 +367,7 @@
      20  f80e		       e0 00		      CPX	#cleanEnd
      21  f810		       d0 f9		      BNE	cleanLoop
      22  f812
-     23  f812		       20 02 f1 	      JSR	map_01_load
+     23  f812		       20 24 f1 	      JSR	map_01_load
      24  f815
      25  f815		       a5 92		      LDA	mapWidth
      26  f817		       85 96		      STA	yLoss
@@ -340,9 +377,9 @@
      30  f81f		       85 95		      STA	yGain
      31  f821		       85 94		      STA	xLoss
      32  f823
-     33  f823		       a9 0e		      LDA	#WCOLU
+     33  f823		       a9 86		      LDA	#WCOLU
      34  f825		       85 98		      STA	wallColour
-     35  f827		       a9 06		      LDA	#SCOLU
+     35  f827		       a9 82		      LDA	#SCOLU
      36  f829		       85 99		      STA	shadowColour
 ------- FILE main.asm
      20  f82b
@@ -391,7 +428,7 @@
       6  f848		       e5 94		      SBC	xLoss
       7  f84a		       a8		      TAY
       8  f84b
-      6  f84b		       b1 9a		      LDA	(mapPtr),Y
+      6  f84b		       b1 a0		      LDA	(mapPtr),Y
       7  f84d		       85 8c		      STA	shadow1b
       8  f84f
       0  f84f					      X_POS_LOS		; 26 cycles
@@ -403,7 +440,7 @@
       6  f854		       e5 93		      SBC	xGain
       7  f856		       a8		      TAY
       8  f857
-     10  f857		       b1 9a		      LDA	(mapPtr),Y
+     10  f857		       b1 a0		      LDA	(mapPtr),Y
      11  f859		       85 80		      STA	wall1a
      12  f85b		       85 84		      STA	wall1b
      13  f85d
@@ -416,7 +453,7 @@
       6  f862		       e5 93		      SBC	xGain
       7  f864		       a8		      TAY
       8  f865
-     15  f865		       b1 9a		      LDA	(mapPtr),Y
+     15  f865		       b1 a0		      LDA	(mapPtr),Y
      16  f867		       85 88		      STA	shadow1a
 ------- FILE walrend.asm
       6  f869
@@ -443,7 +480,7 @@
       6  f876		       e5 93		      SBC	xGain
       7  f878		       a8		      TAY
       8  f879
-      6  f879		       b1 9a		      LDA	(mapPtr),Y
+      6  f879		       b1 a0		      LDA	(mapPtr),Y
       7  f87b		       29 e0		      AND	#LAYER2_AND_0
       8  f87d		       85 89		      STA	shadow2a
       9  f87f
@@ -456,7 +493,7 @@
       6  f884		       e5 94		      SBC	xLoss
       7  f886		       a8		      TAY
       8  f887
-     11  f887		       b1 9a		      LDA	(mapPtr),Y
+     11  f887		       b1 a0		      LDA	(mapPtr),Y
      12  f889		       29 f8		      AND	#LAYER2_AND_1
      13  f88b		       85 81		      STA	wall2a
      14  f88d
@@ -469,7 +506,7 @@
       6  f892		       e5 94		      SBC	xLoss
       7  f894		       a8		      TAY
       8  f895
-     16  f895		       b1 9a		      LDA	(mapPtr),Y
+     16  f895		       b1 a0		      LDA	(mapPtr),Y
      17  f897		       29 07		      AND	#LAYER2_AND_2
      18  f899		       85 85		      STA	wall2b
      19  f89b		       05 81		      ORA	wall2a
@@ -484,7 +521,7 @@
       6  f8a4		       e5 94		      SBC	xLoss
       7  f8a6		       a8		      TAY
       8  f8a7
-     23  f8a7		       b1 9a		      LDA	(mapPtr),Y
+     23  f8a7		       b1 a0		      LDA	(mapPtr),Y
      24  f8a9		       29 f8		      AND	#LAYER2_AND_1
      25  f8ab		       05 85		      ORA	wall2b
      26  f8ad		       85 85		      STA	wall2b
@@ -498,7 +535,7 @@
       6  f8b4		       e5 94		      SBC	xLoss
       7  f8b6		       a8		      TAY
       8  f8b7
-     29  f8b7		       b1 9a		      LDA	(mapPtr),Y
+     29  f8b7		       b1 a0		      LDA	(mapPtr),Y
      30  f8b9		       29 e0		      AND	#LAYER2_AND_0
      31  f8bb		       85 8d		      STA	shadow2b
 ------- FILE walrend.asm
@@ -526,7 +563,7 @@
       6  f8ca		       e5 94		      SBC	xLoss
       7  f8cc		       a8		      TAY
       8  f8cd
-      6  f8cd		       b1 9a		      LDA	(mapPtr),Y
+      6  f8cd		       b1 a0		      LDA	(mapPtr),Y
       7  f8cf		       29 80		      AND	#LAYER3_AND_0
       8  f8d1		       85 8e		      STA	shadow3b
       9  f8d3
@@ -539,7 +576,7 @@
       6  f8d8		       e5 93		      SBC	xGain
       7  f8da		       a8		      TAY
       8  f8db
-     11  f8db		       b1 9a		      LDA	(mapPtr),Y
+     11  f8db		       b1 a0		      LDA	(mapPtr),Y
      12  f8dd		       29 e0		      AND	#LAYER3_AND_1
      13  f8df		       85 86		      STA	wall3b
      14  f8e1
@@ -552,7 +589,7 @@
       6  f8e6		       e5 93		      SBC	xGain
       7  f8e8		       a8		      TAY
       8  f8e9
-     16  f8e9		       b1 9a		      LDA	(mapPtr),Y
+     16  f8e9		       b1 a0		      LDA	(mapPtr),Y
      17  f8eb		       29 1c		      AND	#LAYER3_AND_2
      18  f8ed		       05 86		      ORA	wall3b
      19  f8ef		       85 86		      STA	wall3b
@@ -566,7 +603,7 @@
       6  f8f6		       e5 93		      SBC	xGain
       7  f8f8		       a8		      TAY
       8  f8f9
-     22  f8f9		       b1 9a		      LDA	(mapPtr),Y
+     22  f8f9		       b1 a0		      LDA	(mapPtr),Y
      23  f8fb		       29 03		      AND	#LAYER3_AND_3
      24  f8fd		       85 82		      STA	wall3a
      25  f8ff		       05 86		      ORA	wall3b
@@ -581,7 +618,7 @@
       6  f908		       e5 93		      SBC	xGain
       7  f90a		       a8		      TAY
       8  f90b
-     29  f90b		       b1 9a		      LDA	(mapPtr),Y
+     29  f90b		       b1 a0		      LDA	(mapPtr),Y
      30  f90d		       29 1c		      AND	#LAYER3_AND_2
      31  f90f		       05 82		      ORA	wall3a
      32  f911		       85 82		      STA	wall3a
@@ -595,7 +632,7 @@
       6  f918		       e5 93		      SBC	xGain
       7  f91a		       a8		      TAY
       8  f91b
-     35  f91b		       b1 9a		      LDA	(mapPtr),Y
+     35  f91b		       b1 a0		      LDA	(mapPtr),Y
      36  f91d		       29 e0		      AND	#LAYER3_AND_1
      37  f91f		       05 82		      ORA	wall3a
      38  f921		       85 82		      STA	wall3a
@@ -609,7 +646,7 @@
       6  f928		       e5 93		      SBC	xGain
       7  f92a		       a8		      TAY
       8  f92b
-     41  f92b		       b1 9a		      LDA	(mapPtr),Y
+     41  f92b		       b1 a0		      LDA	(mapPtr),Y
      42  f92d		       29 80		      AND	#LAYER3_AND_0
      43  f92f		       85 8a		      STA	shadow3a
 ------- FILE walrend.asm
@@ -772,282 +809,422 @@
      18  f9b0
      19  f9b0
      20  f9b0				   drawStart
-     21  f9b0
-     22  f9b0		       a0 80		      LDY	#SHAD_AND_0
-     23  f9b2		       20 fe f9 	      JSR	otherWall
-     24  f9b5		       a0 c0		      LDY	#SHAD_AND_1
-     25  f9b7		       20 fe f9 	      JSR	otherWall
-     26  f9ba		       a0 e0		      LDY	#SHAD_AND_2
-     27  f9bc		       20 fe f9 	      JSR	otherWall
-     28  f9bf		       a0 f0		      LDY	#SHAD_AND_3
-     29  f9c1		       20 fe f9 	      JSR	otherWall
-     30  f9c4		       a0 f8		      LDY	#SHAD_AND_4
-     31  f9c6		       20 fe f9 	      JSR	otherWall
-     32  f9c9		       a2 00		      LDX	#0
-     33  f9cb		       20 3e fa 	      JSR	medWall
-     34  f9ce		       a2 01		      LDX	#1
-     35  f9d0		       20 3e fa 	      JSR	medWall
-     36  f9d3		       a2 02		      LDX	#2
-     37  f9d5		       20 3e fa 	      JSR	medWall
-     38  f9d8		       a2 01		      LDX	#1
-     39  f9da		       20 3e fa 	      JSR	medWall
-     40  f9dd		       a2 00		      LDX	#0
-     41  f9df		       20 3e fa 	      JSR	medWall
-     42  f9e2		       a0 f8		      LDY	#SHAD_AND_4
-     43  f9e4		       20 fe f9 	      JSR	otherWall
-     44  f9e7		       a0 f0		      LDY	#SHAD_AND_3
-     45  f9e9		       20 fe f9 	      JSR	otherWall
-     46  f9ec		       a0 e0		      LDY	#SHAD_AND_2
-     47  f9ee		       20 fe f9 	      JSR	otherWall
-     48  f9f1		       a0 c0		      LDY	#SHAD_AND_1
-     49  f9f3		       20 fe f9 	      JSR	otherWall
-     50  f9f6		       a0 80		      LDY	#SHAD_AND_0
-     51  f9f8		       20 fe f9 	      JSR	otherWall
-     52  f9fb
-     53  f9fb		       4c 76 fa 	      JMP	stop
-     54  f9fe
-     55  f9fe							; Draws only the first wall and it's shadow
-     56  f9fe
-     57  f9fe				   otherWall
-     58  f9fe
-     59  f9fe		       a2 00		      LDX	#INDEXINIT
-     60  fa00
-     61  fa00				   _otherWall_loop
-     62  fa00
-     63  fa00		       85 02		      STA	WSYNC
-     64  fa02
-     65  fa02		       a5 98		      LDA	wallColour
-     66  fa04		       85 08		      STA	COLUPF
-     67  fa06		       a5 80		      LDA	wall1a
-     68  fa08		       85 0e		      STA	PF1
-     69  fa0a		       a5 84		      LDA	wall1b
-     70  fa0c		       4a		      LSR
-     71  fa0d		       85 0f		      STA	PF2
-     72  fa0f
-     73  fa0f		       20 aa f9 	      JSR	wait
-     74  fa12
-     75  fa12		       a9 00		      LDA	#NULL
-     76  fa14		       85 0e		      STA	PF1
-     77  fa16		       85 0f		      STA	PF2
-     78  fa18
-     79  fa18		       84 90		      STY	shift
-     80  fa1a
-     81  fa1a		       85 02		      STA	WSYNC
-     82  fa1c
-     83  fa1c		       a5 99		      LDA	shadowColour
-     84  fa1e		       85 08		      STA	COLUPF
-     85  fa20		       a5 88		      LDA	shadow1a
-     86  fa22		       25 90		      AND	shift
-     87  fa24		       85 0e		      STA	PF1
-     88  fa26		       85 0e		      STA	PF1
-     89  fa28		       a5 8c		      LDA	shadow1b
-     90  fa2a		       25 90		      AND	shift
-     91  fa2c		       4a		      LSR
-     92  fa2d		       85 0f		      STA	PF2
-     93  fa2f
-     94  fa2f		       20 af f9 	      JSR	wait2
-     95  fa32
-     96  fa32		       a9 00		      LDA	#NULL
-     97  fa34		       85 0e		      STA	PF1
-     98  fa36		       85 0f		      STA	PF2
-     99  fa38
-    100  fa38		       e8		      INX
-    101  fa39		       e0 04		      CPX	#PIXH
-    102  fa3b		       d0 c3		      BNE	_otherWall_loop
-    103  fa3d
-    104  fa3d		       60		      RTS
-    105  fa3e
-    106  fa3e							; Can draw every wall and it's shadow
-    107  fa3e
-    108  fa3e				   medWall
-    109  fa3e
-    110  fa3e		       a0 00		      LDY	#INDEXINIT
-    111  fa40
-    112  fa40				   _medWall_loop
-    113  fa40
-    114  fa40		       85 02		      STA	WSYNC
-    115  fa42		       a5 98		      LDA	wallColour
-    116  fa44		       85 08		      STA	COLUPF
-    117  fa46		       b5 81		      LDA	wall2a,X
-    118  fa48		       85 0e		      STA	PF1
-    119  fa4a		       b5 85		      LDA	wall2b,X
-    120  fa4c		       4a		      LSR
-    121  fa4d		       85 0f		      STA	PF2
-    122  fa4f
-    123  fa4f		       20 aa f9 	      JSR	wait
-    124  fa52
-    125  fa52		       a9 00		      LDA	#NULL
-    126  fa54		       85 0e		      STA	PF1
-    127  fa56		       85 0f		      STA	PF2
-    128  fa58		       85 02		      STA	WSYNC
-    129  fa5a
-    130  fa5a		       a5 99		      LDA	shadowColour
-    131  fa5c		       85 08		      STA	COLUPF
-    132  fa5e		       b5 89		      LDA	shadow2a,X
-    133  fa60		       85 0e		      STA	PF1
-    134  fa62		       b5 8d		      LDA	shadow2b,X
-    135  fa64		       4a		      LSR
-    136  fa65		       85 0f		      STA	PF2
-    137  fa67
-    138  fa67		       20 aa f9 	      JSR	wait
-    139  fa6a
-    140  fa6a		       a9 00		      LDA	#NULL
-    141  fa6c		       85 0e		      STA	PF1
-    142  fa6e		       85 0f		      STA	PF2
-    143  fa70
-    144  fa70		       c8		      INY
-    145  fa71
-    146  fa71		       c0 04		      CPY	#PIXH
-    147  fa73		       d0 cb		      BNE	_medWall_loop
-    148  fa75
-    149  fa75		       60		      RTS
-    150  fa76
-    151  fa76				   stop
-    152  fa76
-    153  fa76		       85 02		      STA	WSYNC
-    154  fa78
-    155  fa78		       a9 00		      LDA	#NULL
-    156  fa7a		       85 0e		      STA	PF1
-    157  fa7c		       85 0f		      STA	PF2
+     21  f9b0		       a0 80		      LDY	#SHAD_AND_0
+     22  f9b2		       20 09 fa 	      JSR	firstWall
+     23  f9b5		       a0 c0		      LDY	#SHAD_AND_1
+     24  f9b7		       20 09 fa 	      JSR	firstWall
+     25  f9ba		       a0 e0		      LDY	#SHAD_AND_2
+     26  f9bc		       20 09 fa 	      JSR	firstWall
+     27  f9bf		       a0 f0		      LDY	#SHAD_AND_3
+     28  f9c1		       20 09 fa 	      JSR	firstWall
+     29  f9c4		       a0 f8		      LDY	#SHAD_AND_4
+     30  f9c6		       20 09 fa 	      JSR	firstWall
+     31  f9c9		       a2 00		      LDX	#0
+     32  f9cb		       20 49 fa 	      JSR	otherWall
+     33  f9ce		       a2 01		      LDX	#1
+     34  f9d0		       20 49 fa 	      JSR	otherWall
+     35  f9d3		       a2 02		      LDX	#2
+     36  f9d5		       20 49 fa 	      JSR	otherWall
+     37  f9d8		       a2 01		      LDX	#1
+     38  f9da		       20 49 fa 	      JSR	otherWall
+     39  f9dd		       a2 00		      LDX	#0
+     40  f9df		       20 49 fa 	      JSR	otherWall
+     41  f9e2		       a0 f8		      LDY	#SHAD_AND_4
+     42  f9e4		       20 09 fa 	      JSR	firstWall
+     43  f9e7		       a0 f0		      LDY	#SHAD_AND_3
+     44  f9e9		       20 09 fa 	      JSR	firstWall
+     45  f9ec		       a0 e0		      LDY	#SHAD_AND_2
+     46  f9ee		       20 09 fa 	      JSR	firstWall
+     47  f9f1		       a0 c0		      LDY	#SHAD_AND_1
+     48  f9f3		       20 09 fa 	      JSR	firstWall
+     49  f9f6		       a0 80		      LDY	#SHAD_AND_0
+     50  f9f8		       20 09 fa 	      JSR	firstWall
+     51  f9fb
+     52  f9fb		       a9 00		      LDA	#NULL
+     53  f9fd		       85 0e		      STA	PF1
+     54  f9ff		       85 0f		      STA	PF2
+     55  fa01
+     56  fa01		       85 02		      STA	WSYNC
+     57  fa03
+     58  fa03		       20 be fa 	      JSR	mmDraw
+     59  fa06
+     60  fa06		       4c 19 fb 	      JMP	stop
+     61  fa09
+------- FILE drawCode/1stWall.asm LEVEL 3 PASS 2
+      0  fa09					      INCLUDE	"drawCode/1stWall.asm"
+      1  fa09							; The draw code for the 1st wall and shadow
+      2  fa09
+      3  fa09				   firstWall
+      4  fa09
+      5  fa09		       a2 00		      LDX	#INDEXINIT
+      6  fa0b
+      7  fa0b				   _firstWall_loop
+      8  fa0b
+      9  fa0b		       85 02		      STA	WSYNC
+     10  fa0d
+     11  fa0d		       a5 98		      LDA	wallColour
+     12  fa0f		       85 08		      STA	COLUPF
+     13  fa11		       a5 80		      LDA	wall1a
+     14  fa13		       85 0e		      STA	PF1
+     15  fa15		       a5 84		      LDA	wall1b
+     16  fa17		       4a		      LSR
+     17  fa18		       85 0f		      STA	PF2
+     18  fa1a
+     19  fa1a		       20 aa f9 	      JSR	wait
+     20  fa1d
+     21  fa1d		       a9 00		      LDA	#NULL
+     22  fa1f		       85 0e		      STA	PF1
+     23  fa21		       85 0f		      STA	PF2
+     24  fa23
+     25  fa23		       84 90		      STY	shift
+     26  fa25
+     27  fa25		       85 02		      STA	WSYNC
+     28  fa27
+     29  fa27		       a5 99		      LDA	shadowColour
+     30  fa29		       85 08		      STA	COLUPF
+     31  fa2b		       a5 88		      LDA	shadow1a
+     32  fa2d		       25 90		      AND	shift
+     33  fa2f		       85 0e		      STA	PF1
+     34  fa31		       85 0e		      STA	PF1
+     35  fa33		       a5 8c		      LDA	shadow1b
+     36  fa35		       25 90		      AND	shift
+     37  fa37		       4a		      LSR
+     38  fa38		       85 0f		      STA	PF2
+     39  fa3a
+     40  fa3a		       20 af f9 	      JSR	wait2
+     41  fa3d
+     42  fa3d		       a9 00		      LDA	#NULL
+     43  fa3f		       85 0e		      STA	PF1
+     44  fa41		       85 0f		      STA	PF2
+     45  fa43
+     46  fa43		       e8		      INX
+     47  fa44		       e0 04		      CPX	#PIXH
+     48  fa46		       d0 c3		      BNE	_firstWall_loop
+     49  fa48
+     50  fa48		       60		      RTS
+     51  fa49
+------- FILE dispkern.asm
+------- FILE drawCode/othrWall.asm LEVEL 3 PASS 2
+      0  fa49					      INCLUDE	"drawCode/othrWall.asm"
+      1  fa49							; Can draw any wall
+      2  fa49
+      3  fa49				   otherWall
+      4  fa49
+      5  fa49		       a0 00		      LDY	#INDEXINIT
+      6  fa4b
+      7  fa4b				   _otherWall_loop
+      8  fa4b
+      9  fa4b		       85 02		      STA	WSYNC
+     10  fa4d		       a5 98		      LDA	wallColour
+     11  fa4f		       85 08		      STA	COLUPF
+     12  fa51		       b5 81		      LDA	wall2a,X
+     13  fa53		       85 0e		      STA	PF1
+     14  fa55		       b5 85		      LDA	wall2b,X
+     15  fa57		       4a		      LSR
+     16  fa58		       85 0f		      STA	PF2
+     17  fa5a
+     18  fa5a		       20 aa f9 	      JSR	wait
+     19  fa5d
+     20  fa5d		       a9 00		      LDA	#NULL
+     21  fa5f		       85 0e		      STA	PF1
+     22  fa61		       85 0f		      STA	PF2
+     23  fa63		       85 02		      STA	WSYNC
+     24  fa65
+     25  fa65		       a5 99		      LDA	shadowColour
+     26  fa67		       85 08		      STA	COLUPF
+     27  fa69		       b5 89		      LDA	shadow2a,X
+     28  fa6b		       85 0e		      STA	PF1
+     29  fa6d		       b5 8d		      LDA	shadow2b,X
+     30  fa6f		       4a		      LSR
+     31  fa70		       85 0f		      STA	PF2
+     32  fa72
+     33  fa72		       20 aa f9 	      JSR	wait
+     34  fa75
+     35  fa75		       a9 00		      LDA	#NULL
+     36  fa77		       85 0e		      STA	PF1
+     37  fa79		       85 0f		      STA	PF2
+     38  fa7b
+     39  fa7b		       c8		      INY
+     40  fa7c
+     41  fa7c		       c0 04		      CPY	#PIXH
+     42  fa7e		       d0 cb		      BNE	_otherWall_loop
+     43  fa80
+     44  fa80		       60		      RTS
+------- FILE dispkern.asm
+------- FILE drawCode/mmDraw.asm LEVEL 3 PASS 2
+      0  fa81					      INCLUDE	"drawCode/mmDraw.asm"
+      1  fa81							; Draws the compass to the screen
+      2  fa81
+------- FILE drawCode/mmRender.asm LEVEL 4 PASS 2
+      0  fa81					      INCLUDE	"drawCode/mmRender.asm"
+      1  fa81							; Render the minimap
+      2  fa81
+      3  fa81				   mmRender
+      4  fa81							; Set the colour of the player
+      5  fa81		       a9 cc		      LDA	#PLYRCOLU
+      6  fa83		       85 08		      STA	COLUPF
+      7  fa85							; Set the colour of the map
+      8  fa85		       a9 0e		      LDA	#MAPCOLU
+      9  fa87		       85 06		      STA	COLUP0
+     10  fa89		       85 07		      STA	COLUP1
+     11  fa8b							; Get the player's position and translate it into horizontal movement
+     12  fa8b		       a9 08		      LDA	#%00001000
+     13  fa8d		       38		      SEC
+     14  fa8e		       e5 91		      SBC	playerPos
+     15  fa90		       0a		      ASL
+     16  fa91		       0a		      ASL
+     17  fa92		       0a		      ASL
+     18  fa93		       0a		      ASL
+     19  fa94		       85 9c		      STA	horzPos_plyr
+     20  fa96
+     21  fa96							; Set the map's position to the right values
+     22  fa96		       a9 00		      LDA	#HADJ_A
+     23  fa98		       85 9a		      STA	horzPos_mA
+     24  fa9a		       a9 10		      LDA	#HADJ_B
+     25  fa9c		       85 9b		      STA	horzPos_mB
+     26  fa9e
+     27  fa9e		       85 02		      STA	WSYNC
+     28  faa0		       a2 00		      LDX	#0
+     29  faa2
+     30  faa2				   _renderWait_1
+     31  faa2		       e8		      INX
+     32  faa3		       e0 04		      CPX	#4
+     33  faa5		       d0 fb		      BNE	_renderWait_1
+     34  faa7		       ea		      NOP
+     35  faa8		       ea		      NOP
+     36  faa9		       85 10		      STA	RESP0
+     37  faab		       85 11		      STA	RESP1
+     38  faad
+     39  faad		       a5 91		      LDA	playerPos
+     40  faaf
+     41  faaf		       85 02		      STA	WSYNC
+     42  fab1		       a6 00		      LDX	0
+     43  fab3
+     44  fab3				   _renderWait_2
+     45  fab3		       e8		      INX
+     46  fab4		       e0 04		      CPX	#4
+     47  fab6		       d0 fb		      BNE	_renderWait_2
+     48  fab8		       ea		      NOP
+     49  fab9		       ea		      NOP
+     50  faba		       ea		      NOP
+     51  fabb		       85 14		      STA	RESBL
+     52  fabd
+     53  fabd		       60		      RTS
+------- FILE drawCode/mmDraw.asm
+      4  fabe
+      5  fabe				   mmDraw
+      6  fabe		       a9 00		      LDA	#0
+      7  fac0
+      8  fac0		       20 81 fa 	      JSR	mmRender
+      9  fac3
+     10  fac3							; Load the player's position
+     11  fac3
+     12  fac3		       a5 9c		      LDA	horzPos_plyr
+     13  fac5		       85 24		      STA	HMBL
+     14  fac7		       a5 9a		      LDA	horzPos_mA
+     15  fac9		       85 20		      STA	HMP0
+     16  facb		       a5 9b		      LDA	horzPos_mB
+     17  facd		       85 21		      STA	HMP1
+     18  facf
+     19  facf		       a9 00		      LDA	#NULL
+     20  fad1		       85 1b		      STA	GRP0
+     21  fad3		       85 1c		      STA	GRP1
+     22  fad5		       85 2a		      STA	HMOVE
+     23  fad7
+     24  fad7		       a0 00		      LDY	#INDEXINIT
+     25  fad9		       a6 91		      LDX	playerPos
+     26  fadb
+     27  fadb				   _mmLoop
+     28  fadb		       85 02		      STA	WSYNC
+     29  fadd
+     30  fadd		       b1 9e		      LDA	(miniMapPtr),Y
+     31  fadf		       85 1b		      STA	GRP0
+     32  fae1		       c8		      INY
+     33  fae2		       b1 9e		      LDA	(miniMapPtr),Y
+     34  fae4		       85 1c		      STA	GRP1
+     35  fae6		       c8		      INY
+     36  fae7
+     37  fae7		       8a		      TXA
+     38  fae8		       38		      SEC
+     39  fae9		       e5 92		      SBC	mapWidth
+     40  faeb		       aa		      TAX
+     41  faec		       29 f0		      AND	#%11110000
+     42  faee
+     43  faee		       c9 00		      CMP	#0
+     44  faf0		       d0 0a		      BNE	_noDraw
+     45  faf2
+     46  faf2		       a9 02		      LDA	#2
+     47  faf4		       85 1f		      STA	ENABL
+     48  faf6		       85 9d		      STA	drawingPlyr
+     49  faf8		       a9 01		      LDA	#1
+     50  fafa		       85 27		      STA	VDELBL
+     51  fafc
+     52  fafc				   _noDraw
+     53  fafc
+     54  fafc		       a5 9d		      LDA	drawingPlyr
+     55  fafe		       85 1f		      STA	ENABL
+     56  fb00		       a9 00		      LDA	#0
+     57  fb02		       85 9d		      STA	drawingPlyr
+     58  fb04		       c0 20		      CPY	#32
+     59  fb06		       d0 d3		      BNE	_mmLoop
+     60  fb08
+     61  fb08		       a9 00		      LDA	#0
+     62  fb0a		       85 1f		      STA	ENABL
+     63  fb0c
+     64  fb0c		       85 02		      STA	WSYNC
+     65  fb0e
+     66  fb0e		       a9 00		      LDA	#NULL
+     67  fb10		       85 1b		      STA	GRP0
+     68  fb12		       85 1c		      STA	GRP1
+     69  fb14		       85 06		      STA	COLUP0
+     70  fb16		       85 07		      STA	COLUP1
+     71  fb18
+     72  fb18		       60		      RTS
+------- FILE dispkern.asm
+     65  fb19
+     66  fb19				   stop
+     67  fb19
+     68  fb19
+     69  fb19		       85 09		      STA	COLUBK
 ------- FILE main.asm
-     57  fa7e
-     58  fa7e
-     59  fa7e							; Start VBLANK
-     60  fa7e
-     61  fa7e		       a9 c2		      LDA	#VBLANK_SET
-     62  fa80		       85 01		      STA	VBLANK
-     63  fa82
-     64  fa82							; Process input
-     65  fa82
+     57  fb1b
+     58  fb1b
+     59  fb1b							; Start VBLANK
+     60  fb1b
+     61  fb1b		       a9 c2		      LDA	#VBLANK_SET
+     62  fb1d		       85 01		      STA	VBLANK
+     63  fb1f
+     64  fb1f							; Process input
+     65  fb1f
 ------- FILE input.asm LEVEL 2 PASS 2
-      0  fa82					      INCLUDE	"input.asm"
-      1  fa82							; VePseu's controller input
-      2  fa82
-      3  fa82		       ad 80 02 	      LDA	SWCHA
-      4  fa85		       29 10		      AND	#FFORD
-      5  fa87		       c9 10		      CMP	#FFORD
-      6  fa89		       f0 16		      BEQ	CIN2
-      7  fa8b
-      8  fa8b		       a5 92		      LDA	mapWidth
-      9  fa8d		       85 96		      STA	yLoss
-     10  fa8f		       a9 01		      LDA	#ONE
-     11  fa91		       85 93		      STA	xGain
-     12  fa93		       a9 0e		      LDA	#WCOLU
-     13  fa95		       85 98		      STA	wallColour
-     14  fa97		       a9 06		      LDA	#SCOLU
-     15  fa99		       85 99		      STA	shadowColour
-     16  fa9b		       a9 00		      LDA	#NULL
-     17  fa9d		       85 95		      STA	yGain
-     18  fa9f		       85 94		      STA	xLoss
-     19  faa1
-     20  faa1				   CIN2
-     21  faa1		       ad 80 02 	      LDA	SWCHA
-     22  faa4		       29 20		      AND	#FBACK
-     23  faa6		       c9 20		      CMP	#FBACK
-     24  faa8		       f0 16		      BEQ	CIN3
-     25  faaa
-     26  faaa		       a5 92		      LDA	mapWidth
-     27  faac		       85 95		      STA	yGain
-     28  faae		       a9 01		      LDA	#ONE
-     29  fab0		       85 94		      STA	xLoss
-     30  fab2		       a9 0e		      LDA	#WCOLU
-     31  fab4		       85 98		      STA	wallColour
-     32  fab6		       a9 06		      LDA	#SCOLU
-     33  fab8		       85 99		      STA	shadowColour
-     34  faba		       a9 00		      LDA	#NULL
-     35  fabc		       85 96		      STA	yLoss
-     36  fabe		       85 93		      STA	xGain
-     37  fac0
-     38  fac0				   CIN3
-     39  fac0		       ad 80 02 	      LDA	SWCHA
-     40  fac3		       29 80		      AND	#FLEFT
-     41  fac5		       c9 80		      CMP	#FLEFT
-     42  fac7		       f0 16		      BEQ	CIN4
-     43  fac9
-     44  fac9		       a5 92		      LDA	mapWidth
-     45  facb		       85 94		      STA	xLoss
-     46  facd		       a9 01		      LDA	#ONE
-     47  facf		       85 95		      STA	yGain
-     48  fad1		       a9 06		      LDA	#SCOLU
-     49  fad3		       85 98		      STA	wallColour
-     50  fad5		       a9 0e		      LDA	#WCOLU
-     51  fad7		       85 99		      STA	shadowColour
-     52  fad9		       a9 00		      LDA	#NULL
-     53  fadb		       85 96		      STA	yLoss
-     54  fadd		       85 93		      STA	xGain
-     55  fadf
-     56  fadf				   CIN4
-     57  fadf		       ad 80 02 	      LDA	SWCHA
-     58  fae2		       29 40		      AND	#FRIGT
-     59  fae4		       c9 40		      CMP	#FRIGT
-     60  fae6		       f0 16		      BEQ	CTRIG
-     61  fae8
-     62  fae8		       a5 92		      LDA	mapWidth
-     63  faea		       85 93		      STA	xGain
-     64  faec		       a9 01		      LDA	#ONE
-     65  faee		       85 96		      STA	yLoss
-     66  faf0		       a9 06		      LDA	#SCOLU
-     67  faf2		       85 98		      STA	wallColour
-     68  faf4		       a9 0e		      LDA	#WCOLU
-     69  faf6		       85 99		      STA	shadowColour
-     70  faf8		       a9 00		      LDA	#NULL
-     71  fafa		       85 95		      STA	yGain
-     72  fafc		       85 94		      STA	xLoss
-     73  fafe
-     74  fafe				   CTRIG
-     75  fafe
-     76  fafe		       a5 3c		      LDA	INPT4
-     77  fb00		       29 80		      AND	#ITRIG
-     78  fb02		       c9 80		      CMP	#ITRIG
-     79  fb04		       f0 1e		      BEQ	CNOTRIG
-     80  fb06
-     81  fb06		       a5 91		      LDA	playerPos
-     82  fb08		       38		      SEC
-     83  fb09		       e5 96		      SBC	yLoss
-     84  fb0b		       18		      CLC
-     85  fb0c		       65 95		      ADC	yGain
-     86  fb0e		       a8		      TAY
-     87  fb0f		       b1 9a		      LDA	(mapPtr),Y
-     88  fb11		       c9 00		      CMP	#NULL
-     89  fb13		       d0 08		      BNE	COLL
-     90  fb15		       a5 97		      LDA	trigPressed
-     91  fb17		       c9 00		      CMP	#NULL
-     92  fb19		       d0 02		      BNE	COLL
-     93  fb1b		       84 91		      STY	playerPos
-     94  fb1d
-     95  fb1d				   COLL
-     96  fb1d
-     97  fb1d		       a9 ff		      LDA	#$FF
-     98  fb1f		       85 97		      STA	trigPressed
-     99  fb21		       4c 28 fb 	      JMP	CEND
-    100  fb24
-    101  fb24				   CNOTRIG
-    102  fb24		       a9 00		      LDA	#NULL
-    103  fb26		       85 97		      STA	trigPressed
-    104  fb28
-    105  fb28				   CEND
-    106  fb28		       85 02		      STA	WSYNC
+      0  fb1f					      INCLUDE	"input.asm"
+      1  fb1f							; VePseu's controller input
+      2  fb1f
+      3  fb1f		       ad 80 02 	      LDA	SWCHA
+      4  fb22		       29 10		      AND	#FFORD
+      5  fb24		       c9 10		      CMP	#FFORD
+      6  fb26		       f0 16		      BEQ	CIN2
+      7  fb28
+      8  fb28		       a5 92		      LDA	mapWidth
+      9  fb2a		       85 96		      STA	yLoss
+     10  fb2c		       a9 01		      LDA	#ONE
+     11  fb2e		       85 93		      STA	xGain
+     12  fb30		       a9 86		      LDA	#WCOLU
+     13  fb32		       85 98		      STA	wallColour
+     14  fb34		       a9 82		      LDA	#SCOLU
+     15  fb36		       85 99		      STA	shadowColour
+     16  fb38		       a9 00		      LDA	#NULL
+     17  fb3a		       85 95		      STA	yGain
+     18  fb3c		       85 94		      STA	xLoss
+     19  fb3e
+     20  fb3e				   CIN2
+     21  fb3e		       ad 80 02 	      LDA	SWCHA
+     22  fb41		       29 20		      AND	#FBACK
+     23  fb43		       c9 20		      CMP	#FBACK
+     24  fb45		       f0 16		      BEQ	CIN3
+     25  fb47
+     26  fb47		       a5 92		      LDA	mapWidth
+     27  fb49		       85 95		      STA	yGain
+     28  fb4b		       a9 01		      LDA	#ONE
+     29  fb4d		       85 94		      STA	xLoss
+     30  fb4f		       a9 86		      LDA	#WCOLU
+     31  fb51		       85 98		      STA	wallColour
+     32  fb53		       a9 82		      LDA	#SCOLU
+     33  fb55		       85 99		      STA	shadowColour
+     34  fb57		       a9 00		      LDA	#NULL
+     35  fb59		       85 96		      STA	yLoss
+     36  fb5b		       85 93		      STA	xGain
+     37  fb5d
+     38  fb5d				   CIN3
+     39  fb5d		       ad 80 02 	      LDA	SWCHA
+     40  fb60		       29 80		      AND	#FLEFT
+     41  fb62		       c9 80		      CMP	#FLEFT
+     42  fb64		       f0 16		      BEQ	CIN4
+     43  fb66
+     44  fb66		       a5 92		      LDA	mapWidth
+     45  fb68		       85 93		      STA	xGain
+     46  fb6a		       a9 01		      LDA	#ONE
+     47  fb6c		       85 95		      STA	yGain
+     48  fb6e		       a9 82		      LDA	#SCOLU
+     49  fb70		       85 98		      STA	wallColour
+     50  fb72		       a9 86		      LDA	#WCOLU
+     51  fb74		       85 99		      STA	shadowColour
+     52  fb76		       a9 00		      LDA	#NULL
+     53  fb78		       85 96		      STA	yLoss
+     54  fb7a		       85 94		      STA	xLoss
+     55  fb7c
+     56  fb7c				   CIN4
+     57  fb7c		       ad 80 02 	      LDA	SWCHA
+     58  fb7f		       29 40		      AND	#FRIGT
+     59  fb81		       c9 40		      CMP	#FRIGT
+     60  fb83		       f0 16		      BEQ	CTRIG
+     61  fb85
+     62  fb85		       a5 92		      LDA	mapWidth
+     63  fb87		       85 94		      STA	xLoss
+     64  fb89		       a9 01		      LDA	#ONE
+     65  fb8b		       85 96		      STA	yLoss
+     66  fb8d		       a9 82		      LDA	#SCOLU
+     67  fb8f		       85 98		      STA	wallColour
+     68  fb91		       a9 86		      LDA	#WCOLU
+     69  fb93		       85 99		      STA	shadowColour
+     70  fb95		       a9 00		      LDA	#NULL
+     71  fb97		       85 95		      STA	yGain
+     72  fb99		       85 93		      STA	xGain
+     73  fb9b
+     74  fb9b				   CTRIG
+     75  fb9b
+     76  fb9b		       a5 3c		      LDA	INPT4
+     77  fb9d		       29 80		      AND	#ITRIG
+     78  fb9f		       c9 80		      CMP	#ITRIG
+     79  fba1		       f0 1e		      BEQ	CNOTRIG
+     80  fba3
+     81  fba3		       a5 91		      LDA	playerPos
+     82  fba5		       38		      SEC
+     83  fba6		       e5 96		      SBC	yLoss
+     84  fba8		       18		      CLC
+     85  fba9		       65 95		      ADC	yGain
+     86  fbab		       a8		      TAY
+     87  fbac		       b1 a0		      LDA	(mapPtr),Y
+     88  fbae		       c9 00		      CMP	#NULL
+     89  fbb0		       d0 08		      BNE	COLL
+     90  fbb2		       a5 97		      LDA	trigPressed
+     91  fbb4		       c9 00		      CMP	#NULL
+     92  fbb6		       d0 02		      BNE	COLL
+     93  fbb8		       84 91		      STY	playerPos
+     94  fbba
+     95  fbba				   COLL
+     96  fbba
+     97  fbba		       a9 ff		      LDA	#$FF
+     98  fbbc		       85 97		      STA	trigPressed
+     99  fbbe		       4c c5 fb 	      JMP	CEND
+    100  fbc1
+    101  fbc1				   CNOTRIG
+    102  fbc1		       a9 00		      LDA	#NULL
+    103  fbc3		       85 97		      STA	trigPressed
+    104  fbc5
+    105  fbc5				   CEND
+    106  fbc5		       85 02		      STA	WSYNC
 ------- FILE main.asm
-     67  fb2a
-     68  fb2a							; Pad again
-     69  fb2a
-     70  fb2a		       a2 00		      LDX	#INDEXINIT
-     71  fb2c
-     72  fb2c				   lowerPad
-     73  fb2c		       85 02		      STA	WSYNC
-     74  fb2e
-     75  fb2e		       e8		      INX
-     76  fb2f		       e0 61		      CPX	#LOPAD_LIMIT
-     77  fb31		       d0 f9		      BNE	lowerPad
-     78  fb33
-     79  fb33							; Get everything ready for VSYNC
-     80  fb33
-     81  fb33		       a9 00		      LDA	#NULL
-     82  fb35		       85 01		      STA	VBLANK
-     83  fb37		       a9 02		      LDA	#VSYNC_SET
-     84  fb39		       85 02		      STA	WSYNC
-     85  fb3b		       4c 2d f8 	      JMP	screenStart
-     86  fb3e
+     67  fbc7
+     68  fbc7							; Pad again
+     69  fbc7
+     70  fbc7		       a2 00		      LDX	#INDEXINIT
+     71  fbc9
+     72  fbc9				   lowerPad
+     73  fbc9		       85 02		      STA	WSYNC
+     74  fbcb
+     75  fbcb		       e8		      INX
+     76  fbcc		       e0 4d		      CPX	#LOPAD_LIMIT
+     77  fbce		       d0 f9		      BNE	lowerPad
+     78  fbd0
+     79  fbd0							; Get everything ready for VSYNC
+     80  fbd0
+     81  fbd0		       a9 00		      LDA	#NULL
+     82  fbd2		       85 01		      STA	VBLANK
+     83  fbd4		       a9 02		      LDA	#VSYNC_SET
+     84  fbd6		       85 02		      STA	WSYNC
+     85  fbd8		       4c 2d f8 	      JMP	screenStart
+     86  fbdb
      87  fffa					      ORG	$FFFA
      88  fffa
      89  fffa		       00 f8		      DC.W	start	; Something

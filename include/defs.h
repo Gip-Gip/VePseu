@@ -3,8 +3,13 @@ ONE     = 1 ; The value of one
 
 PIXH    = 4 ; The height of each pixel in scanlines (x2)
 
-WCOLU   = $0E ; The initial colour of walls
-SCOLU   = $06 ; The initial colour of shadows
+HADJ_A  = $00
+HADJ_B  = $10
+
+WCOLU       = $86 ; The initial colour of walls
+SCOLU       = $82 ; The initial colour of shadows
+MAPCOLU     = $0E ; The colour of the map on the minimap
+PLYRCOLU    = $CC ; The colour of the player on the minimap
 
 VBLANK_SET  = %11000010 ; The value to push to the vblank register
 VSYNC_SET   = 2 ; The value to push to the vsync register
@@ -12,7 +17,7 @@ VSYNC_SET   = 2 ; The value to push to the vsync register
 INDEXINIT   = 0 ; The value to initialize indexes to
 
 UPPAD_LIMIT = 24 ; The upper pad amount
-LOPAD_LIMIT = 97 ; The lower pad amount
+LOPAD_LIMIT = 77 ; The lower pad amount
 
 LAYER2_AND_0    = %11100000 ; The pattern layer 2's shadow takes on
 LAYER2_AND_1    = %11111000 ; The pattern layer 2's first wall takes on

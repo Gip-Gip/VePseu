@@ -18,140 +18,52 @@ wait2: ; Waits the right amount of time to blank the mirrored playfield
 
 
 drawStart:
-
     LDY #SHAD_AND_0
-    JSR otherWall
+    JSR firstWall
     LDY #SHAD_AND_1
-    JSR otherWall
+    JSR firstWall
     LDY #SHAD_AND_2
-    JSR otherWall
+    JSR firstWall
     LDY #SHAD_AND_3
-    JSR otherWall
+    JSR firstWall
     LDY #SHAD_AND_4
-    JSR otherWall
+    JSR firstWall
     LDX #0
-    JSR medWall
+    JSR otherWall
     LDX #1
-    JSR medWall
+    JSR otherWall
     LDX #2
-    JSR medWall
+    JSR otherWall
     LDX #1
-    JSR medWall
+    JSR otherWall
     LDX #0
-    JSR medWall
+    JSR otherWall
     LDY #SHAD_AND_4
-    JSR otherWall
+    JSR firstWall
     LDY #SHAD_AND_3
-    JSR otherWall
+    JSR firstWall
     LDY #SHAD_AND_2
-    JSR otherWall
+    JSR firstWall
     LDY #SHAD_AND_1
-    JSR otherWall
+    JSR firstWall
     LDY #SHAD_AND_0
-    JSR otherWall
+    JSR firstWall
+
+    LDA #NULL
+    STA PF1
+    STA PF2
+
+    STA WSYNC
+
+    JSR mmDraw
 
     JMP stop
 
-; Draws only the first wall and it's shadow
-
-otherWall:
-
-    LDX #INDEXINIT
-
-_otherWall_loop:
-
-    STA WSYNC
-
-    LDA wallColour
-    STA COLUPF
-    LDA wall1a
-    STA PF1
-    LDA wall1b
-    LSR
-    STA PF2
-
-    JSR wait
-
-    LDA #NULL
-    STA PF1
-    STA PF2
-
-    STY shift
-
-    STA WSYNC
-
-    LDA shadowColour
-    STA COLUPF
-    LDA shadow1a
-    AND shift
-    STA PF1
-    STA PF1
-    LDA shadow1b
-    AND shift
-    LSR
-    STA PF2
-
-    JSR wait2
-
-    LDA #NULL
-    STA PF1
-    STA PF2
-
-    INX
-    CPX #PIXH
-    BNE _otherWall_loop
-
-    RTS
-
-; Can draw every wall and it's shadow
-
-medWall:
-
-    LDY #INDEXINIT
-
-_medWall_loop:
-
-    STA WSYNC
-    LDA wallColour
-    STA COLUPF
-    LDA wall2a,X
-    STA PF1
-    LDA wall2b,X
-    LSR
-    STA PF2
-
-    JSR wait
-
-    LDA #NULL
-    STA PF1
-    STA PF2
-    STA WSYNC
-
-    LDA shadowColour
-    STA COLUPF
-    LDA shadow2a,X
-    STA PF1
-    LDA shadow2b,X
-    LSR
-    STA PF2
-
-    JSR wait
-
-    LDA #NULL
-    STA PF1
-    STA PF2
-
-    INY
-
-    CPY #PIXH
-    BNE _medWall_loop
-
-    RTS
+    INCLUDE "drawCode/1stWall.asm"
+    INCLUDE "drawCode/othrWall.asm"
+    INCLUDE "drawCode/mmDraw.asm"
 
 stop:
 
-    STA WSYNC
 
-    LDA #NULL
-    STA PF1
-    STA PF2
+    STA COLUBK

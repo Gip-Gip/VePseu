@@ -29,4 +29,9 @@ yLoss           DC 0
 trigPressed     DC 0
 wallColour      DC 0
 shadowColour    DC 0
+horzPos_mA      DC 0
+horzPos_mB      DC 0
+horzPos_plyr    DC 0
+drawingPlyr     DC 0
+miniMapPtr      DC.W 0
 mapPtr          DC.W 0
