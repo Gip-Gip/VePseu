@@ -26,12 +26,16 @@ xGain           DC 0
 xLoss           DC 0
 yGain           DC 0
 yLoss           DC 0
-trigPressed     DC 0
+fordPressed     DC 0
+backPressed     DC 0
+leftPressed     DC 0
+rigtPressed     DC 0
 wallColour      DC 0
 shadowColour    DC 0
 horzPos_mA      DC 0
 horzPos_mB      DC 0
 horzPos_plyr    DC 0
 drawingPlyr     DC 0
+direction       DC 0
 miniMapPtr      DC.W 0
 mapPtr          DC.W 0

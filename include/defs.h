@@ -1,3 +1,13 @@
+    MAC INA
+        CLC
+        ADC #1
+    ENDM
+
+    MAC DEA
+        SEC
+        SBC #1
+    ENDM
+
 NULL    = 0 ; The value of NULL
 ONE     = 1 ; The value of one
 
@@ -44,3 +54,8 @@ cleanStart  = 0 ; The value to initialize X to in clearLoop
 cleanEnd    = 0 ; The value of X to stop the loop at in clearLoop
 
 stack   = $FF ; The address of the stack
+
+DNORTH = 0
+DSOUTH = 2
+DWEST = 1
+DEAST = 3
