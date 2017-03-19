@@ -224,7 +224,7 @@
      14 U028a		       00 18	   UPPAD_LIMIT =	24	; The upper pad amount
      15 U028a		       00 61	   LOPAD_LIMIT =	97	; The lower pad amount
      16 U028a
-     17 U028a		       00 80	   LAYER2_AND_0 =	%10000000	; The pattern layer 2's shadow takes on
+     17 U028a		       00 e0	   LAYER2_AND_0 =	%11100000	; The pattern layer 2's shadow takes on
      18 U028a		       00 f8	   LAYER2_AND_1 =	%11111000	; The pattern layer 2's first wall takes on
      19 U028a		       00 07	   LAYER2_AND_2 =	%00000111	; The pattern layer 2's second wall takes on
      20 U028a
@@ -233,7 +233,7 @@
      23 U028a		       00 1c	   LAYER3_AND_2 =	%00011100	; The pattern layer 3's second wall takes on
      24 U028a		       00 03	   LAYER3_AND_3 =	%00000011	; The pattern layer 3's third wall takes on
      25 U028a
-     26 U028a		       00 80	   SHAD_AND_0 =	%10000000
+     26 U028a		       00 80	   SHAD_AND_0 =	%10000000	; Patterns of the 1st shadow
      27 U028a		       00 c0	   SHAD_AND_1 =	%11000000
      28 U028a		       00 e0	   SHAD_AND_2 =	%11100000
      29 U028a		       00 f0	   SHAD_AND_3 =	%11110000
@@ -444,7 +444,7 @@
       7  f878		       a8		      TAY
       8  f879
       6  f879		       b1 9a		      LDA	(mapPtr),Y
-      7  f87b		       29 80		      AND	#LAYER2_AND_0
+      7  f87b		       29 e0		      AND	#LAYER2_AND_0
       8  f87d		       85 89		      STA	shadow2a
       9  f87f
       0  f87f					      X_POS_GAN		; 25 cycles
@@ -499,7 +499,7 @@
       7  f8b6		       a8		      TAY
       8  f8b7
      29  f8b7		       b1 9a		      LDA	(mapPtr),Y
-     30  f8b9		       29 80		      AND	#LAYER2_AND_0
+     30  f8b9		       29 e0		      AND	#LAYER2_AND_0
      31  f8bb		       85 8d		      STA	shadow2b
 ------- FILE walrend.asm
       8  f8bd

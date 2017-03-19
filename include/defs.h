@@ -14,7 +14,7 @@ INDEXINIT   = 0 ; The value to initialize indexes to
 UPPAD_LIMIT = 24 ; The upper pad amount
 LOPAD_LIMIT = 97 ; The lower pad amount
 
-LAYER2_AND_0    = %10000000 ; The pattern layer 2's shadow takes on
+LAYER2_AND_0    = %11100000 ; The pattern layer 2's shadow takes on
 LAYER2_AND_1    = %11111000 ; The pattern layer 2's first wall takes on
 LAYER2_AND_2    = %00000111 ; The pattern layer 2's second wall takes on
 
