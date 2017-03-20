@@ -27,7 +27,7 @@ VSYNC_SET   = 2 ; The value to push to the vsync register
 INDEXINIT   = 0 ; The value to initialize indexes to
 
 UPPAD_LIMIT = 24 ; The upper pad amount
-LOPAD_LIMIT = 77 ; The lower pad amount
+LOPAD_LIMIT = 74 ; The lower pad amount
 
 LAYER2_AND_0    = %11100000 ; The pattern layer 2's shadow takes on
 LAYER2_AND_1    = %11111000 ; The pattern layer 2's first wall takes on

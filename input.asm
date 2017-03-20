@@ -1,91 +1,105 @@
 ; VePseu's controller input
 
-    LDA SWCHA
+    STA WSYNC
+
+    LDA SWCHA ; 9 or 10 cycles
     AND #FFORD
     CMP #FFORD
     BEQ CIN1_NOPRESS
 
-    LDA playerPos
+    LDA playerPos ; 15 cycles
     SEC
     SBC yLoss
     CLC
     ADC yGain
     TAY
-    LDA (mapPtr),Y
+
+    LDA (mapPtr),Y ; 10 or 11 cycles
     CMP #NULL
     BNE CIN2
-    LDA fordPressed
+
+    LDA fordPressed ; 5 or 6 cycles
     CMP #NULL
     BNE CIN2
-    STY playerPos
+
+    STY playerPos ; 9 cycles
     STY fordPressed
     JMP CIN2
 
 CIN1_NOPRESS:
-    LDA #NULL
+    LDA #NULL ; 5 cycles
     STA fordPressed
 
 CIN2:
-    LDA SWCHA
+    STA WSYNC
+    LDA SWCHA ; 9 or 10 cycles
     AND #FBACK
     CMP #FBACK
     BEQ CIN2_NOPRESS
 
-    LDA playerPos
+    LDA playerPos ; 15 cycles
     SEC
     SBC yGain
     CLC
     ADC yLoss
     TAY
-    LDA (mapPtr),Y
+
+    LDA (mapPtr),Y ; 10 or 11 cycles
     CMP #NULL
     BNE CIN3
-    LDA backPressed
+
+    LDA backPressed ; 5 or 6 cycles
     CMP #NULL
     BNE CIN3
-    STY playerPos
+
+    STY playerPos ; 9 cycles
     STY backPressed
     JMP CIN3
 
 CIN2_NOPRESS:
-    LDA #NULL
+    LDA #NULL ; 5 cycles
     STA backPressed
 
 CIN3:
-    LDA SWCHA
+    STA WSYNC
+    LDA SWCHA ; 9 or 10 cycles
     AND #FLEFT
     CMP #FLEFT
     BEQ CIN3_NOPRESS
 
-    LDA rigtPressed
+    LDA rigtPressed ; 7 or 8 cycles
     CMP #NULL
     BNE CIN4
-    LDA direction
+
+    LDA direction ; 10 cycles
     INA
     AND #%00000011
     STA direction
-    LDA #1
+
+    LDA #1 ; 8 cycles
     STA rigtPressed
     JMP CIN4
 
 CIN3_NOPRESS:
-    LDA #NULL
+    LDA #NULL ; 5 cycles
     STA rigtPressed
 
 CIN4:
-    LDA SWCHA
+    LDA SWCHA ; 9 or 10 cycles
     AND #FRIGT
     CMP #FRIGT
     BEQ CIN4_NOPRESS
 
-    LDA leftPressed
+    LDA leftPressed ; 7 or 8 cycles
     CMP #NULL
     BNE CDIR1
-    LDA direction
+
+    LDA direction ; 10 cycles
     DEA
     AND #%00000011
     STA direction
-    LDA #1
+
+    LDA #1 ; 8 cycles
     STA leftPressed
     JMP CDIR1
 
@@ -94,8 +108,10 @@ CIN4_NOPRESS:
     STA leftPressed
 
 CDIR1:
+    STA WSYNC
+
     LDA direction
-    CMP DNORTH
+    CMP #DNORTH
     BNE CDIR2
 
     LDA mapWidth
@@ -112,7 +128,7 @@ CDIR1:
 
 CDIR2:
     LDA direction
-    CMP DSOUTH
+    CMP #DSOUTH
     BNE CDIR3
 
     LDA mapWidth
@@ -129,7 +145,7 @@ CDIR2:
 
 CDIR3:
     LDA direction
-    CMP DWEST
+    CMP #DWEST
     BNE CDIR4
 
     LDA mapWidth
@@ -146,7 +162,7 @@ CDIR3:
 
 CDIR4:
     LDA direction
-    CMP DEAST
+    CMP #DEAST
     BNE CEND
 
     LDA mapWidth
