@@ -39,3 +39,4 @@ drawingPlyr     DC 0
 direction       DC 0
 miniMapPtr      DC.W 0
 mapPtr          DC.W 0
+foo             DC 0

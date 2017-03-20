@@ -55,6 +55,8 @@ cleanEnd    = 0 ; The value of X to stop the loop at in clearLoop
 
 stack   = $FF ; The address of the stack
 
+PHCORR = 3; The player's minimap X correction
+
 DNORTH = 0
 DSOUTH = 2
 DWEST = 1

@@ -10,6 +10,7 @@ mmRender:
     STA COLUP1
     ; Get the player's position and translate it into horizontal movement
     LDA #%00001000
+    CLC
     SEC
     SBC playerPos
     ASL
@@ -39,7 +40,7 @@ _renderWait_1:
     LDA playerPos
 
     STA WSYNC
-    LDX 0
+    LDX #INDEXINIT
 
 _renderWait_2:
     INX
@@ -47,7 +48,7 @@ _renderWait_2:
     BNE _renderWait_2
     NOP
     NOP
-    NOP
+    STA foo ; wait 3 cycles instead of 2
     STA RESBL
 
     RTS
