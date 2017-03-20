@@ -1,0 +1,8 @@
+#########################Version I.I.MMXVII, Revision 1#########################
+
+ * Added a changelog
+ * Added peripheral vision
+ * Added repeating actions
+ * Fixed a bug where the line count would jump if all 4 arrow keys were pressed
+   (stella)
+ * Organized the source code further

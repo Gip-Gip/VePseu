@@ -28,10 +28,10 @@ mmRender:
     STA WSYNC
     LDX #0
 
-_renderWait_1:
+_mmRender_wait1:
     INX
     CPX #4
-    BNE _renderWait_1
+    BNE _mmRender_wait1
     NOP
     NOP
     STA RESP0
@@ -42,10 +42,10 @@ _renderWait_1:
     STA WSYNC
     LDX #INDEXINIT
 
-_renderWait_2:
+_mmRender_wait2:
     INX
     CPX #4
-    BNE _renderWait_2
+    BNE _mmRender_wait2
     NOP
     NOP
     STA foo ; wait 3 cycles instead of 2

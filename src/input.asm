@@ -20,10 +20,16 @@
 
     LDA fordPressed ; 5 or 6 cycles
     CMP #NULL
-    BNE CIN2
+    BNE CIN1_WAIT
 
     STY playerPos ; 9 cycles
-    STY fordPressed
+    LDA #CWAITCNT
+    STA fordPressed
+    JMP CIN2
+
+CIN1_WAIT:
+    DEA
+    STA fordPressed
     JMP CIN2
 
 CIN1_NOPRESS:
@@ -50,10 +56,16 @@ CIN2:
 
     LDA backPressed ; 5 or 6 cycles
     CMP #NULL
-    BNE CIN3
+    BNE CIN2_WAIT
 
     STY playerPos ; 9 cycles
-    STY backPressed
+    LDA #CWAITCNT
+    STA backPressed
+    JMP CIN3
+
+CIN2_WAIT:
+    DEA
+    STA backPressed
     JMP CIN3
 
 CIN2_NOPRESS:
@@ -67,17 +79,23 @@ CIN3:
     CMP #FLEFT
     BEQ CIN3_NOPRESS
 
-    LDA rigtPressed ; 7 or 8 cycles
-    CMP #NULL
-    BNE CIN4
-
-    LDA direction ; 10 cycles
+    LDA direction
     INA
     AND #%00000011
+
+    LDX rigtPressed
+    CPX #NULL
+    BNE CIN3_WAIT
+
     STA direction
 
-    LDA #1 ; 8 cycles
+    LDA #CWAITCNT ; 8 cycles
     STA rigtPressed
+    JMP CIN4
+
+CIN3_WAIT:
+    DEX
+    STX rigtPressed
     JMP CIN4
 
 CIN3_NOPRESS:
@@ -85,22 +103,29 @@ CIN3_NOPRESS:
     STA rigtPressed
 
 CIN4:
+    STA WSYNC
     LDA SWCHA ; 9 or 10 cycles
     AND #FRIGT
     CMP #FRIGT
     BEQ CIN4_NOPRESS
 
-    LDA leftPressed ; 7 or 8 cycles
-    CMP #NULL
-    BNE CDIR1
-
     LDA direction ; 10 cycles
     DEA
     AND #%00000011
+
+    LDX leftPressed ; 7 or 8 cycles
+    CPX #NULL
+    BNE CIN4_WAIT
+
     STA direction
 
-    LDA #1 ; 8 cycles
+    LDA #CWAITCNT ; 8 cycles
     STA leftPressed
+    JMP CDIR1
+
+CIN4_WAIT:
+    DEX
+    STX leftPressed
     JMP CDIR1
 
 CIN4_NOPRESS:
@@ -109,7 +134,6 @@ CIN4_NOPRESS:
 
 CDIR1:
     STA WSYNC
-
     LDA direction
     CMP #DNORTH
     BNE CDIR2

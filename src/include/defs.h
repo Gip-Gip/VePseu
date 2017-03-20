@@ -11,9 +11,9 @@
 NULL    = 0 ; The value of NULL
 ONE     = 1 ; The value of one
 
-PIXH    = 4 ; The height of each pixel in scanlines (x2)
+PIXH    = 4 ; The height of each pixel, in scanlines (x2)
 
-HADJ_A  = $00
+HADJ_A  = $00 ; The horizontal adjustment of each minimap sprite
 HADJ_B  = $10
 
 WCOLU       = $86 ; The initial colour of walls
@@ -27,7 +27,9 @@ VSYNC_SET   = 2 ; The value to push to the vsync register
 INDEXINIT   = 0 ; The value to initialize indexes to
 
 UPPAD_LIMIT = 24 ; The upper pad amount
-LOPAD_LIMIT = 74 ; The lower pad amount
+LOPAD_LIMIT = 72 ; The lower pad amount
+
+LAYER0_AND_0    = %10000000 ; The pattern the peripheral vision takes on
 
 LAYER2_AND_0    = %11100000 ; The pattern layer 2's shadow takes on
 LAYER2_AND_1    = %11111000 ; The pattern layer 2's first wall takes on
@@ -55,9 +57,9 @@ cleanEnd    = 0 ; The value of X to stop the loop at in clearLoop
 
 stack   = $FF ; The address of the stack
 
-PHCORR = 3; The player's minimap X correction
+CWAITCNT    = #15 ; The amount of frames to wait before input is repeated
 
-DNORTH = 0
+DNORTH = 0 ; The possible directions
 DSOUTH = 2
 DWEST = 1
 DEAST = 3
