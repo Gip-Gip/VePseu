@@ -40,8 +40,7 @@ Contributing will get you a permanent place in the AUTHORS.TXT
  * So far there are 856 total lines of code
  * The Versioning scheme is [Inf. Version].[Annual Version].[Year] in roman
    numerals
-     * The Infinitive Version is incremented every large change, such as when
-     PoSRIC became capable of IO with RiPorFS it was incremented from I to II
+     * The Infinitive Version is incremented every large change
      * The Annual Version is incremented with the Infinitive Version and every
        large update which isn't drastic enough to increment the Infinitive
        Version. It is reset to one annually
