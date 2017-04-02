@@ -4,7 +4,7 @@
     AND #LAYER0_AND_0
     STA shadow1a
 
-    TYA
+    TYA ; Move twice the amount of a normal X_POS_GAIN
     CLC
     ADC xGain
     ADC xGain
@@ -12,6 +12,7 @@
     SBC xLoss
     SBC xLoss
     TAY
+
     LDA (mapPtr),Y
-    AND #LAYER0_AND_0
-    STA shadow1b
+    AND #LAYER0_AND_1
+    STA shadow1e

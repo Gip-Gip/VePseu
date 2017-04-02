@@ -6,48 +6,28 @@
 
     JMP drawStart
 
-wait: ; Waits the right amount of time to blank the mirrored playfield
-    NOP
-    NOP
-    NOP
-    NOP
-    RTS
-
-wait2: ; Waits the right amount of time to blank the mirrored playfield
-    RTS
-
+    INCLUDE "drawCode/1stWall.asm"
+    INCLUDE "drawCode/2ndWall.asm"
+    INCLUDE "drawCode/3rdWall.asm"
+    INCLUDE "drawCode/4thWall.asm"
+    INCLUDE "drawCode/5thWall.asm"
+    INCLUDE "drawCode/6thWall.asm"
+    INCLUDE "drawCode/mmDraw.asm"
 
 drawStart:
-    LDY #SHAD_AND_0
+    LDA #WCOLU
+    STA COLUPF
     JSR firstWall
-    LDY #SHAD_AND_1
-    JSR firstWall
-    LDY #SHAD_AND_2
-    JSR firstWall
-    LDY #SHAD_AND_3
-    JSR firstWall
-    LDY #SHAD_AND_4
-    JSR firstWall
-    LDX #0
-    JSR otherWall
-    LDX #1
-    JSR otherWall
-    LDX #2
-    JSR otherWall
-    LDX #1
-    JSR otherWall
-    LDX #0
-    JSR otherWall
-    LDY #SHAD_AND_4
-    JSR firstWall
-    LDY #SHAD_AND_3
-    JSR firstWall
-    LDY #SHAD_AND_2
-    JSR firstWall
-    LDY #SHAD_AND_1
-    JSR firstWall
-    LDY #SHAD_AND_0
-    JSR firstWall
+    JSR secondWall
+    JSR thirdWall
+    JSR fourthWall
+    JSR fifthWall
+    JSR sixthWall
+    JSR sixthWall
+    JSR fifthWall
+    JSR fourthWall
+    JSR thirdWall
+    JSR secondWall
 
     LDA #NULL
     STA PF1
@@ -58,10 +38,6 @@ drawStart:
     JSR mmDraw
 
     JMP stop
-
-    INCLUDE "drawCode/1stWall.asm"
-    INCLUDE "drawCode/othrWall.asm"
-    INCLUDE "drawCode/mmDraw.asm"
 
 stop:
 

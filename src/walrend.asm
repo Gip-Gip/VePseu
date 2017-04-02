@@ -10,6 +10,4 @@
 
     INCLUDE "r_layers/layer3.asm" ; 182 cycles
 
-    INCLUDE "r_layers/layer4.asm" ; 8 cycles
-
     STA WSYNC ; By this time 6 scanlines have passed

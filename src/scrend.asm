@@ -2,62 +2,62 @@
 
 ; Remove the shadows incase only 1 wall is drawn (22 cycles)
     LDA shadow1a
-    ORA wall1a
-    EOR wall1a
-    AND #%11111000
+    ORA wall1
+    EOR wall1
     STA shadow1a
 
     LDA shadow1b
-    ORA wall1b
-    EOR wall1b
-    AND #%11111000
+    ORA wall1
+    EOR wall1
     STA shadow1b
 
+    LDA shadow1d
+    ORA wall1
+    EOR wall1
+    STA shadow1d
 
-; Merge walls (approx 381 cycles)
+    LDA shadow1e
+    ORA wall1
+    EOR wall1
+    STA shadow1e
 
-    LDX #1
+    LDA wall1
+    STA wall1+1
+    STA wall1+2
+    STA wall1+3
+    STA wall1+4
 
-mergeLoop:
+    LDX #NULL
 
-; Merge wall a
+scrRendLoop:
 
-    MRGWLL wall1a ; 17 cycles
+    LDA wall2a,X
+    ORA wall1,X
+    STA wall2a,X
 
-; Make shadow a
+    LDA shadow2aa,X
+    ORA shadow1a,X
+    STA shadow2aa,X
 
-    MKSHAD shadow1a ; 21 cycles
+    LDA shadow2ab,X
+    ORA shadow1a,X
+    STA shadow2ab,X
 
-; Overlap wall a
+    LDA wall2a,X
+    ORA shadow1a,X
+    EOR shadow1a,X
+    STA wall2a,X
 
-    OVLWLL wall1a, shadow1a ; 22 cycles
+    LDA shadow2aa,X
+    ORA wall2a,X
+    EOR wall2a,X
+    STA shadow2aa,X
 
-; Overlap shadow a
+    LDA shadow2ab,X
+    ORA wall2a,X
+    EOR wall2a,X
+    STA shadow2ab,X
 
-    OVLSHD wall1a, shadow1a ; 21 cycles
-
-; Merge wall b
-
-    MRGWLL wall1b ; 17 cycles
-
-; Make shadow b
-
-    MKSHAD shadow1b ; 21 cycles
-
-; Overlap wall b
-
-    OVLWLL wall1b, shadow1b ; 22 cycles
-
-; Overlap shadow b
-
-    OVLSHD wall1b, shadow1b ; 20 cycles
-
-; Loop if not done
-
-    INX ; 7 or 6 cycles
-    CPX #4
-    BNE mergeLoop
-
-    STA WSYNC
-
-; By this time, we know approx 6 scanlines have passed
+    INX
+    CPX #10
+    BNE scrRendLoop

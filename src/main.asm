@@ -8,6 +8,7 @@
 
     ORG $F000
 
+    INCLUDE "andtable.asm"
     INCLUDE "map.asm"
 
     ORG $F800
