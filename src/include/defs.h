@@ -65,8 +65,8 @@ LAYER3_AND_0    = %00000010 ; The pattern layer 3's shadow takes on
 LAYER3_AND_1    = %00000011 ; The pattern layer 3's shadow takes on
 LAYER3_AND_2    = %00000011 ; The pattern layer 3's first wall takes on
 LAYER3_AND_3    = %00001111 ; The pattern layer 3's second wall takes on
-LAYER3_AND_4    = %00001000 ; The pattern layer 3's third wall takes on
-LAYER3_AND_5    = %00001100 ; The pattern layer 3's third wall takes on
+LAYER3_AND_4    = %00010000 ; The pattern layer 3's third wall takes on
+LAYER3_AND_5    = %00110000 ; The pattern layer 3's third wall takes on
 LAYER3_AND_6    = %11110000 ; The pattern layer 3's third wall takes on
 LAYER3_AND_7    = %11000000 ; The pattern layer 3's third wall takes on
 LAYER3_AND_8    = %00100000 ; The pattern layer 3's third wall takes on
@@ -88,6 +88,8 @@ FBACK   = %00100000 ; The bit set when the joystick is in the backward position
 FLEFT   = %10000000 ; The bit set when the joystick is in the left position
 FRIGT   = %01000000 ; The bit set when the joystick is in the right position
 ITRIG   = %10000000 ; The bit set when the trigger is set
+
+LOWSHAD_LIMIT = 1
 
 cleanStart  = 0 ; The value to initialize X to in clearLoop
 cleanEnd    = 0 ; The value of X to stop the loop at in clearLoop

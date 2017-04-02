@@ -2,7 +2,7 @@
 
   dc_w1s1.asm
   |   | |
-  |   | |- The shadow variant it draws (A or B, 1 or 2)
+  |   | |- The shadow variant it draws (A = 1, B = 2, no shadow =0)
   |   |
   |   |- The wall it draws
   |
@@ -14,7 +14,7 @@
   |    | | |
   |    | | |- The AND variant number, screenwise left-right
   |    | |
-  |    | |- The shadow flag (1 = true, 0=false)
+  |    | |- The shadow variant (A = 1, B = 2, no shadow =0)
   |    |
   |    |- The layer it's for
   |

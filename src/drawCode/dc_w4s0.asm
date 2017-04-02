@@ -1,4 +1,4 @@
-; The draw code for the 1st wall and shadow
+; The draw code for the 4th wall
 
 dc_w4s0:
 

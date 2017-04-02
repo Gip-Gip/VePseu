@@ -1,4 +1,4 @@
-; The draw code for the 1st wall and shadow
+; The draw code for the 1st wall and it's second shadow
 
 dc_w1s2:
 
@@ -47,7 +47,7 @@ _dc_w1s2_start
 
     LDX #NULL
 
-    CPY #1
+    CPY #LOWSHAD_LIMIT
     BNE _dc_w1s2_loop
 
     RTS

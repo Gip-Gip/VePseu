@@ -1,91 +1,82 @@
-; Third layer (104 cycles)
+; Render the third layer (it's really ugly)
 
-    Y_POS_ADV ; 14 cycles
+    INCLUDE "include/ands_3.h"
 
-    X_POS_GAN  ; 25
+    Y_POS_ADV
+
+    X_POS_GAN
     LDA (mapPtr),Y
-    TAX
-    AND #LAYER3_AND_0
-    STA shadow3ea
-    TXA
-    AND #LAYER3_AND_1
+    AND #AND_W3S2P6
     STA shadow3eb
+    AND #AND_W3S1P6
+    STA shadow3ea
 
-    X_POS_LOS ; 25
+    X_POS_LOS
     LDA (mapPtr),Y
     TAX
-    AND #LAYER3_AND_2
+    AND #AND_W3S0P8
+    STA wall3d
+    AND #AND_W3S0P9
     STA wall3e
     TXA
-    AND #LAYER3_AND_3
-    STA wall3d
-    TXA
-    AND #LAYER3_AND_4
-    STA shadow3da
-    TXA
-    AND #LAYER3_AND_5
+    AND #AND_W3S2P5
     STA shadow3db
+    AND #AND_W3S1P5
+    STA shadow3da
 
-    X_POS_LOS ; 29
+    X_POS_LOS
     LDA (mapPtr),Y
     TAX
-    AND #LAYER3_AND_6
+    AND #AND_W3S0P7
     ORA wall3d
     STA wall3d
-    TXA
-    AND #LAYER3_AND_7
+    AND #AND_W3S0P6
     STA wall3c
     TXA
-    AND #LAYER3_AND_8
-    STA shadow3ca
-    TXA
-    AND #LAYER3_AND_9
+    AND #AND_W3S2P4
     STA shadow3cb
+    AND #AND_W3S1P4
+    STA shadow3ca
 
-    X_POS_LOS ; 31
+    X_POS_LOS
     LDA (mapPtr),Y
-    TAX
-    AND #LAYER3_AND_A
+    AND #AND_W3S0P4
+    STA wall3b
+    AND #AND_W3S0P5
     ORA wall3c
     STA wall3c
-    TXA
-    AND #LAYER3_AND_B
-    STA wall3b
 
-    X_POS_LOS ; 29
+    X_POS_LOS
     LDA (mapPtr),Y
     TAX
-    AND #LAYER3_AND_C
+    AND #AND_W3S0P3
     ORA wall3b
     STA wall3b
-    TXA
-    AND #LAYER3_AND_D
+    AND #AND_W3S0P2
     STA wall3a
     TXA
-    AND #LAYER3_AND_E
-    STA shadow3ba
-    TXA
-    AND #LAYER3_AND_F
+    AND #AND_W3S2P3
     STA shadow3bb
+    AND #AND_W3S1P3
+    STA shadow3ba
 
-    X_POS_LOS ; 29
+    X_POS_LOS
     LDA (mapPtr),Y
     TAX
-    AND #LAYER3_AND_G
+    AND #AND_W3S0P1
     ORA wall3a
     STA wall3a
     TXA
-    AND #LAYER3_AND_H
-    STA shadow3aa
-    TXA
-    AND #LAYER3_AND_I
+    AND #AND_W3S2P2
     STA shadow3ab
+    AND #AND_W3S0P1
+    STA shadow3aa
 
-    X_POS_LOS ; 25
+    X_POS_LOS
     LDA (mapPtr),Y
-    TAX
-    AND #LAYER3_AND_J
-    STA shadow3aa
-    TXA
-    AND #LAYER3_AND_K
+    AND #AND_W3S2P1
+    ORA shadow3ab
     STA shadow3ab
+    AND #AND_W3S1P1
+    ORA shadow3aa
+    STA shadow3aa
