@@ -1,14 +1,14 @@
 ; The draw code for the 1st wall and shadow
 
-thirdWall:
+dc_w2s2:
 
     LDX #INDEXINIT
-    JMP _thirdWall_start
+    JMP _dc_w2s2_start
 
-_thirdWall_loop:
+_dc_w2s2_loop:
     STA WSYNC
     DELAY 10
-_thirdWall_start:
+_dc_w2s2_start:
     LDA wallColour
     STA COLUPF
     LDA wall2a
@@ -49,7 +49,7 @@ _thirdWall_start:
 
     INX
     CPX #PIXH
-    BNE _thirdWall_loop
+    BNE _dc_w2s2_loop
 
     LDX #NULL
 

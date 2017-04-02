@@ -4,12 +4,6 @@ MAP_01_POS = $D1
 MAP_01_WDTH = $10
 MAP_01_SZ = $100
 
-mapList:
-    DC.W map_01
-
-miniMapList:
-    DC.W map_01_miniMap
-
 map_01:
     HEX  FF FF FF 00 00 00 00 00 00 00 00 00 00 FF FF FF
     HEX  FF 00 FF FF FF FF FF FF FF FF FF FF FF FF 00 FF
@@ -28,7 +22,7 @@ map_01:
     HEX  FF 00 FF 00 00 00 00 00 00 00 00 00 00 FF 00 FF
     HEX  FF FF FF 00 00 00 00 00 00 00 00 00 00 FF FF FF
 
-map_01_miniMap:
+miniMap_01:
     DC.W %0000011111100000
     DC.W %1111110110111111
     DC.W %0000000110000000
@@ -53,13 +47,13 @@ map_01_load:
     LDA #MAP_01_WDTH
     STA mapWidth
 
-    LDA mapList
+    LDA #<map_01
     STA mapPtr
-    LDA mapList + 1
+    LDA #>map_01
     STA mapPtr + 1
 
-    LDA miniMapList
+    LDA #<miniMap_01
     STA miniMapPtr
-    LDA miniMapList + 1
+    LDA #>miniMap_01
     STA miniMapPtr + 1
     RTS

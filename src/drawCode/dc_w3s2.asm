@@ -1,15 +1,15 @@
-; The draw code for the 1st wall and shadow
+; The draw code for 3rd wall and it's second shadow
 
-fourthWall:
+dc_w3s2:
 
     LDX #INDEXINIT
-    JMP _fourthWall_start
+    JMP _dc_w3s2_start
 
-_fourthWall_loop:
+_dc_w3s2_loop:
     STA WSYNC
-    DELAY 10
-_fourthWall_start:
-    LDA wallColour
+    DELAY 10 ; Delay to keep the timing constant
+_dc_w3s2_start:
+    LDA wallColour ; Draw the wall
     STA COLUPF
     LDA wall3a
     STA PF1
@@ -27,22 +27,22 @@ _fourthWall_start:
     STA PF2
     STA PF0
 
-    STA WSYNC
+    STA WSYNC ; Draw the shadow
     LDA shadowColour
     STA COLUPF
-    LDA shadow3aa
+    LDA shadow3ab
     ORA shadow2ab
     STA PF1
-    LDA shadow3ba
+    LDA shadow3bb
     ORA shadow2bb
     STA PF2
-    LDA shadow3ca
+    LDA shadow3cb
     ORA shadow2cb
     STA PF0
-    LDA shadow3da
+    LDA shadow3db
     ORA shadow2db
     STA PF1
-    LDA shadow3ea
+    LDA shadow3eb
     ORA shadow2eb
     STA PF2
     LDA #NULL
@@ -50,10 +50,8 @@ _fourthWall_start:
 
     INX
     CPX #PIXH
-    BNE _fourthWall_loop
+    BNE _dc_w3s2_loop
 
-    LDX #NULL
-
-    DELAY 5
+    DELAY 7 ; Delay to keep the timing constant
 
     RTS

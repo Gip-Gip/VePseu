@@ -1,26 +1,31 @@
 ; The draw code for the 1st wall and shadow
 
-fifthWall:
+dc_w4s0:
 
     LDX #INDEXINIT
-    JMP _fifthWall_start
+    JMP _dc_w4s0_start
 
-_fifthWall_loop:
+_dc_w4s0_loop:
     STA WSYNC
     DELAY 10
-_fifthWall_start:
+_dc_w4s0_start:
     LDA wallColour
     STA COLUPF
-    LDA wall3a
+    LDA #FULLWALL
+    EOR shadow3ab
     STA PF1
-    LDA wall3b
+    LDA #FULLWALL
+    EOR shadow3bb
     STA PF2
-    DELAY 14
-    LDA wall3c
+    DELAY 4
+    LDA #FULLWALL
+    EOR shadow3cb
     STA PF0
-    LDA wall3d
+    LDA #FULLWALL
+    EOR shadow3db
     STA PF1
-    LDA wall3e
+    LDA #FULLWALL
+    EOR shadow3eb
     STA PF2
     LDA #NULL
     DELAY 2
@@ -50,10 +55,8 @@ _fifthWall_start:
 
     INX
     CPX #PIXH
-    BNE _fifthWall_loop
+    BNE _dc_w4s0_loop
 
-    LDX #NULL
-
-    DELAY 5
+    DELAY 7
 
     RTS

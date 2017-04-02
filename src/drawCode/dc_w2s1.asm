@@ -1,15 +1,15 @@
-; The draw code for the 1st wall and shadow
+; The second wall and it's first shadow
 
-secondWall:
+dc_w2s1:
 
     LDX #INDEXINIT
-    JMP _secondWall_start
+    JMP _dc_w2s1_start
 
-_secondWall_loop:
+_dc_w2s1_loop:
     STA WSYNC
-    DELAY 10
-_secondWall_start:
-    LDA wallColour
+    DELAY 10 ; Delay to keep the timing constant
+_dc_w2s1_start:
+    LDA wallColour ; Draw the wall
     STA COLUPF
     LDA wall2a
     STA PF1
@@ -27,7 +27,7 @@ _secondWall_start:
     STA PF2
     STA PF0
 
-    STA WSYNC
+    STA WSYNC ; Draw the shadow
     LDA shadowColour
     STA COLUPF
     LDA shadow2aa
@@ -47,12 +47,10 @@ _secondWall_start:
     LDA #NULL
     STA PF0
 
-    INX
+    INX ; Loop for the rest of the pixel's height
     CPX #PIXH
-    BNE _secondWall_loop
+    BNE _dc_w2s1_loop
 
-    DELAY 8
-
-    LDX #NULL
+    DELAY 10 ; Delay to keep timing constant
 
     RTS

@@ -1,18 +1,21 @@
 ; The draw code for the 1st wall and shadow
 
-firstWall:
+dc_w1s2:
 
     LDX #INDEXINIT
-    LDY #INDEXINIT
+    LDY #9
+    JMP _dc_w1s2_start
 
-_firstWall_loop:
+_dc_w1s2_loop:
     STA WSYNC
+    DELAY 12
+_dc_w1s2_start
     LDA wallColour
     STA COLUPF
     LDA wall1
     STA PF1
     STA PF2
-    DELAY 28
+    DELAY 16
     STA PF0
     DELAY 3
     LDA #NULL
@@ -39,12 +42,12 @@ _firstWall_loop:
 
     INX
     CPX #PIXH
-    BNE _firstWall_loop
-    INY
+    BNE _dc_w1s2_loop
+    DEY
 
     LDX #NULL
 
-    CPY #10
-    BNE _firstWall_loop
+    CPY #1
+    BNE _dc_w1s2_loop
 
     RTS

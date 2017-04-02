@@ -36,8 +36,8 @@ VSYNC_SET   = 2 ; The value to push to the vsync register
 
 INDEXINIT   = 0 ; The value to initialize indexes to
 
-UPPAD_LIMIT = 20 ; The upper pad amount
-LOPAD_LIMIT = 20 ; The lower pad amount
+UPPAD_LIMIT = 16 ; The upper pad amount
+LOPAD_LIMIT = 25 ; The lower pad amount
 
 FULLWALL    = $FF
 
