@@ -1,3 +1,7 @@
+########################Version II.II.MMXVII, Revision 1########################
+
+ * Centered the minimap
+
 ########################Version II.II.MMXVII, Revision 0########################
 
  * Improved the size of the veiwport

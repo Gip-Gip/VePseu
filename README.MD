@@ -1,6 +1,7 @@
 # VePseu
 
-The **Ve**ry **Pseu**do 3d engine (for the Atari 2600)
+The **Ve**ry **Pseu**do 3d engine (for the Atari 2600), **now at `II.II.MMXVII
+Rev. 1`!**
 
 ## What is VePseu?
 
@@ -37,7 +38,7 @@ Contributing will get you a permanent place in the AUTHORS.TXT
 
 ## Misc. Facts
  * The project was started in mid March of 2017
- * So far there are 1322 total lines of code(sloccount)
+ * So far there are 1358 total lines of code(sloccount)
  * The Versioning scheme is [Inf. Version].[Annual Version].[Year] in roman
    numerals
      * The Infinitive Version is incremented every large change
