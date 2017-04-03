@@ -28,6 +28,10 @@ PIXH    = 3 ; The height of each pixel, in scanlines (x2)
 HADJ_A  = $00 ; The horizontal adjustment of each minimap sprite
 HADJ_B  = $10
 
+HWAIT   = 5 ; The horizontal wait for the minimap
+HDELAY1 = 7 ; The amount of clocks for horizontal correction (minimap)
+HDELAY2 = 10 ; The amount of clocks for horizontal correction (player blip)
+
 WCOLU       = $86 ; The initial colour of walls
 SCOLU       = $82 ; The initial colour of shadows
 MAPCOLU     = $0E ; The colour of the map on the minimap
@@ -62,7 +66,3 @@ DNORTH = 0 ; The possible directions
 DSOUTH = 2
 DWEST = 1
 DEAST = 3
-
-HWAIT   = 5 ; The horizontal wait for the minimap
-HDELAY1 = 8 ; The amount of clocks for horizontal correction (minimap)
-HDELAY2 = 11 ; The amount of clocks for horizontal correction (player blip)
