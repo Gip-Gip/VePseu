@@ -26,14 +26,13 @@ mmRender:
     STA horzPos_mB
 
     STA WSYNC
-    LDX #0
+    LDX #INDEXINIT
 
 _mmRender_wait1:
     INX
-    CPX #4
+    CPX #HWAIT
     BNE _mmRender_wait1
-    NOP
-    NOP
+    DELAY HDELAY1
     STA RESP0
     STA RESP1
 
@@ -44,9 +43,17 @@ _mmRender_wait1:
 
 _mmRender_wait2:
     INX
-    CPX #4
+    CPX #HWAIT
     BNE _mmRender_wait2
-    DELAY 7
+    DELAY HDELAY2
     STA RESBL
+
+    STA WSYNC
+    LDX #INDEXINIT
+
+_mmRender_wait3:
+    INX
+    CPX #HWAIT
+    BNE _mmRender_wait3
 
     RTS

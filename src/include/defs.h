@@ -39,7 +39,7 @@ VSYNC_SET   = 2 ; The value to push to the vsync register
 INDEXINIT   = 0 ; The value to initialize indexes to
 
 UPPAD_LIMIT = 14 ; The upper pad amount
-LOPAD_LIMIT = 26 ; The lower pad amount
+LOPAD_LIMIT = 25 ; The lower pad amount
 
 FULLWALL    = $FF
 
@@ -62,3 +62,7 @@ DNORTH = 0 ; The possible directions
 DSOUTH = 2
 DWEST = 1
 DEAST = 3
+
+HWAIT   = 5 ; The horizontal wait for the minimap
+HDELAY1 = 8 ; The amount of clocks for horizontal correction (minimap)
+HDELAY2 = 11 ; The amount of clocks for horizontal correction (player blip)
