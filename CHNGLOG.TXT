@@ -1,3 +1,10 @@
+########################Version II.II.MMXVII, Revision 0########################
+
+ * Improved the size of the veiwport
+ * Improved the map loading code
+ * Redid almost all of the rendering code
+ * Maps are now aligned to 256 bytes
+
 #########################Version I.I.MMXVII, Revision 1#########################
 
  * Added a changelog

@@ -1,3 +1,5 @@
+; The AND constants for render layer 3
+
 AND_W3S1P1  = %10000000
 AND_W3S2P1  = %11000000
 

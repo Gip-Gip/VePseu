@@ -37,7 +37,7 @@ Contributing will get you a permanent place in the AUTHORS.TXT
 
 ## Misc. Facts
  * The project was started in mid March of 2017
- * So far there are 856 total lines of code
+ * So far there are 1322 total lines of code(sloccount)
  * The Versioning scheme is [Inf. Version].[Annual Version].[Year] in roman
    numerals
      * The Infinitive Version is incremented every large change, such as when

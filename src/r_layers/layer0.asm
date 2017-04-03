@@ -1,10 +1,13 @@
-; Peripheral vision rendering (86 cycles)
-    X_POS_LOS ; 23 cycles
+; Peripheral vision rendering (54 cycles)
+
+    INCLUDE "include/ands_0.h"
+
+    X_POS_LOS ; 24 cycles
     LDA (mapPtr),Y
-    AND #LAYER0_AND_0
+    AND #AND_W0S1P1
     STA shadow1a
 
-    TYA ; Move twice the amount of a normal X_POS_GAIN
+    TYA ; Move twice the amount of a normal X_POS_GAIN (20 cycles)
     CLC
     ADC xGain
     ADC xGain
@@ -13,6 +16,6 @@
     SBC xLoss
     TAY
 
-    LDA (mapPtr),Y
-    AND #LAYER0_AND_1
+    LDA (mapPtr),Y ; 10 cycles
+    AND #AND_W0S1P2
     STA shadow1e
