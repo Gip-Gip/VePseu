@@ -2,27 +2,27 @@
 
     STA WSYNC
 
-    LDA SWCHA ; 9 or 10 cycles
+    LDA SWCHA
     AND #FFORD
     CMP #FFORD
     BEQ CIN1_NOPRESS
 
-    LDA playerPos ; 15 cycles
+    LDA playerPos
     SEC
     SBC yLoss
     CLC
     ADC yGain
     TAY
 
-    LDA (mapPtr),Y ; 10 or 11 cycles
+    LDA (mapPtr),Y
     CMP #NULL
     BNE CIN2
 
-    LDA fordPressed ; 5 or 6 cycles
+    LDA fordPressed
     CMP #NULL
     BNE CIN1_WAIT
 
-    STY playerPos ; 9 cycles
+    STY playerPos
     LDA #CWAITCNT
     STA fordPressed
     JMP CIN2
@@ -33,32 +33,32 @@ CIN1_WAIT:
     JMP CIN2
 
 CIN1_NOPRESS:
-    LDA #NULL ; 5 cycles
+    LDA #NULL
     STA fordPressed
 
 CIN2:
     STA WSYNC
-    LDA SWCHA ; 9 or 10 cycles
+    LDA SWCHA
     AND #FBACK
     CMP #FBACK
     BEQ CIN2_NOPRESS
 
-    LDA playerPos ; 15 cycles
+    LDA playerPos
     SEC
     SBC yGain
     CLC
     ADC yLoss
     TAY
 
-    LDA (mapPtr),Y ; 10 or 11 cycles
+    LDA (mapPtr),Y
     CMP #NULL
     BNE CIN3
 
-    LDA backPressed ; 5 or 6 cycles
+    LDA backPressed
     CMP #NULL
     BNE CIN2_WAIT
 
-    STY playerPos ; 9 cycles
+    STY playerPos
     LDA #CWAITCNT
     STA backPressed
     JMP CIN3
@@ -69,12 +69,12 @@ CIN2_WAIT:
     JMP CIN3
 
 CIN2_NOPRESS:
-    LDA #NULL ; 5 cycles
+    LDA #NULL
     STA backPressed
 
 CIN3:
     STA WSYNC
-    LDA SWCHA ; 9 or 10 cycles
+    LDA SWCHA
     AND #FLEFT
     CMP #FLEFT
     BEQ CIN3_NOPRESS
@@ -89,7 +89,7 @@ CIN3:
 
     STA direction
 
-    LDA #CWAITCNT ; 8 cycles
+    LDA #CWAITCNT
     STA rigtPressed
     JMP CIN4
 
@@ -99,27 +99,27 @@ CIN3_WAIT:
     JMP CIN4
 
 CIN3_NOPRESS:
-    LDA #NULL ; 5 cycles
+    LDA #NULL
     STA rigtPressed
 
 CIN4:
     STA WSYNC
-    LDA SWCHA ; 9 or 10 cycles
+    LDA SWCHA
     AND #FRIGT
     CMP #FRIGT
     BEQ CIN4_NOPRESS
 
-    LDA direction ; 10 cycles
+    LDA direction
     DEA
     AND #%00000011
 
-    LDX leftPressed ; 7 or 8 cycles
+    LDX leftPressed
     CPX #NULL
     BNE CIN4_WAIT
 
     STA direction
 
-    LDA #CWAITCNT ; 8 cycles
+    LDA #CWAITCNT
     STA leftPressed
     JMP CDIR1
 

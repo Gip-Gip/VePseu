@@ -1,0 +1,21 @@
+                            DRAW-CODE NAMING SCHEME:
+
+  dc_w1s1.asm
+  |   | |
+  |   | |- The shadow variant it draws (A = 1, B = 2, no shadow =0)
+  |   |
+  |   |- The wall it draws
+  |
+  |- Draw-code identifier
+
+                            AND MACRO NAMING SCHEME:
+
+  AND_W2S1P1
+  |    | | |
+  |    | | |- The AND variant number, screenwise left-right
+  |    | |
+  |    | |- The shadow variant (A = 1, B = 2, no shadow =0)
+  |    |
+  |    |- The layer it's for
+  |
+  |- The AND identifier

@@ -1,67 +1,50 @@
 ; VePseu's display kernel
 
-; This actually draws 121 lines to the screen instead of the usual 196. The
-; only reason being it looks better with the small horizontal size of the
-; picture
-
     JMP drawStart
 
-wait: ; Waits the right amount of time to blank the mirrored playfield
-    NOP
-    NOP
-    NOP
-    NOP
-    RTS
+;                        FILE/SUBROUTINE NAMING SCHEME:
+;
+; dc_w1s1.asm
+; |   | |
+; |   | |- The shadow variant it draws (A or B, 1 or 2)
+; |   |
+; |   |- The wall it draws
+; |
+; |- Draw-code identifier
 
-wait2: ; Waits the right amount of time to blank the mirrored playfield
-    RTS
-
+    INCLUDE "drawCode/dc_w1s1.asm"
+    INCLUDE "drawCode/dc_w1s2.asm"
+    INCLUDE "drawCode/dc_w2s1.asm"
+    INCLUDE "drawCode/dc_w2s2.asm"
+    INCLUDE "drawCode/dc_w3s1.asm"
+    INCLUDE "drawCode/dc_w3s2.asm"
+    INCLUDE "drawCode/dc_w4s0.asm"
+    INCLUDE "drawCode/mmDraw.asm"
 
 drawStart:
-    LDY #SHAD_AND_0
-    JSR firstWall
-    LDY #SHAD_AND_1
-    JSR firstWall
-    LDY #SHAD_AND_2
-    JSR firstWall
-    LDY #SHAD_AND_3
-    JSR firstWall
-    LDY #SHAD_AND_4
-    JSR firstWall
-    LDX #0
-    JSR otherWall
-    LDX #1
-    JSR otherWall
-    LDX #2
-    JSR otherWall
-    LDX #1
-    JSR otherWall
-    LDX #0
-    JSR otherWall
-    LDY #SHAD_AND_4
-    JSR firstWall
-    LDY #SHAD_AND_3
-    JSR firstWall
-    LDY #SHAD_AND_2
-    JSR firstWall
-    LDY #SHAD_AND_1
-    JSR firstWall
-    LDY #SHAD_AND_0
-    JSR firstWall
+    LDA #WCOLU
+    STA COLUPF
+
+    JSR dc_w1s1 ; Draw all the walls and their shadows!
+    JSR dc_w2s1
+    JSR dc_w2s2
+    JSR dc_w3s1
+    JSR dc_w3s2
+    JSR dc_w4s0
+    JSR dc_w4s0
+    JSR dc_w3s2
+    JSR dc_w3s1
+    JSR dc_w2s2
+    JSR dc_w2s1
+    JSR dc_w1s2
 
     LDA #NULL
     STA PF1
     STA PF2
 
-    STA WSYNC
-
     JSR mmDraw
 
     JMP stop
-
-    INCLUDE "drawCode/1stWall.asm"
-    INCLUDE "drawCode/othrWall.asm"
-    INCLUDE "drawCode/mmDraw.asm"
 
 stop:
 

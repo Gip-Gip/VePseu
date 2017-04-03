@@ -1,63 +1,66 @@
 ; VePseu's screen renderer
 
-; Remove the shadows incase only 1 wall is drawn (22 cycles)
-    LDA shadow1a
-    ORA wall1a
-    EOR wall1a
-    AND #%11111000
+; Remove the shadows incase only 1 wall is drawn
+
+    LDA shadow1a ; 12 cycles
+    ORA wall1
+    EOR wall1
     STA shadow1a
 
-    LDA shadow1b
-    ORA wall1b
-    EOR wall1b
-    AND #%11111000
+    LDA shadow1b ; 12 cycles
+    ORA wall1
+    EOR wall1
     STA shadow1b
 
+    LDA shadow1d ; 12 cycles
+    ORA wall1
+    EOR wall1
+    STA shadow1d
 
-; Merge walls (approx 381 cycles)
+    LDA shadow1e ; 12 cycles
+    ORA wall1
+    EOR wall1
+    STA shadow1e
 
-    LDX #1
+    LDA wall1 ; Copy wall one to the four addresses preceding it (15 cycles)
+    STA wall1+1
+    STA wall1+2
+    STA wall1+3
+    STA wall1+4
 
-mergeLoop:
+    LDX #INDEXINIT ; 2 cycles
 
-; Merge wall a
+scrRendLoop: ; Totals at 909 cycles
 
-    MRGWLL wall1a ; 17 cycles
+    LDA wall2a,X ; Merge walls (12 cycles)
+    ORA wall1,X
+    STA wall2a,X
 
-; Make shadow a
+    LDA shadow2aa,X ; Merge A shadows (12 cycles)
+    ORA shadow1a,X
+    STA shadow2aa,X
 
-    MKSHAD shadow1a ; 21 cycles
+    LDA shadow2ab,X ; Merge B shadows (12 cycles)
+    ORA shadow1a,X
+    STA shadow2ab,X
 
-; Overlap wall a
+    LDA wall2a,X ; Overlap walls (16 cycles)
+    ORA shadow1a,X
+    EOR shadow1a,X
+    STA wall2a,X
 
-    OVLWLL wall1a, shadow1a ; 22 cycles
+    LDA shadow2aa,X ; Overlap A shadows (16 cycles)
+    ORA wall2a,X
+    EOR wall2a,X
+    STA shadow2aa,X
 
-; Overlap shadow a
+    LDA shadow2ab,X ; Overlap B shadows (16 cycles)
+    ORA wall2a,X
+    EOR wall2a,X
+    STA shadow2ab,X
 
-    OVLSHD wall1a, shadow1a ; 21 cycles
+    INX ; Loop if we haven't rendered all the walls (6 or 7 cycles)
+    CPX #WALLCNT
+    BNE scrRendLoop
 
-; Merge wall b
-
-    MRGWLL wall1b ; 17 cycles
-
-; Make shadow b
-
-    MKSHAD shadow1b ; 21 cycles
-
-; Overlap wall b
-
-    OVLWLL wall1b, shadow1b ; 22 cycles
-
-; Overlap shadow b
-
-    OVLSHD wall1b, shadow1b ; 20 cycles
-
-; Loop if not done
-
-    INX ; 7 or 6 cycles
-    CPX #4
-    BNE mergeLoop
-
-    STA WSYNC
-
-; By this time, we know approx 6 scanlines have passed
+    STA WSYNC ; by the end of this we have used 14 scanlines

@@ -46,9 +46,7 @@ _mmRender_wait2:
     INX
     CPX #4
     BNE _mmRender_wait2
-    NOP
-    NOP
-    STA foo ; wait 3 cycles instead of 2
+    DELAY 7
     STA RESBL
 
     RTS

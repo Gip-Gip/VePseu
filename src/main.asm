@@ -8,6 +8,7 @@
 
     ORG $F000
 
+    INCLUDE "andtable.asm"
     INCLUDE "map.asm"
 
     ORG $F800
@@ -32,11 +33,11 @@ screenStart:
 
     STA VSYNC
 
-; Render everything (12 scanlines)
+; Render everything (23 scanlines)
 
-    INCLUDE "walrend.asm" ; 6 scanlines
+    INCLUDE "walrend.asm" ; 9 scanlines
 
-    INCLUDE "scrend.asm" ; 6 Scanlines
+    INCLUDE "scrend.asm" ; 14 Scanlines
 
 ; Pad!
 
@@ -53,7 +54,7 @@ upperPad:
 
 ; Draw everything
 
-    INCLUDE "dispkern.asm" ; 121 Scanlines
+    INCLUDE "dispkern.asm" ; 186 scanlines
 
 
 ; Start VBLANK
