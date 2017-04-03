@@ -272,40 +272,44 @@
      28 U028a		       00 00	   HADJ_A     =	$00	; The horizontal adjustment of each minimap sprite
      29 U028a		       00 10	   HADJ_B     =	$10
      30 U028a
-     31 U028a		       00 86	   WCOLU      =	$86	; The initial colour of walls
-     32 U028a		       00 82	   SCOLU      =	$82	; The initial colour of shadows
-     33 U028a		       00 0e	   MAPCOLU    =	$0E	; The colour of the map on the minimap
-     34 U028a		       00 cc	   PLYRCOLU   =	$CC	; The colour of the player on the minimap
-     35 U028a
-     36 U028a		       00 c2	   VBLANK_SET =	%11000010	; The value to push to the vblank register
-     37 U028a		       00 02	   VSYNC_SET  =	2	; The value to push to the vsync register
-     38 U028a
-     39 U028a		       00 00	   INDEXINIT  =	0	; The value to initialize indexes to
-     40 U028a
-     41 U028a		       00 0e	   UPPAD_LIMIT =	14	; The upper pad amount
-     42 U028a		       00 1a	   LOPAD_LIMIT =	26	; The lower pad amount
-     43 U028a
-     44 U028a		       00 ff	   FULLWALL   =	$FF
-     45 U028a
-     46 U028a		       00 10	   FFORD      =	%00010000	; The bit set when the joystick is in the forward position
-     47 U028a		       00 20	   FBACK      =	%00100000	; The bit set when the joystick is in the backward position
-     48 U028a		       00 80	   FLEFT      =	%10000000	; The bit set when the joystick is in the left position
-     49 U028a		       00 40	   FRIGT      =	%01000000	; The bit set when the joystick is in the right position
-     50 U028a		       00 80	   ITRIG      =	%10000000	; The bit set when the trigger is set
-     51 U028a
-     52 U028a		       00 01	   LOWSHAD_LIMIT =	1	; The limited size of the shadow at the bottem of the screen
-     53 U028a
-     54 U028a		       00 00	   cleanStart =	0	; The value to initialize X to in clearLoop
-     55 U028a		       00 00	   cleanEnd   =	0	; The value of X to stop the loop at in clearLoop
-     56 U028a
-     57 U028a		       00 ff	   stack      =	$FF	; The address of the stack
-     58 U028a
-     59 U028a		       00 0f	   CWAITCNT   =	#15	; The amount of frames to wait before input is repeated
+     31 U028a		       00 05	   HWAIT      =	5	; The horizontal wait for the minimap
+     32 U028a		       00 07	   HDELAY1    =	7	; The amount of clocks for horizontal correction (minimap)
+     33 U028a		       00 0a	   HDELAY2    =	10	; The amount of clocks for horizontal correction (player blip)
+     34 U028a
+     35 U028a		       00 86	   WCOLU      =	$86	; The initial colour of walls
+     36 U028a		       00 82	   SCOLU      =	$82	; The initial colour of shadows
+     37 U028a		       00 0e	   MAPCOLU    =	$0E	; The colour of the map on the minimap
+     38 U028a		       00 cc	   PLYRCOLU   =	$CC	; The colour of the player on the minimap
+     39 U028a
+     40 U028a		       00 c2	   VBLANK_SET =	%11000010	; The value to push to the vblank register
+     41 U028a		       00 02	   VSYNC_SET  =	2	; The value to push to the vsync register
+     42 U028a
+     43 U028a		       00 00	   INDEXINIT  =	0	; The value to initialize indexes to
+     44 U028a
+     45 U028a		       00 0e	   UPPAD_LIMIT =	14	; The upper pad amount
+     46 U028a		       00 19	   LOPAD_LIMIT =	25	; The lower pad amount
+     47 U028a
+     48 U028a		       00 ff	   FULLWALL   =	$FF
+     49 U028a
+     50 U028a		       00 10	   FFORD      =	%00010000	; The bit set when the joystick is in the forward position
+     51 U028a		       00 20	   FBACK      =	%00100000	; The bit set when the joystick is in the backward position
+     52 U028a		       00 80	   FLEFT      =	%10000000	; The bit set when the joystick is in the left position
+     53 U028a		       00 40	   FRIGT      =	%01000000	; The bit set when the joystick is in the right position
+     54 U028a		       00 80	   ITRIG      =	%10000000	; The bit set when the trigger is set
+     55 U028a
+     56 U028a		       00 01	   LOWSHAD_LIMIT =	1	; The limited size of the shadow at the bottem of the screen
+     57 U028a
+     58 U028a		       00 00	   cleanStart =	0	; The value to initialize X to in clearLoop
+     59 U028a		       00 00	   cleanEnd   =	0	; The value of X to stop the loop at in clearLoop
      60 U028a
-     61 U028a		       00 00	   DNORTH     =	0	; The possible directions
-     62 U028a		       00 02	   DSOUTH     =	2
-     63 U028a		       00 01	   DWEST      =	1
-     64 U028a		       00 03	   DEAST      =	3
+     61 U028a		       00 ff	   stack      =	$FF	; The address of the stack
+     62 U028a
+     63 U028a		       00 0f	   CWAITCNT   =	#15	; The amount of frames to wait before input is repeated
+     64 U028a
+     65 U028a		       00 00	   DNORTH     =	0	; The possible directions
+     66 U028a		       00 02	   DSOUTH     =	2
+     67 U028a		       00 01	   DWEST      =	1
+     68 U028a		       00 03	   DEAST      =	3
 ------- FILE include/vepseu.h
      11 U028a
      12 U028a
@@ -991,7 +995,7 @@
       0  fa21					      INCLUDE	"dispkern.asm"	; 186 scanlines
       1  fa21							; VePseu's display kernel
       2  fa21
-      3  fa21		       4c 7c fd 	      JMP	drawStart
+      3  fa21		       4c 83 fd 	      JMP	drawStart
       4  fa24
       5  fa24							;			  FILE/SUBROUTINE NAMING SCHEME:
       6  fa24							;
@@ -1813,411 +1817,427 @@
       1  fce2							; Render the minimap
       2  fce2
       3  fce2				   mmRender
-      4  fce2							; Set the colour of the player
-      5  fce2		       a9 cc		      LDA	#PLYRCOLU
-      6  fce4		       85 08		      STA	COLUPF
-      7  fce6							; Set the colour of the map
-      8  fce6		       a9 0e		      LDA	#MAPCOLU
-      9  fce8		       85 06		      STA	COLUP0
-     10  fcea		       85 07		      STA	COLUP1
-     11  fcec							; Get the player's position and translate it into horizontal movement
-     12  fcec		       a9 08		      LDA	#%00001000
-     13  fcee		       18		      CLC
-     14  fcef		       38		      SEC
-     15  fcf0		       e5 a9		      SBC	playerPos
-     16  fcf2		       0a		      ASL
-     17  fcf3		       0a		      ASL
-     18  fcf4		       0a		      ASL
-     19  fcf5		       0a		      ASL
-     20  fcf6		       85 b7		      STA	horzPos_plyr
-     21  fcf8
-     22  fcf8							; Set the map's position to the right values
-     23  fcf8		       a9 00		      LDA	#HADJ_A
-     24  fcfa		       85 b5		      STA	horzPos_mA
-     25  fcfc		       a9 10		      LDA	#HADJ_B
-     26  fcfe		       85 b6		      STA	horzPos_mB
-     27  fd00
-     28  fd00		       85 02		      STA	WSYNC
-     29  fd02		       a2 00		      LDX	#0
-     30  fd04
-     31  fd04				   _mmRender_wait1
-     32  fd04		       e8		      INX
-     33  fd05		       e0 04		      CPX	#4
-     34  fd07		       d0 fb		      BNE	_mmRender_wait1
-     35  fd09		       ea		      NOP
-     36  fd0a		       ea		      NOP
-     37  fd0b		       85 10		      STA	RESP0
-     38  fd0d		       85 11		      STA	RESP1
-     39  fd0f
-     40  fd0f		       a5 a9		      LDA	playerPos
-     41  fd11
-     42  fd11		       85 02		      STA	WSYNC
-     43  fd13		       a2 00		      LDX	#INDEXINIT
-     44  fd15
-     45  fd15				   _mmRender_wait2
-     46  fd15		       e8		      INX
-     47  fd16		       e0 04		      CPX	#4
-     48  fd18		       d0 fb		      BNE	_mmRender_wait2
-      0  fd1a					      DELAY	7
-      1  fd1a					      REPEAT	7/2 - 7%2
-      2  fd1a		       ea		      NOP
-      1  fd1a					      REPEND
-      2  fd1b		       ea		      NOP
-      3  fd1c					      REPEND
-      4  fd1c
-      5  fd1c					      REPEAT	7%2
-      6  fd1c		       85 30		      STA	DUMP
-      7  fd1e					      REPEND
-     50  fd1e		       85 14		      STA	RESBL
-     51  fd20
-     52  fd20		       60		      RTS
+      4  fce2		       85 2b		      STA	HMCLR
+      5  fce4							; Set the colour of the player
+      6  fce4		       a9 cc		      LDA	#PLYRCOLU
+      7  fce6		       85 08		      STA	COLUPF
+      8  fce8							; Set the colour of the map
+      9  fce8		       a9 0e		      LDA	#MAPCOLU
+     10  fcea		       85 06		      STA	COLUP0
+     11  fcec		       85 07		      STA	COLUP1
+     12  fcee							; Get the player's position and translate it into horizontal movement
+     13  fcee		       a9 08		      LDA	#%00001000
+     14  fcf0		       18		      CLC
+     15  fcf1		       38		      SEC
+     16  fcf2		       e5 a9		      SBC	playerPos
+     17  fcf4		       0a		      ASL
+     18  fcf5		       0a		      ASL
+     19  fcf6		       0a		      ASL
+     20  fcf7		       0a		      ASL
+     21  fcf8		       85 b7		      STA	horzPos_plyr
+     22  fcfa
+     23  fcfa							; Set the map's position to the right values
+     24  fcfa		       a9 00		      LDA	#HADJ_A
+     25  fcfc		       85 b5		      STA	horzPos_mA
+     26  fcfe		       a9 10		      LDA	#HADJ_B
+     27  fd00		       85 b6		      STA	horzPos_mB
+     28  fd02
+     29  fd02		       85 02		      STA	WSYNC
+     30  fd04		       a2 00		      LDX	#INDEXINIT
+     31  fd06
+     32  fd06				   _mmRender_wait1
+     33  fd06		       e8		      INX
+     34  fd07		       e0 05		      CPX	#HWAIT
+     35  fd09		       d0 fb		      BNE	_mmRender_wait1
+      0  fd0b					      DELAY	HDELAY1
+      1  fd0b					      REPEAT	HDELAY1/2 - HDELAY1%2
+      2  fd0b		       ea		      NOP
+      1  fd0b					      REPEND
+      2  fd0c		       ea		      NOP
+      3  fd0d					      REPEND
+      4  fd0d
+      5  fd0d					      REPEAT	HDELAY1%2
+      6  fd0d		       85 30		      STA	DUMP
+      7  fd0f					      REPEND
+     37  fd0f		       85 10		      STA	RESP0
+     38  fd11		       85 11		      STA	RESP1
+     39  fd13
+     40  fd13		       a5 a9		      LDA	playerPos
+     41  fd15
+     42  fd15		       85 02		      STA	WSYNC
+     43  fd17		       a2 00		      LDX	#INDEXINIT
+     44  fd19
+     45  fd19				   _mmRender_wait2
+     46  fd19		       e8		      INX
+     47  fd1a		       e0 05		      CPX	#HWAIT
+     48  fd1c		       d0 fb		      BNE	_mmRender_wait2
+      0  fd1e					      DELAY	HDELAY2
+      1  fd1e					      REPEAT	HDELAY2/2 - HDELAY2%2
+      2  fd1e		       ea		      NOP
+      1  fd1e					      REPEND
+      2  fd1f		       ea		      NOP
+      1  fd1f					      REPEND
+      2  fd20		       ea		      NOP
+      1  fd20					      REPEND
+      2  fd21		       ea		      NOP
+      1  fd21					      REPEND
+      2  fd22		       ea		      NOP
+      3  fd23					      REPEND
+      4  fd23
+      5  fd23				  -	      REPEAT	HDELAY2%2
+      6  fd23				  -	      STA	DUMP
+      7  fd23					      REPEND
+     50  fd23		       85 14		      STA	RESBL
+     51  fd25
+     52  fd25		       60		      RTS
 ------- FILE drawCode/mmDraw.asm
-      4  fd21
-      5  fd21				   mmDraw
-      6  fd21		       a9 00		      LDA	#0
-      7  fd23
-      8  fd23		       20 e2 fc 	      JSR	mmRender
-      9  fd26
-     10  fd26							; Load the player's position
-     11  fd26
-     12  fd26		       a5 b7		      LDA	horzPos_plyr
-     13  fd28		       85 24		      STA	HMBL
-     14  fd2a		       a5 b5		      LDA	horzPos_mA
-     15  fd2c		       85 20		      STA	HMP0
-     16  fd2e		       a5 b6		      LDA	horzPos_mB
-     17  fd30		       85 21		      STA	HMP1
-     18  fd32
-     19  fd32		       a9 00		      LDA	#NULL
-     20  fd34		       85 1b		      STA	GRP0
-     21  fd36		       85 1c		      STA	GRP1
-     22  fd38		       85 2a		      STA	HMOVE
-     23  fd3a
-     24  fd3a		       a0 00		      LDY	#INDEXINIT
-     25  fd3c		       a6 a9		      LDX	playerPos
-     26  fd3e
-     27  fd3e				   _mmLoop
-     28  fd3e		       85 02		      STA	WSYNC
-     29  fd40
-     30  fd40		       b1 ba		      LDA	(miniMapPtr),Y
-     31  fd42		       85 1b		      STA	GRP0
-     32  fd44		       c8		      INY
-     33  fd45		       b1 ba		      LDA	(miniMapPtr),Y
-     34  fd47		       85 1c		      STA	GRP1
-     35  fd49		       c8		      INY
-     36  fd4a
-     37  fd4a		       8a		      TXA
-     38  fd4b		       38		      SEC
-     39  fd4c		       e5 aa		      SBC	mapWidth
-     40  fd4e		       aa		      TAX
-     41  fd4f		       29 f0		      AND	#%11110000
-     42  fd51
-     43  fd51		       c9 00		      CMP	#0
-     44  fd53		       d0 0a		      BNE	_noDraw
-     45  fd55
-     46  fd55		       a9 02		      LDA	#2
-     47  fd57		       85 1f		      STA	ENABL
-     48  fd59		       85 b8		      STA	drawingPlyr
-     49  fd5b		       a9 01		      LDA	#1
-     50  fd5d		       85 27		      STA	VDELBL
-     51  fd5f
-     52  fd5f				   _noDraw
-     53  fd5f
-     54  fd5f		       a5 b8		      LDA	drawingPlyr
-     55  fd61		       85 1f		      STA	ENABL
-     56  fd63		       a9 00		      LDA	#0
-     57  fd65		       85 b8		      STA	drawingPlyr
-     58  fd67		       c0 20		      CPY	#32
-     59  fd69		       d0 d3		      BNE	_mmLoop
-     60  fd6b
-     61  fd6b		       a9 00		      LDA	#0
-     62  fd6d		       85 1f		      STA	ENABL
-     63  fd6f
-     64  fd6f		       85 02		      STA	WSYNC
-     65  fd71
-     66  fd71		       a9 00		      LDA	#NULL
-     67  fd73		       85 1b		      STA	GRP0
-     68  fd75		       85 1c		      STA	GRP1
-     69  fd77		       85 06		      STA	COLUP0
-     70  fd79		       85 07		      STA	COLUP1
-     71  fd7b
-     72  fd7b		       60		      RTS
+      4  fd26
+      5  fd26				   mmDraw
+      6  fd26		       a9 00		      LDA	#0
+      7  fd28
+      8  fd28		       20 e2 fc 	      JSR	mmRender
+      9  fd2b
+     10  fd2b							; Load the player's position
+     11  fd2b
+     12  fd2b		       a5 b7		      LDA	horzPos_plyr
+     13  fd2d		       85 24		      STA	HMBL
+     14  fd2f		       a5 b5		      LDA	horzPos_mA
+     15  fd31		       85 20		      STA	HMP0
+     16  fd33		       a5 b6		      LDA	horzPos_mB
+     17  fd35		       85 21		      STA	HMP1
+     18  fd37
+     19  fd37		       a9 00		      LDA	#NULL
+     20  fd39		       85 1b		      STA	GRP0
+     21  fd3b		       85 1c		      STA	GRP1
+     22  fd3d		       85 02		      STA	WSYNC
+     23  fd3f		       85 2a		      STA	HMOVE
+     24  fd41
+     25  fd41		       a0 00		      LDY	#INDEXINIT
+     26  fd43		       a6 a9		      LDX	playerPos
+     27  fd45
+     28  fd45				   _mmLoop
+     29  fd45		       85 02		      STA	WSYNC
+     30  fd47
+     31  fd47		       b1 ba		      LDA	(miniMapPtr),Y
+     32  fd49		       85 1b		      STA	GRP0
+     33  fd4b		       c8		      INY
+     34  fd4c		       b1 ba		      LDA	(miniMapPtr),Y
+     35  fd4e		       85 1c		      STA	GRP1
+     36  fd50		       c8		      INY
+     37  fd51
+     38  fd51		       8a		      TXA
+     39  fd52		       38		      SEC
+     40  fd53		       e5 aa		      SBC	mapWidth
+     41  fd55		       aa		      TAX
+     42  fd56		       29 f0		      AND	#%11110000
+     43  fd58
+     44  fd58		       c9 00		      CMP	#0
+     45  fd5a		       d0 0a		      BNE	_noDraw
+     46  fd5c
+     47  fd5c		       a9 02		      LDA	#2
+     48  fd5e		       85 1f		      STA	ENABL
+     49  fd60		       85 b8		      STA	drawingPlyr
+     50  fd62		       a9 01		      LDA	#1
+     51  fd64		       85 27		      STA	VDELBL
+     52  fd66
+     53  fd66				   _noDraw
+     54  fd66
+     55  fd66		       a5 b8		      LDA	drawingPlyr
+     56  fd68		       85 1f		      STA	ENABL
+     57  fd6a		       a9 00		      LDA	#0
+     58  fd6c		       85 b8		      STA	drawingPlyr
+     59  fd6e		       c0 20		      CPY	#32
+     60  fd70		       d0 d3		      BNE	_mmLoop
+     61  fd72
+     62  fd72		       a9 00		      LDA	#0
+     63  fd74		       85 1f		      STA	ENABL
+     64  fd76
+     65  fd76		       85 02		      STA	WSYNC
+     66  fd78
+     67  fd78		       a9 00		      LDA	#NULL
+     68  fd7a		       85 1b		      STA	GRP0
+     69  fd7c		       85 1c		      STA	GRP1
+     70  fd7e		       85 06		      STA	COLUP0
+     71  fd80		       85 07		      STA	COLUP1
+     72  fd82
+     73  fd82		       60		      RTS
 ------- FILE dispkern.asm
-     23  fd7c
-     24  fd7c				   drawStart
-     25  fd7c		       a9 86		      LDA	#WCOLU
-     26  fd7e		       85 08		      STA	COLUPF
-     27  fd80
-     28  fd80		       20 24 fa 	      JSR	dc_w1s1	; Draw all the walls and their shadows!
-     29  fd83		       20 e9 fa 	      JSR	dc_w2s1
-     30  fd86		       20 4c fb 	      JSR	dc_w2s2
-     31  fd89		       20 b0 fb 	      JSR	dc_w3s1
-     32  fd8c		       20 15 fc 	      JSR	dc_w3s2
-     33  fd8f		       20 79 fc 	      JSR	dc_w4s0
-     34  fd92		       20 79 fc 	      JSR	dc_w4s0
-     35  fd95		       20 15 fc 	      JSR	dc_w3s2
-     36  fd98		       20 b0 fb 	      JSR	dc_w3s1
-     37  fd9b		       20 4c fb 	      JSR	dc_w2s2
-     38  fd9e		       20 e9 fa 	      JSR	dc_w2s1
-     39  fda1		       20 85 fa 	      JSR	dc_w1s2
-     40  fda4
-     41  fda4		       a9 00		      LDA	#NULL
-     42  fda6		       85 0e		      STA	PF1
-     43  fda8		       85 0f		      STA	PF2
-     44  fdaa
-     45  fdaa		       20 21 fd 	      JSR	mmDraw
-     46  fdad
-     47  fdad		       4c b0 fd 	      JMP	stop
-     48  fdb0
-     49  fdb0				   stop
-     50  fdb0
-     51  fdb0
-     52  fdb0		       85 09		      STA	COLUBK
+     23  fd83
+     24  fd83				   drawStart
+     25  fd83		       a9 86		      LDA	#WCOLU
+     26  fd85		       85 08		      STA	COLUPF
+     27  fd87
+     28  fd87		       20 24 fa 	      JSR	dc_w1s1	; Draw all the walls and their shadows!
+     29  fd8a		       20 e9 fa 	      JSR	dc_w2s1
+     30  fd8d		       20 4c fb 	      JSR	dc_w2s2
+     31  fd90		       20 b0 fb 	      JSR	dc_w3s1
+     32  fd93		       20 15 fc 	      JSR	dc_w3s2
+     33  fd96		       20 79 fc 	      JSR	dc_w4s0
+     34  fd99		       20 79 fc 	      JSR	dc_w4s0
+     35  fd9c		       20 15 fc 	      JSR	dc_w3s2
+     36  fd9f		       20 b0 fb 	      JSR	dc_w3s1
+     37  fda2		       20 4c fb 	      JSR	dc_w2s2
+     38  fda5		       20 e9 fa 	      JSR	dc_w2s1
+     39  fda8		       20 85 fa 	      JSR	dc_w1s2
+     40  fdab
+     41  fdab		       a9 00		      LDA	#NULL
+     42  fdad		       85 0e		      STA	PF1
+     43  fdaf		       85 0f		      STA	PF2
+     44  fdb1
+     45  fdb1		       20 26 fd 	      JSR	mmDraw
+     46  fdb4
+     47  fdb4		       4c b7 fd 	      JMP	stop
+     48  fdb7
+     49  fdb7				   stop
+     50  fdb7
+     51  fdb7
+     52  fdb7		       85 09		      STA	COLUBK
 ------- FILE main.asm
-     58  fdb2
-     59  fdb2
-     60  fdb2							; Start VBLANK
-     61  fdb2
-     62  fdb2		       a9 c2		      LDA	#VBLANK_SET
-     63  fdb4		       85 01		      STA	VBLANK
-     64  fdb6
-     65  fdb6							; Process input
-     66  fdb6
+     58  fdb9
+     59  fdb9
+     60  fdb9							; Start VBLANK
+     61  fdb9
+     62  fdb9		       a9 c2		      LDA	#VBLANK_SET
+     63  fdbb		       85 01		      STA	VBLANK
+     64  fdbd
+     65  fdbd							; Process input
+     66  fdbd
 ------- FILE input.asm LEVEL 2 PASS 2
-      0  fdb6					      INCLUDE	"input.asm"
-      1  fdb6							; VePseu's controller input
-      2  fdb6
-      3  fdb6		       85 02		      STA	WSYNC
-      4  fdb8
-      5  fdb8		       ad 80 02 	      LDA	SWCHA
-      6  fdbb		       29 10		      AND	#FFORD
-      7  fdbd		       c9 10		      CMP	#FFORD
-      8  fdbf		       f0 26		      BEQ	CIN1_NOPRESS
-      9  fdc1
-     10  fdc1		       a5 a9		      LDA	playerPos
-     11  fdc3		       38		      SEC
-     12  fdc4		       e5 ae		      SBC	yLoss
-     13  fdc6		       18		      CLC
-     14  fdc7		       65 ad		      ADC	yGain
-     15  fdc9		       a8		      TAY
-     16  fdca
-     17  fdca		       b1 bc		      LDA	(mapPtr),Y
-     18  fdcc		       c9 00		      CMP	#NULL
-     19  fdce		       d0 1b		      BNE	CIN2
-     20  fdd0
-     21  fdd0		       a5 af		      LDA	fordPressed
-     22  fdd2		       c9 00		      CMP	#NULL
-     23  fdd4		       d0 09		      BNE	CIN1_WAIT
-     24  fdd6
-     25  fdd6		       84 a9		      STY	playerPos
-     26  fdd8		       a9 0f		      LDA	#CWAITCNT
-     27  fdda		       85 af		      STA	fordPressed
-     28  fddc		       4c eb fd 	      JMP	CIN2
-     29  fddf
-     30  fddf				   CIN1_WAIT
-      0  fddf					      DEA
-      1  fddf		       38		      SEC
-      2  fde0		       e9 01		      SBC	#1
-     32  fde2		       85 af		      STA	fordPressed
-     33  fde4		       4c eb fd 	      JMP	CIN2
-     34  fde7
-     35  fde7				   CIN1_NOPRESS
-     36  fde7		       a9 00		      LDA	#NULL
-     37  fde9		       85 af		      STA	fordPressed
-     38  fdeb
-     39  fdeb				   CIN2
-     40  fdeb		       85 02		      STA	WSYNC
-     41  fded		       ad 80 02 	      LDA	SWCHA
-     42  fdf0		       29 20		      AND	#FBACK
-     43  fdf2		       c9 20		      CMP	#FBACK
-     44  fdf4		       f0 26		      BEQ	CIN2_NOPRESS
-     45  fdf6
-     46  fdf6		       a5 a9		      LDA	playerPos
-     47  fdf8		       38		      SEC
-     48  fdf9		       e5 ad		      SBC	yGain
-     49  fdfb		       18		      CLC
-     50  fdfc		       65 ae		      ADC	yLoss
-     51  fdfe		       a8		      TAY
-     52  fdff
-     53  fdff		       b1 bc		      LDA	(mapPtr),Y
-     54  fe01		       c9 00		      CMP	#NULL
-     55  fe03		       d0 1b		      BNE	CIN3
-     56  fe05
-     57  fe05		       a5 b0		      LDA	backPressed
-     58  fe07		       c9 00		      CMP	#NULL
-     59  fe09		       d0 09		      BNE	CIN2_WAIT
-     60  fe0b
-     61  fe0b		       84 a9		      STY	playerPos
-     62  fe0d		       a9 0f		      LDA	#CWAITCNT
-     63  fe0f		       85 b0		      STA	backPressed
-     64  fe11		       4c 20 fe 	      JMP	CIN3
-     65  fe14
-     66  fe14				   CIN2_WAIT
-      0  fe14					      DEA
-      1  fe14		       38		      SEC
-      2  fe15		       e9 01		      SBC	#1
-     68  fe17		       85 b0		      STA	backPressed
-     69  fe19		       4c 20 fe 	      JMP	CIN3
-     70  fe1c
-     71  fe1c				   CIN2_NOPRESS
-     72  fe1c		       a9 00		      LDA	#NULL
-     73  fe1e		       85 b0		      STA	backPressed
-     74  fe20
-     75  fe20				   CIN3
-     76  fe20		       85 02		      STA	WSYNC
-     77  fe22		       ad 80 02 	      LDA	SWCHA
-     78  fe25		       29 80		      AND	#FLEFT
-     79  fe27		       c9 80		      CMP	#FLEFT
-     80  fe29		       f0 1c		      BEQ	CIN3_NOPRESS
-     81  fe2b
-     82  fe2b		       a5 b9		      LDA	direction
-      0  fe2d					      INA
-      1  fe2d		       18		      CLC
-      2  fe2e		       69 01		      ADC	#1
-     84  fe30		       29 03		      AND	#%00000011
-     85  fe32
-     86  fe32		       a6 b2		      LDX	rigtPressed
-     87  fe34		       e0 00		      CPX	#NULL
-     88  fe36		       d0 09		      BNE	CIN3_WAIT
-     89  fe38
-     90  fe38		       85 b9		      STA	direction
-     91  fe3a
-     92  fe3a		       a9 0f		      LDA	#CWAITCNT
-     93  fe3c		       85 b2		      STA	rigtPressed
-     94  fe3e		       4c 4b fe 	      JMP	CIN4
-     95  fe41
-     96  fe41				   CIN3_WAIT
-     97  fe41		       ca		      DEX
-     98  fe42		       86 b2		      STX	rigtPressed
-     99  fe44		       4c 4b fe 	      JMP	CIN4
-    100  fe47
-    101  fe47				   CIN3_NOPRESS
-    102  fe47		       a9 00		      LDA	#NULL
-    103  fe49		       85 b2		      STA	rigtPressed
-    104  fe4b
-    105  fe4b				   CIN4
-    106  fe4b		       85 02		      STA	WSYNC
-    107  fe4d		       ad 80 02 	      LDA	SWCHA
-    108  fe50		       29 40		      AND	#FRIGT
-    109  fe52		       c9 40		      CMP	#FRIGT
-    110  fe54		       f0 1c		      BEQ	CIN4_NOPRESS
-    111  fe56
-    112  fe56		       a5 b9		      LDA	direction
-      0  fe58					      DEA
-      1  fe58		       38		      SEC
-      2  fe59		       e9 01		      SBC	#1
-    114  fe5b		       29 03		      AND	#%00000011
-    115  fe5d
-    116  fe5d		       a6 b1		      LDX	leftPressed
-    117  fe5f		       e0 00		      CPX	#NULL
-    118  fe61		       d0 09		      BNE	CIN4_WAIT
-    119  fe63
-    120  fe63		       85 b9		      STA	direction
-    121  fe65
-    122  fe65		       a9 0f		      LDA	#CWAITCNT
-    123  fe67		       85 b1		      STA	leftPressed
-    124  fe69		       4c 76 fe 	      JMP	CDIR1
-    125  fe6c
-    126  fe6c				   CIN4_WAIT
-    127  fe6c		       ca		      DEX
-    128  fe6d		       86 b1		      STX	leftPressed
-    129  fe6f		       4c 76 fe 	      JMP	CDIR1
-    130  fe72
-    131  fe72				   CIN4_NOPRESS
-    132  fe72		       a9 00		      LDA	#NULL
-    133  fe74		       85 b1		      STA	leftPressed
-    134  fe76
-    135  fe76				   CDIR1
-    136  fe76		       85 02		      STA	WSYNC
-    137  fe78		       a5 b9		      LDA	direction
-    138  fe7a		       c9 00		      CMP	#DNORTH
-    139  fe7c		       d0 16		      BNE	CDIR2
-    140  fe7e
-    141  fe7e		       a5 aa		      LDA	mapWidth
-    142  fe80		       85 ae		      STA	yLoss
-    143  fe82		       a9 01		      LDA	#ONE
-    144  fe84		       85 ab		      STA	xGain
-    145  fe86		       a9 86		      LDA	#WCOLU
-    146  fe88		       85 b3		      STA	wallColour
-    147  fe8a		       a9 82		      LDA	#SCOLU
-    148  fe8c		       85 b4		      STA	shadowColour
-    149  fe8e		       a9 00		      LDA	#NULL
-    150  fe90		       85 ad		      STA	yGain
-    151  fe92		       85 ac		      STA	xLoss
-    152  fe94
-    153  fe94				   CDIR2
-    154  fe94		       a5 b9		      LDA	direction
-    155  fe96		       c9 02		      CMP	#DSOUTH
-    156  fe98		       d0 16		      BNE	CDIR3
-    157  fe9a
-    158  fe9a		       a5 aa		      LDA	mapWidth
-    159  fe9c		       85 ad		      STA	yGain
-    160  fe9e		       a9 01		      LDA	#ONE
-    161  fea0		       85 ac		      STA	xLoss
-    162  fea2		       a9 86		      LDA	#WCOLU
-    163  fea4		       85 b3		      STA	wallColour
-    164  fea6		       a9 82		      LDA	#SCOLU
-    165  fea8		       85 b4		      STA	shadowColour
-    166  feaa		       a9 00		      LDA	#NULL
-    167  feac		       85 ae		      STA	yLoss
-    168  feae		       85 ab		      STA	xGain
-    169  feb0
-    170  feb0				   CDIR3
-    171  feb0		       a5 b9		      LDA	direction
-    172  feb2		       c9 01		      CMP	#DWEST
-    173  feb4		       d0 16		      BNE	CDIR4
-    174  feb6
-    175  feb6		       a5 aa		      LDA	mapWidth
-    176  feb8		       85 ab		      STA	xGain
-    177  feba		       a9 01		      LDA	#ONE
-    178  febc		       85 ad		      STA	yGain
-    179  febe		       a9 82		      LDA	#SCOLU
-    180  fec0		       85 b3		      STA	wallColour
-    181  fec2		       a9 86		      LDA	#WCOLU
-    182  fec4		       85 b4		      STA	shadowColour
-    183  fec6		       a9 00		      LDA	#NULL
-    184  fec8		       85 ae		      STA	yLoss
-    185  feca		       85 ac		      STA	xLoss
-    186  fecc
-    187  fecc				   CDIR4
-    188  fecc		       a5 b9		      LDA	direction
-    189  fece		       c9 03		      CMP	#DEAST
-    190  fed0		       d0 16		      BNE	CEND
-    191  fed2
-    192  fed2		       a5 aa		      LDA	mapWidth
-    193  fed4		       85 ac		      STA	xLoss
-    194  fed6		       a9 01		      LDA	#ONE
-    195  fed8		       85 ae		      STA	yLoss
-    196  feda		       a9 82		      LDA	#SCOLU
-    197  fedc		       85 b3		      STA	wallColour
-    198  fede		       a9 86		      LDA	#WCOLU
-    199  fee0		       85 b4		      STA	shadowColour
-    200  fee2		       a9 00		      LDA	#NULL
-    201  fee4		       85 ad		      STA	yGain
-    202  fee6		       85 ab		      STA	xGain
-    203  fee8
-    204  fee8				   CEND
-    205  fee8		       85 02		      STA	WSYNC
+      0  fdbd					      INCLUDE	"input.asm"
+      1  fdbd							; VePseu's controller input
+      2  fdbd
+      3  fdbd		       85 02		      STA	WSYNC
+      4  fdbf
+      5  fdbf		       ad 80 02 	      LDA	SWCHA
+      6  fdc2		       29 10		      AND	#FFORD
+      7  fdc4		       c9 10		      CMP	#FFORD
+      8  fdc6		       f0 26		      BEQ	CIN1_NOPRESS
+      9  fdc8
+     10  fdc8		       a5 a9		      LDA	playerPos
+     11  fdca		       38		      SEC
+     12  fdcb		       e5 ae		      SBC	yLoss
+     13  fdcd		       18		      CLC
+     14  fdce		       65 ad		      ADC	yGain
+     15  fdd0		       a8		      TAY
+     16  fdd1
+     17  fdd1		       b1 bc		      LDA	(mapPtr),Y
+     18  fdd3		       c9 00		      CMP	#NULL
+     19  fdd5		       d0 1b		      BNE	CIN2
+     20  fdd7
+     21  fdd7		       a5 af		      LDA	fordPressed
+     22  fdd9		       c9 00		      CMP	#NULL
+     23  fddb		       d0 09		      BNE	CIN1_WAIT
+     24  fddd
+     25  fddd		       84 a9		      STY	playerPos
+     26  fddf		       a9 0f		      LDA	#CWAITCNT
+     27  fde1		       85 af		      STA	fordPressed
+     28  fde3		       4c f2 fd 	      JMP	CIN2
+     29  fde6
+     30  fde6				   CIN1_WAIT
+      0  fde6					      DEA
+      1  fde6		       38		      SEC
+      2  fde7		       e9 01		      SBC	#1
+     32  fde9		       85 af		      STA	fordPressed
+     33  fdeb		       4c f2 fd 	      JMP	CIN2
+     34  fdee
+     35  fdee				   CIN1_NOPRESS
+     36  fdee		       a9 00		      LDA	#NULL
+     37  fdf0		       85 af		      STA	fordPressed
+     38  fdf2
+     39  fdf2				   CIN2
+     40  fdf2		       85 02		      STA	WSYNC
+     41  fdf4		       ad 80 02 	      LDA	SWCHA
+     42  fdf7		       29 20		      AND	#FBACK
+     43  fdf9		       c9 20		      CMP	#FBACK
+     44  fdfb		       f0 26		      BEQ	CIN2_NOPRESS
+     45  fdfd
+     46  fdfd		       a5 a9		      LDA	playerPos
+     47  fdff		       38		      SEC
+     48  fe00		       e5 ad		      SBC	yGain
+     49  fe02		       18		      CLC
+     50  fe03		       65 ae		      ADC	yLoss
+     51  fe05		       a8		      TAY
+     52  fe06
+     53  fe06		       b1 bc		      LDA	(mapPtr),Y
+     54  fe08		       c9 00		      CMP	#NULL
+     55  fe0a		       d0 1b		      BNE	CIN3
+     56  fe0c
+     57  fe0c		       a5 b0		      LDA	backPressed
+     58  fe0e		       c9 00		      CMP	#NULL
+     59  fe10		       d0 09		      BNE	CIN2_WAIT
+     60  fe12
+     61  fe12		       84 a9		      STY	playerPos
+     62  fe14		       a9 0f		      LDA	#CWAITCNT
+     63  fe16		       85 b0		      STA	backPressed
+     64  fe18		       4c 27 fe 	      JMP	CIN3
+     65  fe1b
+     66  fe1b				   CIN2_WAIT
+      0  fe1b					      DEA
+      1  fe1b		       38		      SEC
+      2  fe1c		       e9 01		      SBC	#1
+     68  fe1e		       85 b0		      STA	backPressed
+     69  fe20		       4c 27 fe 	      JMP	CIN3
+     70  fe23
+     71  fe23				   CIN2_NOPRESS
+     72  fe23		       a9 00		      LDA	#NULL
+     73  fe25		       85 b0		      STA	backPressed
+     74  fe27
+     75  fe27				   CIN3
+     76  fe27		       85 02		      STA	WSYNC
+     77  fe29		       ad 80 02 	      LDA	SWCHA
+     78  fe2c		       29 80		      AND	#FLEFT
+     79  fe2e		       c9 80		      CMP	#FLEFT
+     80  fe30		       f0 1c		      BEQ	CIN3_NOPRESS
+     81  fe32
+     82  fe32		       a5 b9		      LDA	direction
+      0  fe34					      INA
+      1  fe34		       18		      CLC
+      2  fe35		       69 01		      ADC	#1
+     84  fe37		       29 03		      AND	#%00000011
+     85  fe39
+     86  fe39		       a6 b2		      LDX	rigtPressed
+     87  fe3b		       e0 00		      CPX	#NULL
+     88  fe3d		       d0 09		      BNE	CIN3_WAIT
+     89  fe3f
+     90  fe3f		       85 b9		      STA	direction
+     91  fe41
+     92  fe41		       a9 0f		      LDA	#CWAITCNT
+     93  fe43		       85 b2		      STA	rigtPressed
+     94  fe45		       4c 52 fe 	      JMP	CIN4
+     95  fe48
+     96  fe48				   CIN3_WAIT
+     97  fe48		       ca		      DEX
+     98  fe49		       86 b2		      STX	rigtPressed
+     99  fe4b		       4c 52 fe 	      JMP	CIN4
+    100  fe4e
+    101  fe4e				   CIN3_NOPRESS
+    102  fe4e		       a9 00		      LDA	#NULL
+    103  fe50		       85 b2		      STA	rigtPressed
+    104  fe52
+    105  fe52				   CIN4
+    106  fe52		       85 02		      STA	WSYNC
+    107  fe54		       ad 80 02 	      LDA	SWCHA
+    108  fe57		       29 40		      AND	#FRIGT
+    109  fe59		       c9 40		      CMP	#FRIGT
+    110  fe5b		       f0 1c		      BEQ	CIN4_NOPRESS
+    111  fe5d
+    112  fe5d		       a5 b9		      LDA	direction
+      0  fe5f					      DEA
+      1  fe5f		       38		      SEC
+      2  fe60		       e9 01		      SBC	#1
+    114  fe62		       29 03		      AND	#%00000011
+    115  fe64
+    116  fe64		       a6 b1		      LDX	leftPressed
+    117  fe66		       e0 00		      CPX	#NULL
+    118  fe68		       d0 09		      BNE	CIN4_WAIT
+    119  fe6a
+    120  fe6a		       85 b9		      STA	direction
+    121  fe6c
+    122  fe6c		       a9 0f		      LDA	#CWAITCNT
+    123  fe6e		       85 b1		      STA	leftPressed
+    124  fe70		       4c 7d fe 	      JMP	CDIR1
+    125  fe73
+    126  fe73				   CIN4_WAIT
+    127  fe73		       ca		      DEX
+    128  fe74		       86 b1		      STX	leftPressed
+    129  fe76		       4c 7d fe 	      JMP	CDIR1
+    130  fe79
+    131  fe79				   CIN4_NOPRESS
+    132  fe79		       a9 00		      LDA	#NULL
+    133  fe7b		       85 b1		      STA	leftPressed
+    134  fe7d
+    135  fe7d				   CDIR1
+    136  fe7d		       85 02		      STA	WSYNC
+    137  fe7f		       a5 b9		      LDA	direction
+    138  fe81		       c9 00		      CMP	#DNORTH
+    139  fe83		       d0 16		      BNE	CDIR2
+    140  fe85
+    141  fe85		       a5 aa		      LDA	mapWidth
+    142  fe87		       85 ae		      STA	yLoss
+    143  fe89		       a9 01		      LDA	#ONE
+    144  fe8b		       85 ab		      STA	xGain
+    145  fe8d		       a9 86		      LDA	#WCOLU
+    146  fe8f		       85 b3		      STA	wallColour
+    147  fe91		       a9 82		      LDA	#SCOLU
+    148  fe93		       85 b4		      STA	shadowColour
+    149  fe95		       a9 00		      LDA	#NULL
+    150  fe97		       85 ad		      STA	yGain
+    151  fe99		       85 ac		      STA	xLoss
+    152  fe9b
+    153  fe9b				   CDIR2
+    154  fe9b		       a5 b9		      LDA	direction
+    155  fe9d		       c9 02		      CMP	#DSOUTH
+    156  fe9f		       d0 16		      BNE	CDIR3
+    157  fea1
+    158  fea1		       a5 aa		      LDA	mapWidth
+    159  fea3		       85 ad		      STA	yGain
+    160  fea5		       a9 01		      LDA	#ONE
+    161  fea7		       85 ac		      STA	xLoss
+    162  fea9		       a9 86		      LDA	#WCOLU
+    163  feab		       85 b3		      STA	wallColour
+    164  fead		       a9 82		      LDA	#SCOLU
+    165  feaf		       85 b4		      STA	shadowColour
+    166  feb1		       a9 00		      LDA	#NULL
+    167  feb3		       85 ae		      STA	yLoss
+    168  feb5		       85 ab		      STA	xGain
+    169  feb7
+    170  feb7				   CDIR3
+    171  feb7		       a5 b9		      LDA	direction
+    172  feb9		       c9 01		      CMP	#DWEST
+    173  febb		       d0 16		      BNE	CDIR4
+    174  febd
+    175  febd		       a5 aa		      LDA	mapWidth
+    176  febf		       85 ab		      STA	xGain
+    177  fec1		       a9 01		      LDA	#ONE
+    178  fec3		       85 ad		      STA	yGain
+    179  fec5		       a9 82		      LDA	#SCOLU
+    180  fec7		       85 b3		      STA	wallColour
+    181  fec9		       a9 86		      LDA	#WCOLU
+    182  fecb		       85 b4		      STA	shadowColour
+    183  fecd		       a9 00		      LDA	#NULL
+    184  fecf		       85 ae		      STA	yLoss
+    185  fed1		       85 ac		      STA	xLoss
+    186  fed3
+    187  fed3				   CDIR4
+    188  fed3		       a5 b9		      LDA	direction
+    189  fed5		       c9 03		      CMP	#DEAST
+    190  fed7		       d0 16		      BNE	CEND
+    191  fed9
+    192  fed9		       a5 aa		      LDA	mapWidth
+    193  fedb		       85 ac		      STA	xLoss
+    194  fedd		       a9 01		      LDA	#ONE
+    195  fedf		       85 ae		      STA	yLoss
+    196  fee1		       a9 82		      LDA	#SCOLU
+    197  fee3		       85 b3		      STA	wallColour
+    198  fee5		       a9 86		      LDA	#WCOLU
+    199  fee7		       85 b4		      STA	shadowColour
+    200  fee9		       a9 00		      LDA	#NULL
+    201  feeb		       85 ad		      STA	yGain
+    202  feed		       85 ab		      STA	xGain
+    203  feef
+    204  feef				   CEND
+    205  feef		       85 02		      STA	WSYNC
 ------- FILE main.asm
-     68  feea
-     69  feea							; Pad again
-     70  feea
-     71  feea		       a2 00		      LDX	#INDEXINIT
-     72  feec
-     73  feec				   lowerPad
-     74  feec		       85 02		      STA	WSYNC
-     75  feee
-     76  feee		       e8		      INX
-     77  feef		       e0 1a		      CPX	#LOPAD_LIMIT
-     78  fef1		       d0 f9		      BNE	lowerPad
-     79  fef3
-     80  fef3							; Get everything ready for VSYNC
-     81  fef3
-     82  fef3		       a9 00		      LDA	#NULL
-     83  fef5		       85 01		      STA	VBLANK
-     84  fef7		       a9 02		      LDA	#VSYNC_SET
-     85  fef9		       85 02		      STA	WSYNC
-     86  fefb		       4c 2d f8 	      JMP	screenStart
-     87  fefe
+     68  fef1
+     69  fef1							; Pad again
+     70  fef1
+     71  fef1		       a2 00		      LDX	#INDEXINIT
+     72  fef3
+     73  fef3				   lowerPad
+     74  fef3		       85 02		      STA	WSYNC
+     75  fef5
+     76  fef5		       e8		      INX
+     77  fef6		       e0 19		      CPX	#LOPAD_LIMIT
+     78  fef8		       d0 f9		      BNE	lowerPad
+     79  fefa
+     80  fefa							; Get everything ready for VSYNC
+     81  fefa
+     82  fefa		       a9 00		      LDA	#NULL
+     83  fefc		       85 01		      STA	VBLANK
+     84  fefe		       a9 02		      LDA	#VSYNC_SET
+     85  ff00		       85 02		      STA	WSYNC
+     86  ff02		       4c 2d f8 	      JMP	screenStart
+     87  ff05
      88  fffa					      ORG	$FFFA
      89  fffa
      90  fffa		       00 f8		      DC.W	start	; Something

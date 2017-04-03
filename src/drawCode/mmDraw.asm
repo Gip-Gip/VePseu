@@ -19,6 +19,7 @@ mmDraw:
     LDA #NULL
     STA GRP0
     STA GRP1
+    STA WSYNC
     STA HMOVE
 
     LDY #INDEXINIT

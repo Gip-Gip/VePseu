@@ -28,6 +28,10 @@ PIXH    = 3 ; The height of each pixel, in scanlines (x2)
 HADJ_A  = $00 ; The horizontal adjustment of each minimap sprite
 HADJ_B  = $10
 
+HWAIT   = 5 ; The horizontal wait for the minimap
+HDELAY1 = 7 ; The amount of clocks for horizontal correction (minimap)
+HDELAY2 = 10 ; The amount of clocks for horizontal correction (player blip)
+
 WCOLU       = $86 ; The initial colour of walls
 SCOLU       = $82 ; The initial colour of shadows
 MAPCOLU     = $0E ; The colour of the map on the minimap
@@ -39,7 +43,7 @@ VSYNC_SET   = 2 ; The value to push to the vsync register
 INDEXINIT   = 0 ; The value to initialize indexes to
 
 UPPAD_LIMIT = 14 ; The upper pad amount
-LOPAD_LIMIT = 26 ; The lower pad amount
+LOPAD_LIMIT = 25 ; The lower pad amount
 
 FULLWALL    = $FF
 
