@@ -49,12 +49,4 @@ _mmRender_wait2:
     DELAY HDELAY2
     STA RESBL
 
-    STA WSYNC
-    LDX #INDEXINIT
-
-_mmRender_wait3:
-    INX
-    CPX #HWAIT
-    BNE _mmRender_wait3
-
     RTS
