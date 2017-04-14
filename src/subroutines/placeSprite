@@ -1,0 +1,22 @@
+; Sprite placement tool
+
+placeSprite:
+    LDY #0
+_placeSprite_loop:
+    LDA (spritePtr),Y
+    STA playerDraw,X
+
+    INX
+    DEC scaleTmp
+    LDA scaleTmp
+    CMP #0
+    BNE _placeSprite_loop
+
+    LDA scale
+    STA scaleTmp
+
+    INY
+    CPY spriteHeight
+    BNE _placeSprite_loop
+
+    RTS

@@ -39,6 +39,16 @@ screenStart:
 
     INCLUDE "scrend.asm" ; 14 Scanlines
 
+    LDA #<jerry
+    STA sprite
+    LDA #>jerry
+    STA sprite+1
+    LDA #$0C
+    STA COLUP0
+
+    LDA #30
+    STA spriteHeight
+
 ; Pad!
 
     LDX #INDEXINIT
@@ -53,6 +63,8 @@ upperPad:
     STA WSYNC
 
 ; Draw everything
+
+    LDY #10 + 30
 
     INCLUDE "dispkern.asm" ; 186 scanlines
 
