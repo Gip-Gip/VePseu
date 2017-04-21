@@ -13,6 +13,8 @@
 
     ORG $F800
 
+    RTS
+
 start:
 
 ; Initialize everything
@@ -46,7 +48,7 @@ screenStart:
     LDA #$0C
     STA COLUP0
 
-    LDA #30
+    LDA #31
     STA spriteHeight
 
 ; Pad!
@@ -64,7 +66,7 @@ upperPad:
 
 ; Draw everything
 
-    LDY #10 + 30
+    LDY #0
 
     INCLUDE "dispkern.asm" ; 186 scanlines
 

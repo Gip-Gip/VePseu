@@ -1,23 +1,34 @@
-; The draw code for the 4th wall
+; The second wall and it's second shadow
+
+dc_w4s0_delayed:
+    JMP dc_w4s0
+
+dc_w4s0_switch:
+    LDA #$7F
+    ADC #$01
 
 dc_w4s0:
 
-    LDX #INDEXINIT
-    JMP _dc_w4s0_start
+    LDX #PIXH
 
 _dc_w4s0_loop:
-    STA WSYNC
-    DELAY 10
-_dc_w4s0_start:
     LDA wallColour
+    STA WSYNC
+_dc_w4s0_joinIn:
     STA COLUPF
-    LDA #FULLWALL
-    EOR shadow3ab
+    LDA wall4a
     STA PF1
-    LDA #FULLWALL
-    EOR shadow3bb
+    TYA
+    BEQ _dc_w4s0_noSprite_1
+    DEY
+    CPY spriteHeight
+    BCS _dc_w4s0_noSprite_2
+    LDA (sprite),Y
+    STA GRP0
+_dc_w4s0_noSprite_ret:
+    LDA wall4b
     STA PF2
-    DELAY 4
+
     LDA #FULLWALL
     EOR shadow3cb
     STA PF0
@@ -28,11 +39,11 @@ _dc_w4s0_start:
     EOR shadow3eb
     STA PF2
     LDA #NULL
-    DELAY 2
+    DELAY 4
     STA PF2
     STA PF0
 
-    STA WSYNC
+    STA WSYNC ; Draw the shadow
     LDA shadowColour
     STA COLUPF
     LDA shadow3ab
@@ -53,10 +64,16 @@ _dc_w4s0_start:
     LDA #NULL
     STA PF0
 
-    INX
-    CPX #PIXH
+    DEX
     BNE _dc_w4s0_loop
 
-    DELAY 7
+    BVC dc_w4s0_switch
+    JMP dc_w3s2
 
-    RTS
+_dc_w4s0_noSprite_1:
+    DELAY 11
+    JMP _dc_w4s0_noSprite_ret
+
+_dc_w4s0_noSprite_2:
+    DELAY 4
+    JMP _dc_w4s0_noSprite_ret

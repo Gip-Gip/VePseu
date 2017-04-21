@@ -2,20 +2,37 @@
 
 dc_w2s1:
 
-    LDX #INDEXINIT
-    JMP _dc_w2s1_start
+    LDX #PIXH
+    LDA wallColour
+    DELAY 2
+    JMP _dc_w2s1_joinIn
+
+_dc_w2s1_noSprite_1:
+    DELAY 11
+    JMP _dc_w2s1_noSprite_ret
+
+_dc_w2s1_noSprite_2:
+    DELAY 4
+    JMP _dc_w2s1_noSprite_ret
 
 _dc_w2s1_loop:
+    LDA wallColour
     STA WSYNC
-    DELAY 10 ; Delay to keep the timing constant
-_dc_w2s1_start:
-    LDA wallColour ; Draw the wall
+_dc_w2s1_joinIn:
     STA COLUPF
     LDA wall2a
     STA PF1
+    TYA
+    BEQ _dc_w2s1_noSprite_1
+    DEY
+    CPY spriteHeight
+    BCS _dc_w2s1_noSprite_2
+    LDA (sprite),Y
+    STA GRP0
+_dc_w2s1_noSprite_ret:
     LDA wall2b
     STA PF2
-    DELAY 14
+
     LDA wall2c
     STA PF0
     LDA wall2d
@@ -23,7 +40,7 @@ _dc_w2s1_start:
     LDA wall2e
     STA PF2
     LDA #NULL
-    DELAY 2
+    DELAY 10
     STA PF2
     STA PF0
 
@@ -47,10 +64,8 @@ _dc_w2s1_start:
     LDA #NULL
     STA PF0
 
-    INX ; Loop for the rest of the pixel's height
-    CPX #PIXH
+    DEX
     BNE _dc_w2s1_loop
 
-    DELAY 10 ; Delay to keep timing constant
-
-    RTS
+    BVC dc_w2s2_delayed
+    JMP jumbo

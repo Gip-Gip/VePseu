@@ -173,62 +173,65 @@
      15 U008c		       00	   wall3c     DC	0
      16 U008d		       00	   wall3d     DC	0
      17 U008e		       00	   wall3e     DC	0
-     18 U008f
-     19 U008f		       00	   shadow2aa  DC	0
-     20 U0090		       00	   shadow2ba  DC	0
-     21 U0091		       00	   shadow2ca  DC	0
-     22 U0092		       00	   shadow2da  DC	0
-     23 U0093		       00	   shadow2ea  DC	0
-     24 U0094		       00	   shadow3aa  DC	0
-     25 U0095		       00	   shadow3ba  DC	0
-     26 U0096		       00	   shadow3ca  DC	0
-     27 U0097		       00	   shadow3da  DC	0
-     28 U0098		       00	   shadow3ea  DC	0
-     29 U0099
-     30 U0099		       00	   shadow1a   DC	0
-     31 U009a		       00	   shadow1b   DC	0
-     32 U009b		       00	   shadow1c   DC	0
-     33 U009c		       00	   shadow1d   DC	0
-     34 U009d		       00	   shadow1e   DC	0
-     35 U009e		       00	   shadow2ab  DC	0
-     36 U009f		       00	   shadow2bb  DC	0
-     37 U00a0		       00	   shadow2cb  DC	0
-     38 U00a1		       00	   shadow2db  DC	0
-     39 U00a2		       00	   shadow2eb  DC	0
-     40 U00a3		       00	   shadow3ab  DC	0
-     41 U00a4		       00	   shadow3bb  DC	0
-     42 U00a5		       00	   shadow3cb  DC	0
-     43 U00a6		       00	   shadow3db  DC	0
-     44 U00a7		       00	   shadow3eb  DC	0
-     45 U00a8
-     46 U00a8		       00	   shift      DC	0
-     47 U00a9		       00	   playerPos  DC	0
-     48 U00aa		       00	   mapWidth   DC	0
-     49 U00ab		       00	   xGain      DC	0
-     50 U00ac		       00	   xLoss      DC	0
-     51 U00ad		       00	   yGain      DC	0
-     52 U00ae		       00	   yLoss      DC	0
-     53 U00af		       00	   fordPressed DC	0
-     54 U00b0		       00	   backPressed DC	0
-     55 U00b1		       00	   leftPressed DC	0
-     56 U00b2		       00	   rigtPressed DC	0
-     57 U00b3		       00	   wallColour DC	0
-     58 U00b4		       00	   shadowColour DC	0
-     59 U00b5		       00	   horzPos_mA DC	0
-     60 U00b6		       00	   horzPos_mB DC	0
-     61 U00b7		       00	   horzPos_plyr DC	0
-     62 U00b8		       00	   drawingPlyr DC	0
-     63 U00b9		       00	   direction  DC	0
-     64 U00ba		       00	   spriteHeight DC	0
-     65 U00bb		       00 00	   miniMapPtr DC.W	0
-     66 U00bd		       00 00	   mapPtr     DC.W	0
-     67 U00bf		       00 00	   sprite     DC.W	0
-     68 U00c1		       00	   foo	      DC	0
+     18 U008f		       00	   wall4a     DC	0
+     19 U0090		       00	   wall4b     DC	0
+     20 U0091
+     21 U0091		       00	   shadow2aa  DC	0
+     22 U0092		       00	   shadow2ba  DC	0
+     23 U0093		       00	   shadow2ca  DC	0
+     24 U0094		       00	   shadow2da  DC	0
+     25 U0095		       00	   shadow2ea  DC	0
+     26 U0096		       00	   shadow3aa  DC	0
+     27 U0097		       00	   shadow3ba  DC	0
+     28 U0098		       00	   shadow3ca  DC	0
+     29 U0099		       00	   shadow3da  DC	0
+     30 U009a		       00	   shadow3ea  DC	0
+     31 U009b
+     32 U009b		       00	   shadow1a   DC	0
+     33 U009c		       00	   shadow1b   DC	0
+     34 U009d		       00	   shadow1c   DC	0
+     35 U009e		       00	   shadow1d   DC	0
+     36 U009f		       00	   shadow1e   DC	0
+     37 U00a0		       00	   shadow2ab  DC	0
+     38 U00a1		       00	   shadow2bb  DC	0
+     39 U00a2		       00	   shadow2cb  DC	0
+     40 U00a3		       00	   shadow2db  DC	0
+     41 U00a4		       00	   shadow2eb  DC	0
+     42 U00a5		       00	   shadow3ab  DC	0
+     43 U00a6		       00	   shadow3bb  DC	0
+     44 U00a7		       00	   shadow3cb  DC	0
+     45 U00a8		       00	   shadow3db  DC	0
+     46 U00a9		       00	   shadow3eb  DC	0
+     47 U00aa
+     48 U00aa		       00	   shift      DC	0
+     49 U00ab		       00	   playerPos  DC	0
+     50 U00ac		       00	   mapWidth   DC	0
+     51 U00ad		       00	   xGain      DC	0
+     52 U00ae		       00	   xLoss      DC	0
+     53 U00af		       00	   yGain      DC	0
+     54 U00b0		       00	   yLoss      DC	0
+     55 U00b1		       00	   fordPressed DC	0
+     56 U00b2		       00	   backPressed DC	0
+     57 U00b3		       00	   leftPressed DC	0
+     58 U00b4		       00	   rigtPressed DC	0
+     59 U00b5		       00	   wallColour DC	0
+     60 U00b6		       00	   shadowColour DC	0
+     61 U00b7		       00	   horzPos_mA DC	0
+     62 U00b8		       00	   horzPos_mB DC	0
+     63 U00b9		       00	   horzPos_plyr DC	0
+     64 U00ba		       00	   drawingPlyr DC	0
+     65 U00bb		       00	   direction  DC	0
+     66 U00bc		       00	   spriteHeight DC	0
+     67 U00bd		       00	   halfJump   DC	0
+     68 U00be		       00 00	   miniMapPtr DC.W	0
+     69 U00c0		       00 00	   mapPtr     DC.W	0
+     70 U00c2		       00 00	   sprite     DC.W	0
+     71 U00c4		       00	   foo	      DC	0
 ------- FILE include/vepseu.h
 ------- FILE include/pia_addr.h LEVEL 3 PASS 2
-      0 U00c2					      INCLUDE	"include/pia_addr.h"
-      1 U00c2							; PIA addresses
-      2 U00c2
+      0 U00c5					      INCLUDE	"include/pia_addr.h"
+      1 U00c5							; PIA addresses
+      2 U00c5
       3 U0280					      ORG	$0280
       4 U0280
       5 U0280		       00	   SWCHA      DC	0
@@ -255,63 +258,103 @@
       9 U028a					      ENDM
      10 U028a
      11 U028a					      MAC	delay
-     12 U028a					      REPEAT	{1}/2 - {1}%2
-     13 U028a					      NOP
-     14 U028a					      REPEND
+     12 U028a				   .CYCLES    SET	{1}
+     13 U028a
+     14 U028a					      ECHO	"C0",.CYCLES
      15 U028a
-     16 U028a					      REPEAT	{1}%2
-     17 U028a					      STA	DUMP
-     18 U028a					      REPEND
-     19 U028a					      ENDM
+     16 U028a					      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+     17 U028a					      NOP
+     18 U028a				   .CYCLES    SET	.CYCLES - 2
+     19 U028a					      ENDIF
      20 U028a
-     21 U028a		       00 00	   NULL       =	0	; The value of NULL
-     22 U028a		       00 01	   ONE	      =	1	; The value of one
-     23 U028a
-     24 U028a		       00 0a	   WALLCNT    =	10	; The number of walls to render in scrend
-     25 U028a
-     26 U028a		       00 03	   PIXH       =	3	; The height of each pixel, in scanlines (x2)
-     27 U028a
-     28 U028a		       00 00	   HADJ_A     =	$00	; The horizontal adjustment of each minimap sprite
-     29 U028a		       00 10	   HADJ_B     =	$10
-     30 U028a
-     31 U028a		       00 05	   HWAIT      =	5	; The horizontal wait for the minimap
-     32 U028a		       00 07	   HDELAY1    =	7	; The amount of clocks for horizontal correction (minimap)
-     33 U028a		       00 0a	   HDELAY2    =	10	; The amount of clocks for horizontal correction (player blip)
-     34 U028a
-     35 U028a		       00 86	   WCOLU      =	$86	; The initial colour of walls
-     36 U028a		       00 82	   SCOLU      =	$82	; The initial colour of shadows
-     37 U028a		       00 0e	   MAPCOLU    =	$0E	; The colour of the map on the minimap
-     38 U028a		       00 cc	   PLYRCOLU   =	$CC	; The colour of the player on the minimap
-     39 U028a
-     40 U028a		       00 c2	   VBLANK_SET =	%11000010	; The value to push to the vblank register
-     41 U028a		       00 02	   VSYNC_SET  =	2	; The value to push to the vsync register
+     21 U028a					      ECHO	"C1",.CYCLES
+     22 U028a
+     23 U028a					      IF	[.CYCLES - 2] / 5
+     24 U028a					      REPEAT	.CYCLES / 5
+     25 U028a					      INC	foo
+     26 U028a					      REPEND
+     27 U028a				   .CYCLES    SET	.CYCLES % 5
+     28 U028a					      ENDIF
+     29 U028a
+     30 U028a					      ECHO	"C2",.CYCLES
+     31 U028a
+     32 U028a					      IF	.CYCLES % 3 == 1
+     33 U028a					      NOP
+     34 U028a				   .CYCLES    SET	.CYCLES - 2
+     35 U028a					      ENDIF
+     36 U028a
+     37 U028a					      ECHO	"C3",.CYCLES
+     38 U028a
+     39 U028a					      REPEAT	.CYCLES / 3
+     40 U028a					      STA	DUMP
+     41 U028a					      REPEND
      42 U028a
-     43 U028a		       00 00	   INDEXINIT  =	0	; The value to initialize indexes to
+     43 U028a				   .CYCLES    SET	.CYCLES % 3
      44 U028a
-     45 U028a		       00 0e	   UPPAD_LIMIT =	14	; The upper pad amount
-     46 U028a		       00 19	   LOPAD_LIMIT =	25	; The lower pad amount
-     47 U028a
-     48 U028a		       00 ff	   FULLWALL   =	$FF
-     49 U028a
-     50 U028a		       00 10	   FFORD      =	%00010000	; The bit set when the joystick is in the forward position
-     51 U028a		       00 20	   FBACK      =	%00100000	; The bit set when the joystick is in the backward position
-     52 U028a		       00 80	   FLEFT      =	%10000000	; The bit set when the joystick is in the left position
-     53 U028a		       00 40	   FRIGT      =	%01000000	; The bit set when the joystick is in the right position
-     54 U028a		       00 80	   ITRIG      =	%10000000	; The bit set when the trigger is set
-     55 U028a
-     56 U028a		       00 01	   LOWSHAD_LIMIT =	1	; The limited size of the shadow at the bottem of the screen
-     57 U028a
-     58 U028a		       00 00	   cleanStart =	0	; The value to initialize X to in clearLoop
-     59 U028a		       00 00	   cleanEnd   =	0	; The value of X to stop the loop at in clearLoop
-     60 U028a
-     61 U028a		       00 ff	   stack      =	$FF	; The address of the stack
-     62 U028a
-     63 U028a		       00 0f	   CWAITCNT   =	#15	; The amount of frames to wait before input is repeated
-     64 U028a
-     65 U028a		       00 00	   DNORTH     =	0	; The possible directions
-     66 U028a		       00 02	   DSOUTH     =	2
-     67 U028a		       00 01	   DWEST      =	1
-     68 U028a		       00 03	   DEAST      =	3
+     45 U028a					      ECHO	"C4",.CYCLES
+     46 U028a
+     47 U028a					      REPEAT	.CYCLES / 2
+     48 U028a					      NOP
+     49 U028a					      REPEND
+     50 U028a
+     51 U028a				   .CYCLES    SET	.CYCLES % 2
+     52 U028a
+     53 U028a					      IF	.CYCLES
+     54 U028a					      ERR
+     55 U028a					      ENDIF
+     56 U028a
+     57 U028a					      ENDM
+     58 U028a
+     59 U028a		       00 00	   NULL       =	0	; The value of NULL
+     60 U028a		       00 01	   ONE	      =	1	; The value of one
+     61 U028a
+     62 U028a		       00 0a	   WALLCNT    =	10	; The number of walls to render in scrend
+     63 U028a
+     64 U028a		       00 03	   PIXH       =	3	; The height of each pixel, in scanlines (x2)
+     65 U028a
+     66 U028a		       00 1e	   UPPRWALL_S =	30
+     67 U028a
+     68 U028a		       00 00	   HADJ_A     =	$00	; The horizontal adjustment of each minimap sprite
+     69 U028a		       00 10	   HADJ_B     =	$10
+     70 U028a
+     71 U028a		       00 05	   HWAIT      =	5	; The horizontal wait for the minimap
+     72 U028a		       00 07	   HDELAY1    =	7	; The amount of clocks for horizontal correction (minimap)
+     73 U028a		       00 0a	   HDELAY2    =	10	; The amount of clocks for horizontal correction (player blip)
+     74 U028a
+     75 U028a		       00 86	   WCOLU      =	$86	; The initial colour of walls
+     76 U028a		       00 82	   SCOLU      =	$82	; The initial colour of shadows
+     77 U028a		       00 0e	   MAPCOLU    =	$0E	; The colour of the map on the minimap
+     78 U028a		       00 cc	   PLYRCOLU   =	$CC	; The colour of the player on the minimap
+     79 U028a
+     80 U028a		       00 c2	   VBLANK_SET =	%11000010	; The value to push to the vblank register
+     81 U028a		       00 02	   VSYNC_SET  =	2	; The value to push to the vsync register
+     82 U028a
+     83 U028a		       00 00	   INDEXINIT  =	0	; The value to initialize indexes to
+     84 U028a
+     85 U028a		       00 0e	   UPPAD_LIMIT =	14	; The upper pad amount
+     86 U028a		       00 19	   LOPAD_LIMIT =	25	; The lower pad amount
+     87 U028a
+     88 U028a		       00 ff	   FULLWALL   =	$FF
+     89 U028a
+     90 U028a		       00 10	   FFORD      =	%00010000	; The bit set when the joystick is in the forward position
+     91 U028a		       00 20	   FBACK      =	%00100000	; The bit set when the joystick is in the backward position
+     92 U028a		       00 80	   FLEFT      =	%10000000	; The bit set when the joystick is in the left position
+     93 U028a		       00 40	   FRIGT      =	%01000000	; The bit set when the joystick is in the right position
+     94 U028a		       00 80	   ITRIG      =	%10000000	; The bit set when the trigger is set
+     95 U028a
+     96 U028a		       00 01	   LOWSHAD_LIMIT =	1	; The limited size of the shadow at the bottem of the screen
+     97 U028a
+     98 U028a		       00 00	   cleanStart =	0	; The value to initialize X to in clearLoop
+     99 U028a		       00 00	   cleanEnd   =	0	; The value of X to stop the loop at in clearLoop
+    100 U028a
+    101 U028a		       00 ff	   stack      =	$FF	; The address of the stack
+    102 U028a
+    103 U028a		       00 0f	   CWAITCNT   =	#15	; The amount of frames to wait before input is repeated
+    104 U028a
+    105 U028a		       00 00	   DNORTH     =	0	; The possible directions
+    106 U028a		       00 02	   DSOUTH     =	2
+    107 U028a		       00 01	   DWEST      =	1
+    108 U028a		       00 03	   DEAST      =	3
 ------- FILE include/vepseu.h
      11 U028a
      12 U028a
@@ -462,7 +505,7 @@
       5  f078		       01 00	   MAP_01_SZ  =	$100
       6  f078
       7  f078				   jerry
-      8  f078		       42		      DC	%01000010
+      8  f078		       00		      DC	%00000000
       9  f079		       42		      DC	%01000010
      10  f07a		       42		      DC	%01000010
      11  f07b		       42		      DC	%01000010
@@ -473,1898 +516,2903 @@
      16  f080		       42		      DC	%01000010
      17  f081		       42		      DC	%01000010
      18  f082		       42		      DC	%01000010
-     19  f083		       ff		      DC	%11111111
-     20  f084		       81		      DC	%10000001
-     21  f085		       89		      DC	%10001001
-     22  f086		       81		      DC	%10000001
-     23  f087		       89		      DC	%10001001
-     24  f088		       81		      DC	%10000001
-     25  f089		       89		      DC	%10001001
-     26  f08a		       81		      DC	%10000001
-     27  f08b		       89		      DC	%10001001
-     28  f08c		       81		      DC	%10000001
-     29  f08d		       99		      DC	%10011001
-     30  f08e		       a5		      DC	%10100101
-     31  f08f		       42		      DC	%01000010
+     19  f083		       42		      DC	%01000010
+     20  f084		       ff		      DC	%11111111
+     21  f085		       81		      DC	%10000001
+     22  f086		       89		      DC	%10001001
+     23  f087		       81		      DC	%10000001
+     24  f088		       89		      DC	%10001001
+     25  f089		       81		      DC	%10000001
+     26  f08a		       89		      DC	%10001001
+     27  f08b		       81		      DC	%10000001
+     28  f08c		       89		      DC	%10001001
+     29  f08d		       81		      DC	%10000001
+     30  f08e		       99		      DC	%10011001
+     31  f08f		       a5		      DC	%10100101
      32  f090		       42		      DC	%01000010
-     33  f091		       6a		      DC	%01101010
-     34  f092		       42		      DC	%01000010
-     35  f093		       99		      DC	%10011001
-     36  f094		       a5		      DC	%10100101
-     37  f095		       c3		      DC	%11000011
-     38  f096
-     39  f096				   miniMap_01
-     40  f096		       e0 07		      DC.W	%0000011111100000
-     41  f098		       bf fd		      DC.W	%1111110110111111
-     42  f09a		       80 01		      DC.W	%0000000110000000
-     43  f09c		       80 01		      DC.W	%0000000110000000
-     44  f09e		       be bd		      DC.W	%1011110110111110
-     45  f0a0		       a2 a5		      DC.W	%1010010110100010
-     46  f0a2		       a2 a7		      DC.W	%1010011110100010
-     47  f0a4		       e2 a7		      DC.W	%1010011111100010
-     48  f0a6		       e2 a5		      DC.W	%1010010111100010
-     49  f0a8		       be bd		      DC.W	%1011110110111110
-     50  f0aa		       80 81		      DC.W	%1000000110000000
-     51  f0ac		       80 81		      DC.W	%1000000110000000
-     52  f0ae		       bf fd		      DC.W	%1111110110111111
-     53  f0b0		       a0 05		      DC.W	%0000010110100000
-     54  f0b2		       a0 05		      DC.W	%0000010110100000
-     55  f0b4		       e0 07		      DC.W	%0000011111100000
-     56  f0b6
-     57  f0b6				   map_01_load
-     58  f0b6		       a9 d1		      LDA	#MAP_01_POS
-     59  f0b8		       85 a9		      STA	playerPos
-     60  f0ba		       a9 10		      LDA	#MAP_01_WDTH
-     61  f0bc		       85 aa		      STA	mapWidth
-     62  f0be
-     63  f0be		       a9 00		      LDA	#<map_01
-     64  f0c0		       85 bd		      STA	mapPtr
-     65  f0c2		       a9 f1		      LDA	#>map_01
-     66  f0c4		       85 be		      STA	mapPtr + 1
-     67  f0c6
-     68  f0c6		       a9 96		      LDA	#<miniMap_01
-     69  f0c8		       85 bb		      STA	miniMapPtr
-     70  f0ca		       a9 f0		      LDA	#>miniMap_01
-     71  f0cc		       85 bc		      STA	miniMapPtr + 1
-     72  f0ce		       60		      RTS
-     73  f0cf
-     74  f0cf
-     75  f100		       00 00 00 00*	      ALIGN	256
-     76  f100
-     77  f100				   map_01
-     78  f100		       ff ff ff 00*	      HEX	FF FF FF 00 00 00 00 00 00 00 00 00 00 FF FF FF
-     79  f110		       ff 00 ff ff*	      HEX	FF 00 FF FF FF FF FF FF FF FF FF FF FF FF 00 FF
-     80  f120		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF
-     81  f130		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF
-     82  f140		       ff 00 ff ff*	      HEX	FF 00 FF FF FF FF FF 00 FF 00 FF FF FF FF 00 FF
-     83  f150		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 FF 00 FF 00 FF 00 00 FF 00 FF
-     84  f160		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 FF 00 FF 00 FF 00 00 FF FF FF
-     85  f170		       ff ff ff 00*	      HEX	FF FF FF 00 00 00 FF 00 FF 00 FF 00 00 FF FF FF
-     86  f180		       ff ff ff 00*	      HEX	FF FF FF 00 00 00 FF 00 FF 00 FF 00 00 FF 00 FF
-     87  f190		       ff 00 ff ff*	      HEX	FF 00 FF FF FF FF FF 00 FF 00 FF FF FF FF 00 FF
-     88  f1a0		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 FF 00 00 00 00 00 00 FF
-     89  f1b0		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 FF 00 00 00 00 00 00 FF
-     90  f1c0		       ff 00 ff ff*	      HEX	FF 00 FF FF FF FF FF FF FF FF FF FF FF FF 00 FF
-     91  f1d0		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 00 00 00 00 00 00 00 FF 00 FF
-     92  f1e0		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 00 00 00 00 00 00 00 FF 00 FF
-     93  f1f0		       ff ff ff 00*	      HEX	FF FF FF 00 00 00 00 00 00 00 00 00 00 FF FF FF
+     33  f091		       42		      DC	%01000010
+     34  f092		       6a		      DC	%01101010
+     35  f093		       42		      DC	%01000010
+     36  f094		       99		      DC	%10011001
+     37  f095		       a5		      DC	%10100101
+     38  f096		       c3		      DC	%11000011
+     39  f097
+     40  f097				   miniMap_01
+     41  f097		       e0 07		      DC.W	%0000011111100000
+     42  f099		       bf fd		      DC.W	%1111110110111111
+     43  f09b		       80 01		      DC.W	%0000000110000000
+     44  f09d		       80 01		      DC.W	%0000000110000000
+     45  f09f		       be bd		      DC.W	%1011110110111110
+     46  f0a1		       a2 a5		      DC.W	%1010010110100010
+     47  f0a3		       a2 a7		      DC.W	%1010011110100010
+     48  f0a5		       e2 a7		      DC.W	%1010011111100010
+     49  f0a7		       e2 a5		      DC.W	%1010010111100010
+     50  f0a9		       be bd		      DC.W	%1011110110111110
+     51  f0ab		       80 81		      DC.W	%1000000110000000
+     52  f0ad		       80 81		      DC.W	%1000000110000000
+     53  f0af		       bf fd		      DC.W	%1111110110111111
+     54  f0b1		       a0 05		      DC.W	%0000010110100000
+     55  f0b3		       a0 05		      DC.W	%0000010110100000
+     56  f0b5		       e0 07		      DC.W	%0000011111100000
+     57  f0b7
+     58  f0b7				   map_01_load
+     59  f0b7		       a9 d1		      LDA	#MAP_01_POS
+     60  f0b9		       85 ab		      STA	playerPos
+     61  f0bb		       a9 10		      LDA	#MAP_01_WDTH
+     62  f0bd		       85 ac		      STA	mapWidth
+     63  f0bf
+     64  f0bf		       a9 00		      LDA	#<map_01
+     65  f0c1		       85 c0		      STA	mapPtr
+     66  f0c3		       a9 f1		      LDA	#>map_01
+     67  f0c5		       85 c1		      STA	mapPtr + 1
+     68  f0c7
+     69  f0c7		       a9 97		      LDA	#<miniMap_01
+     70  f0c9		       85 be		      STA	miniMapPtr
+     71  f0cb		       a9 f0		      LDA	#>miniMap_01
+     72  f0cd		       85 bf		      STA	miniMapPtr + 1
+     73  f0cf		       60		      RTS
+     74  f0d0
+     75  f0d0
+     76  f100		       00 00 00 00*	      ALIGN	256
+     77  f100
+     78  f100				   map_01
+     79  f100		       ff ff ff 00*	      HEX	FF FF FF 00 00 00 00 00 00 00 00 00 00 FF FF FF
+     80  f110		       ff 00 ff ff*	      HEX	FF 00 FF FF FF FF FF FF FF FF FF FF FF FF 00 FF
+     81  f120		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF
+     82  f130		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 00 00 00 00 00 00 00 FF
+     83  f140		       ff 00 ff ff*	      HEX	FF 00 FF FF FF FF FF 00 FF 00 FF FF FF FF 00 FF
+     84  f150		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 FF 00 FF 00 FF 00 00 FF 00 FF
+     85  f160		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 FF 00 FF 00 FF 00 00 FF FF FF
+     86  f170		       ff ff ff 00*	      HEX	FF FF FF 00 00 00 FF 00 FF 00 FF 00 00 FF FF FF
+     87  f180		       ff ff ff 00*	      HEX	FF FF FF 00 00 00 FF 00 FF 00 FF 00 00 FF 00 FF
+     88  f190		       ff 00 ff ff*	      HEX	FF 00 FF FF FF FF FF 00 FF 00 FF FF FF FF 00 FF
+     89  f1a0		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 FF 00 00 00 00 00 00 FF
+     90  f1b0		       ff 00 00 00*	      HEX	FF 00 00 00 00 00 00 00 FF 00 00 00 00 00 00 FF
+     91  f1c0		       ff 00 ff ff*	      HEX	FF 00 FF FF FF FF FF FF FF FF FF FF FF FF 00 FF
+     92  f1d0		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 00 00 00 00 00 00 00 FF 00 FF
+     93  f1e0		       ff 00 ff 00*	      HEX	FF 00 FF 00 00 00 00 00 00 00 00 00 00 FF 00 FF
+     94  f1f0		       ff ff ff 00*	      HEX	FF FF FF 00 00 00 00 00 00 00 00 00 00 FF FF FF
 ------- FILE main.asm
      13  f200
      14  f800					      ORG	$F800
      15  f800
-     16  f800				   start
-     17  f800
-     18  f800							; Initialize everything
-     19  f800
+     16  f800		       60		      RTS
+     17  f801
+     18  f801				   start
+     19  f801
+     20  f801							; Initialize everything
+     21  f801
 ------- FILE init.asm LEVEL 2 PASS 2
-      0  f800					      INCLUDE	"init.asm"
-      1  f800							; VePseu's init file
-      2  f800
-      3  f800		       a2 ff		      LDX	#stack
-      4  f802		       9a		      TXS
-      5  f803
-      6  f803		       a9 00		      LDA	#NULL
-      7  f805
-      8  f805		       d8		      CLD
-      9  f806		       18		      CLC
-     10  f807		       58		      CLI
-     11  f808		       b8		      CLV
-     12  f809
-     13  f809		       a2 00		      LDX	#INDEXINIT
-     14  f80b
-     15  f80b				   cleanLoop
-     16  f80b
-     17  f80b		       95 00		      STA	cleanStart,X
-     18  f80d		       e8		      INX
-     19  f80e
-     20  f80e		       e0 00		      CPX	#cleanEnd
-     21  f810		       d0 f9		      BNE	cleanLoop
-     22  f812
-     23  f812		       20 b6 f0 	      JSR	map_01_load
-     24  f815
-     25  f815		       a5 aa		      LDA	mapWidth
-     26  f817		       85 ae		      STA	yLoss
-     27  f819		       a9 01		      LDA	#ONE
-     28  f81b		       85 ab		      STA	xGain
-     29  f81d		       a9 00		      LDA	#NULL
-     30  f81f		       85 ad		      STA	yGain
-     31  f821		       85 ac		      STA	xLoss
-     32  f823
-     33  f823		       a9 86		      LDA	#WCOLU
-     34  f825		       85 b3		      STA	wallColour
-     35  f827		       a9 82		      LDA	#SCOLU
-     36  f829		       85 b4		      STA	shadowColour
+      0  f801					      INCLUDE	"init.asm"
+      1  f801							; VePseu's init file
+      2  f801
+      3  f801		       a2 ff		      LDX	#stack
+      4  f803		       9a		      TXS
+      5  f804
+      6  f804		       a9 00		      LDA	#NULL
+      7  f806
+      8  f806		       d8		      CLD
+      9  f807		       18		      CLC
+     10  f808		       58		      CLI
+     11  f809		       b8		      CLV
+     12  f80a
+     13  f80a		       a2 00		      LDX	#INDEXINIT
+     14  f80c
+     15  f80c				   cleanLoop
+     16  f80c
+     17  f80c		       95 00		      STA	cleanStart,X
+     18  f80e		       e8		      INX
+     19  f80f
+     20  f80f		       e0 00		      CPX	#cleanEnd
+     21  f811		       d0 f9		      BNE	cleanLoop
+     22  f813
+     23  f813		       20 b7 f0 	      JSR	map_01_load
+     24  f816
+     25  f816		       a5 ac		      LDA	mapWidth
+     26  f818		       85 b0		      STA	yLoss
+     27  f81a		       a9 01		      LDA	#ONE
+     28  f81c		       85 ad		      STA	xGain
+     29  f81e		       a9 00		      LDA	#NULL
+     30  f820		       85 af		      STA	yGain
+     31  f822		       85 ae		      STA	xLoss
+     32  f824
+     33  f824		       a9 86		      LDA	#WCOLU
+     34  f826		       85 b5		      STA	wallColour
+     35  f828		       a9 82		      LDA	#SCOLU
+     36  f82a		       85 b6		      STA	shadowColour
 ------- FILE main.asm
-     21  f82b
-     22  f82b		       a9 02		      LDA	#VSYNC_SET
-     23  f82d
-     24  f82d				   screenStart
-     25  f82d
-     26  f82d							; Start vsync (3 scanlines)
-     27  f82d		       85 00		      STA	VSYNC
-     28  f82f
-     29  f82f		       85 02		      STA	WSYNC
-     30  f831		       85 02		      STA	WSYNC
-     31  f833		       a9 00		      LDA	#NULL
-     32  f835		       85 02		      STA	WSYNC
-     33  f837
-     34  f837		       85 00		      STA	VSYNC
-     35  f839
-     36  f839							; Render everything (23 scanlines)
-     37  f839
+     23  f82c
+     24  f82c		       a9 02		      LDA	#VSYNC_SET
+     25  f82e
+     26  f82e				   screenStart
+     27  f82e
+     28  f82e							; Start vsync (3 scanlines)
+     29  f82e		       85 00		      STA	VSYNC
+     30  f830
+     31  f830		       85 02		      STA	WSYNC
+     32  f832		       85 02		      STA	WSYNC
+     33  f834		       a9 00		      LDA	#NULL
+     34  f836		       85 02		      STA	WSYNC
+     35  f838
+     36  f838		       85 00		      STA	VSYNC
+     37  f83a
+     38  f83a							; Render everything (23 scanlines)
+     39  f83a
 ------- FILE walrend.asm LEVEL 2 PASS 2
-      0  f839					      INCLUDE	"walrend.asm"	; 9 scanlines
-      1  f839							; VePseu's wall renderer
-      2  f839
-      3  f839		       a4 a9		      LDY	playerPos
-      4  f83b
+      0  f83a					      INCLUDE	"walrend.asm"	; 9 scanlines
+      1  f83a							; VePseu's wall renderer
+      2  f83a
+      3  f83a		       a4 ab		      LDY	playerPos
+      4  f83c
 ------- FILE r_layers/layer0.asm LEVEL 3 PASS 2
-      0  f83b					      INCLUDE	"r_layers/layer0.asm"	; 54 cycles
-      1  f83b							; Peripheral vision rendering (54 cycles)
-      2  f83b
+      0  f83c					      INCLUDE	"r_layers/layer0.asm"	; 54 cycles
+      1  f83c							; Peripheral vision rendering (54 cycles)
+      2  f83c
 ------- FILE include/ands_0.h LEVEL 4 PASS 2
-      0  f83b					      INCLUDE	"include/ands_0.h"
-      1  f83b							; The AND constants for peripheral vision
-      2  f83b
-      3  f83b		       00 c0	   AND_W0S1P1 =	%11000000
-      4  f83b		       00 03	   AND_W0S1P2 =	%00000011
+      0  f83c					      INCLUDE	"include/ands_0.h"
+      1  f83c							; The AND constants for peripheral vision
+      2  f83c
+      3  f83c		       00 c0	   AND_W0S1P1 =	%11000000
+      4  f83c		       00 03	   AND_W0S1P2 =	%00000011
 ------- FILE r_layers/layer0.asm
-      4  f83b
-      0  f83b					      X_POS_LOS		; 24 cycles
-      1  f83b
-      2  f83b		       98		      TYA
-      3  f83c		       18		      CLC
-      4  f83d		       65 ac		      ADC	xLoss
-      5  f83f		       38		      SEC
-      6  f840		       e5 ab		      SBC	xGain
-      7  f842		       a8		      TAY
-      8  f843
-      6  f843		       b1 bd		      LDA	(mapPtr),Y
-      7  f845		       29 c0		      AND	#AND_W0S1P1
-      8  f847		       85 99		      STA	shadow1a
-      9  f849
-     10  f849		       98		      TYA		; Move twice the amount of a normal X_POS_GAIN (20 cycles)
-     11  f84a		       18		      CLC
-     12  f84b		       65 ab		      ADC	xGain
-     13  f84d		       65 ab		      ADC	xGain
-     14  f84f		       38		      SEC
-     15  f850		       e5 ac		      SBC	xLoss
-     16  f852		       e5 ac		      SBC	xLoss
-     17  f854		       a8		      TAY
-     18  f855
-     19  f855		       b1 bd		      LDA	(mapPtr),Y	; 10 cycles
-     20  f857		       29 03		      AND	#AND_W0S1P2
-     21  f859		       85 9d		      STA	shadow1e
+      4  f83c
+      0  f83c					      X_POS_LOS		; 24 cycles
+      1  f83c
+      2  f83c		       98		      TYA
+      3  f83d		       18		      CLC
+      4  f83e		       65 ae		      ADC	xLoss
+      5  f840		       38		      SEC
+      6  f841		       e5 ad		      SBC	xGain
+      7  f843		       a8		      TAY
+      8  f844
+      6  f844		       b1 c0		      LDA	(mapPtr),Y
+      7  f846		       29 c0		      AND	#AND_W0S1P1
+      8  f848		       85 9b		      STA	shadow1a
+      9  f84a
+     10  f84a		       98		      TYA		; Move twice the amount of a normal X_POS_GAIN (20 cycles)
+     11  f84b		       18		      CLC
+     12  f84c		       65 ad		      ADC	xGain
+     13  f84e		       65 ad		      ADC	xGain
+     14  f850		       38		      SEC
+     15  f851		       e5 ae		      SBC	xLoss
+     16  f853		       e5 ae		      SBC	xLoss
+     17  f855		       a8		      TAY
+     18  f856
+     19  f856		       b1 c0		      LDA	(mapPtr),Y	; 10 cycles
+     20  f858		       29 03		      AND	#AND_W0S1P2
+     21  f85a		       85 9f		      STA	shadow1e
 ------- FILE walrend.asm
-      6  f85b
+      6  f85c
 ------- FILE r_layers/layer1.asm LEVEL 3 PASS 2
-      0  f85b					      INCLUDE	"r_layers/layer1.asm"	; 86 cycles
-      1  f85b							; Render the first layer (not that ugly) (86 cycles)
-      2  f85b
+      0  f85c					      INCLUDE	"r_layers/layer1.asm"	; 86 cycles
+      1  f85c							; Render the first layer (not that ugly) (86 cycles)
+      2  f85c
 ------- FILE include/ands_1.h LEVEL 4 PASS 2
-      0  f85b					      INCLUDE	"include/ands_1.h"
-      1  f85b							; The AND constants for layer 1
-      2  f85b
-      3  f85b		       00 03	   AND_W1S1P1 =	%00000011
-      4  f85b		       00 03	   AND_W1S1P2 =	%00000011
+      0  f85c					      INCLUDE	"include/ands_1.h"
+      1  f85c							; The AND constants for layer 1
+      2  f85c
+      3  f85c		       00 03	   AND_W1S1P1 =	%00000011
+      4  f85c		       00 03	   AND_W1S1P2 =	%00000011
 ------- FILE r_layers/layer1.asm
-      4  f85b
-      0  f85b					      Y_POS_ADV		; 30 cycles
-      1  f85b
-      2  f85b		       98		      TYA
-      3  f85c		       18		      CLC
-      4  f85d		       65 ad		      ADC	yGain
-      5  f85f		       38		      SEC
-      6  f860		       e5 ae		      SBC	yLoss
-      7  f862		       a8		      TAY
-      8  f863
-      6  f863		       b1 bd		      LDA	(mapPtr),Y
-      7  f865		       85 9c		      STA	shadow1d
-      8  f867		       05 9d		      ORA	shadow1e
-      9  f869		       29 03		      AND	#AND_W1S1P1
-     10  f86b		       85 9d		      STA	shadow1e
-     11  f86d
-      0  f86d					      X_POS_LOS		; 22 cycles
-      1  f86d
-      2  f86d		       98		      TYA
-      3  f86e		       18		      CLC
-      4  f86f		       65 ac		      ADC	xLoss
-      5  f871		       38		      SEC
-      6  f872		       e5 ab		      SBC	xGain
-      7  f874		       a8		      TAY
-      8  f875
-     13  f875		       b1 bd		      LDA	(mapPtr),Y
-     14  f877		       85 80		      STA	wall1
-     15  f879
-      0  f879					      X_POS_LOS		; 34 cycles
-      1  f879
-      2  f879		       98		      TYA
-      3  f87a		       18		      CLC
-      4  f87b		       65 ac		      ADC	xLoss
-      5  f87d		       38		      SEC
-      6  f87e		       e5 ab		      SBC	xGain
-      7  f880		       a8		      TAY
-      8  f881
-     17  f881		       b1 bd		      LDA	(mapPtr),Y
-     18  f883		       aa		      TAX
-     19  f884		       05 99		      ORA	shadow1a
-     20  f886		       85 99		      STA	shadow1a
-     21  f888		       8a		      TXA
-     22  f889		       29 03		      AND	#AND_W1S1P2
-     23  f88b		       85 9a		      STA	shadow1b
+      4  f85c
+      0  f85c					      Y_POS_ADV		; 30 cycles
+      1  f85c
+      2  f85c		       98		      TYA
+      3  f85d		       18		      CLC
+      4  f85e		       65 af		      ADC	yGain
+      5  f860		       38		      SEC
+      6  f861		       e5 b0		      SBC	yLoss
+      7  f863		       a8		      TAY
+      8  f864
+      6  f864		       b1 c0		      LDA	(mapPtr),Y
+      7  f866		       85 9e		      STA	shadow1d
+      8  f868		       05 9f		      ORA	shadow1e
+      9  f86a		       29 03		      AND	#AND_W1S1P1
+     10  f86c		       85 9f		      STA	shadow1e
+     11  f86e
+      0  f86e					      X_POS_LOS		; 22 cycles
+      1  f86e
+      2  f86e		       98		      TYA
+      3  f86f		       18		      CLC
+      4  f870		       65 ae		      ADC	xLoss
+      5  f872		       38		      SEC
+      6  f873		       e5 ad		      SBC	xGain
+      7  f875		       a8		      TAY
+      8  f876
+     13  f876		       b1 c0		      LDA	(mapPtr),Y
+     14  f878		       85 80		      STA	wall1
+     15  f87a
+      0  f87a					      X_POS_LOS		; 34 cycles
+      1  f87a
+      2  f87a		       98		      TYA
+      3  f87b		       18		      CLC
+      4  f87c		       65 ae		      ADC	xLoss
+      5  f87e		       38		      SEC
+      6  f87f		       e5 ad		      SBC	xGain
+      7  f881		       a8		      TAY
+      8  f882
+     17  f882		       b1 c0		      LDA	(mapPtr),Y
+     18  f884		       aa		      TAX
+     19  f885		       05 9b		      ORA	shadow1a
+     20  f887		       85 9b		      STA	shadow1a
+     21  f889		       8a		      TXA
+     22  f88a		       29 03		      AND	#AND_W1S1P2
+     23  f88c		       85 9c		      STA	shadow1b
 ------- FILE walrend.asm
-      8  f88d
+      8  f88e
 ------- FILE r_layers/layer2.asm LEVEL 3 PASS 2
-      0  f88d					      INCLUDE	"r_layers/layer2.asm"	; 186 cycles
-      1  f88d							; Render the second layer (186 cycles)
-      2  f88d
+      0  f88e					      INCLUDE	"r_layers/layer2.asm"	; 186 cycles
+      1  f88e							; Render the second layer (186 cycles)
+      2  f88e
 ------- FILE include/ands_2.h LEVEL 4 PASS 2
-      0  f88d					      INCLUDE	"include/ands_2.h"
-      1  f88d							; The AND constants for layer 2
-      2  f88d
-      3  f88d		       00 e0	   AND_W2S1P1 =	%11100000
-      4  f88d		       00 fc	   AND_W2S2P1 =	%11111100
-      5  f88d
-      6  f88d		       00 03	   AND_W2S0P1 =	%00000011
-      7  f88d		       00 04	   AND_W2S1P2 =	%00000100
-      8  f88d		       00 0c	   AND_W2S2P2 =	%00001100
-      9  f88d
-     10  f88d		       00 fc	   AND_W2S0P2 =	%11111100
-     11  f88d
-     12  f88d		       00 80	   AND_W2S1P3 =	%10000000
-     13  f88d		       00 c0	   AND_W2S2P3 =	%11000000
-     14  f88d
-     15  f88d		       00 01	   AND_W2S1P4 =	%00000001
-     16  f88d		       00 0f	   AND_W2S2P4 =	%00001111
-     17  f88d		       00 03	   AND_W2S1P5 =	%00000011
-     18  f88d		       00 03	   AND_W2S2P5 =	%00000011
+      0  f88e					      INCLUDE	"include/ands_2.h"
+      1  f88e							; The AND constants for layer 2
+      2  f88e
+      3  f88e		       00 e0	   AND_W2S1P1 =	%11100000
+      4  f88e		       00 fc	   AND_W2S2P1 =	%11111100
+      5  f88e
+      6  f88e		       00 03	   AND_W2S0P1 =	%00000011
+      7  f88e		       00 04	   AND_W2S1P2 =	%00000100
+      8  f88e		       00 0c	   AND_W2S2P2 =	%00001100
+      9  f88e
+     10  f88e		       00 fc	   AND_W2S0P2 =	%11111100
+     11  f88e
+     12  f88e		       00 80	   AND_W2S1P3 =	%10000000
+     13  f88e		       00 c0	   AND_W2S2P3 =	%11000000
+     14  f88e
+     15  f88e		       00 01	   AND_W2S1P4 =	%00000001
+     16  f88e		       00 0f	   AND_W2S2P4 =	%00001111
+     17  f88e		       00 03	   AND_W2S1P5 =	%00000011
+     18  f88e		       00 03	   AND_W2S2P5 =	%00000011
 ------- FILE r_layers/layer2.asm
-      4  f88d
-      0  f88d					      Y_POS_ADV		; 14 cycles
-      1  f88d
-      2  f88d		       98		      TYA
-      3  f88e		       18		      CLC
-      4  f88f		       65 ad		      ADC	yGain
-      5  f891		       38		      SEC
-      6  f892		       e5 ae		      SBC	yLoss
-      7  f894		       a8		      TAY
-      8  f895
-      6  f895
-      0  f895					      X_POS_LOS		; 29 cycles
-      1  f895
-      2  f895		       98		      TYA
-      3  f896		       18		      CLC
-      4  f897		       65 ac		      ADC	xLoss
-      5  f899		       38		      SEC
-      6  f89a		       e5 ab		      SBC	xGain
-      7  f89c		       a8		      TAY
-      8  f89d
-      8  f89d		       b1 bd		      LDA	(mapPtr),Y
-      9  f89f		       29 fc		      AND	#AND_W2S2P1
-     10  f8a1		       85 9e		      STA	shadow2ab
-     11  f8a3		       29 e0		      AND	#AND_W2S1P1
-     12  f8a5		       85 8f		      STA	shadow2aa
-     13  f8a7
-      0  f8a7					      X_POS_GAN		; 41 cycles
-      1  f8a7
-      2  f8a7		       98		      TYA
-      3  f8a8		       18		      CLC
-      4  f8a9		       65 ab		      ADC	xGain
-      5  f8ab		       38		      SEC
-      6  f8ac		       e5 ac		      SBC	xLoss
-      7  f8ae		       a8		      TAY
-      8  f8af
-     15  f8af		       b1 bd		      LDA	(mapPtr),Y
-     16  f8b1		       aa		      TAX
-     17  f8b2		       85 85		      STA	wall2a
-     18  f8b4		       29 03		      AND	#AND_W2S0P1
-     19  f8b6		       85 86		      STA	wall2b
-     20  f8b8		       8a		      TXA
-     21  f8b9		       29 0c		      AND	#AND_W2S2P2
-     22  f8bb		       85 9f		      STA	shadow2bb
-     23  f8bd		       29 04		      AND	#AND_W2S1P2
-     24  f8bf		       85 90		      STA	shadow2ba
-     25  f8c1
-      0  f8c1					      X_POS_GAN		; 30 cycles
-      1  f8c1
-      2  f8c1		       98		      TYA
-      3  f8c2		       18		      CLC
-      4  f8c3		       65 ab		      ADC	xGain
-      5  f8c5		       38		      SEC
-      6  f8c6		       e5 ac		      SBC	xLoss
-      7  f8c8		       a8		      TAY
-      8  f8c9
-     27  f8c9		       b1 bd		      LDA	(mapPtr),Y
-     28  f8cb		       85 87		      STA	wall2c
-     29  f8cd		       29 fc		      AND	#AND_W2S0P2
-     30  f8cf		       05 86		      ORA	wall2b
-     31  f8d1		       85 86		      STA	wall2b
-     32  f8d3
-      0  f8d3					      X_POS_GAN		; 35 cycles
-      1  f8d3
-      2  f8d3		       98		      TYA
-      3  f8d4		       18		      CLC
-      4  f8d5		       65 ab		      ADC	xGain
-      5  f8d7		       38		      SEC
-      6  f8d8		       e5 ac		      SBC	xLoss
-      7  f8da		       a8		      TAY
-      8  f8db
-     34  f8db		       b1 bd		      LDA	(mapPtr),Y
-     35  f8dd		       85 88		      STA	wall2d
-     36  f8df		       85 89		      STA	wall2e
-     37  f8e1		       29 c0		      AND	#AND_W2S2P3
-     38  f8e3		       85 a0		      STA	shadow2cb
-     39  f8e5		       29 80		      AND	#AND_W2S1P3
-     40  f8e7		       85 91		      STA	shadow2ca
-     41  f8e9
-      0  f8e9					      X_POS_GAN		; 37 cycles
-      1  f8e9
-      2  f8e9		       98		      TYA
-      3  f8ea		       18		      CLC
-      4  f8eb		       65 ab		      ADC	xGain
-      5  f8ed		       38		      SEC
-      6  f8ee		       e5 ac		      SBC	xLoss
-      7  f8f0		       a8		      TAY
-      8  f8f1
-     43  f8f1		       b1 bd		      LDA	(mapPtr),Y
-     44  f8f3		       29 0f		      AND	#AND_W2S2P4
-     45  f8f5		       85 a1		      STA	shadow2db
-     46  f8f7		       29 03		      AND	#AND_W2S1P5
-     47  f8f9		       85 93		      STA	shadow2ea
-     48  f8fb		       85 a2		      STA	shadow2eb
-     49  f8fd		       29 01		      AND	#AND_W2S1P4
-     50  f8ff		       85 92		      STA	shadow2da
+      4  f88e
+      0  f88e					      Y_POS_ADV		; 14 cycles
+      1  f88e
+      2  f88e		       98		      TYA
+      3  f88f		       18		      CLC
+      4  f890		       65 af		      ADC	yGain
+      5  f892		       38		      SEC
+      6  f893		       e5 b0		      SBC	yLoss
+      7  f895		       a8		      TAY
+      8  f896
+      6  f896
+      0  f896					      X_POS_LOS		; 29 cycles
+      1  f896
+      2  f896		       98		      TYA
+      3  f897		       18		      CLC
+      4  f898		       65 ae		      ADC	xLoss
+      5  f89a		       38		      SEC
+      6  f89b		       e5 ad		      SBC	xGain
+      7  f89d		       a8		      TAY
+      8  f89e
+      8  f89e		       b1 c0		      LDA	(mapPtr),Y
+      9  f8a0		       29 fc		      AND	#AND_W2S2P1
+     10  f8a2		       85 a0		      STA	shadow2ab
+     11  f8a4		       29 e0		      AND	#AND_W2S1P1
+     12  f8a6		       85 91		      STA	shadow2aa
+     13  f8a8
+      0  f8a8					      X_POS_GAN		; 41 cycles
+      1  f8a8
+      2  f8a8		       98		      TYA
+      3  f8a9		       18		      CLC
+      4  f8aa		       65 ad		      ADC	xGain
+      5  f8ac		       38		      SEC
+      6  f8ad		       e5 ae		      SBC	xLoss
+      7  f8af		       a8		      TAY
+      8  f8b0
+     15  f8b0		       b1 c0		      LDA	(mapPtr),Y
+     16  f8b2		       aa		      TAX
+     17  f8b3		       85 85		      STA	wall2a
+     18  f8b5		       29 03		      AND	#AND_W2S0P1
+     19  f8b7		       85 86		      STA	wall2b
+     20  f8b9		       8a		      TXA
+     21  f8ba		       29 0c		      AND	#AND_W2S2P2
+     22  f8bc		       85 a1		      STA	shadow2bb
+     23  f8be		       29 04		      AND	#AND_W2S1P2
+     24  f8c0		       85 92		      STA	shadow2ba
+     25  f8c2
+      0  f8c2					      X_POS_GAN		; 30 cycles
+      1  f8c2
+      2  f8c2		       98		      TYA
+      3  f8c3		       18		      CLC
+      4  f8c4		       65 ad		      ADC	xGain
+      5  f8c6		       38		      SEC
+      6  f8c7		       e5 ae		      SBC	xLoss
+      7  f8c9		       a8		      TAY
+      8  f8ca
+     27  f8ca		       b1 c0		      LDA	(mapPtr),Y
+     28  f8cc		       85 87		      STA	wall2c
+     29  f8ce		       29 fc		      AND	#AND_W2S0P2
+     30  f8d0		       05 86		      ORA	wall2b
+     31  f8d2		       85 86		      STA	wall2b
+     32  f8d4
+      0  f8d4					      X_POS_GAN		; 35 cycles
+      1  f8d4
+      2  f8d4		       98		      TYA
+      3  f8d5		       18		      CLC
+      4  f8d6		       65 ad		      ADC	xGain
+      5  f8d8		       38		      SEC
+      6  f8d9		       e5 ae		      SBC	xLoss
+      7  f8db		       a8		      TAY
+      8  f8dc
+     34  f8dc		       b1 c0		      LDA	(mapPtr),Y
+     35  f8de		       85 88		      STA	wall2d
+     36  f8e0		       85 89		      STA	wall2e
+     37  f8e2		       29 c0		      AND	#AND_W2S2P3
+     38  f8e4		       85 a2		      STA	shadow2cb
+     39  f8e6		       29 80		      AND	#AND_W2S1P3
+     40  f8e8		       85 93		      STA	shadow2ca
+     41  f8ea
+      0  f8ea					      X_POS_GAN		; 37 cycles
+      1  f8ea
+      2  f8ea		       98		      TYA
+      3  f8eb		       18		      CLC
+      4  f8ec		       65 ad		      ADC	xGain
+      5  f8ee		       38		      SEC
+      6  f8ef		       e5 ae		      SBC	xLoss
+      7  f8f1		       a8		      TAY
+      8  f8f2
+     43  f8f2		       b1 c0		      LDA	(mapPtr),Y
+     44  f8f4		       29 0f		      AND	#AND_W2S2P4
+     45  f8f6		       85 a3		      STA	shadow2db
+     46  f8f8		       29 03		      AND	#AND_W2S1P5
+     47  f8fa		       85 95		      STA	shadow2ea
+     48  f8fc		       85 a4		      STA	shadow2eb
+     49  f8fe		       29 01		      AND	#AND_W2S1P4
+     50  f900		       85 94		      STA	shadow2da
 ------- FILE walrend.asm
-     10  f901
+     10  f902
 ------- FILE r_layers/layer3.asm LEVEL 3 PASS 2
-      0  f901					      INCLUDE	"r_layers/layer3.asm"	; 281 cycles
-      1  f901							; Render the third layer (it's really ugly, at 281 cycles)
-      2  f901
+      0  f902					      INCLUDE	"r_layers/layer3.asm"	; 281 cycles
+      1  f902							; Render the third layer (it's really ugly, at 281 cycles)
+      2  f902
 ------- FILE include/ands_3.h LEVEL 4 PASS 2
-      0  f901					      INCLUDE	"include/ands_3.h"
-      1  f901							; The AND constants for render layer 3
-      2  f901
-      3  f901		       00 80	   AND_W3S1P1 =	%10000000
-      4  f901		       00 c0	   AND_W3S2P1 =	%11000000
-      5  f901
-      6  f901		       00 fc	   AND_W3S0P1 =	%11111100
-      7  f901		       00 02	   AND_W3S1P2 =	%00000010
-      8  f901		       00 03	   AND_W3S2P2 =	%00000011
-      9  f901
-     10  f901		       00 03	   AND_W3S0P2 =	%00000011
-     11  f901		       00 0f	   AND_W3S0P3 =	%00001111
-     12  f901		       00 10	   AND_W3S1P3 =	%00010000
-     13  f901		       00 30	   AND_W3S2P3 =	%00110000
-     14  f901
-     15  f901		       00 f0	   AND_W3S0P4 =	%11110000
-     16  f901		       00 30	   AND_W3S0P5 =	%00110000
-     17  f901
-     18  f901		       00 c0	   AND_W3S0P6 =	%11000000
-     19  f901		       00 f0	   AND_W3S0P7 =	%11110000
-     20  f901		       00 20	   AND_W3S1P4 =	%00100000
-     21  f901		       00 30	   AND_W3S2P4 =	%00110000
-     22  f901
-     23  f901		       00 0f	   AND_W3S0P8 =	%00001111
-     24  f901		       00 03	   AND_W3S0P9 =	%00000011
-     25  f901		       00 10	   AND_W3S1P5 =	%00010000
-     26  f901		       00 30	   AND_W3S2P5 =	%00110000
-     27  f901
-     28  f901		       00 02	   AND_W3S1P6 =	%00000010
-     29  f901		       00 03	   AND_W3S2P6 =	%00000011
+      0  f902					      INCLUDE	"include/ands_3.h"
+      1  f902							; The AND constants for render layer 3
+      2  f902
+      3  f902		       00 80	   AND_W3S1P1 =	%10000000
+      4  f902		       00 c0	   AND_W3S2P1 =	%11000000
+      5  f902
+      6  f902		       00 fc	   AND_W3S0P1 =	%11111100
+      7  f902		       00 02	   AND_W3S1P2 =	%00000010
+      8  f902		       00 03	   AND_W3S2P2 =	%00000011
+      9  f902
+     10  f902		       00 03	   AND_W3S0P2 =	%00000011
+     11  f902		       00 0f	   AND_W3S0P3 =	%00001111
+     12  f902		       00 10	   AND_W3S1P3 =	%00010000
+     13  f902		       00 30	   AND_W3S2P3 =	%00110000
+     14  f902
+     15  f902		       00 f0	   AND_W3S0P4 =	%11110000
+     16  f902		       00 30	   AND_W3S0P5 =	%00110000
+     17  f902
+     18  f902		       00 c0	   AND_W3S0P6 =	%11000000
+     19  f902		       00 f0	   AND_W3S0P7 =	%11110000
+     20  f902		       00 20	   AND_W3S1P4 =	%00100000
+     21  f902		       00 30	   AND_W3S2P4 =	%00110000
+     22  f902
+     23  f902		       00 0f	   AND_W3S0P8 =	%00001111
+     24  f902		       00 03	   AND_W3S0P9 =	%00000011
+     25  f902		       00 10	   AND_W3S1P5 =	%00010000
+     26  f902		       00 30	   AND_W3S2P5 =	%00110000
+     27  f902
+     28  f902		       00 02	   AND_W3S1P6 =	%00000010
+     29  f902		       00 03	   AND_W3S2P6 =	%00000011
 ------- FILE r_layers/layer3.asm
-      4  f901
-      0  f901					      Y_POS_ADV		; 14 cycles
-      1  f901
-      2  f901		       98		      TYA
-      3  f902		       18		      CLC
-      4  f903		       65 ad		      ADC	yGain
-      5  f905		       38		      SEC
-      6  f906		       e5 ae		      SBC	yLoss
-      7  f908		       a8		      TAY
-      8  f909
-      6  f909
-      0  f909					      X_POS_GAN		; 29 cycles
-      1  f909
-      2  f909		       98		      TYA
-      3  f90a		       18		      CLC
-      4  f90b		       65 ab		      ADC	xGain
-      5  f90d		       38		      SEC
-      6  f90e		       e5 ac		      SBC	xLoss
-      7  f910		       a8		      TAY
-      8  f911
-      8  f911		       b1 bd		      LDA	(mapPtr),Y
-      9  f913		       29 03		      AND	#AND_W3S2P6
-     10  f915		       85 a7		      STA	shadow3eb
-     11  f917		       29 02		      AND	#AND_W3S1P6
-     12  f919		       85 98		      STA	shadow3ea
-     13  f91b
-      0  f91b					      X_POS_LOS		; 38 cycles
-      1  f91b
-      2  f91b		       98		      TYA
-      3  f91c		       18		      CLC
-      4  f91d		       65 ac		      ADC	xLoss
-      5  f91f		       38		      SEC
-      6  f920		       e5 ab		      SBC	xGain
-      7  f922		       a8		      TAY
-      8  f923
-     15  f923		       b1 bd		      LDA	(mapPtr),Y
-     16  f925		       aa		      TAX
-     17  f926		       29 0f		      AND	#AND_W3S0P8
-     18  f928		       85 8d		      STA	wall3d
-     19  f92a		       29 03		      AND	#AND_W3S0P9
-     20  f92c		       85 8e		      STA	wall3e
-     21  f92e		       8a		      TXA
-     22  f92f		       29 30		      AND	#AND_W3S2P5
-     23  f931		       85 a6		      STA	shadow3db
-     24  f933		       29 10		      AND	#AND_W3S1P5
-     25  f935		       85 97		      STA	shadow3da
-     26  f937
-      0  f937					      X_POS_LOS		; 46 cycles
-      1  f937
-      2  f937		       98		      TYA
-      3  f938		       18		      CLC
-      4  f939		       65 ac		      ADC	xLoss
-      5  f93b		       38		      SEC
-      6  f93c		       e5 ab		      SBC	xGain
-      7  f93e		       a8		      TAY
-      8  f93f
-     28  f93f		       b1 bd		      LDA	(mapPtr),Y
-     29  f941		       aa		      TAX
-     30  f942		       29 f0		      AND	#AND_W3S0P7
-     31  f944		       05 8d		      ORA	wall3d
-     32  f946		       85 8d		      STA	wall3d
-     33  f948		       29 c0		      AND	#AND_W3S0P6
-     34  f94a		       85 8c		      STA	wall3c
-     35  f94c		       8a		      TXA
-     36  f94d		       29 30		      AND	#AND_W3S2P4
-     37  f94f		       85 a5		      STA	shadow3cb
-     38  f951		       29 20		      AND	#AND_W3S1P4
-     39  f953		       85 96		      STA	shadow3ca
-     40  f955
-      0  f955					      X_POS_LOS		; 32 cycles
-      1  f955
-      2  f955		       98		      TYA
-      3  f956		       18		      CLC
-      4  f957		       65 ac		      ADC	xLoss
-      5  f959		       38		      SEC
-      6  f95a		       e5 ab		      SBC	xGain
-      7  f95c		       a8		      TAY
-      8  f95d
-     42  f95d		       b1 bd		      LDA	(mapPtr),Y
-     43  f95f		       29 f0		      AND	#AND_W3S0P4
-     44  f961		       85 8b		      STA	wall3b
-     45  f963		       29 30		      AND	#AND_W3S0P5
-     46  f965		       05 8c		      ORA	wall3c
-     47  f967		       85 8c		      STA	wall3c
-     48  f969
-      0  f969					      X_POS_LOS		; 46 cycles
-      1  f969
-      2  f969		       98		      TYA
-      3  f96a		       18		      CLC
-      4  f96b		       65 ac		      ADC	xLoss
-      5  f96d		       38		      SEC
-      6  f96e		       e5 ab		      SBC	xGain
-      7  f970		       a8		      TAY
-      8  f971
-     50  f971		       b1 bd		      LDA	(mapPtr),Y
-     51  f973		       aa		      TAX
-     52  f974		       29 0f		      AND	#AND_W3S0P3
-     53  f976		       05 8b		      ORA	wall3b
-     54  f978		       85 8b		      STA	wall3b
-     55  f97a		       29 03		      AND	#AND_W3S0P2
-     56  f97c		       85 8a		      STA	wall3a
-     57  f97e		       8a		      TXA
-     58  f97f		       29 30		      AND	#AND_W3S2P3
-     59  f981		       85 a4		      STA	shadow3bb
-     60  f983		       29 10		      AND	#AND_W3S1P3
-     61  f985		       85 95		      STA	shadow3ba
-     62  f987
-      0  f987					      X_POS_LOS		; 41 cycles
-      1  f987
-      2  f987		       98		      TYA
-      3  f988		       18		      CLC
-      4  f989		       65 ac		      ADC	xLoss
-      5  f98b		       38		      SEC
-      6  f98c		       e5 ab		      SBC	xGain
-      7  f98e		       a8		      TAY
-      8  f98f
-     64  f98f		       b1 bd		      LDA	(mapPtr),Y
-     65  f991		       aa		      TAX
-     66  f992		       29 fc		      AND	#AND_W3S0P1
-     67  f994		       05 8a		      ORA	wall3a
-     68  f996		       85 8a		      STA	wall3a
-     69  f998		       8a		      TXA
-     70  f999		       29 03		      AND	#AND_W3S2P2
-     71  f99b		       85 a3		      STA	shadow3ab
-     72  f99d		       29 02		      AND	#AND_W3S1P2
-     73  f99f		       85 94		      STA	shadow3aa
-     74  f9a1
-      0  f9a1					      X_POS_LOS		; 35 cycles
-      1  f9a1
-      2  f9a1		       98		      TYA
-      3  f9a2		       18		      CLC
-      4  f9a3		       65 ac		      ADC	xLoss
-      5  f9a5		       38		      SEC
-      6  f9a6		       e5 ab		      SBC	xGain
-      7  f9a8		       a8		      TAY
-      8  f9a9
-     76  f9a9		       b1 bd		      LDA	(mapPtr),Y
-     77  f9ab		       29 c0		      AND	#AND_W3S2P1
-     78  f9ad		       05 a3		      ORA	shadow3ab
-     79  f9af		       85 a3		      STA	shadow3ab
-     80  f9b1		       29 80		      AND	#AND_W3S1P1
-     81  f9b3		       05 94		      ORA	shadow3aa
-     82  f9b5		       85 94		      STA	shadow3aa
+      4  f902
+      0  f902					      Y_POS_ADV		; 14 cycles
+      1  f902
+      2  f902		       98		      TYA
+      3  f903		       18		      CLC
+      4  f904		       65 af		      ADC	yGain
+      5  f906		       38		      SEC
+      6  f907		       e5 b0		      SBC	yLoss
+      7  f909		       a8		      TAY
+      8  f90a
+      6  f90a
+      0  f90a					      X_POS_GAN		; 29 cycles
+      1  f90a
+      2  f90a		       98		      TYA
+      3  f90b		       18		      CLC
+      4  f90c		       65 ad		      ADC	xGain
+      5  f90e		       38		      SEC
+      6  f90f		       e5 ae		      SBC	xLoss
+      7  f911		       a8		      TAY
+      8  f912
+      8  f912		       b1 c0		      LDA	(mapPtr),Y
+      9  f914		       29 03		      AND	#AND_W3S2P6
+     10  f916		       85 a9		      STA	shadow3eb
+     11  f918		       29 02		      AND	#AND_W3S1P6
+     12  f91a		       85 9a		      STA	shadow3ea
+     13  f91c
+      0  f91c					      X_POS_LOS		; 38 cycles
+      1  f91c
+      2  f91c		       98		      TYA
+      3  f91d		       18		      CLC
+      4  f91e		       65 ae		      ADC	xLoss
+      5  f920		       38		      SEC
+      6  f921		       e5 ad		      SBC	xGain
+      7  f923		       a8		      TAY
+      8  f924
+     15  f924		       b1 c0		      LDA	(mapPtr),Y
+     16  f926		       aa		      TAX
+     17  f927		       29 0f		      AND	#AND_W3S0P8
+     18  f929		       85 8d		      STA	wall3d
+     19  f92b		       29 03		      AND	#AND_W3S0P9
+     20  f92d		       85 8e		      STA	wall3e
+     21  f92f		       8a		      TXA
+     22  f930		       29 30		      AND	#AND_W3S2P5
+     23  f932		       85 a8		      STA	shadow3db
+     24  f934		       29 10		      AND	#AND_W3S1P5
+     25  f936		       85 99		      STA	shadow3da
+     26  f938
+      0  f938					      X_POS_LOS		; 46 cycles
+      1  f938
+      2  f938		       98		      TYA
+      3  f939		       18		      CLC
+      4  f93a		       65 ae		      ADC	xLoss
+      5  f93c		       38		      SEC
+      6  f93d		       e5 ad		      SBC	xGain
+      7  f93f		       a8		      TAY
+      8  f940
+     28  f940		       b1 c0		      LDA	(mapPtr),Y
+     29  f942		       aa		      TAX
+     30  f943		       29 f0		      AND	#AND_W3S0P7
+     31  f945		       05 8d		      ORA	wall3d
+     32  f947		       85 8d		      STA	wall3d
+     33  f949		       29 c0		      AND	#AND_W3S0P6
+     34  f94b		       85 8c		      STA	wall3c
+     35  f94d		       8a		      TXA
+     36  f94e		       29 30		      AND	#AND_W3S2P4
+     37  f950		       85 a7		      STA	shadow3cb
+     38  f952		       29 20		      AND	#AND_W3S1P4
+     39  f954		       85 98		      STA	shadow3ca
+     40  f956
+      0  f956					      X_POS_LOS		; 32 cycles
+      1  f956
+      2  f956		       98		      TYA
+      3  f957		       18		      CLC
+      4  f958		       65 ae		      ADC	xLoss
+      5  f95a		       38		      SEC
+      6  f95b		       e5 ad		      SBC	xGain
+      7  f95d		       a8		      TAY
+      8  f95e
+     42  f95e		       b1 c0		      LDA	(mapPtr),Y
+     43  f960		       29 f0		      AND	#AND_W3S0P4
+     44  f962		       85 8b		      STA	wall3b
+     45  f964		       29 30		      AND	#AND_W3S0P5
+     46  f966		       05 8c		      ORA	wall3c
+     47  f968		       85 8c		      STA	wall3c
+     48  f96a
+      0  f96a					      X_POS_LOS		; 46 cycles
+      1  f96a
+      2  f96a		       98		      TYA
+      3  f96b		       18		      CLC
+      4  f96c		       65 ae		      ADC	xLoss
+      5  f96e		       38		      SEC
+      6  f96f		       e5 ad		      SBC	xGain
+      7  f971		       a8		      TAY
+      8  f972
+     50  f972		       b1 c0		      LDA	(mapPtr),Y
+     51  f974		       aa		      TAX
+     52  f975		       29 0f		      AND	#AND_W3S0P3
+     53  f977		       05 8b		      ORA	wall3b
+     54  f979		       85 8b		      STA	wall3b
+     55  f97b		       29 03		      AND	#AND_W3S0P2
+     56  f97d		       85 8a		      STA	wall3a
+     57  f97f		       8a		      TXA
+     58  f980		       29 30		      AND	#AND_W3S2P3
+     59  f982		       85 a6		      STA	shadow3bb
+     60  f984		       29 10		      AND	#AND_W3S1P3
+     61  f986		       85 97		      STA	shadow3ba
+     62  f988
+      0  f988					      X_POS_LOS		; 41 cycles
+      1  f988
+      2  f988		       98		      TYA
+      3  f989		       18		      CLC
+      4  f98a		       65 ae		      ADC	xLoss
+      5  f98c		       38		      SEC
+      6  f98d		       e5 ad		      SBC	xGain
+      7  f98f		       a8		      TAY
+      8  f990
+     64  f990		       b1 c0		      LDA	(mapPtr),Y
+     65  f992		       aa		      TAX
+     66  f993		       29 fc		      AND	#AND_W3S0P1
+     67  f995		       05 8a		      ORA	wall3a
+     68  f997		       85 8a		      STA	wall3a
+     69  f999		       8a		      TXA
+     70  f99a		       29 03		      AND	#AND_W3S2P2
+     71  f99c		       85 a5		      STA	shadow3ab
+     72  f99e		       29 02		      AND	#AND_W3S1P2
+     73  f9a0		       85 96		      STA	shadow3aa
+     74  f9a2
+      0  f9a2					      X_POS_LOS		; 35 cycles
+      1  f9a2
+      2  f9a2		       98		      TYA
+      3  f9a3		       18		      CLC
+      4  f9a4		       65 ae		      ADC	xLoss
+      5  f9a6		       38		      SEC
+      6  f9a7		       e5 ad		      SBC	xGain
+      7  f9a9		       a8		      TAY
+      8  f9aa
+     76  f9aa		       b1 c0		      LDA	(mapPtr),Y
+     77  f9ac		       29 c0		      AND	#AND_W3S2P1
+     78  f9ae		       05 a5		      ORA	shadow3ab
+     79  f9b0		       85 a5		      STA	shadow3ab
+     80  f9b2		       29 80		      AND	#AND_W3S1P1
+     81  f9b4		       05 96		      ORA	shadow3aa
+     82  f9b6		       85 96		      STA	shadow3aa
 ------- FILE walrend.asm
-     12  f9b7
-     13  f9b7		       85 02		      STA	WSYNC	; At the end, we've consumed 9 scanlines
+     12  f9b8
+     13  f9b8		       85 02		      STA	WSYNC	; At the end, we've consumed 9 scanlines
 ------- FILE main.asm
-     39  f9b9
+     41  f9ba
 ------- FILE scrend.asm LEVEL 2 PASS 2
-      0  f9b9					      INCLUDE	"scrend.asm"	; 14 Scanlines
-      1  f9b9							; VePseu's screen renderer
-      2  f9b9
-      3  f9b9							; Remove the shadows incase only 1 wall is drawn
-      4  f9b9
-      5  f9b9		       a5 99		      LDA	shadow1a	; 12 cycles
-      6  f9bb		       05 80		      ORA	wall1
-      7  f9bd		       45 80		      EOR	wall1
-      8  f9bf		       85 99		      STA	shadow1a
-      9  f9c1
-     10  f9c1		       a5 9a		      LDA	shadow1b	; 12 cycles
-     11  f9c3		       05 80		      ORA	wall1
-     12  f9c5		       45 80		      EOR	wall1
-     13  f9c7		       85 9a		      STA	shadow1b
-     14  f9c9
-     15  f9c9		       a5 9c		      LDA	shadow1d	; 12 cycles
-     16  f9cb		       05 80		      ORA	wall1
-     17  f9cd		       45 80		      EOR	wall1
-     18  f9cf		       85 9c		      STA	shadow1d
-     19  f9d1
-     20  f9d1		       a5 9d		      LDA	shadow1e	; 12 cycles
-     21  f9d3		       05 80		      ORA	wall1
-     22  f9d5		       45 80		      EOR	wall1
-     23  f9d7		       85 9d		      STA	shadow1e
-     24  f9d9
-     25  f9d9		       a5 80		      LDA	wall1	; Copy wall one to the four addresses preceding it (15 cycles)
-     26  f9db		       85 81		      STA	wall1+1
-     27  f9dd		       85 82		      STA	wall1+2
-     28  f9df		       85 83		      STA	wall1+3
-     29  f9e1		       85 84		      STA	wall1+4
-     30  f9e3
-     31  f9e3		       a2 00		      LDX	#INDEXINIT	; 2 cycles
-     32  f9e5
-     33  f9e5				   scrRendLoop		; Totals at 909 cycles
-     34  f9e5
-     35  f9e5		       b5 85		      LDA	wall2a,X	; Merge walls (12 cycles)
-     36  f9e7		       15 80		      ORA	wall1,X
-     37  f9e9		       95 85		      STA	wall2a,X
-     38  f9eb
-     39  f9eb		       b5 8f		      LDA	shadow2aa,X	; Merge A shadows (12 cycles)
-     40  f9ed		       15 99		      ORA	shadow1a,X
-     41  f9ef		       95 8f		      STA	shadow2aa,X
-     42  f9f1
-     43  f9f1		       b5 9e		      LDA	shadow2ab,X	; Merge B shadows (12 cycles)
-     44  f9f3		       15 99		      ORA	shadow1a,X
-     45  f9f5		       95 9e		      STA	shadow2ab,X
-     46  f9f7
-     47  f9f7		       b5 85		      LDA	wall2a,X	; Overlap walls (16 cycles)
-     48  f9f9		       15 99		      ORA	shadow1a,X
-     49  f9fb		       55 99		      EOR	shadow1a,X
-     50  f9fd		       95 85		      STA	wall2a,X
-     51  f9ff
-     52  f9ff		       b5 8f		      LDA	shadow2aa,X	; Overlap A shadows (16 cycles)
-     53  fa01		       15 85		      ORA	wall2a,X
-     54  fa03		       55 85		      EOR	wall2a,X
-     55  fa05		       95 8f		      STA	shadow2aa,X
-     56  fa07
-     57  fa07		       b5 9e		      LDA	shadow2ab,X	; Overlap B shadows (16 cycles)
-     58  fa09		       15 85		      ORA	wall2a,X
-     59  fa0b		       55 85		      EOR	wall2a,X
-     60  fa0d		       95 9e		      STA	shadow2ab,X
-     61  fa0f
-     62  fa0f		       e8		      INX		; Loop if we haven't rendered all the walls (6 or 7 cycles)
-     63  fa10		       e0 0a		      CPX	#WALLCNT
-     64  fa12		       d0 d1		      BNE	scrRendLoop
-     65  fa14
-     66  fa14		       85 02		      STA	WSYNC	; by the end of this we have used 14 scanlines
+      0  f9ba					      INCLUDE	"scrend.asm"	; 14 Scanlines
+      1  f9ba							; VePseu's screen renderer
+      2  f9ba
+      3  f9ba							; Remove the shadows incase only 1 wall is drawn
+      4  f9ba
+      5  f9ba		       a5 9b		      LDA	shadow1a	; 12 cycles
+      6  f9bc		       05 80		      ORA	wall1
+      7  f9be		       45 80		      EOR	wall1
+      8  f9c0		       85 9b		      STA	shadow1a
+      9  f9c2
+     10  f9c2		       a5 9c		      LDA	shadow1b	; 12 cycles
+     11  f9c4		       05 80		      ORA	wall1
+     12  f9c6		       45 80		      EOR	wall1
+     13  f9c8		       85 9c		      STA	shadow1b
+     14  f9ca
+     15  f9ca		       a5 9e		      LDA	shadow1d	; 12 cycles
+     16  f9cc		       05 80		      ORA	wall1
+     17  f9ce		       45 80		      EOR	wall1
+     18  f9d0		       85 9e		      STA	shadow1d
+     19  f9d2
+     20  f9d2		       a5 9f		      LDA	shadow1e	; 12 cycles
+     21  f9d4		       05 80		      ORA	wall1
+     22  f9d6		       45 80		      EOR	wall1
+     23  f9d8		       85 9f		      STA	shadow1e
+     24  f9da
+     25  f9da		       a5 80		      LDA	wall1	; Copy wall one to the four addresses preceding it (15 cycles)
+     26  f9dc		       85 81		      STA	wall1+1
+     27  f9de		       85 82		      STA	wall1+2
+     28  f9e0		       85 83		      STA	wall1+3
+     29  f9e2		       85 84		      STA	wall1+4
+     30  f9e4
+     31  f9e4		       a2 00		      LDX	#INDEXINIT	; 2 cycles
+     32  f9e6
+     33  f9e6				   scrRendLoop		; Totals at 909 cycles
+     34  f9e6
+     35  f9e6		       b5 85		      LDA	wall2a,X	; Merge walls (12 cycles)
+     36  f9e8		       15 80		      ORA	wall1,X
+     37  f9ea		       95 85		      STA	wall2a,X
+     38  f9ec
+     39  f9ec		       b5 91		      LDA	shadow2aa,X	; Merge A shadows (12 cycles)
+     40  f9ee		       15 9b		      ORA	shadow1a,X
+     41  f9f0		       95 91		      STA	shadow2aa,X
+     42  f9f2
+     43  f9f2		       b5 a0		      LDA	shadow2ab,X	; Merge B shadows (12 cycles)
+     44  f9f4		       15 9b		      ORA	shadow1a,X
+     45  f9f6		       95 a0		      STA	shadow2ab,X
+     46  f9f8
+     47  f9f8		       b5 85		      LDA	wall2a,X	; Overlap walls (16 cycles)
+     48  f9fa		       15 9b		      ORA	shadow1a,X
+     49  f9fc		       55 9b		      EOR	shadow1a,X
+     50  f9fe		       95 85		      STA	wall2a,X
+     51  fa00
+     52  fa00		       b5 91		      LDA	shadow2aa,X	; Overlap A shadows (16 cycles)
+     53  fa02		       15 85		      ORA	wall2a,X
+     54  fa04		       55 85		      EOR	wall2a,X
+     55  fa06		       95 91		      STA	shadow2aa,X
+     56  fa08
+     57  fa08		       b5 a0		      LDA	shadow2ab,X	; Overlap B shadows (16 cycles)
+     58  fa0a		       15 85		      ORA	wall2a,X
+     59  fa0c		       55 85		      EOR	wall2a,X
+     60  fa0e		       95 a0		      STA	shadow2ab,X
+     61  fa10
+     62  fa10		       e8		      INX		; Loop if we haven't rendered all the walls (6 or 7 cycles)
+     63  fa11		       e0 0a		      CPX	#WALLCNT
+     64  fa13		       d0 d1		      BNE	scrRendLoop
+     65  fa15
+     66  fa15		       a9 ff		      LDA	#FULLWALL
+     67  fa17		       45 a5		      EOR	shadow3ab
+     68  fa19		       85 8f		      STA	wall4a
+     69  fa1b
+     70  fa1b		       a9 ff		      LDA	#FULLWALL
+     71  fa1d		       45 a6		      EOR	shadow3bb
+     72  fa1f		       85 90		      STA	wall4b
+     73  fa21
+     74  fa21		       85 02		      STA	WSYNC	; by the end of this we have used 14 scanlines
 ------- FILE main.asm
-     41  fa16
-     42  fa16		       a9 78		      LDA	#<jerry
-     43  fa18		       85 bf		      STA	sprite
-     44  fa1a		       a9 f0		      LDA	#>jerry
-     45  fa1c		       85 c0		      STA	sprite+1
-     46  fa1e		       a9 0c		      LDA	#$0C
-     47  fa20		       85 06		      STA	COLUP0
-     48  fa22
-     49  fa22		       a9 1e		      LDA	#30
-     50  fa24		       85 ba		      STA	spriteHeight
-     51  fa26
-     52  fa26							; Pad!
-     53  fa26
-     54  fa26		       a2 00		      LDX	#INDEXINIT
-     55  fa28
-     56  fa28				   upperPad
-     57  fa28		       85 02		      STA	WSYNC
-     58  fa2a
-     59  fa2a		       e8		      INX
-     60  fa2b		       e0 0e		      CPX	#UPPAD_LIMIT
-     61  fa2d		       d0 f9		      BNE	upperPad
-     62  fa2f
-     63  fa2f		       85 02		      STA	WSYNC
-     64  fa31
-     65  fa31							; Draw everything
-     66  fa31
-     67  fa31		       a0 28		      LDY	#10 + 30
-     68  fa33
+     43  fa23
+     44  fa23		       a9 78		      LDA	#<jerry
+     45  fa25		       85 c2		      STA	sprite
+     46  fa27		       a9 f0		      LDA	#>jerry
+     47  fa29		       85 c3		      STA	sprite+1
+     48  fa2b		       a9 0c		      LDA	#$0C
+     49  fa2d		       85 06		      STA	COLUP0
+     50  fa2f
+     51  fa2f		       a9 1f		      LDA	#31
+     52  fa31		       85 bc		      STA	spriteHeight
+     53  fa33
+     54  fa33							; Pad!
+     55  fa33
+     56  fa33		       a2 00		      LDX	#INDEXINIT
+     57  fa35
+     58  fa35				   upperPad
+     59  fa35		       85 02		      STA	WSYNC
+     60  fa37
+     61  fa37		       e8		      INX
+     62  fa38		       e0 0e		      CPX	#UPPAD_LIMIT
+     63  fa3a		       d0 f9		      BNE	upperPad
+     64  fa3c
+     65  fa3c		       85 02		      STA	WSYNC
+     66  fa3e
+     67  fa3e							; Draw everything
+     68  fa3e
+     69  fa3e		       a0 00		      LDY	#0
+     70  fa40
 ------- FILE dispkern.asm LEVEL 2 PASS 2
-      0  fa33					      INCLUDE	"dispkern.asm"	; 186 scanlines
-      1  fa33							; VePseu's display kernel
-      2  fa33
-      3  fa33		       4c 9e fd 	      JMP	drawStart
-      4  fa36
-      5  fa36							;			  FILE/SUBROUTINE NAMING SCHEME:
-      6  fa36							;
-      7  fa36							; dc_w1s1.asm
-      8  fa36							; |   | |
-      9  fa36							; |   | |- The shadow variant it draws (A or B, 1 or 2)
-     10  fa36							; |   |
-     11  fa36							; |   |- The wall it draws
-     12  fa36							; |
-     13  fa36							; |- Draw-code identifier
-     14  fa36
-------- FILE drawCode/dc_w1s1.asm LEVEL 3 PASS 2
-      0  fa36					      INCLUDE	"drawCode/dc_w1s1.asm"
-      1  fa36							; The draw code for the 1st wall and shadow
-      2  fa36
-      3  fa36				   dc_w1s1
-      4  fa36
-      5  fa36		       a2 00		      LDX	#INDEXINIT
-      6  fa38
-      7  fa38				   _dc_w1s1_loop
-      8  fa38		       a5 b3		      LDA	wallColour
-      9  fa3a		       85 02		      STA	WSYNC
-     10  fa3c		       85 08		      STA	COLUPF
-     11  fa3e		       a5 80		      LDA	wall1
-     12  fa40		       85 0e		      STA	PF1
-     13  fa42		       98		      TYA
-     14  fa43		       f0 4d		      BEQ	noSprite_1
-     15  fa45		       88		      DEY
-     16  fa46		       c4 ba		      CPY	spriteHeight
-     17  fa48		       b0 51		      BCS	noSprite_2
-     18  fa4a		       b1 bf		      LDA	(sprite),Y
-     19  fa4c		       85 1b		      STA	GRP0
-     20  fa4e				   noSprite_ret
-     21  fa4e		       a5 80		      LDA	wall1
-     22  fa50		       85 0f		      STA	PF2
-      0  fa52					      DELAY	6
-      1  fa52					      REPEAT	6/2 - 6%2
-      2  fa52		       ea		      NOP
-      1  fa52					      REPEND
-      2  fa53		       ea		      NOP
-      1  fa53					      REPEND
-      2  fa54		       ea		      NOP
-      3  fa55					      REPEND
-      4  fa55
-      5  fa55				  -	      REPEAT	6%2
-      6  fa55				  -	      STA	DUMP
-      7  fa55					      REPEND
-     24  fa55		       85 0d		      STA	PF0
-      0  fa57					      DELAY	5
-      1  fa57					      REPEAT	5/2 - 5%2
-      2  fa57		       ea		      NOP
-      3  fa58					      REPEND
-      4  fa58
-      5  fa58					      REPEAT	5%2
-      6  fa58		       85 30		      STA	DUMP
-      7  fa5a					      REPEND
-     26  fa5a		       a9 00		      LDA	#NULL
-     27  fa5c		       85 0d		      STA	PF0
-      0  fa5e					      DELAY	10
-      1  fa5e					      REPEAT	10/2 - 10%2
-      2  fa5e		       ea		      NOP
-      1  fa5e					      REPEND
-      2  fa5f		       ea		      NOP
-      1  fa5f					      REPEND
-      2  fa60		       ea		      NOP
-      1  fa60					      REPEND
-      2  fa61		       ea		      NOP
-      1  fa61					      REPEND
-      2  fa62		       ea		      NOP
-      3  fa63					      REPEND
-      4  fa63
-      5  fa63				  -	      REPEAT	10%2
-      6  fa63				  -	      STA	DUMP
-      7  fa63					      REPEND
-     29  fa63		       85 0f		      STA	PF2
-     30  fa65
-     31  fa65		       85 02		      STA	WSYNC
-     32  fa67		       a5 b4		      LDA	shadowColour
-     33  fa69		       85 08		      STA	COLUPF
-     34  fa6b		       a5 99		      LDA	shadow1a
-     35  fa6d		       3d 00 f0 	      AND	and_1a,X
-     36  fa70		       85 0e		      STA	PF1
-     37  fa72		       a5 9a		      LDA	shadow1b
-     38  fa74		       3d 1e f0 	      AND	and_1b,X
-     39  fa77		       85 0f		      STA	PF2
-      0  fa79					      DELAY	9
-      1  fa79					      REPEAT	9/2 - 9%2
-      2  fa79		       ea		      NOP
-      1  fa79					      REPEND
-      2  fa7a		       ea		      NOP
-      1  fa7a					      REPEND
-      2  fa7b		       ea		      NOP
-      3  fa7c					      REPEND
-      4  fa7c
-      5  fa7c					      REPEAT	9%2
-      6  fa7c		       85 30		      STA	DUMP
-      7  fa7e					      REPEND
-     41  fa7e		       a5 9c		      LDA	shadow1d
-     42  fa80		       3d 3c f0 	      AND	and_1c,X
-     43  fa83		       85 0e		      STA	PF1
-     44  fa85		       a5 9d		      LDA	shadow1e
-     45  fa87		       3d 5a f0 	      AND	and_1d,X
-     46  fa8a		       85 0f		      STA	PF2
-     47  fa8c
-     48  fa8c		       e8		      INX
-     49  fa8d		       e0 1e		      CPX	#30
-     50  fa8f		       d0 a7		      BNE	_dc_w1s1_loop
-     51  fa91
-     52  fa91		       60		      RTS
-     53  fa92
-     54  fa92				   noSprite_1
-      0  fa92					      DELAY	11
-      1  fa92					      REPEAT	11/2 - 11%2
-      2  fa92		       ea		      NOP
-      1  fa92					      REPEND
-      2  fa93		       ea		      NOP
-      1  fa93					      REPEND
-      2  fa94		       ea		      NOP
-      1  fa94					      REPEND
-      2  fa95		       ea		      NOP
-      3  fa96					      REPEND
-      4  fa96
-      5  fa96					      REPEAT	11%2
-      6  fa96		       85 30		      STA	DUMP
-      7  fa98					      REPEND
-     56  fa98		       4c 4e fa 	      JMP	noSprite_ret
-     57  fa9b
-     58  fa9b				   noSprite_2
-      0  fa9b					      DELAY	4
-      1  fa9b					      REPEAT	4/2 - 4%2
-      2  fa9b		       ea		      NOP
-      1  fa9b					      REPEND
-      2  fa9c		       ea		      NOP
-      3  fa9d					      REPEND
-      4  fa9d
-      5  fa9d				  -	      REPEAT	4%2
-      6  fa9d				  -	      STA	DUMP
-      7  fa9d					      REPEND
-     60  fa9d		       4c 4e fa 	      JMP	noSprite_ret
+      0  fa40					      INCLUDE	"dispkern.asm"	; 186 scanlines
+      1  fa40							; VePseu's display kernel
+      2  fa40
+      3  fa40		       4c 00 fb 	      JMP	drawStart
+      4  fa43
+      5  fa43							;			  FILE/SUBROUTINE NAMING SCHEME:
+      6  fa43							;
+      7  fa43							; dc_w1s1.asm
+      8  fa43							; |   | |
+      9  fa43							; |   | |- The shadow variant it draws (A or B, 1 or 2)
+     10  fa43							; |   |
+     11  fa43							; |   |- The wall it draws
+     12  fa43							; |
+     13  fa43							; |- Draw-code identifier
+     14  fa43
+------- FILE drawCode/mmDraw.asm LEVEL 3 PASS 2
+      0  fa43					      INCLUDE	"drawCode/mmDraw.asm"
+      1  fa43							; Draws the compass to the screen
+      2  fa43
+------- FILE drawCode/mmRender.asm LEVEL 4 PASS 2
+      0  fa43					      INCLUDE	"drawCode/mmRender.asm"
+      1  fa43							; Render the minimap
+      2  fa43
+      3  fa43				   mmRender
+      4  fa43		       85 2b		      STA	HMCLR
+      5  fa45							; Set the colour of the player
+      6  fa45		       a9 cc		      LDA	#PLYRCOLU
+      7  fa47		       85 08		      STA	COLUPF
+      8  fa49							; Set the colour of the map
+      9  fa49		       a9 0e		      LDA	#MAPCOLU
+     10  fa4b		       85 06		      STA	COLUP0
+     11  fa4d		       85 07		      STA	COLUP1
+     12  fa4f							; Get the player's position and translate it into horizontal movement
+     13  fa4f		       a9 08		      LDA	#%00001000
+     14  fa51		       18		      CLC
+     15  fa52		       38		      SEC
+     16  fa53		       e5 ab		      SBC	playerPos
+     17  fa55		       0a		      ASL
+     18  fa56		       0a		      ASL
+     19  fa57		       0a		      ASL
+     20  fa58		       0a		      ASL
+     21  fa59		       85 b9		      STA	horzPos_plyr
+     22  fa5b
+     23  fa5b							; Set the map's position to the right values
+     24  fa5b		       a9 00		      LDA	#HADJ_A
+     25  fa5d		       85 b7		      STA	horzPos_mA
+     26  fa5f		       a9 10		      LDA	#HADJ_B
+     27  fa61		       85 b8		      STA	horzPos_mB
+     28  fa63
+     29  fa63		       85 02		      STA	WSYNC
+     30  fa65		       a2 00		      LDX	#INDEXINIT
+     31  fa67
+     32  fa67				   _mmRender_wait1
+     33  fa67		       e8		      INX
+     34  fa68		       e0 05		      CPX	#HWAIT
+     35  fa6a		       d0 fb		      BNE	_mmRender_wait1
+      0  fa6c					      DELAY	HDELAY1
+      1  fa6c				   .CYCLES    SET	HDELAY1
+      2  fa6c
+ C0 $7
+      3  fa6c					      ECHO	"C0",.CYCLES
+      4  fa6c
+      5  fa6c				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fa6c				  -	      NOP
+      7  fa6c				  -.CYCLES    SET	.CYCLES - 2
+      8  fa6c					      ENDIF
+      9  fa6c
+ C1 $7
+     10  fa6c					      ECHO	"C1",.CYCLES
+     11  fa6c
+     12  fa6c					      IF	[.CYCLES - 2] / 5
+     13  fa6c					      REPEAT	.CYCLES / 5
+     14  fa6c		       e6 c4		      INC	foo
+     15  fa6e					      REPEND
+     16  fa6e				   .CYCLES    SET	.CYCLES % 5
+     17  fa6e					      ENDIF
+     18  fa6e
+ C2 $2
+     19  fa6e					      ECHO	"C2",.CYCLES
+     20  fa6e
+     21  fa6e				  -	      IF	.CYCLES % 3 == 1
+     22  fa6e				  -	      NOP
+     23  fa6e				  -.CYCLES    SET	.CYCLES - 2
+     24  fa6e					      ENDIF
+     25  fa6e
+ C3 $2
+     26  fa6e					      ECHO	"C3",.CYCLES
+     27  fa6e
+     28  fa6e				  -	      REPEAT	.CYCLES / 3
+     29  fa6e				  -	      STA	DUMP
+     30  fa6e					      REPEND
+     31  fa6e
+     32  fa6e				   .CYCLES    SET	.CYCLES % 3
+     33  fa6e
+ C4 $2
+     34  fa6e					      ECHO	"C4",.CYCLES
+     35  fa6e
+     36  fa6e					      REPEAT	.CYCLES / 2
+     37  fa6e		       ea		      NOP
+     38  fa6f					      REPEND
+     39  fa6f
+     40  fa6f				   .CYCLES    SET	.CYCLES % 2
+     41  fa6f
+     42  fa6f				  -	      IF	.CYCLES
+     43  fa6f				  -	      ERR
+     44  fa6f					      ENDIF
+     45  fa6f
+     37  fa6f		       85 10		      STA	RESP0
+     38  fa71		       85 11		      STA	RESP1
+     39  fa73
+     40  fa73		       a5 ab		      LDA	playerPos
+     41  fa75
+     42  fa75		       85 02		      STA	WSYNC
+     43  fa77		       a2 00		      LDX	#INDEXINIT
+     44  fa79
+     45  fa79				   _mmRender_wait2
+     46  fa79		       e8		      INX
+     47  fa7a		       e0 05		      CPX	#HWAIT
+     48  fa7c		       d0 fb		      BNE	_mmRender_wait2
+      0  fa7e					      DELAY	HDELAY2
+      1  fa7e				   .CYCLES    SET	HDELAY2
+      2  fa7e
+ C0 $a
+      3  fa7e					      ECHO	"C0",.CYCLES
+      4  fa7e
+      5  fa7e				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fa7e				  -	      NOP
+      7  fa7e				  -.CYCLES    SET	.CYCLES - 2
+      8  fa7e					      ENDIF
+      9  fa7e
+ C1 $a
+     10  fa7e					      ECHO	"C1",.CYCLES
+     11  fa7e
+     12  fa7e					      IF	[.CYCLES - 2] / 5
+     13  fa7e					      REPEAT	.CYCLES / 5
+     14  fa7e		       e6 c4		      INC	foo
+     13  fa7e					      REPEND
+     14  fa80		       e6 c4		      INC	foo
+     15  fa82					      REPEND
+     16  fa82				   .CYCLES    SET	.CYCLES % 5
+     17  fa82					      ENDIF
+     18  fa82
+ C2 $0
+     19  fa82					      ECHO	"C2",.CYCLES
+     20  fa82
+     21  fa82				  -	      IF	.CYCLES % 3 == 1
+     22  fa82				  -	      NOP
+     23  fa82				  -.CYCLES    SET	.CYCLES - 2
+     24  fa82					      ENDIF
+     25  fa82
+ C3 $0
+     26  fa82					      ECHO	"C3",.CYCLES
+     27  fa82
+     28  fa82				  -	      REPEAT	.CYCLES / 3
+     29  fa82				  -	      STA	DUMP
+     30  fa82					      REPEND
+     31  fa82
+     32  fa82				   .CYCLES    SET	.CYCLES % 3
+     33  fa82
+ C4 $0
+     34  fa82					      ECHO	"C4",.CYCLES
+     35  fa82
+     36  fa82				  -	      REPEAT	.CYCLES / 2
+     37  fa82				  -	      NOP
+     38  fa82					      REPEND
+     39  fa82
+     40  fa82				   .CYCLES    SET	.CYCLES % 2
+     41  fa82
+     42  fa82				  -	      IF	.CYCLES
+     43  fa82				  -	      ERR
+     44  fa82					      ENDIF
+     45  fa82
+     50  fa82		       85 14		      STA	RESBL
+     51  fa84
+     52  fa84		       60		      RTS
+------- FILE drawCode/mmDraw.asm
+      4  fa85
+      5  fa85				   mmDraw
+      6  fa85		       a9 00		      LDA	#0
+      7  fa87
+      8  fa87		       20 43 fa 	      JSR	mmRender
+      9  fa8a
+     10  fa8a							; Load the player's position
+     11  fa8a
+     12  fa8a		       a5 b9		      LDA	horzPos_plyr
+     13  fa8c		       85 24		      STA	HMBL
+     14  fa8e		       a5 b7		      LDA	horzPos_mA
+     15  fa90		       85 20		      STA	HMP0
+     16  fa92		       a5 b8		      LDA	horzPos_mB
+     17  fa94		       85 21		      STA	HMP1
+     18  fa96
+     19  fa96		       a9 00		      LDA	#NULL
+     20  fa98		       85 1b		      STA	GRP0
+     21  fa9a		       85 1c		      STA	GRP1
+     22  fa9c		       85 02		      STA	WSYNC
+     23  fa9e		       85 2a		      STA	HMOVE
+     24  faa0
+     25  faa0		       a0 00		      LDY	#INDEXINIT
+     26  faa2		       a6 ab		      LDX	playerPos
+     27  faa4
+     28  faa4				   _mmLoop
+     29  faa4		       85 02		      STA	WSYNC
+     30  faa6
+     31  faa6		       b1 be		      LDA	(miniMapPtr),Y
+     32  faa8		       85 1b		      STA	GRP0
+     33  faaa		       c8		      INY
+     34  faab		       b1 be		      LDA	(miniMapPtr),Y
+     35  faad		       85 1c		      STA	GRP1
+     36  faaf		       c8		      INY
+     37  fab0
+     38  fab0		       8a		      TXA
+     39  fab1		       38		      SEC
+     40  fab2		       e5 ac		      SBC	mapWidth
+     41  fab4		       aa		      TAX
+     42  fab5		       29 f0		      AND	#%11110000
+     43  fab7
+     44  fab7		       c9 00		      CMP	#0
+     45  fab9		       d0 0a		      BNE	_noDraw
+     46  fabb
+     47  fabb		       a9 02		      LDA	#2
+     48  fabd		       85 1f		      STA	ENABL
+     49  fabf		       85 ba		      STA	drawingPlyr
+     50  fac1		       a9 01		      LDA	#1
+     51  fac3		       85 27		      STA	VDELBL
+     52  fac5
+     53  fac5				   _noDraw
+     54  fac5
+     55  fac5		       a5 ba		      LDA	drawingPlyr
+     56  fac7		       85 1f		      STA	ENABL
+     57  fac9		       a9 00		      LDA	#0
+     58  facb		       85 ba		      STA	drawingPlyr
+     59  facd		       c0 20		      CPY	#32
+     60  facf		       d0 d3		      BNE	_mmLoop
+     61  fad1
+     62  fad1		       a9 00		      LDA	#0
+     63  fad3		       85 1f		      STA	ENABL
+     64  fad5
+     65  fad5		       85 02		      STA	WSYNC
+     66  fad7
+     67  fad7		       a9 00		      LDA	#NULL
+     68  fad9		       85 1b		      STA	GRP0
+     69  fadb		       85 1c		      STA	GRP1
+     70  fadd		       85 06		      STA	COLUP0
+     71  fadf		       85 07		      STA	COLUP1
+     72  fae1
+     73  fae1		       60		      RTS
 ------- FILE dispkern.asm
 ------- FILE drawCode/dc_w1s2.asm LEVEL 3 PASS 2
-      0  faa0					      INCLUDE	"drawCode/dc_w1s2.asm"
-      1  faa0							; The draw code for the 1st wall and it's second shadow
-      2  faa0
-      3  faa0				   dc_w1s2
-      4  faa0
-      5  faa0		       a2 00		      LDX	#INDEXINIT
-      6  faa2		       a0 09		      LDY	#9
-      7  faa4		       4c af fa 	      JMP	_dc_w1s2_start
-      8  faa7
-      9  faa7				   _dc_w1s2_loop
-     10  faa7		       85 02		      STA	WSYNC
-      0  faa9					      DELAY	12
-      1  faa9					      REPEAT	12/2 - 12%2
-      2  faa9		       ea		      NOP
-      1  faa9					      REPEND
-      2  faaa		       ea		      NOP
-      1  faaa					      REPEND
-      2  faab		       ea		      NOP
-      1  faab					      REPEND
-      2  faac		       ea		      NOP
-      1  faac					      REPEND
-      2  faad		       ea		      NOP
-      1  faad					      REPEND
-      2  faae		       ea		      NOP
-      3  faaf					      REPEND
-      4  faaf
-      5  faaf				  -	      REPEAT	12%2
-      6  faaf				  -	      STA	DUMP
-      7  faaf					      REPEND
-     12  faaf				   _dc_w1s2_start
-     13  faaf		       a5 b3		      LDA	wallColour
-     14  fab1		       85 08		      STA	COLUPF
-     15  fab3		       a5 80		      LDA	wall1
-     16  fab5		       85 0e		      STA	PF1
-     17  fab7		       85 0f		      STA	PF2
-      0  fab9					      DELAY	16
-      1  fab9					      REPEAT	16/2 - 16%2
-      2  fab9		       ea		      NOP
-      1  fab9					      REPEND
-      2  faba		       ea		      NOP
-      1  faba					      REPEND
-      2  fabb		       ea		      NOP
-      1  fabb					      REPEND
-      2  fabc		       ea		      NOP
-      1  fabc					      REPEND
-      2  fabd		       ea		      NOP
-      1  fabd					      REPEND
-      2  fabe		       ea		      NOP
-      1  fabe					      REPEND
-      2  fabf		       ea		      NOP
-      1  fabf					      REPEND
-      2  fac0		       ea		      NOP
-      3  fac1					      REPEND
-      4  fac1
-      5  fac1				  -	      REPEAT	16%2
-      6  fac1				  -	      STA	DUMP
-      7  fac1					      REPEND
-     19  fac1		       85 0d		      STA	PF0
-      0  fac3					      DELAY	3
-      1  fac3				  -	      REPEAT	3/2 - 3%2
-      2  fac3				  -	      NOP
-      3  fac3					      REPEND
-      4  fac3
-      5  fac3					      REPEAT	3%2
-      6  fac3		       85 30		      STA	DUMP
-      7  fac5					      REPEND
-     21  fac5		       a9 00		      LDA	#NULL
-     22  fac7		       85 0d		      STA	PF0
-      0  fac9					      DELAY	10
-      1  fac9					      REPEAT	10/2 - 10%2
-      2  fac9		       ea		      NOP
-      1  fac9					      REPEND
-      2  faca		       ea		      NOP
-      1  faca					      REPEND
-      2  facb		       ea		      NOP
-      1  facb					      REPEND
-      2  facc		       ea		      NOP
-      1  facc					      REPEND
-      2  facd		       ea		      NOP
-      3  face					      REPEND
-      4  face
-      5  face				  -	      REPEAT	10%2
-      6  face				  -	      STA	DUMP
-      7  face					      REPEND
-     24  face		       85 0f		      STA	PF2
-     25  fad0
-     26  fad0		       85 02		      STA	WSYNC
-     27  fad2		       a5 b4		      LDA	shadowColour
-     28  fad4		       85 08		      STA	COLUPF
-     29  fad6		       a5 99		      LDA	shadow1a
-     30  fad8		       39 00 f0 	      AND	and_1a,Y
-     31  fadb		       85 0e		      STA	PF1
-     32  fadd		       a5 9a		      LDA	shadow1b
-     33  fadf		       39 1e f0 	      AND	and_1b,Y
-     34  fae2		       85 0f		      STA	PF2
-      0  fae4					      DELAY	9
-      1  fae4					      REPEAT	9/2 - 9%2
-      2  fae4		       ea		      NOP
-      1  fae4					      REPEND
-      2  fae5		       ea		      NOP
-      1  fae5					      REPEND
-      2  fae6		       ea		      NOP
-      3  fae7					      REPEND
-      4  fae7
-      5  fae7					      REPEAT	9%2
-      6  fae7		       85 30		      STA	DUMP
-      7  fae9					      REPEND
-     36  fae9		       a5 9c		      LDA	shadow1d
-     37  faeb		       39 3c f0 	      AND	and_1c,Y
-     38  faee		       85 0e		      STA	PF1
-     39  faf0		       a5 9d		      LDA	shadow1e
-     40  faf2		       39 5a f0 	      AND	and_1d,Y
-     41  faf5		       85 0f		      STA	PF2
-     42  faf7
-     43  faf7		       e8		      INX
-     44  faf8		       e0 03		      CPX	#PIXH
-     45  fafa		       d0 ab		      BNE	_dc_w1s2_loop
-     46  fafc		       88		      DEY
-     47  fafd
-     48  fafd		       a2 00		      LDX	#NULL
-     49  faff
-     50  faff		       c0 01		      CPY	#LOWSHAD_LIMIT
-     51  fb01		       d0 a4		      BNE	_dc_w1s2_loop
-     52  fb03
-     53  fb03		       60		      RTS
+      0  fae2					      INCLUDE	"drawCode/dc_w1s2.asm"
+      1  fae2
+------- FILE dispkern.asm
+     17  fae2
+     18  fb00		       00 00 00 00*	      ALIGN	256
+     19  fb00
+     20  fb00				   drawStart
+     21  fb00
+     22  fb00		       b8		      CLV
+     23  fb01
+------- FILE drawCode/dc_w1s1.asm LEVEL 3 PASS 2
+      0  fb01					      INCLUDE	"drawCode/dc_w1s1.asm"
+      1  fb01							; The draw code for the 1st wall and shadow
+      2  fb01
+      3  fb01		       4c 11 fb 	      JMP	dc_w1s1
+      4  fb04
+      5  fb04				   _dc_w1s1_noSprite_1
+      0  fb04					      DELAY	11
+      1  fb04				   .CYCLES    SET	11
+      2  fb04
+ C0 $b
+      3  fb04					      ECHO	"C0",.CYCLES
+      4  fb04
+      5  fb04					      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fb04		       ea		      NOP
+      7  fb04				   .CYCLES    SET	.CYCLES - 2
+      8  fb05					      ENDIF
+      9  fb05
+ C1 $9
+     10  fb05					      ECHO	"C1",.CYCLES
+     11  fb05
+     12  fb05					      IF	[.CYCLES - 2] / 5
+     13  fb05					      REPEAT	.CYCLES / 5
+     14  fb05		       e6 c4		      INC	foo
+     15  fb07					      REPEND
+     16  fb07				   .CYCLES    SET	.CYCLES % 5
+     17  fb07					      ENDIF
+     18  fb07
+ C2 $4
+     19  fb07					      ECHO	"C2",.CYCLES
+     20  fb07
+     21  fb07					      IF	.CYCLES % 3 == 1
+     22  fb07		       ea		      NOP
+     23  fb07				   .CYCLES    SET	.CYCLES - 2
+     24  fb08					      ENDIF
+     25  fb08
+ C3 $2
+     26  fb08					      ECHO	"C3",.CYCLES
+     27  fb08
+     28  fb08				  -	      REPEAT	.CYCLES / 3
+     29  fb08				  -	      STA	DUMP
+     30  fb08					      REPEND
+     31  fb08
+     32  fb08				   .CYCLES    SET	.CYCLES % 3
+     33  fb08
+ C4 $2
+     34  fb08					      ECHO	"C4",.CYCLES
+     35  fb08
+     36  fb08					      REPEAT	.CYCLES / 2
+     37  fb08		       ea		      NOP
+     38  fb09					      REPEND
+     39  fb09
+     40  fb09				   .CYCLES    SET	.CYCLES % 2
+     41  fb09
+     42  fb09				  -	      IF	.CYCLES
+     43  fb09				  -	      ERR
+     44  fb09					      ENDIF
+     45  fb09
+      7  fb09		       4c 29 fb 	      JMP	_dc_w1s1_noSprite_ret
+      8  fb0c
+      9  fb0c				   _dc_w1s1_noSprite_2
+      0  fb0c					      DELAY	4
+      1  fb0c				   .CYCLES    SET	4
+      2  fb0c
+ C0 $4
+      3  fb0c					      ECHO	"C0",.CYCLES
+      4  fb0c
+      5  fb0c				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fb0c				  -	      NOP
+      7  fb0c				  -.CYCLES    SET	.CYCLES - 2
+      8  fb0c					      ENDIF
+      9  fb0c
+ C1 $4
+     10  fb0c					      ECHO	"C1",.CYCLES
+     11  fb0c
+     12  fb0c				  -	      IF	[.CYCLES - 2] / 5
+     13  fb0c				  -	      REPEAT	.CYCLES / 5
+     14  fb0c				  -	      INC	foo
+     15  fb0c				  -	      REPEND
+     16  fb0c				  -.CYCLES    SET	.CYCLES % 5
+     17  fb0c					      ENDIF
+     18  fb0c
+ C2 $4
+     19  fb0c					      ECHO	"C2",.CYCLES
+     20  fb0c
+     21  fb0c					      IF	.CYCLES % 3 == 1
+     22  fb0c		       ea		      NOP
+     23  fb0c				   .CYCLES    SET	.CYCLES - 2
+     24  fb0d					      ENDIF
+     25  fb0d
+ C3 $2
+     26  fb0d					      ECHO	"C3",.CYCLES
+     27  fb0d
+     28  fb0d				  -	      REPEAT	.CYCLES / 3
+     29  fb0d				  -	      STA	DUMP
+     30  fb0d					      REPEND
+     31  fb0d
+     32  fb0d				   .CYCLES    SET	.CYCLES % 3
+     33  fb0d
+ C4 $2
+     34  fb0d					      ECHO	"C4",.CYCLES
+     35  fb0d
+     36  fb0d					      REPEAT	.CYCLES / 2
+     37  fb0d		       ea		      NOP
+     38  fb0e					      REPEND
+     39  fb0e
+     40  fb0e				   .CYCLES    SET	.CYCLES % 2
+     41  fb0e
+     42  fb0e				  -	      IF	.CYCLES
+     43  fb0e				  -	      ERR
+     44  fb0e					      ENDIF
+     45  fb0e
+     11  fb0e		       4c 29 fb 	      JMP	_dc_w1s1_noSprite_ret
+     12  fb11
+     13  fb11				   dc_w1s1
+     14  fb11
+     15  fb11		       a2 00		      LDX	#INDEXINIT
+     16  fb13
+     17  fb13				   _dc_w1s1_loop
+     18  fb13		       a5 b5		      LDA	wallColour
+     19  fb15		       85 02		      STA	WSYNC
+     20  fb17		       85 08		      STA	COLUPF
+     21  fb19		       a5 80		      LDA	wall1
+     22  fb1b		       85 0e		      STA	PF1
+     23  fb1d		       98		      TYA
+     24  fb1e		       f0 e4		      BEQ	_dc_w1s1_noSprite_1
+     25  fb20		       88		      DEY
+     26  fb21		       c4 bc		      CPY	spriteHeight
+     27  fb23		       b0 e7		      BCS	_dc_w1s1_noSprite_2
+     28  fb25		       b1 c2		      LDA	(sprite),Y
+     29  fb27		       85 1b		      STA	GRP0
+     30  fb29				   _dc_w1s1_noSprite_ret
+     31  fb29		       a5 80		      LDA	wall1
+     32  fb2b		       85 0f		      STA	PF2
+      0  fb2d					      DELAY	6
+      1  fb2d				   .CYCLES    SET	6
+      2  fb2d
+ C0 $6
+      3  fb2d					      ECHO	"C0",.CYCLES
+      4  fb2d
+      5  fb2d				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fb2d				  -	      NOP
+      7  fb2d				  -.CYCLES    SET	.CYCLES - 2
+      8  fb2d					      ENDIF
+      9  fb2d
+ C1 $6
+     10  fb2d					      ECHO	"C1",.CYCLES
+     11  fb2d
+     12  fb2d				  -	      IF	[.CYCLES - 2] / 5
+     13  fb2d				  -	      REPEAT	.CYCLES / 5
+     14  fb2d				  -	      INC	foo
+     15  fb2d				  -	      REPEND
+     16  fb2d				  -.CYCLES    SET	.CYCLES % 5
+     17  fb2d					      ENDIF
+     18  fb2d
+ C2 $6
+     19  fb2d					      ECHO	"C2",.CYCLES
+     20  fb2d
+     21  fb2d				  -	      IF	.CYCLES % 3 == 1
+     22  fb2d				  -	      NOP
+     23  fb2d				  -.CYCLES    SET	.CYCLES - 2
+     24  fb2d					      ENDIF
+     25  fb2d
+ C3 $6
+     26  fb2d					      ECHO	"C3",.CYCLES
+     27  fb2d
+     28  fb2d					      REPEAT	.CYCLES / 3
+     29  fb2d		       85 30		      STA	DUMP
+     28  fb2d					      REPEND
+     29  fb2f		       85 30		      STA	DUMP
+     30  fb31					      REPEND
+     31  fb31
+     32  fb31				   .CYCLES    SET	.CYCLES % 3
+     33  fb31
+ C4 $0
+     34  fb31					      ECHO	"C4",.CYCLES
+     35  fb31
+     36  fb31				  -	      REPEAT	.CYCLES / 2
+     37  fb31				  -	      NOP
+     38  fb31					      REPEND
+     39  fb31
+     40  fb31				   .CYCLES    SET	.CYCLES % 2
+     41  fb31
+     42  fb31				  -	      IF	.CYCLES
+     43  fb31				  -	      ERR
+     44  fb31					      ENDIF
+     45  fb31
+     34  fb31		       85 0d		      STA	PF0
+      0  fb33					      DELAY	19
+      1  fb33				   .CYCLES    SET	19
+      2  fb33
+ C0 $13
+      3  fb33					      ECHO	"C0",.CYCLES
+      4  fb33
+      5  fb33				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fb33				  -	      NOP
+      7  fb33				  -.CYCLES    SET	.CYCLES - 2
+      8  fb33					      ENDIF
+      9  fb33
+ C1 $13
+     10  fb33					      ECHO	"C1",.CYCLES
+     11  fb33
+     12  fb33					      IF	[.CYCLES - 2] / 5
+     13  fb33					      REPEAT	.CYCLES / 5
+     14  fb33		       e6 c4		      INC	foo
+     13  fb33					      REPEND
+     14  fb35		       e6 c4		      INC	foo
+     13  fb35					      REPEND
+     14  fb37		       e6 c4		      INC	foo
+     15  fb39					      REPEND
+     16  fb39				   .CYCLES    SET	.CYCLES % 5
+     17  fb39					      ENDIF
+     18  fb39
+ C2 $4
+     19  fb39					      ECHO	"C2",.CYCLES
+     20  fb39
+     21  fb39					      IF	.CYCLES % 3 == 1
+     22  fb39		       ea		      NOP
+     23  fb39				   .CYCLES    SET	.CYCLES - 2
+     24  fb3a					      ENDIF
+     25  fb3a
+ C3 $2
+     26  fb3a					      ECHO	"C3",.CYCLES
+     27  fb3a
+     28  fb3a				  -	      REPEAT	.CYCLES / 3
+     29  fb3a				  -	      STA	DUMP
+     30  fb3a					      REPEND
+     31  fb3a
+     32  fb3a				   .CYCLES    SET	.CYCLES % 3
+     33  fb3a
+ C4 $2
+     34  fb3a					      ECHO	"C4",.CYCLES
+     35  fb3a
+     36  fb3a					      REPEAT	.CYCLES / 2
+     37  fb3a		       ea		      NOP
+     38  fb3b					      REPEND
+     39  fb3b
+     40  fb3b				   .CYCLES    SET	.CYCLES % 2
+     41  fb3b
+     42  fb3b				  -	      IF	.CYCLES
+     43  fb3b				  -	      ERR
+     44  fb3b					      ENDIF
+     45  fb3b
+     36  fb3b		       a9 00		      LDA	#NULL
+     37  fb3d		       85 0f		      STA	PF2
+     38  fb3f		       85 0d		      STA	PF0
+     39  fb41
+     40  fb41		       85 02		      STA	WSYNC
+     41  fb43		       a5 b6		      LDA	shadowColour
+     42  fb45		       85 08		      STA	COLUPF
+     43  fb47		       a5 9b		      LDA	shadow1a
+     44  fb49		       3d 00 f0 	      AND	and_1a,X
+     45  fb4c		       85 0e		      STA	PF1
+     46  fb4e		       a5 9c		      LDA	shadow1b
+     47  fb50		       3d 1e f0 	      AND	and_1b,X
+     48  fb53		       85 0f		      STA	PF2
+      0  fb55					      DELAY	9
+      1  fb55				   .CYCLES    SET	9
+      2  fb55
+ C0 $9
+      3  fb55					      ECHO	"C0",.CYCLES
+      4  fb55
+      5  fb55				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fb55				  -	      NOP
+      7  fb55				  -.CYCLES    SET	.CYCLES - 2
+      8  fb55					      ENDIF
+      9  fb55
+ C1 $9
+     10  fb55					      ECHO	"C1",.CYCLES
+     11  fb55
+     12  fb55					      IF	[.CYCLES - 2] / 5
+     13  fb55					      REPEAT	.CYCLES / 5
+     14  fb55		       e6 c4		      INC	foo
+     15  fb57					      REPEND
+     16  fb57				   .CYCLES    SET	.CYCLES % 5
+     17  fb57					      ENDIF
+     18  fb57
+ C2 $4
+     19  fb57					      ECHO	"C2",.CYCLES
+     20  fb57
+     21  fb57					      IF	.CYCLES % 3 == 1
+     22  fb57		       ea		      NOP
+     23  fb57				   .CYCLES    SET	.CYCLES - 2
+     24  fb58					      ENDIF
+     25  fb58
+ C3 $2
+     26  fb58					      ECHO	"C3",.CYCLES
+     27  fb58
+     28  fb58				  -	      REPEAT	.CYCLES / 3
+     29  fb58				  -	      STA	DUMP
+     30  fb58					      REPEND
+     31  fb58
+     32  fb58				   .CYCLES    SET	.CYCLES % 3
+     33  fb58
+ C4 $2
+     34  fb58					      ECHO	"C4",.CYCLES
+     35  fb58
+     36  fb58					      REPEAT	.CYCLES / 2
+     37  fb58		       ea		      NOP
+     38  fb59					      REPEND
+     39  fb59
+     40  fb59				   .CYCLES    SET	.CYCLES % 2
+     41  fb59
+     42  fb59				  -	      IF	.CYCLES
+     43  fb59				  -	      ERR
+     44  fb59					      ENDIF
+     45  fb59
+     50  fb59		       a5 9e		      LDA	shadow1d
+     51  fb5b		       3d 3c f0 	      AND	and_1c,X
+     52  fb5e		       85 0e		      STA	PF1
+     53  fb60		       a5 9f		      LDA	shadow1e
+     54  fb62		       3d 5a f0 	      AND	and_1d,X
+     55  fb65		       85 0f		      STA	PF2
+     56  fb67
+     57  fb67		       a9 00		      LDA	#NULL
+     58  fb69		       85 1b		      STA	GRP0
+     59  fb6b
+     60  fb6b		       e8		      INX
+     61  fb6c		       e0 1e		      CPX	#UPPRWALL_S
+     62  fb6e		       d0 a3		      BNE	_dc_w1s1_loop
 ------- FILE dispkern.asm
 ------- FILE drawCode/dc_w2s1.asm LEVEL 3 PASS 2
-      0  fb04					      INCLUDE	"drawCode/dc_w2s1.asm"
-      1  fb04							; The second wall and it's first shadow
-      2  fb04
-      3  fb04				   dc_w2s1
-      4  fb04
-      5  fb04		       a2 00		      LDX	#INDEXINIT
-      6  fb06		       4c 10 fb 	      JMP	_dc_w2s1_start
-      7  fb09
-      8  fb09				   _dc_w2s1_loop
-      9  fb09		       85 02		      STA	WSYNC
-      0  fb0b					      DELAY	10	; Delay to keep the timing constant
-      1  fb0b					      REPEAT	10/2 - 10%2
-      2  fb0b		       ea		      NOP
-      1  fb0b					      REPEND
-      2  fb0c		       ea		      NOP
-      1  fb0c					      REPEND
-      2  fb0d		       ea		      NOP
-      1  fb0d					      REPEND
-      2  fb0e		       ea		      NOP
-      1  fb0e					      REPEND
-      2  fb0f		       ea		      NOP
-      3  fb10					      REPEND
-      4  fb10
-      5  fb10				  -	      REPEAT	10%2
-      6  fb10				  -	      STA	DUMP
-      7  fb10					      REPEND
-     11  fb10				   _dc_w2s1_start
-     12  fb10		       a5 b3		      LDA	wallColour	; Draw the wall
-     13  fb12		       85 08		      STA	COLUPF
-     14  fb14		       a5 85		      LDA	wall2a
-     15  fb16		       85 0e		      STA	PF1
-     16  fb18		       a5 86		      LDA	wall2b
-     17  fb1a		       85 0f		      STA	PF2
-      0  fb1c					      DELAY	14
-      1  fb1c					      REPEAT	14/2 - 14%2
-      2  fb1c		       ea		      NOP
-      1  fb1c					      REPEND
-      2  fb1d		       ea		      NOP
-      1  fb1d					      REPEND
-      2  fb1e		       ea		      NOP
-      1  fb1e					      REPEND
-      2  fb1f		       ea		      NOP
-      1  fb1f					      REPEND
-      2  fb20		       ea		      NOP
-      1  fb20					      REPEND
-      2  fb21		       ea		      NOP
-      1  fb21					      REPEND
-      2  fb22		       ea		      NOP
-      3  fb23					      REPEND
-      4  fb23
-      5  fb23				  -	      REPEAT	14%2
-      6  fb23				  -	      STA	DUMP
-      7  fb23					      REPEND
-     19  fb23		       a5 87		      LDA	wall2c
-     20  fb25		       85 0d		      STA	PF0
-     21  fb27		       a5 88		      LDA	wall2d
-     22  fb29		       85 0e		      STA	PF1
-     23  fb2b		       a5 89		      LDA	wall2e
-     24  fb2d		       85 0f		      STA	PF2
-     25  fb2f		       a9 00		      LDA	#NULL
-      0  fb31					      DELAY	2
-      1  fb31					      REPEAT	2/2 - 2%2
-      2  fb31		       ea		      NOP
-      3  fb32					      REPEND
-      4  fb32
-      5  fb32				  -	      REPEAT	2%2
-      6  fb32				  -	      STA	DUMP
-      7  fb32					      REPEND
-     27  fb32		       85 0f		      STA	PF2
-     28  fb34		       85 0d		      STA	PF0
-     29  fb36
-     30  fb36		       85 02		      STA	WSYNC	; Draw the shadow
-     31  fb38		       a5 b4		      LDA	shadowColour
-     32  fb3a		       85 08		      STA	COLUPF
-     33  fb3c		       a5 8f		      LDA	shadow2aa
-     34  fb3e		       05 99		      ORA	shadow1a
-     35  fb40		       85 0e		      STA	PF1
-     36  fb42		       a5 90		      LDA	shadow2ba
-     37  fb44		       05 9a		      ORA	shadow1b
-     38  fb46		       85 0f		      STA	PF2
-     39  fb48		       a5 91		      LDA	shadow2ca
-     40  fb4a		       85 0d		      STA	PF0
-     41  fb4c		       a5 92		      LDA	shadow2da
-     42  fb4e		       05 9b		      ORA	shadow1c
-     43  fb50		       85 0e		      STA	PF1
-     44  fb52		       a5 93		      LDA	shadow2ea
-     45  fb54		       05 9d		      ORA	shadow1e
-     46  fb56		       85 0f		      STA	PF2
-     47  fb58		       a9 00		      LDA	#NULL
-     48  fb5a		       85 0d		      STA	PF0
-     49  fb5c
-     50  fb5c		       e8		      INX		; Loop for the rest of the pixel's height
-     51  fb5d		       e0 03		      CPX	#PIXH
-     52  fb5f		       d0 a8		      BNE	_dc_w2s1_loop
-     53  fb61
-      0  fb61					      DELAY	10	; Delay to keep timing constant
-      1  fb61					      REPEAT	10/2 - 10%2
-      2  fb61		       ea		      NOP
-      1  fb61					      REPEND
-      2  fb62		       ea		      NOP
-      1  fb62					      REPEND
-      2  fb63		       ea		      NOP
-      1  fb63					      REPEND
-      2  fb64		       ea		      NOP
-      1  fb64					      REPEND
-      2  fb65		       ea		      NOP
-      3  fb66					      REPEND
-      4  fb66
-      5  fb66				  -	      REPEAT	10%2
-      6  fb66				  -	      STA	DUMP
-      7  fb66					      REPEND
-     55  fb66
-     56  fb66		       60		      RTS
+      0  fb70					      INCLUDE	"drawCode/dc_w2s1.asm"
+      1  fb70							; The second wall and it's first shadow
+      2  fb70
+      3  fb70				   dc_w2s1
+      4  fb70
+      5  fb70		       a2 03		      LDX	#PIXH
+      6  fb72		       a5 b5		      LDA	wallColour
+      0  fb74					      DELAY	2
+      1  fb74				   .CYCLES    SET	2
+      2  fb74
+ C0 $2
+      3  fb74					      ECHO	"C0",.CYCLES
+      4  fb74
+      5  fb74				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fb74				  -	      NOP
+      7  fb74				  -.CYCLES    SET	.CYCLES - 2
+      8  fb74					      ENDIF
+      9  fb74
+ C1 $2
+     10  fb74					      ECHO	"C1",.CYCLES
+     11  fb74
+     12  fb74				  -	      IF	[.CYCLES - 2] / 5
+     13  fb74				  -	      REPEAT	.CYCLES / 5
+     14  fb74				  -	      INC	foo
+     15  fb74				  -	      REPEND
+     16  fb74				  -.CYCLES    SET	.CYCLES % 5
+     17  fb74					      ENDIF
+     18  fb74
+ C2 $2
+     19  fb74					      ECHO	"C2",.CYCLES
+     20  fb74
+     21  fb74				  -	      IF	.CYCLES % 3 == 1
+     22  fb74				  -	      NOP
+     23  fb74				  -.CYCLES    SET	.CYCLES - 2
+     24  fb74					      ENDIF
+     25  fb74
+ C3 $2
+     26  fb74					      ECHO	"C3",.CYCLES
+     27  fb74
+     28  fb74				  -	      REPEAT	.CYCLES / 3
+     29  fb74				  -	      STA	DUMP
+     30  fb74					      REPEND
+     31  fb74
+     32  fb74				   .CYCLES    SET	.CYCLES % 3
+     33  fb74
+ C4 $2
+     34  fb74					      ECHO	"C4",.CYCLES
+     35  fb74
+     36  fb74					      REPEAT	.CYCLES / 2
+     37  fb74		       ea		      NOP
+     38  fb75					      REPEND
+     39  fb75
+     40  fb75				   .CYCLES    SET	.CYCLES % 2
+     41  fb75
+     42  fb75				  -	      IF	.CYCLES
+     43  fb75				  -	      ERR
+     44  fb75					      ENDIF
+     45  fb75
+      8  fb75		       4c 89 fb 	      JMP	_dc_w2s1_joinIn
+      9  fb78
+     10  fb78				   _dc_w2s1_noSprite_1
+      0  fb78					      DELAY	11
+      1  fb78				   .CYCLES    SET	11
+      2  fb78
+ C0 $b
+      3  fb78					      ECHO	"C0",.CYCLES
+      4  fb78
+      5  fb78					      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fb78		       ea		      NOP
+      7  fb78				   .CYCLES    SET	.CYCLES - 2
+      8  fb79					      ENDIF
+      9  fb79
+ C1 $9
+     10  fb79					      ECHO	"C1",.CYCLES
+     11  fb79
+     12  fb79					      IF	[.CYCLES - 2] / 5
+     13  fb79					      REPEAT	.CYCLES / 5
+     14  fb79		       e6 c4		      INC	foo
+     15  fb7b					      REPEND
+     16  fb7b				   .CYCLES    SET	.CYCLES % 5
+     17  fb7b					      ENDIF
+     18  fb7b
+ C2 $4
+     19  fb7b					      ECHO	"C2",.CYCLES
+     20  fb7b
+     21  fb7b					      IF	.CYCLES % 3 == 1
+     22  fb7b		       ea		      NOP
+     23  fb7b				   .CYCLES    SET	.CYCLES - 2
+     24  fb7c					      ENDIF
+     25  fb7c
+ C3 $2
+     26  fb7c					      ECHO	"C3",.CYCLES
+     27  fb7c
+     28  fb7c				  -	      REPEAT	.CYCLES / 3
+     29  fb7c				  -	      STA	DUMP
+     30  fb7c					      REPEND
+     31  fb7c
+     32  fb7c				   .CYCLES    SET	.CYCLES % 3
+     33  fb7c
+ C4 $2
+     34  fb7c					      ECHO	"C4",.CYCLES
+     35  fb7c
+     36  fb7c					      REPEAT	.CYCLES / 2
+     37  fb7c		       ea		      NOP
+     38  fb7d					      REPEND
+     39  fb7d
+     40  fb7d				   .CYCLES    SET	.CYCLES % 2
+     41  fb7d
+     42  fb7d				  -	      IF	.CYCLES
+     43  fb7d				  -	      ERR
+     44  fb7d					      ENDIF
+     45  fb7d
+     12  fb7d		       4c 9b fb 	      JMP	_dc_w2s1_noSprite_ret
+     13  fb80
+     14  fb80				   _dc_w2s1_noSprite_2
+      0  fb80					      DELAY	4
+      1  fb80				   .CYCLES    SET	4
+      2  fb80
+ C0 $4
+      3  fb80					      ECHO	"C0",.CYCLES
+      4  fb80
+      5  fb80				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fb80				  -	      NOP
+      7  fb80				  -.CYCLES    SET	.CYCLES - 2
+      8  fb80					      ENDIF
+      9  fb80
+ C1 $4
+     10  fb80					      ECHO	"C1",.CYCLES
+     11  fb80
+     12  fb80				  -	      IF	[.CYCLES - 2] / 5
+     13  fb80				  -	      REPEAT	.CYCLES / 5
+     14  fb80				  -	      INC	foo
+     15  fb80				  -	      REPEND
+     16  fb80				  -.CYCLES    SET	.CYCLES % 5
+     17  fb80					      ENDIF
+     18  fb80
+ C2 $4
+     19  fb80					      ECHO	"C2",.CYCLES
+     20  fb80
+     21  fb80					      IF	.CYCLES % 3 == 1
+     22  fb80		       ea		      NOP
+     23  fb80				   .CYCLES    SET	.CYCLES - 2
+     24  fb81					      ENDIF
+     25  fb81
+ C3 $2
+     26  fb81					      ECHO	"C3",.CYCLES
+     27  fb81
+     28  fb81				  -	      REPEAT	.CYCLES / 3
+     29  fb81				  -	      STA	DUMP
+     30  fb81					      REPEND
+     31  fb81
+     32  fb81				   .CYCLES    SET	.CYCLES % 3
+     33  fb81
+ C4 $2
+     34  fb81					      ECHO	"C4",.CYCLES
+     35  fb81
+     36  fb81					      REPEAT	.CYCLES / 2
+     37  fb81		       ea		      NOP
+     38  fb82					      REPEND
+     39  fb82
+     40  fb82				   .CYCLES    SET	.CYCLES % 2
+     41  fb82
+     42  fb82				  -	      IF	.CYCLES
+     43  fb82				  -	      ERR
+     44  fb82					      ENDIF
+     45  fb82
+     16  fb82		       4c 9b fb 	      JMP	_dc_w2s1_noSprite_ret
+     17  fb85
+     18  fb85				   _dc_w2s1_loop
+     19  fb85		       a5 b5		      LDA	wallColour
+     20  fb87		       85 02		      STA	WSYNC
+     21  fb89				   _dc_w2s1_joinIn
+     22  fb89		       85 08		      STA	COLUPF
+     23  fb8b		       a5 85		      LDA	wall2a
+     24  fb8d		       85 0e		      STA	PF1
+     25  fb8f		       98		      TYA
+     26  fb90		       f0 e6		      BEQ	_dc_w2s1_noSprite_1
+     27  fb92		       88		      DEY
+     28  fb93		       c4 bc		      CPY	spriteHeight
+     29  fb95		       b0 e9		      BCS	_dc_w2s1_noSprite_2
+     30  fb97		       b1 c2		      LDA	(sprite),Y
+     31  fb99		       85 1b		      STA	GRP0
+     32  fb9b				   _dc_w2s1_noSprite_ret
+     33  fb9b		       a5 86		      LDA	wall2b
+     34  fb9d		       85 0f		      STA	PF2
+     35  fb9f
+     36  fb9f		       a5 87		      LDA	wall2c
+     37  fba1		       85 0d		      STA	PF0
+     38  fba3		       a5 88		      LDA	wall2d
+     39  fba5		       85 0e		      STA	PF1
+     40  fba7		       a5 89		      LDA	wall2e
+     41  fba9		       85 0f		      STA	PF2
+     42  fbab		       a9 00		      LDA	#NULL
+      0  fbad					      DELAY	10
+      1  fbad				   .CYCLES    SET	10
+      2  fbad
+ C0 $a
+      3  fbad					      ECHO	"C0",.CYCLES
+      4  fbad
+      5  fbad				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fbad				  -	      NOP
+      7  fbad				  -.CYCLES    SET	.CYCLES - 2
+      8  fbad					      ENDIF
+      9  fbad
+ C1 $a
+     10  fbad					      ECHO	"C1",.CYCLES
+     11  fbad
+     12  fbad					      IF	[.CYCLES - 2] / 5
+     13  fbad					      REPEAT	.CYCLES / 5
+     14  fbad		       e6 c4		      INC	foo
+     13  fbad					      REPEND
+     14  fbaf		       e6 c4		      INC	foo
+     15  fbb1					      REPEND
+     16  fbb1				   .CYCLES    SET	.CYCLES % 5
+     17  fbb1					      ENDIF
+     18  fbb1
+ C2 $0
+     19  fbb1					      ECHO	"C2",.CYCLES
+     20  fbb1
+     21  fbb1				  -	      IF	.CYCLES % 3 == 1
+     22  fbb1				  -	      NOP
+     23  fbb1				  -.CYCLES    SET	.CYCLES - 2
+     24  fbb1					      ENDIF
+     25  fbb1
+ C3 $0
+     26  fbb1					      ECHO	"C3",.CYCLES
+     27  fbb1
+     28  fbb1				  -	      REPEAT	.CYCLES / 3
+     29  fbb1				  -	      STA	DUMP
+     30  fbb1					      REPEND
+     31  fbb1
+     32  fbb1				   .CYCLES    SET	.CYCLES % 3
+     33  fbb1
+ C4 $0
+     34  fbb1					      ECHO	"C4",.CYCLES
+     35  fbb1
+     36  fbb1				  -	      REPEAT	.CYCLES / 2
+     37  fbb1				  -	      NOP
+     38  fbb1					      REPEND
+     39  fbb1
+     40  fbb1				   .CYCLES    SET	.CYCLES % 2
+     41  fbb1
+     42  fbb1				  -	      IF	.CYCLES
+     43  fbb1				  -	      ERR
+     44  fbb1					      ENDIF
+     45  fbb1
+     44  fbb1		       85 0f		      STA	PF2
+     45  fbb3		       85 0d		      STA	PF0
+     46  fbb5
+     47  fbb5		       85 02		      STA	WSYNC	; Draw the shadow
+     48  fbb7		       a5 b6		      LDA	shadowColour
+     49  fbb9		       85 08		      STA	COLUPF
+     50  fbbb		       a5 91		      LDA	shadow2aa
+     51  fbbd		       05 9b		      ORA	shadow1a
+     52  fbbf		       85 0e		      STA	PF1
+     53  fbc1		       a5 92		      LDA	shadow2ba
+     54  fbc3		       05 9c		      ORA	shadow1b
+     55  fbc5		       85 0f		      STA	PF2
+     56  fbc7		       a5 93		      LDA	shadow2ca
+     57  fbc9		       85 0d		      STA	PF0
+     58  fbcb		       a5 94		      LDA	shadow2da
+     59  fbcd		       05 9d		      ORA	shadow1c
+     60  fbcf		       85 0e		      STA	PF1
+     61  fbd1		       a5 95		      LDA	shadow2ea
+     62  fbd3		       05 9f		      ORA	shadow1e
+     63  fbd5		       85 0f		      STA	PF2
+     64  fbd7		       a9 00		      LDA	#NULL
+     65  fbd9		       85 0d		      STA	PF0
+     66  fbdb
+     67  fbdb		       ca		      DEX
+     68  fbdc		       d0 a7		      BNE	_dc_w2s1_loop
+     69  fbde
+     70  fbde		       50 03		      BVC	dc_w2s2_delayed
+     71  fbe0		       4c ab fd 	      JMP	jumbo
 ------- FILE dispkern.asm
 ------- FILE drawCode/dc_w2s2.asm LEVEL 3 PASS 2
-      0  fb67					      INCLUDE	"drawCode/dc_w2s2.asm"
-      1  fb67							; The draw code for the 1st wall and shadow
-      2  fb67
-      3  fb67				   dc_w2s2
-      4  fb67
-      5  fb67		       a2 00		      LDX	#INDEXINIT
-      6  fb69		       4c 73 fb 	      JMP	_dc_w2s2_start
-      7  fb6c
-      8  fb6c				   _dc_w2s2_loop
-      9  fb6c		       85 02		      STA	WSYNC
-      0  fb6e					      DELAY	10
-      1  fb6e					      REPEAT	10/2 - 10%2
-      2  fb6e		       ea		      NOP
-      1  fb6e					      REPEND
-      2  fb6f		       ea		      NOP
-      1  fb6f					      REPEND
-      2  fb70		       ea		      NOP
-      1  fb70					      REPEND
-      2  fb71		       ea		      NOP
-      1  fb71					      REPEND
-      2  fb72		       ea		      NOP
-      3  fb73					      REPEND
-      4  fb73
-      5  fb73				  -	      REPEAT	10%2
-      6  fb73				  -	      STA	DUMP
-      7  fb73					      REPEND
-     11  fb73				   _dc_w2s2_start
-     12  fb73		       a5 b3		      LDA	wallColour
-     13  fb75		       85 08		      STA	COLUPF
-     14  fb77		       a5 85		      LDA	wall2a
-     15  fb79		       85 0e		      STA	PF1
-     16  fb7b		       a5 86		      LDA	wall2b
-     17  fb7d		       85 0f		      STA	PF2
-      0  fb7f					      DELAY	14
-      1  fb7f					      REPEAT	14/2 - 14%2
-      2  fb7f		       ea		      NOP
-      1  fb7f					      REPEND
-      2  fb80		       ea		      NOP
-      1  fb80					      REPEND
-      2  fb81		       ea		      NOP
-      1  fb81					      REPEND
-      2  fb82		       ea		      NOP
-      1  fb82					      REPEND
-      2  fb83		       ea		      NOP
-      1  fb83					      REPEND
-      2  fb84		       ea		      NOP
-      1  fb84					      REPEND
-      2  fb85		       ea		      NOP
-      3  fb86					      REPEND
-      4  fb86
-      5  fb86				  -	      REPEAT	14%2
-      6  fb86				  -	      STA	DUMP
-      7  fb86					      REPEND
-     19  fb86		       a5 87		      LDA	wall2c
-     20  fb88		       85 0d		      STA	PF0
-     21  fb8a		       a5 88		      LDA	wall2d
-     22  fb8c		       85 0e		      STA	PF1
-     23  fb8e		       a5 89		      LDA	wall2e
-     24  fb90		       85 0f		      STA	PF2
-     25  fb92		       a9 00		      LDA	#NULL
-      0  fb94					      DELAY	2
-      1  fb94					      REPEAT	2/2 - 2%2
-      2  fb94		       ea		      NOP
-      3  fb95					      REPEND
-      4  fb95
-      5  fb95				  -	      REPEAT	2%2
-      6  fb95				  -	      STA	DUMP
-      7  fb95					      REPEND
-     27  fb95		       85 0f		      STA	PF2
-     28  fb97		       85 0d		      STA	PF0
-     29  fb99
-     30  fb99		       85 02		      STA	WSYNC
-     31  fb9b		       a5 b4		      LDA	shadowColour
-     32  fb9d		       85 08		      STA	COLUPF
-     33  fb9f		       a5 9e		      LDA	shadow2ab
-     34  fba1		       05 99		      ORA	shadow1a
-     35  fba3		       85 0e		      STA	PF1
-     36  fba5		       a5 9f		      LDA	shadow2bb
-     37  fba7		       05 9a		      ORA	shadow1b
-     38  fba9		       85 0f		      STA	PF2
-     39  fbab		       a5 a0		      LDA	shadow2cb
-     40  fbad		       85 0d		      STA	PF0
-     41  fbaf		       a5 a1		      LDA	shadow2db
-     42  fbb1		       05 9b		      ORA	shadow1c
-     43  fbb3		       85 0e		      STA	PF1
-     44  fbb5		       a5 a2		      LDA	shadow2eb
-     45  fbb7		       05 9d		      ORA	shadow1e
-     46  fbb9		       85 0f		      STA	PF2
-     47  fbbb		       a9 00		      LDA	#NULL
-     48  fbbd		       85 0d		      STA	PF0
-     49  fbbf
-     50  fbbf		       e8		      INX
-     51  fbc0		       e0 03		      CPX	#PIXH
-     52  fbc2		       d0 a8		      BNE	_dc_w2s2_loop
-     53  fbc4
-     54  fbc4		       a2 00		      LDX	#NULL
-     55  fbc6
-      0  fbc6					      DELAY	8
-      1  fbc6					      REPEAT	8/2 - 8%2
-      2  fbc6		       ea		      NOP
-      1  fbc6					      REPEND
-      2  fbc7		       ea		      NOP
-      1  fbc7					      REPEND
-      2  fbc8		       ea		      NOP
-      1  fbc8					      REPEND
-      2  fbc9		       ea		      NOP
-      3  fbca					      REPEND
-      4  fbca
-      5  fbca				  -	      REPEAT	8%2
-      6  fbca				  -	      STA	DUMP
-      7  fbca					      REPEND
-     57  fbca
-     58  fbca		       60		      RTS
+      0  fbe3					      INCLUDE	"drawCode/dc_w2s2.asm"
+      1  fbe3							; The second wall and it's second shadow
+      2  fbe3
+      3  fbe3				   dc_w2s2_delayed
+      0  fbe3					      DELAY	2
+      1  fbe3				   .CYCLES    SET	2
+      2  fbe3
+ C0 $2
+      3  fbe3					      ECHO	"C0",.CYCLES
+      4  fbe3
+      5  fbe3				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fbe3				  -	      NOP
+      7  fbe3				  -.CYCLES    SET	.CYCLES - 2
+      8  fbe3					      ENDIF
+      9  fbe3
+ C1 $2
+     10  fbe3					      ECHO	"C1",.CYCLES
+     11  fbe3
+     12  fbe3				  -	      IF	[.CYCLES - 2] / 5
+     13  fbe3				  -	      REPEAT	.CYCLES / 5
+     14  fbe3				  -	      INC	foo
+     15  fbe3				  -	      REPEND
+     16  fbe3				  -.CYCLES    SET	.CYCLES % 5
+     17  fbe3					      ENDIF
+     18  fbe3
+ C2 $2
+     19  fbe3					      ECHO	"C2",.CYCLES
+     20  fbe3
+     21  fbe3				  -	      IF	.CYCLES % 3 == 1
+     22  fbe3				  -	      NOP
+     23  fbe3				  -.CYCLES    SET	.CYCLES - 2
+     24  fbe3					      ENDIF
+     25  fbe3
+ C3 $2
+     26  fbe3					      ECHO	"C3",.CYCLES
+     27  fbe3
+     28  fbe3				  -	      REPEAT	.CYCLES / 3
+     29  fbe3				  -	      STA	DUMP
+     30  fbe3					      REPEND
+     31  fbe3
+     32  fbe3				   .CYCLES    SET	.CYCLES % 3
+     33  fbe3
+ C4 $2
+     34  fbe3					      ECHO	"C4",.CYCLES
+     35  fbe3
+     36  fbe3					      REPEAT	.CYCLES / 2
+     37  fbe3		       ea		      NOP
+     38  fbe4					      REPEND
+     39  fbe4
+     40  fbe4				   .CYCLES    SET	.CYCLES % 2
+     41  fbe4
+     42  fbe4				  -	      IF	.CYCLES
+     43  fbe4				  -	      ERR
+     44  fbe4					      ENDIF
+     45  fbe4
+      5  fbe4				   dc_w2s2
+      6  fbe4
+      7  fbe4		       a2 03		      LDX	#PIXH
+      8  fbe6
+      9  fbe6				   _dc_w2s2_loop
+     10  fbe6		       a5 b5		      LDA	wallColour
+     11  fbe8		       85 02		      STA	WSYNC
+     12  fbea		       85 08		      STA	COLUPF
+     13  fbec		       a5 85		      LDA	wall2a
+     14  fbee		       85 0e		      STA	PF1
+     15  fbf0		       98		      TYA
+     16  fbf1		       f0 53		      BEQ	_dc_w2s2_noSprite_1
+     17  fbf3		       88		      DEY
+     18  fbf4		       c4 bc		      CPY	spriteHeight
+     19  fbf6		       b0 55		      BCS	_dc_w2s2_noSprite_2
+     20  fbf8		       b1 c2		      LDA	(sprite),Y
+     21  fbfa		       85 1b		      STA	GRP0
+     22  fbfc				   _dc_w2s2_noSprite_ret
+     23  fbfc		       a5 86		      LDA	wall2b
+     24  fbfe		       85 0f		      STA	PF2
+     25  fc00
+     26  fc00		       a5 87		      LDA	wall2c
+     27  fc02		       85 0d		      STA	PF0
+     28  fc04		       a5 88		      LDA	wall2d
+     29  fc06		       85 0e		      STA	PF1
+     30  fc08		       a5 89		      LDA	wall2e
+     31  fc0a		       85 0f		      STA	PF2
+     32  fc0c		       a9 00		      LDA	#NULL
+      0  fc0e					      DELAY	10
+      1  fc0e				   .CYCLES    SET	10
+      2  fc0e
+ C0 $a
+      3  fc0e					      ECHO	"C0",.CYCLES
+      4  fc0e
+      5  fc0e				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fc0e				  -	      NOP
+      7  fc0e				  -.CYCLES    SET	.CYCLES - 2
+      8  fc0e					      ENDIF
+      9  fc0e
+ C1 $a
+     10  fc0e					      ECHO	"C1",.CYCLES
+     11  fc0e
+     12  fc0e					      IF	[.CYCLES - 2] / 5
+     13  fc0e					      REPEAT	.CYCLES / 5
+     14  fc0e		       e6 c4		      INC	foo
+     13  fc0e					      REPEND
+     14  fc10		       e6 c4		      INC	foo
+     15  fc12					      REPEND
+     16  fc12				   .CYCLES    SET	.CYCLES % 5
+     17  fc12					      ENDIF
+     18  fc12
+ C2 $0
+     19  fc12					      ECHO	"C2",.CYCLES
+     20  fc12
+     21  fc12				  -	      IF	.CYCLES % 3 == 1
+     22  fc12				  -	      NOP
+     23  fc12				  -.CYCLES    SET	.CYCLES - 2
+     24  fc12					      ENDIF
+     25  fc12
+ C3 $0
+     26  fc12					      ECHO	"C3",.CYCLES
+     27  fc12
+     28  fc12				  -	      REPEAT	.CYCLES / 3
+     29  fc12				  -	      STA	DUMP
+     30  fc12					      REPEND
+     31  fc12
+     32  fc12				   .CYCLES    SET	.CYCLES % 3
+     33  fc12
+ C4 $0
+     34  fc12					      ECHO	"C4",.CYCLES
+     35  fc12
+     36  fc12				  -	      REPEAT	.CYCLES / 2
+     37  fc12				  -	      NOP
+     38  fc12					      REPEND
+     39  fc12
+     40  fc12				   .CYCLES    SET	.CYCLES % 2
+     41  fc12
+     42  fc12				  -	      IF	.CYCLES
+     43  fc12				  -	      ERR
+     44  fc12					      ENDIF
+     45  fc12
+     34  fc12		       85 0f		      STA	PF2
+     35  fc14		       85 0d		      STA	PF0
+     36  fc16
+     37  fc16		       85 02		      STA	WSYNC	; Draw the shadow
+     38  fc18		       a5 b6		      LDA	shadowColour
+     39  fc1a		       85 08		      STA	COLUPF
+     40  fc1c		       a5 a0		      LDA	shadow2ab
+     41  fc1e		       05 9b		      ORA	shadow1a
+     42  fc20		       85 0e		      STA	PF1
+     43  fc22		       a5 a1		      LDA	shadow2bb
+     44  fc24		       05 9c		      ORA	shadow1b
+     45  fc26		       85 0f		      STA	PF2
+     46  fc28		       a5 a2		      LDA	shadow2cb
+     47  fc2a		       85 0d		      STA	PF0
+     48  fc2c		       a5 a3		      LDA	shadow2db
+     49  fc2e		       05 9d		      ORA	shadow1c
+     50  fc30		       85 0e		      STA	PF1
+     51  fc32		       a5 a4		      LDA	shadow2eb
+     52  fc34		       05 9f		      ORA	shadow1e
+     53  fc36		       85 0f		      STA	PF2
+     54  fc38		       a9 00		      LDA	#NULL
+     55  fc3a		       85 0d		      STA	PF0
+     56  fc3c
+     57  fc3c		       ca		      DEX
+     58  fc3d		       d0 a7		      BNE	_dc_w2s2_loop
+     59  fc3f
+     60  fc3f		       50 11		      BVC	dc_w3s1_delayed
+      0  fc41					      DELAY	4
+      1  fc41				   .CYCLES    SET	4
+      2  fc41
+ C0 $4
+      3  fc41					      ECHO	"C0",.CYCLES
+      4  fc41
+      5  fc41				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fc41				  -	      NOP
+      7  fc41				  -.CYCLES    SET	.CYCLES - 2
+      8  fc41					      ENDIF
+      9  fc41
+ C1 $4
+     10  fc41					      ECHO	"C1",.CYCLES
+     11  fc41
+     12  fc41				  -	      IF	[.CYCLES - 2] / 5
+     13  fc41				  -	      REPEAT	.CYCLES / 5
+     14  fc41				  -	      INC	foo
+     15  fc41				  -	      REPEND
+     16  fc41				  -.CYCLES    SET	.CYCLES % 5
+     17  fc41					      ENDIF
+     18  fc41
+ C2 $4
+     19  fc41					      ECHO	"C2",.CYCLES
+     20  fc41
+     21  fc41					      IF	.CYCLES % 3 == 1
+     22  fc41		       ea		      NOP
+     23  fc41				   .CYCLES    SET	.CYCLES - 2
+     24  fc42					      ENDIF
+     25  fc42
+ C3 $2
+     26  fc42					      ECHO	"C3",.CYCLES
+     27  fc42
+     28  fc42				  -	      REPEAT	.CYCLES / 3
+     29  fc42				  -	      STA	DUMP
+     30  fc42					      REPEND
+     31  fc42
+     32  fc42				   .CYCLES    SET	.CYCLES % 3
+     33  fc42
+ C4 $2
+     34  fc42					      ECHO	"C4",.CYCLES
+     35  fc42
+     36  fc42					      REPEAT	.CYCLES / 2
+     37  fc42		       ea		      NOP
+     38  fc43					      REPEND
+     39  fc43
+     40  fc43				   .CYCLES    SET	.CYCLES % 2
+     41  fc43
+     42  fc43				  -	      IF	.CYCLES
+     43  fc43				  -	      ERR
+     44  fc43					      ENDIF
+     45  fc43
+     62  fc43		       4c 70 fb 	      JMP	dc_w2s1
+     63  fc46
+     64  fc46				   _dc_w2s2_noSprite_1
+      0  fc46					      DELAY	10
+      1  fc46				   .CYCLES    SET	10
+      2  fc46
+ C0 $a
+      3  fc46					      ECHO	"C0",.CYCLES
+      4  fc46
+      5  fc46				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fc46				  -	      NOP
+      7  fc46				  -.CYCLES    SET	.CYCLES - 2
+      8  fc46					      ENDIF
+      9  fc46
+ C1 $a
+     10  fc46					      ECHO	"C1",.CYCLES
+     11  fc46
+     12  fc46					      IF	[.CYCLES - 2] / 5
+     13  fc46					      REPEAT	.CYCLES / 5
+     14  fc46		       e6 c4		      INC	foo
+     13  fc46					      REPEND
+     14  fc48		       e6 c4		      INC	foo
+     15  fc4a					      REPEND
+     16  fc4a				   .CYCLES    SET	.CYCLES % 5
+     17  fc4a					      ENDIF
+     18  fc4a
+ C2 $0
+     19  fc4a					      ECHO	"C2",.CYCLES
+     20  fc4a
+     21  fc4a				  -	      IF	.CYCLES % 3 == 1
+     22  fc4a				  -	      NOP
+     23  fc4a				  -.CYCLES    SET	.CYCLES - 2
+     24  fc4a					      ENDIF
+     25  fc4a
+ C3 $0
+     26  fc4a					      ECHO	"C3",.CYCLES
+     27  fc4a
+     28  fc4a				  -	      REPEAT	.CYCLES / 3
+     29  fc4a				  -	      STA	DUMP
+     30  fc4a					      REPEND
+     31  fc4a
+     32  fc4a				   .CYCLES    SET	.CYCLES % 3
+     33  fc4a
+ C4 $0
+     34  fc4a					      ECHO	"C4",.CYCLES
+     35  fc4a
+     36  fc4a				  -	      REPEAT	.CYCLES / 2
+     37  fc4a				  -	      NOP
+     38  fc4a					      REPEND
+     39  fc4a
+     40  fc4a				   .CYCLES    SET	.CYCLES % 2
+     41  fc4a
+     42  fc4a				  -	      IF	.CYCLES
+     43  fc4a				  -	      ERR
+     44  fc4a					      ENDIF
+     45  fc4a
+     66  fc4a		       4c fc fb 	      JMP	_dc_w2s2_noSprite_ret
+     67  fc4d
+     68  fc4d				   _dc_w2s2_noSprite_2
+      0  fc4d					      DELAY	4
+      1  fc4d				   .CYCLES    SET	4
+      2  fc4d
+ C0 $4
+      3  fc4d					      ECHO	"C0",.CYCLES
+      4  fc4d
+      5  fc4d				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fc4d				  -	      NOP
+      7  fc4d				  -.CYCLES    SET	.CYCLES - 2
+      8  fc4d					      ENDIF
+      9  fc4d
+ C1 $4
+     10  fc4d					      ECHO	"C1",.CYCLES
+     11  fc4d
+     12  fc4d				  -	      IF	[.CYCLES - 2] / 5
+     13  fc4d				  -	      REPEAT	.CYCLES / 5
+     14  fc4d				  -	      INC	foo
+     15  fc4d				  -	      REPEND
+     16  fc4d				  -.CYCLES    SET	.CYCLES % 5
+     17  fc4d					      ENDIF
+     18  fc4d
+ C2 $4
+     19  fc4d					      ECHO	"C2",.CYCLES
+     20  fc4d
+     21  fc4d					      IF	.CYCLES % 3 == 1
+     22  fc4d		       ea		      NOP
+     23  fc4d				   .CYCLES    SET	.CYCLES - 2
+     24  fc4e					      ENDIF
+     25  fc4e
+ C3 $2
+     26  fc4e					      ECHO	"C3",.CYCLES
+     27  fc4e
+     28  fc4e				  -	      REPEAT	.CYCLES / 3
+     29  fc4e				  -	      STA	DUMP
+     30  fc4e					      REPEND
+     31  fc4e
+     32  fc4e				   .CYCLES    SET	.CYCLES % 3
+     33  fc4e
+ C4 $2
+     34  fc4e					      ECHO	"C4",.CYCLES
+     35  fc4e
+     36  fc4e					      REPEAT	.CYCLES / 2
+     37  fc4e		       ea		      NOP
+     38  fc4f					      REPEND
+     39  fc4f
+     40  fc4f				   .CYCLES    SET	.CYCLES % 2
+     41  fc4f
+     42  fc4f				  -	      IF	.CYCLES
+     43  fc4f				  -	      ERR
+     44  fc4f					      ENDIF
+     45  fc4f
+     70  fc4f		       4c fc fb 	      JMP	_dc_w2s2_noSprite_ret
 ------- FILE dispkern.asm
 ------- FILE drawCode/dc_w3s1.asm LEVEL 3 PASS 2
-      0  fbcb					      INCLUDE	"drawCode/dc_w3s1.asm"
-      1  fbcb							; The draw code for the 1st wall and shadow
-      2  fbcb
-      3  fbcb				   dc_w3s1
-      4  fbcb
-      5  fbcb		       a2 00		      LDX	#INDEXINIT
-      6  fbcd		       4c d7 fb 	      JMP	_dc_w3s1_start
-      7  fbd0
-      8  fbd0				   _dc_w3s1_loop
-      9  fbd0		       85 02		      STA	WSYNC
-      0  fbd2					      DELAY	10
-      1  fbd2					      REPEAT	10/2 - 10%2
-      2  fbd2		       ea		      NOP
-      1  fbd2					      REPEND
-      2  fbd3		       ea		      NOP
-      1  fbd3					      REPEND
-      2  fbd4		       ea		      NOP
-      1  fbd4					      REPEND
-      2  fbd5		       ea		      NOP
-      1  fbd5					      REPEND
-      2  fbd6		       ea		      NOP
-      3  fbd7					      REPEND
-      4  fbd7
-      5  fbd7				  -	      REPEAT	10%2
-      6  fbd7				  -	      STA	DUMP
-      7  fbd7					      REPEND
-     11  fbd7				   _dc_w3s1_start
-     12  fbd7		       a5 b3		      LDA	wallColour
-     13  fbd9		       85 08		      STA	COLUPF
-     14  fbdb		       a5 8a		      LDA	wall3a
-     15  fbdd		       85 0e		      STA	PF1
-     16  fbdf		       a5 8b		      LDA	wall3b
-     17  fbe1		       85 0f		      STA	PF2
-      0  fbe3					      DELAY	14
-      1  fbe3					      REPEAT	14/2 - 14%2
-      2  fbe3		       ea		      NOP
-      1  fbe3					      REPEND
-      2  fbe4		       ea		      NOP
-      1  fbe4					      REPEND
-      2  fbe5		       ea		      NOP
-      1  fbe5					      REPEND
-      2  fbe6		       ea		      NOP
-      1  fbe6					      REPEND
-      2  fbe7		       ea		      NOP
-      1  fbe7					      REPEND
-      2  fbe8		       ea		      NOP
-      1  fbe8					      REPEND
-      2  fbe9		       ea		      NOP
-      3  fbea					      REPEND
-      4  fbea
-      5  fbea				  -	      REPEAT	14%2
-      6  fbea				  -	      STA	DUMP
-      7  fbea					      REPEND
-     19  fbea		       a5 8c		      LDA	wall3c
-     20  fbec		       85 0d		      STA	PF0
-     21  fbee		       a5 8d		      LDA	wall3d
-     22  fbf0		       85 0e		      STA	PF1
-     23  fbf2		       a5 8e		      LDA	wall3e
-     24  fbf4		       85 0f		      STA	PF2
-     25  fbf6		       a9 00		      LDA	#NULL
-      0  fbf8					      DELAY	2
-      1  fbf8					      REPEAT	2/2 - 2%2
-      2  fbf8		       ea		      NOP
-      3  fbf9					      REPEND
-      4  fbf9
-      5  fbf9				  -	      REPEAT	2%2
-      6  fbf9				  -	      STA	DUMP
-      7  fbf9					      REPEND
-     27  fbf9		       85 0f		      STA	PF2
-     28  fbfb		       85 0d		      STA	PF0
-     29  fbfd
-     30  fbfd		       85 02		      STA	WSYNC
-     31  fbff		       a5 b4		      LDA	shadowColour
-     32  fc01		       85 08		      STA	COLUPF
-     33  fc03		       a5 94		      LDA	shadow3aa
-     34  fc05		       05 9e		      ORA	shadow2ab
-     35  fc07		       85 0e		      STA	PF1
-     36  fc09		       a5 95		      LDA	shadow3ba
-     37  fc0b		       05 9f		      ORA	shadow2bb
-     38  fc0d		       85 0f		      STA	PF2
-     39  fc0f		       a5 96		      LDA	shadow3ca
-     40  fc11		       05 a0		      ORA	shadow2cb
-     41  fc13		       85 0d		      STA	PF0
-     42  fc15		       a5 97		      LDA	shadow3da
-     43  fc17		       05 a1		      ORA	shadow2db
-     44  fc19		       85 0e		      STA	PF1
-     45  fc1b		       a5 98		      LDA	shadow3ea
-     46  fc1d		       05 a2		      ORA	shadow2eb
-     47  fc1f		       85 0f		      STA	PF2
-     48  fc21		       a9 00		      LDA	#NULL
-     49  fc23		       85 0d		      STA	PF0
-     50  fc25
-     51  fc25		       e8		      INX
-     52  fc26		       e0 03		      CPX	#PIXH
-     53  fc28		       d0 a6		      BNE	_dc_w3s1_loop
-     54  fc2a
-     55  fc2a		       a2 00		      LDX	#NULL
-     56  fc2c
-      0  fc2c					      DELAY	5
-      1  fc2c					      REPEAT	5/2 - 5%2
-      2  fc2c		       ea		      NOP
-      3  fc2d					      REPEND
-      4  fc2d
-      5  fc2d					      REPEAT	5%2
-      6  fc2d		       85 30		      STA	DUMP
-      7  fc2f					      REPEND
-     58  fc2f
-     59  fc2f		       60		      RTS
+      0  fc52					      INCLUDE	"drawCode/dc_w3s1.asm"
+      1  fc52							; The second wall and it's second shadow
+      2  fc52
+      3  fc52				   dc_w3s1_delayed
+      0  fc52					      DELAY	2
+      1  fc52				   .CYCLES    SET	2
+      2  fc52
+ C0 $2
+      3  fc52					      ECHO	"C0",.CYCLES
+      4  fc52
+      5  fc52				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fc52				  -	      NOP
+      7  fc52				  -.CYCLES    SET	.CYCLES - 2
+      8  fc52					      ENDIF
+      9  fc52
+ C1 $2
+     10  fc52					      ECHO	"C1",.CYCLES
+     11  fc52
+     12  fc52				  -	      IF	[.CYCLES - 2] / 5
+     13  fc52				  -	      REPEAT	.CYCLES / 5
+     14  fc52				  -	      INC	foo
+     15  fc52				  -	      REPEND
+     16  fc52				  -.CYCLES    SET	.CYCLES % 5
+     17  fc52					      ENDIF
+     18  fc52
+ C2 $2
+     19  fc52					      ECHO	"C2",.CYCLES
+     20  fc52
+     21  fc52				  -	      IF	.CYCLES % 3 == 1
+     22  fc52				  -	      NOP
+     23  fc52				  -.CYCLES    SET	.CYCLES - 2
+     24  fc52					      ENDIF
+     25  fc52
+ C3 $2
+     26  fc52					      ECHO	"C3",.CYCLES
+     27  fc52
+     28  fc52				  -	      REPEAT	.CYCLES / 3
+     29  fc52				  -	      STA	DUMP
+     30  fc52					      REPEND
+     31  fc52
+     32  fc52				   .CYCLES    SET	.CYCLES % 3
+     33  fc52
+ C4 $2
+     34  fc52					      ECHO	"C4",.CYCLES
+     35  fc52
+     36  fc52					      REPEAT	.CYCLES / 2
+     37  fc52		       ea		      NOP
+     38  fc53					      REPEND
+     39  fc53
+     40  fc53				   .CYCLES    SET	.CYCLES % 2
+     41  fc53
+     42  fc53				  -	      IF	.CYCLES
+     43  fc53				  -	      ERR
+     44  fc53					      ENDIF
+     45  fc53
+      5  fc53				   dc_w3s1
+      6  fc53
+      7  fc53		       a2 03		      LDX	#PIXH
+      8  fc55
+      9  fc55				   _dc_w3s1_loop
+     10  fc55		       a5 b5		      LDA	wallColour
+     11  fc57		       85 02		      STA	WSYNC
+     12  fc59		       85 08		      STA	COLUPF
+     13  fc5b		       a5 8a		      LDA	wall3a
+     14  fc5d		       85 0e		      STA	PF1
+     15  fc5f		       98		      TYA
+     16  fc60		       f0 53		      BEQ	_dc_w3s1_noSprite_1
+     17  fc62		       88		      DEY
+     18  fc63		       c4 bc		      CPY	spriteHeight
+     19  fc65		       b0 56		      BCS	_dc_w3s1_noSprite_2
+     20  fc67		       b1 c2		      LDA	(sprite),Y
+     21  fc69		       85 1b		      STA	GRP0
+     22  fc6b				   _dc_w3s1_noSprite_ret
+     23  fc6b		       a5 8b		      LDA	wall3b
+     24  fc6d		       85 0f		      STA	PF2
+     25  fc6f
+     26  fc6f		       a5 8c		      LDA	wall3c
+     27  fc71		       85 0d		      STA	PF0
+     28  fc73		       a5 8d		      LDA	wall3d
+     29  fc75		       85 0e		      STA	PF1
+     30  fc77		       a5 8e		      LDA	wall3e
+     31  fc79		       85 0f		      STA	PF2
+     32  fc7b		       a9 00		      LDA	#NULL
+      0  fc7d					      DELAY	10
+      1  fc7d				   .CYCLES    SET	10
+      2  fc7d
+ C0 $a
+      3  fc7d					      ECHO	"C0",.CYCLES
+      4  fc7d
+      5  fc7d				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fc7d				  -	      NOP
+      7  fc7d				  -.CYCLES    SET	.CYCLES - 2
+      8  fc7d					      ENDIF
+      9  fc7d
+ C1 $a
+     10  fc7d					      ECHO	"C1",.CYCLES
+     11  fc7d
+     12  fc7d					      IF	[.CYCLES - 2] / 5
+     13  fc7d					      REPEAT	.CYCLES / 5
+     14  fc7d		       e6 c4		      INC	foo
+     13  fc7d					      REPEND
+     14  fc7f		       e6 c4		      INC	foo
+     15  fc81					      REPEND
+     16  fc81				   .CYCLES    SET	.CYCLES % 5
+     17  fc81					      ENDIF
+     18  fc81
+ C2 $0
+     19  fc81					      ECHO	"C2",.CYCLES
+     20  fc81
+     21  fc81				  -	      IF	.CYCLES % 3 == 1
+     22  fc81				  -	      NOP
+     23  fc81				  -.CYCLES    SET	.CYCLES - 2
+     24  fc81					      ENDIF
+     25  fc81
+ C3 $0
+     26  fc81					      ECHO	"C3",.CYCLES
+     27  fc81
+     28  fc81				  -	      REPEAT	.CYCLES / 3
+     29  fc81				  -	      STA	DUMP
+     30  fc81					      REPEND
+     31  fc81
+     32  fc81				   .CYCLES    SET	.CYCLES % 3
+     33  fc81
+ C4 $0
+     34  fc81					      ECHO	"C4",.CYCLES
+     35  fc81
+     36  fc81				  -	      REPEAT	.CYCLES / 2
+     37  fc81				  -	      NOP
+     38  fc81					      REPEND
+     39  fc81
+     40  fc81				   .CYCLES    SET	.CYCLES % 2
+     41  fc81
+     42  fc81				  -	      IF	.CYCLES
+     43  fc81				  -	      ERR
+     44  fc81					      ENDIF
+     45  fc81
+     34  fc81		       85 0f		      STA	PF2
+     35  fc83		       85 0d		      STA	PF0
+     36  fc85
+     37  fc85		       85 02		      STA	WSYNC	; Draw the shadow
+     38  fc87		       a5 b6		      LDA	shadowColour
+     39  fc89		       85 08		      STA	COLUPF
+     40  fc8b		       a5 96		      LDA	shadow3aa
+     41  fc8d		       05 a0		      ORA	shadow2ab
+     42  fc8f		       85 0e		      STA	PF1
+     43  fc91		       a5 97		      LDA	shadow3ba
+     44  fc93		       05 a1		      ORA	shadow2bb
+     45  fc95		       85 0f		      STA	PF2
+     46  fc97		       a5 98		      LDA	shadow3ca
+     47  fc99		       05 a2		      ORA	shadow2cb
+     48  fc9b		       85 0d		      STA	PF0
+     49  fc9d		       a5 99		      LDA	shadow3da
+     50  fc9f		       05 a3		      ORA	shadow2db
+     51  fca1		       85 0e		      STA	PF1
+     52  fca3		       a5 9a		      LDA	shadow3ea
+     53  fca5		       05 a4		      ORA	shadow2eb
+     54  fca7		       85 0f		      STA	PF2
+     55  fca9		       a9 00		      LDA	#NULL
+     56  fcab		       85 0d		      STA	PF0
+     57  fcad
+     58  fcad		       ca		      DEX
+     59  fcae		       d0 a5		      BNE	_dc_w3s1_loop
+     60  fcb0
+     61  fcb0		       50 10		      BVC	dc_w3s2_delayed
+     62  fcb2		       4c e4 fb 	      JMP	dc_w2s2
+     63  fcb5
+     64  fcb5				   _dc_w3s1_noSprite_1
+      0  fcb5					      DELAY	11
+      1  fcb5				   .CYCLES    SET	11
+      2  fcb5
+ C0 $b
+      3  fcb5					      ECHO	"C0",.CYCLES
+      4  fcb5
+      5  fcb5					      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fcb5		       ea		      NOP
+      7  fcb5				   .CYCLES    SET	.CYCLES - 2
+      8  fcb6					      ENDIF
+      9  fcb6
+ C1 $9
+     10  fcb6					      ECHO	"C1",.CYCLES
+     11  fcb6
+     12  fcb6					      IF	[.CYCLES - 2] / 5
+     13  fcb6					      REPEAT	.CYCLES / 5
+     14  fcb6		       e6 c4		      INC	foo
+     15  fcb8					      REPEND
+     16  fcb8				   .CYCLES    SET	.CYCLES % 5
+     17  fcb8					      ENDIF
+     18  fcb8
+ C2 $4
+     19  fcb8					      ECHO	"C2",.CYCLES
+     20  fcb8
+     21  fcb8					      IF	.CYCLES % 3 == 1
+     22  fcb8		       ea		      NOP
+     23  fcb8				   .CYCLES    SET	.CYCLES - 2
+     24  fcb9					      ENDIF
+     25  fcb9
+ C3 $2
+     26  fcb9					      ECHO	"C3",.CYCLES
+     27  fcb9
+     28  fcb9				  -	      REPEAT	.CYCLES / 3
+     29  fcb9				  -	      STA	DUMP
+     30  fcb9					      REPEND
+     31  fcb9
+     32  fcb9				   .CYCLES    SET	.CYCLES % 3
+     33  fcb9
+ C4 $2
+     34  fcb9					      ECHO	"C4",.CYCLES
+     35  fcb9
+     36  fcb9					      REPEAT	.CYCLES / 2
+     37  fcb9		       ea		      NOP
+     38  fcba					      REPEND
+     39  fcba
+     40  fcba				   .CYCLES    SET	.CYCLES % 2
+     41  fcba
+     42  fcba				  -	      IF	.CYCLES
+     43  fcba				  -	      ERR
+     44  fcba					      ENDIF
+     45  fcba
+     66  fcba		       4c 6b fc 	      JMP	_dc_w3s1_noSprite_ret
+     67  fcbd
+     68  fcbd				   _dc_w3s1_noSprite_2
+      0  fcbd					      DELAY	3
+      1  fcbd				   .CYCLES    SET	3
+      2  fcbd
+ C0 $3
+      3  fcbd					      ECHO	"C0",.CYCLES
+      4  fcbd
+      5  fcbd				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fcbd				  -	      NOP
+      7  fcbd				  -.CYCLES    SET	.CYCLES - 2
+      8  fcbd					      ENDIF
+      9  fcbd
+ C1 $3
+     10  fcbd					      ECHO	"C1",.CYCLES
+     11  fcbd
+     12  fcbd				  -	      IF	[.CYCLES - 2] / 5
+     13  fcbd				  -	      REPEAT	.CYCLES / 5
+     14  fcbd				  -	      INC	foo
+     15  fcbd				  -	      REPEND
+     16  fcbd				  -.CYCLES    SET	.CYCLES % 5
+     17  fcbd					      ENDIF
+     18  fcbd
+ C2 $3
+     19  fcbd					      ECHO	"C2",.CYCLES
+     20  fcbd
+     21  fcbd				  -	      IF	.CYCLES % 3 == 1
+     22  fcbd				  -	      NOP
+     23  fcbd				  -.CYCLES    SET	.CYCLES - 2
+     24  fcbd					      ENDIF
+     25  fcbd
+ C3 $3
+     26  fcbd					      ECHO	"C3",.CYCLES
+     27  fcbd
+     28  fcbd					      REPEAT	.CYCLES / 3
+     29  fcbd		       85 30		      STA	DUMP
+     30  fcbf					      REPEND
+     31  fcbf
+     32  fcbf				   .CYCLES    SET	.CYCLES % 3
+     33  fcbf
+ C4 $0
+     34  fcbf					      ECHO	"C4",.CYCLES
+     35  fcbf
+     36  fcbf				  -	      REPEAT	.CYCLES / 2
+     37  fcbf				  -	      NOP
+     38  fcbf					      REPEND
+     39  fcbf
+     40  fcbf				   .CYCLES    SET	.CYCLES % 2
+     41  fcbf
+     42  fcbf				  -	      IF	.CYCLES
+     43  fcbf				  -	      ERR
+     44  fcbf					      ENDIF
+     45  fcbf
+     70  fcbf		       4c 6b fc 	      JMP	_dc_w3s1_noSprite_ret
 ------- FILE dispkern.asm
 ------- FILE drawCode/dc_w3s2.asm LEVEL 3 PASS 2
-      0  fc30					      INCLUDE	"drawCode/dc_w3s2.asm"
-      1  fc30							; The draw code for 3rd wall and it's second shadow
-      2  fc30
-      3  fc30				   dc_w3s2
-      4  fc30
-      5  fc30		       a2 00		      LDX	#INDEXINIT
-      6  fc32		       4c 3c fc 	      JMP	_dc_w3s2_start
-      7  fc35
-      8  fc35				   _dc_w3s2_loop
-      9  fc35		       85 02		      STA	WSYNC
-      0  fc37					      DELAY	10	; Delay to keep the timing constant
-      1  fc37					      REPEAT	10/2 - 10%2
-      2  fc37		       ea		      NOP
-      1  fc37					      REPEND
-      2  fc38		       ea		      NOP
-      1  fc38					      REPEND
-      2  fc39		       ea		      NOP
-      1  fc39					      REPEND
-      2  fc3a		       ea		      NOP
-      1  fc3a					      REPEND
-      2  fc3b		       ea		      NOP
-      3  fc3c					      REPEND
-      4  fc3c
-      5  fc3c				  -	      REPEAT	10%2
-      6  fc3c				  -	      STA	DUMP
-      7  fc3c					      REPEND
-     11  fc3c				   _dc_w3s2_start
-     12  fc3c		       a5 b3		      LDA	wallColour	; Draw the wall
-     13  fc3e		       85 08		      STA	COLUPF
-     14  fc40		       a5 8a		      LDA	wall3a
-     15  fc42		       85 0e		      STA	PF1
-     16  fc44		       a5 8b		      LDA	wall3b
-     17  fc46		       85 0f		      STA	PF2
-      0  fc48					      DELAY	14
-      1  fc48					      REPEAT	14/2 - 14%2
-      2  fc48		       ea		      NOP
-      1  fc48					      REPEND
-      2  fc49		       ea		      NOP
-      1  fc49					      REPEND
-      2  fc4a		       ea		      NOP
-      1  fc4a					      REPEND
-      2  fc4b		       ea		      NOP
-      1  fc4b					      REPEND
-      2  fc4c		       ea		      NOP
-      1  fc4c					      REPEND
-      2  fc4d		       ea		      NOP
-      1  fc4d					      REPEND
-      2  fc4e		       ea		      NOP
-      3  fc4f					      REPEND
-      4  fc4f
-      5  fc4f				  -	      REPEAT	14%2
-      6  fc4f				  -	      STA	DUMP
-      7  fc4f					      REPEND
-     19  fc4f		       a5 8c		      LDA	wall3c
-     20  fc51		       85 0d		      STA	PF0
-     21  fc53		       a5 8d		      LDA	wall3d
-     22  fc55		       85 0e		      STA	PF1
-     23  fc57		       a5 8e		      LDA	wall3e
-     24  fc59		       85 0f		      STA	PF2
-     25  fc5b		       a9 00		      LDA	#NULL
-      0  fc5d					      DELAY	2
-      1  fc5d					      REPEAT	2/2 - 2%2
-      2  fc5d		       ea		      NOP
-      3  fc5e					      REPEND
-      4  fc5e
-      5  fc5e				  -	      REPEAT	2%2
-      6  fc5e				  -	      STA	DUMP
-      7  fc5e					      REPEND
-     27  fc5e		       85 0f		      STA	PF2
-     28  fc60		       85 0d		      STA	PF0
-     29  fc62
-     30  fc62		       85 02		      STA	WSYNC	; Draw the shadow
-     31  fc64		       a5 b4		      LDA	shadowColour
-     32  fc66		       85 08		      STA	COLUPF
-     33  fc68		       a5 a3		      LDA	shadow3ab
-     34  fc6a		       05 9e		      ORA	shadow2ab
-     35  fc6c		       85 0e		      STA	PF1
-     36  fc6e		       a5 a4		      LDA	shadow3bb
-     37  fc70		       05 9f		      ORA	shadow2bb
-     38  fc72		       85 0f		      STA	PF2
-     39  fc74		       a5 a5		      LDA	shadow3cb
-     40  fc76		       05 a0		      ORA	shadow2cb
-     41  fc78		       85 0d		      STA	PF0
-     42  fc7a		       a5 a6		      LDA	shadow3db
-     43  fc7c		       05 a1		      ORA	shadow2db
-     44  fc7e		       85 0e		      STA	PF1
-     45  fc80		       a5 a7		      LDA	shadow3eb
-     46  fc82		       05 a2		      ORA	shadow2eb
-     47  fc84		       85 0f		      STA	PF2
-     48  fc86		       a9 00		      LDA	#NULL
-     49  fc88		       85 0d		      STA	PF0
-     50  fc8a
-     51  fc8a		       e8		      INX
-     52  fc8b		       e0 03		      CPX	#PIXH
-     53  fc8d		       d0 a6		      BNE	_dc_w3s2_loop
-     54  fc8f
-      0  fc8f					      DELAY	7	; Delay to keep the timing constant
-      1  fc8f					      REPEAT	7/2 - 7%2
-      2  fc8f		       ea		      NOP
-      1  fc8f					      REPEND
-      2  fc90		       ea		      NOP
-      3  fc91					      REPEND
-      4  fc91
-      5  fc91					      REPEAT	7%2
-      6  fc91		       85 30		      STA	DUMP
-      7  fc93					      REPEND
-     56  fc93
-     57  fc93		       60		      RTS
+      0  fcc2					      INCLUDE	"drawCode/dc_w3s2.asm"
+      1  fcc2							; The second wall and it's second shadow
+      2  fcc2
+      3  fcc2				   dc_w3s2_delayed
+      0  fcc2					      DELAY	2
+      1  fcc2				   .CYCLES    SET	2
+      2  fcc2
+ C0 $2
+      3  fcc2					      ECHO	"C0",.CYCLES
+      4  fcc2
+      5  fcc2				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fcc2				  -	      NOP
+      7  fcc2				  -.CYCLES    SET	.CYCLES - 2
+      8  fcc2					      ENDIF
+      9  fcc2
+ C1 $2
+     10  fcc2					      ECHO	"C1",.CYCLES
+     11  fcc2
+     12  fcc2				  -	      IF	[.CYCLES - 2] / 5
+     13  fcc2				  -	      REPEAT	.CYCLES / 5
+     14  fcc2				  -	      INC	foo
+     15  fcc2				  -	      REPEND
+     16  fcc2				  -.CYCLES    SET	.CYCLES % 5
+     17  fcc2					      ENDIF
+     18  fcc2
+ C2 $2
+     19  fcc2					      ECHO	"C2",.CYCLES
+     20  fcc2
+     21  fcc2				  -	      IF	.CYCLES % 3 == 1
+     22  fcc2				  -	      NOP
+     23  fcc2				  -.CYCLES    SET	.CYCLES - 2
+     24  fcc2					      ENDIF
+     25  fcc2
+ C3 $2
+     26  fcc2					      ECHO	"C3",.CYCLES
+     27  fcc2
+     28  fcc2				  -	      REPEAT	.CYCLES / 3
+     29  fcc2				  -	      STA	DUMP
+     30  fcc2					      REPEND
+     31  fcc2
+     32  fcc2				   .CYCLES    SET	.CYCLES % 3
+     33  fcc2
+ C4 $2
+     34  fcc2					      ECHO	"C4",.CYCLES
+     35  fcc2
+     36  fcc2					      REPEAT	.CYCLES / 2
+     37  fcc2		       ea		      NOP
+     38  fcc3					      REPEND
+     39  fcc3
+     40  fcc3				   .CYCLES    SET	.CYCLES % 2
+     41  fcc3
+     42  fcc3				  -	      IF	.CYCLES
+     43  fcc3				  -	      ERR
+     44  fcc3					      ENDIF
+     45  fcc3
+      5  fcc3				   dc_w3s2
+      6  fcc3
+      7  fcc3		       a2 03		      LDX	#PIXH
+      8  fcc5
+      9  fcc5				   _dc_w3s2_loop
+     10  fcc5		       a5 b5		      LDA	wallColour
+     11  fcc7		       85 02		      STA	WSYNC
+     12  fcc9				   _dc_w3s2_joinIn
+     13  fcc9		       85 08		      STA	COLUPF
+     14  fccb		       a5 8a		      LDA	wall3a
+     15  fccd		       85 0e		      STA	PF1
+     16  fccf		       98		      TYA
+     17  fcd0		       f0 53		      BEQ	_dc_w3s2_noSprite_1
+     18  fcd2		       88		      DEY
+     19  fcd3		       c4 bc		      CPY	spriteHeight
+     20  fcd5		       b0 55		      BCS	_dc_w3s2_noSprite_2
+     21  fcd7		       b1 c2		      LDA	(sprite),Y
+     22  fcd9		       85 1b		      STA	GRP0
+     23  fcdb				   _dc_w3s2_noSprite_ret
+     24  fcdb		       a5 8b		      LDA	wall3b
+     25  fcdd		       85 0f		      STA	PF2
+     26  fcdf
+     27  fcdf		       a5 8c		      LDA	wall3c
+     28  fce1		       85 0d		      STA	PF0
+     29  fce3		       a5 8d		      LDA	wall3d
+     30  fce5		       85 0e		      STA	PF1
+     31  fce7		       a5 8e		      LDA	wall3e
+     32  fce9		       85 0f		      STA	PF2
+     33  fceb		       a9 00		      LDA	#NULL
+      0  fced					      DELAY	10
+      1  fced				   .CYCLES    SET	10
+      2  fced
+ C0 $a
+      3  fced					      ECHO	"C0",.CYCLES
+      4  fced
+      5  fced				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fced				  -	      NOP
+      7  fced				  -.CYCLES    SET	.CYCLES - 2
+      8  fced					      ENDIF
+      9  fced
+ C1 $a
+     10  fced					      ECHO	"C1",.CYCLES
+     11  fced
+     12  fced					      IF	[.CYCLES - 2] / 5
+     13  fced					      REPEAT	.CYCLES / 5
+     14  fced		       e6 c4		      INC	foo
+     13  fced					      REPEND
+     14  fcef		       e6 c4		      INC	foo
+     15  fcf1					      REPEND
+     16  fcf1				   .CYCLES    SET	.CYCLES % 5
+     17  fcf1					      ENDIF
+     18  fcf1
+ C2 $0
+     19  fcf1					      ECHO	"C2",.CYCLES
+     20  fcf1
+     21  fcf1				  -	      IF	.CYCLES % 3 == 1
+     22  fcf1				  -	      NOP
+     23  fcf1				  -.CYCLES    SET	.CYCLES - 2
+     24  fcf1					      ENDIF
+     25  fcf1
+ C3 $0
+     26  fcf1					      ECHO	"C3",.CYCLES
+     27  fcf1
+     28  fcf1				  -	      REPEAT	.CYCLES / 3
+     29  fcf1				  -	      STA	DUMP
+     30  fcf1					      REPEND
+     31  fcf1
+     32  fcf1				   .CYCLES    SET	.CYCLES % 3
+     33  fcf1
+ C4 $0
+     34  fcf1					      ECHO	"C4",.CYCLES
+     35  fcf1
+     36  fcf1				  -	      REPEAT	.CYCLES / 2
+     37  fcf1				  -	      NOP
+     38  fcf1					      REPEND
+     39  fcf1
+     40  fcf1				   .CYCLES    SET	.CYCLES % 2
+     41  fcf1
+     42  fcf1				  -	      IF	.CYCLES
+     43  fcf1				  -	      ERR
+     44  fcf1					      ENDIF
+     45  fcf1
+     35  fcf1		       85 0f		      STA	PF2
+     36  fcf3		       85 0d		      STA	PF0
+     37  fcf5
+     38  fcf5		       85 02		      STA	WSYNC	; Draw the shadow
+     39  fcf7		       a5 b6		      LDA	shadowColour
+     40  fcf9		       85 08		      STA	COLUPF
+     41  fcfb		       a5 a5		      LDA	shadow3ab
+     42  fcfd		       05 a0		      ORA	shadow2ab
+     43  fcff		       85 0e		      STA	PF1
+     44  fd01		       a5 a6		      LDA	shadow3bb
+     45  fd03		       05 a1		      ORA	shadow2bb
+     46  fd05		       85 0f		      STA	PF2
+     47  fd07		       a5 a7		      LDA	shadow3cb
+     48  fd09		       05 a2		      ORA	shadow2cb
+     49  fd0b		       85 0d		      STA	PF0
+     50  fd0d		       a5 a8		      LDA	shadow3db
+     51  fd0f		       05 a3		      ORA	shadow2db
+     52  fd11		       85 0e		      STA	PF1
+     53  fd13		       a5 a9		      LDA	shadow3eb
+     54  fd15		       05 a4		      ORA	shadow2eb
+     55  fd17		       85 0f		      STA	PF2
+     56  fd19		       a9 00		      LDA	#NULL
+     57  fd1b		       85 0d		      STA	PF0
+     58  fd1d
+     59  fd1d		       ca		      DEX
+     60  fd1e		       d0 a5		      BNE	_dc_w3s2_loop
+     61  fd20
+     62  fd20		       50 0f		      BVC	dc_w4s0_delayed
+     63  fd22		       4c 53 fc 	      JMP	dc_w3s1
+     64  fd25
+     65  fd25				   _dc_w3s2_noSprite_1
+      0  fd25					      DELAY	10
+      1  fd25				   .CYCLES    SET	10
+      2  fd25
+ C0 $a
+      3  fd25					      ECHO	"C0",.CYCLES
+      4  fd25
+      5  fd25				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fd25				  -	      NOP
+      7  fd25				  -.CYCLES    SET	.CYCLES - 2
+      8  fd25					      ENDIF
+      9  fd25
+ C1 $a
+     10  fd25					      ECHO	"C1",.CYCLES
+     11  fd25
+     12  fd25					      IF	[.CYCLES - 2] / 5
+     13  fd25					      REPEAT	.CYCLES / 5
+     14  fd25		       e6 c4		      INC	foo
+     13  fd25					      REPEND
+     14  fd27		       e6 c4		      INC	foo
+     15  fd29					      REPEND
+     16  fd29				   .CYCLES    SET	.CYCLES % 5
+     17  fd29					      ENDIF
+     18  fd29
+ C2 $0
+     19  fd29					      ECHO	"C2",.CYCLES
+     20  fd29
+     21  fd29				  -	      IF	.CYCLES % 3 == 1
+     22  fd29				  -	      NOP
+     23  fd29				  -.CYCLES    SET	.CYCLES - 2
+     24  fd29					      ENDIF
+     25  fd29
+ C3 $0
+     26  fd29					      ECHO	"C3",.CYCLES
+     27  fd29
+     28  fd29				  -	      REPEAT	.CYCLES / 3
+     29  fd29				  -	      STA	DUMP
+     30  fd29					      REPEND
+     31  fd29
+     32  fd29				   .CYCLES    SET	.CYCLES % 3
+     33  fd29
+ C4 $0
+     34  fd29					      ECHO	"C4",.CYCLES
+     35  fd29
+     36  fd29				  -	      REPEAT	.CYCLES / 2
+     37  fd29				  -	      NOP
+     38  fd29					      REPEND
+     39  fd29
+     40  fd29				   .CYCLES    SET	.CYCLES % 2
+     41  fd29
+     42  fd29				  -	      IF	.CYCLES
+     43  fd29				  -	      ERR
+     44  fd29					      ENDIF
+     45  fd29
+     67  fd29		       4c db fc 	      JMP	_dc_w3s2_noSprite_ret
+     68  fd2c
+     69  fd2c				   _dc_w3s2_noSprite_2
+      0  fd2c					      DELAY	4
+      1  fd2c				   .CYCLES    SET	4
+      2  fd2c
+ C0 $4
+      3  fd2c					      ECHO	"C0",.CYCLES
+      4  fd2c
+      5  fd2c				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fd2c				  -	      NOP
+      7  fd2c				  -.CYCLES    SET	.CYCLES - 2
+      8  fd2c					      ENDIF
+      9  fd2c
+ C1 $4
+     10  fd2c					      ECHO	"C1",.CYCLES
+     11  fd2c
+     12  fd2c				  -	      IF	[.CYCLES - 2] / 5
+     13  fd2c				  -	      REPEAT	.CYCLES / 5
+     14  fd2c				  -	      INC	foo
+     15  fd2c				  -	      REPEND
+     16  fd2c				  -.CYCLES    SET	.CYCLES % 5
+     17  fd2c					      ENDIF
+     18  fd2c
+ C2 $4
+     19  fd2c					      ECHO	"C2",.CYCLES
+     20  fd2c
+     21  fd2c					      IF	.CYCLES % 3 == 1
+     22  fd2c		       ea		      NOP
+     23  fd2c				   .CYCLES    SET	.CYCLES - 2
+     24  fd2d					      ENDIF
+     25  fd2d
+ C3 $2
+     26  fd2d					      ECHO	"C3",.CYCLES
+     27  fd2d
+     28  fd2d				  -	      REPEAT	.CYCLES / 3
+     29  fd2d				  -	      STA	DUMP
+     30  fd2d					      REPEND
+     31  fd2d
+     32  fd2d				   .CYCLES    SET	.CYCLES % 3
+     33  fd2d
+ C4 $2
+     34  fd2d					      ECHO	"C4",.CYCLES
+     35  fd2d
+     36  fd2d					      REPEAT	.CYCLES / 2
+     37  fd2d		       ea		      NOP
+     38  fd2e					      REPEND
+     39  fd2e
+     40  fd2e				   .CYCLES    SET	.CYCLES % 2
+     41  fd2e
+     42  fd2e				  -	      IF	.CYCLES
+     43  fd2e				  -	      ERR
+     44  fd2e					      ENDIF
+     45  fd2e
+     71  fd2e		       4c db fc 	      JMP	_dc_w3s2_noSprite_ret
 ------- FILE dispkern.asm
 ------- FILE drawCode/dc_w4s0.asm LEVEL 3 PASS 2
-      0  fc94					      INCLUDE	"drawCode/dc_w4s0.asm"
-      1  fc94							; The draw code for the 4th wall
-      2  fc94
-      3  fc94				   dc_w4s0
-      4  fc94
-      5  fc94		       a2 00		      LDX	#INDEXINIT
-      6  fc96		       4c a0 fc 	      JMP	_dc_w4s0_start
-      7  fc99
-      8  fc99				   _dc_w4s0_loop
-      9  fc99		       85 02		      STA	WSYNC
-      0  fc9b					      DELAY	10
-      1  fc9b					      REPEAT	10/2 - 10%2
-      2  fc9b		       ea		      NOP
-      1  fc9b					      REPEND
-      2  fc9c		       ea		      NOP
-      1  fc9c					      REPEND
-      2  fc9d		       ea		      NOP
-      1  fc9d					      REPEND
-      2  fc9e		       ea		      NOP
-      1  fc9e					      REPEND
-      2  fc9f		       ea		      NOP
-      3  fca0					      REPEND
-      4  fca0
-      5  fca0				  -	      REPEAT	10%2
-      6  fca0				  -	      STA	DUMP
-      7  fca0					      REPEND
-     11  fca0				   _dc_w4s0_start
-     12  fca0		       a5 b3		      LDA	wallColour
-     13  fca2		       85 08		      STA	COLUPF
-     14  fca4		       a9 ff		      LDA	#FULLWALL
-     15  fca6		       45 a3		      EOR	shadow3ab
-     16  fca8		       85 0e		      STA	PF1
-     17  fcaa		       a9 ff		      LDA	#FULLWALL
-     18  fcac		       45 a4		      EOR	shadow3bb
-     19  fcae		       85 0f		      STA	PF2
-      0  fcb0					      DELAY	4
-      1  fcb0					      REPEAT	4/2 - 4%2
-      2  fcb0		       ea		      NOP
-      1  fcb0					      REPEND
-      2  fcb1		       ea		      NOP
-      3  fcb2					      REPEND
-      4  fcb2
-      5  fcb2				  -	      REPEAT	4%2
-      6  fcb2				  -	      STA	DUMP
-      7  fcb2					      REPEND
-     21  fcb2		       a9 ff		      LDA	#FULLWALL
-     22  fcb4		       45 a5		      EOR	shadow3cb
-     23  fcb6		       85 0d		      STA	PF0
-     24  fcb8		       a9 ff		      LDA	#FULLWALL
-     25  fcba		       45 a6		      EOR	shadow3db
-     26  fcbc		       85 0e		      STA	PF1
-     27  fcbe		       a9 ff		      LDA	#FULLWALL
-     28  fcc0		       45 a7		      EOR	shadow3eb
-     29  fcc2		       85 0f		      STA	PF2
-     30  fcc4		       a9 00		      LDA	#NULL
-      0  fcc6					      DELAY	2
-      1  fcc6					      REPEAT	2/2 - 2%2
-      2  fcc6		       ea		      NOP
-      3  fcc7					      REPEND
-      4  fcc7
-      5  fcc7				  -	      REPEAT	2%2
-      6  fcc7				  -	      STA	DUMP
-      7  fcc7					      REPEND
-     32  fcc7		       85 0f		      STA	PF2
-     33  fcc9		       85 0d		      STA	PF0
-     34  fccb
-     35  fccb		       85 02		      STA	WSYNC
-     36  fccd		       a5 b4		      LDA	shadowColour
-     37  fccf		       85 08		      STA	COLUPF
-     38  fcd1		       a5 a3		      LDA	shadow3ab
-     39  fcd3		       05 9e		      ORA	shadow2ab
-     40  fcd5		       85 0e		      STA	PF1
-     41  fcd7		       a5 a4		      LDA	shadow3bb
-     42  fcd9		       05 9f		      ORA	shadow2bb
-     43  fcdb		       85 0f		      STA	PF2
-     44  fcdd		       a5 a5		      LDA	shadow3cb
-     45  fcdf		       05 a0		      ORA	shadow2cb
-     46  fce1		       85 0d		      STA	PF0
-     47  fce3		       a5 a6		      LDA	shadow3db
-     48  fce5		       05 a1		      ORA	shadow2db
-     49  fce7		       85 0e		      STA	PF1
-     50  fce9		       a5 a7		      LDA	shadow3eb
-     51  fceb		       05 a2		      ORA	shadow2eb
-     52  fced		       85 0f		      STA	PF2
-     53  fcef		       a9 00		      LDA	#NULL
-     54  fcf1		       85 0d		      STA	PF0
-     55  fcf3
-     56  fcf3		       e8		      INX
-     57  fcf4		       e0 03		      CPX	#PIXH
-     58  fcf6		       d0 a1		      BNE	_dc_w4s0_loop
-     59  fcf8
-      0  fcf8					      DELAY	7
-      1  fcf8					      REPEAT	7/2 - 7%2
-      2  fcf8		       ea		      NOP
-      1  fcf8					      REPEND
-      2  fcf9		       ea		      NOP
-      3  fcfa					      REPEND
-      4  fcfa
-      5  fcfa					      REPEAT	7%2
-      6  fcfa		       85 30		      STA	DUMP
-      7  fcfc					      REPEND
-     61  fcfc
-     62  fcfc		       60		      RTS
-------- FILE dispkern.asm
-------- FILE drawCode/mmDraw.asm LEVEL 3 PASS 2
-      0  fcfd					      INCLUDE	"drawCode/mmDraw.asm"
-      1  fcfd							; Draws the compass to the screen
-      2  fcfd
-------- FILE drawCode/mmRender.asm LEVEL 4 PASS 2
-      0  fcfd					      INCLUDE	"drawCode/mmRender.asm"
-      1  fcfd							; Render the minimap
-      2  fcfd
-      3  fcfd				   mmRender
-      4  fcfd		       85 2b		      STA	HMCLR
-      5  fcff							; Set the colour of the player
-      6  fcff		       a9 cc		      LDA	#PLYRCOLU
-      7  fd01		       85 08		      STA	COLUPF
-      8  fd03							; Set the colour of the map
-      9  fd03		       a9 0e		      LDA	#MAPCOLU
-     10  fd05		       85 06		      STA	COLUP0
-     11  fd07		       85 07		      STA	COLUP1
-     12  fd09							; Get the player's position and translate it into horizontal movement
-     13  fd09		       a9 08		      LDA	#%00001000
-     14  fd0b		       18		      CLC
-     15  fd0c		       38		      SEC
-     16  fd0d		       e5 a9		      SBC	playerPos
-     17  fd0f		       0a		      ASL
-     18  fd10		       0a		      ASL
-     19  fd11		       0a		      ASL
-     20  fd12		       0a		      ASL
-     21  fd13		       85 b7		      STA	horzPos_plyr
-     22  fd15
-     23  fd15							; Set the map's position to the right values
-     24  fd15		       a9 00		      LDA	#HADJ_A
-     25  fd17		       85 b5		      STA	horzPos_mA
-     26  fd19		       a9 10		      LDA	#HADJ_B
-     27  fd1b		       85 b6		      STA	horzPos_mB
-     28  fd1d
-     29  fd1d		       85 02		      STA	WSYNC
-     30  fd1f		       a2 00		      LDX	#INDEXINIT
-     31  fd21
-     32  fd21				   _mmRender_wait1
-     33  fd21		       e8		      INX
-     34  fd22		       e0 05		      CPX	#HWAIT
-     35  fd24		       d0 fb		      BNE	_mmRender_wait1
-      0  fd26					      DELAY	HDELAY1
-      1  fd26					      REPEAT	HDELAY1/2 - HDELAY1%2
-      2  fd26		       ea		      NOP
-      1  fd26					      REPEND
-      2  fd27		       ea		      NOP
-      3  fd28					      REPEND
-      4  fd28
-      5  fd28					      REPEAT	HDELAY1%2
-      6  fd28		       85 30		      STA	DUMP
-      7  fd2a					      REPEND
-     37  fd2a		       85 10		      STA	RESP0
-     38  fd2c		       85 11		      STA	RESP1
-     39  fd2e
-     40  fd2e		       a5 a9		      LDA	playerPos
-     41  fd30
-     42  fd30		       85 02		      STA	WSYNC
-     43  fd32		       a2 00		      LDX	#INDEXINIT
-     44  fd34
-     45  fd34				   _mmRender_wait2
-     46  fd34		       e8		      INX
-     47  fd35		       e0 05		      CPX	#HWAIT
-     48  fd37		       d0 fb		      BNE	_mmRender_wait2
-      0  fd39					      DELAY	HDELAY2
-      1  fd39					      REPEAT	HDELAY2/2 - HDELAY2%2
-      2  fd39		       ea		      NOP
-      1  fd39					      REPEND
-      2  fd3a		       ea		      NOP
-      1  fd3a					      REPEND
-      2  fd3b		       ea		      NOP
-      1  fd3b					      REPEND
-      2  fd3c		       ea		      NOP
-      1  fd3c					      REPEND
-      2  fd3d		       ea		      NOP
-      3  fd3e					      REPEND
-      4  fd3e
-      5  fd3e				  -	      REPEAT	HDELAY2%2
-      6  fd3e				  -	      STA	DUMP
-      7  fd3e					      REPEND
-     50  fd3e		       85 14		      STA	RESBL
-     51  fd40
-     52  fd40		       60		      RTS
-------- FILE drawCode/mmDraw.asm
-      4  fd41
-      5  fd41				   mmDraw
-      6  fd41		       a9 00		      LDA	#0
-      7  fd43
-      8  fd43		       20 fd fc 	      JSR	mmRender
-      9  fd46
-     10  fd46							; Load the player's position
-     11  fd46
-     12  fd46		       a5 b7		      LDA	horzPos_plyr
-     13  fd48		       85 24		      STA	HMBL
-     14  fd4a		       a5 b5		      LDA	horzPos_mA
-     15  fd4c		       85 20		      STA	HMP0
-     16  fd4e		       a5 b6		      LDA	horzPos_mB
-     17  fd50		       85 21		      STA	HMP1
-     18  fd52
-     19  fd52		       a9 00		      LDA	#NULL
-     20  fd54		       85 1b		      STA	GRP0
-     21  fd56		       85 1c		      STA	GRP1
-     22  fd58		       85 02		      STA	WSYNC
-     23  fd5a		       85 2a		      STA	HMOVE
-     24  fd5c
-     25  fd5c		       a0 00		      LDY	#INDEXINIT
-     26  fd5e		       a6 a9		      LDX	playerPos
-     27  fd60
-     28  fd60				   _mmLoop
-     29  fd60		       85 02		      STA	WSYNC
-     30  fd62
-     31  fd62		       b1 bb		      LDA	(miniMapPtr),Y
-     32  fd64		       85 1b		      STA	GRP0
-     33  fd66		       c8		      INY
-     34  fd67		       b1 bb		      LDA	(miniMapPtr),Y
-     35  fd69		       85 1c		      STA	GRP1
-     36  fd6b		       c8		      INY
-     37  fd6c
-     38  fd6c		       8a		      TXA
-     39  fd6d		       38		      SEC
-     40  fd6e		       e5 aa		      SBC	mapWidth
-     41  fd70		       aa		      TAX
-     42  fd71		       29 f0		      AND	#%11110000
-     43  fd73
-     44  fd73		       c9 00		      CMP	#0
-     45  fd75		       d0 0a		      BNE	_noDraw
-     46  fd77
-     47  fd77		       a9 02		      LDA	#2
-     48  fd79		       85 1f		      STA	ENABL
-     49  fd7b		       85 b8		      STA	drawingPlyr
-     50  fd7d		       a9 01		      LDA	#1
-     51  fd7f		       85 27		      STA	VDELBL
-     52  fd81
-     53  fd81				   _noDraw
-     54  fd81
-     55  fd81		       a5 b8		      LDA	drawingPlyr
-     56  fd83		       85 1f		      STA	ENABL
-     57  fd85		       a9 00		      LDA	#0
-     58  fd87		       85 b8		      STA	drawingPlyr
-     59  fd89		       c0 20		      CPY	#32
-     60  fd8b		       d0 d3		      BNE	_mmLoop
-     61  fd8d
-     62  fd8d		       a9 00		      LDA	#0
-     63  fd8f		       85 1f		      STA	ENABL
-     64  fd91
-     65  fd91		       85 02		      STA	WSYNC
-     66  fd93
-     67  fd93		       a9 00		      LDA	#NULL
-     68  fd95		       85 1b		      STA	GRP0
-     69  fd97		       85 1c		      STA	GRP1
-     70  fd99		       85 06		      STA	COLUP0
-     71  fd9b		       85 07		      STA	COLUP1
-     72  fd9d
-     73  fd9d		       60		      RTS
-------- FILE dispkern.asm
-     23  fd9e
-     24  fd9e				   drawStart
-     25  fd9e
-     26  fd9e		       20 36 fa 	      JSR	dc_w1s1	; Draw all the walls and their shadows!
-     27  fda1
-     28  fda1		       a9 00		      LDA	#NULL
-     29  fda3		       85 0e		      STA	PF1
-     30  fda5		       85 0f		      STA	PF2
+      0  fd31					      INCLUDE	"drawCode/dc_w4s0.asm"
+      1  fd31							; The second wall and it's second shadow
+      2  fd31
+      3  fd31				   dc_w4s0_delayed
+      4  fd31		       4c 38 fd 	      JMP	dc_w4s0
+      5  fd34
+      6  fd34				   dc_w4s0_switch
+      7  fd34		       a9 7f		      LDA	#$7F
+      8  fd36		       69 01		      ADC	#$01
+      9  fd38
+     10  fd38				   dc_w4s0
+     11  fd38
+     12  fd38		       a2 03		      LDX	#PIXH
+     13  fd3a
+     14  fd3a				   _dc_w4s0_loop
+     15  fd3a		       a5 b5		      LDA	wallColour
+     16  fd3c		       85 02		      STA	WSYNC
+     17  fd3e				   _dc_w4s0_joinIn
+     18  fd3e		       85 08		      STA	COLUPF
+     19  fd40		       a5 8f		      LDA	wall4a
+     20  fd42		       85 0e		      STA	PF1
+     21  fd44		       98		      TYA
+     22  fd45		       f0 57		      BEQ	_dc_w4s0_noSprite_1
+     23  fd47		       88		      DEY
+     24  fd48		       c4 bc		      CPY	spriteHeight
+     25  fd4a		       b0 5a		      BCS	_dc_w4s0_noSprite_2
+     26  fd4c		       b1 c2		      LDA	(sprite),Y
+     27  fd4e		       85 1b		      STA	GRP0
+     28  fd50				   _dc_w4s0_noSprite_ret
+     29  fd50		       a5 90		      LDA	wall4b
+     30  fd52		       85 0f		      STA	PF2
+     31  fd54
+     32  fd54		       a9 ff		      LDA	#FULLWALL
+     33  fd56		       45 a7		      EOR	shadow3cb
+     34  fd58		       85 0d		      STA	PF0
+     35  fd5a		       a9 ff		      LDA	#FULLWALL
+     36  fd5c		       45 a8		      EOR	shadow3db
+     37  fd5e		       85 0e		      STA	PF1
+     38  fd60		       a9 ff		      LDA	#FULLWALL
+     39  fd62		       45 a9		      EOR	shadow3eb
+     40  fd64		       85 0f		      STA	PF2
+     41  fd66		       a9 00		      LDA	#NULL
+      0  fd68					      DELAY	4
+      1  fd68				   .CYCLES    SET	4
+      2  fd68
+ C0 $4
+      3  fd68					      ECHO	"C0",.CYCLES
+      4  fd68
+      5  fd68				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fd68				  -	      NOP
+      7  fd68				  -.CYCLES    SET	.CYCLES - 2
+      8  fd68					      ENDIF
+      9  fd68
+ C1 $4
+     10  fd68					      ECHO	"C1",.CYCLES
+     11  fd68
+     12  fd68				  -	      IF	[.CYCLES - 2] / 5
+     13  fd68				  -	      REPEAT	.CYCLES / 5
+     14  fd68				  -	      INC	foo
+     15  fd68				  -	      REPEND
+     16  fd68				  -.CYCLES    SET	.CYCLES % 5
+     17  fd68					      ENDIF
+     18  fd68
+ C2 $4
+     19  fd68					      ECHO	"C2",.CYCLES
+     20  fd68
+     21  fd68					      IF	.CYCLES % 3 == 1
+     22  fd68		       ea		      NOP
+     23  fd68				   .CYCLES    SET	.CYCLES - 2
+     24  fd69					      ENDIF
+     25  fd69
+ C3 $2
+     26  fd69					      ECHO	"C3",.CYCLES
+     27  fd69
+     28  fd69				  -	      REPEAT	.CYCLES / 3
+     29  fd69				  -	      STA	DUMP
+     30  fd69					      REPEND
+     31  fd69
+     32  fd69				   .CYCLES    SET	.CYCLES % 3
+     33  fd69
+ C4 $2
+     34  fd69					      ECHO	"C4",.CYCLES
+     35  fd69
+     36  fd69					      REPEAT	.CYCLES / 2
+     37  fd69		       ea		      NOP
+     38  fd6a					      REPEND
+     39  fd6a
+     40  fd6a				   .CYCLES    SET	.CYCLES % 2
+     41  fd6a
+     42  fd6a				  -	      IF	.CYCLES
+     43  fd6a				  -	      ERR
+     44  fd6a					      ENDIF
+     45  fd6a
+     43  fd6a		       85 0f		      STA	PF2
+     44  fd6c		       85 0d		      STA	PF0
+     45  fd6e
+     46  fd6e		       85 02		      STA	WSYNC	; Draw the shadow
+     47  fd70		       a5 b6		      LDA	shadowColour
+     48  fd72		       85 08		      STA	COLUPF
+     49  fd74		       a5 a5		      LDA	shadow3ab
+     50  fd76		       05 a0		      ORA	shadow2ab
+     51  fd78		       85 0e		      STA	PF1
+     52  fd7a		       a5 a6		      LDA	shadow3bb
+     53  fd7c		       05 a1		      ORA	shadow2bb
+     54  fd7e		       85 0f		      STA	PF2
+     55  fd80		       a5 a7		      LDA	shadow3cb
+     56  fd82		       05 a2		      ORA	shadow2cb
+     57  fd84		       85 0d		      STA	PF0
+     58  fd86		       a5 a8		      LDA	shadow3db
+     59  fd88		       05 a3		      ORA	shadow2db
+     60  fd8a		       85 0e		      STA	PF1
+     61  fd8c		       a5 a9		      LDA	shadow3eb
+     62  fd8e		       05 a4		      ORA	shadow2eb
+     63  fd90		       85 0f		      STA	PF2
+     64  fd92		       a9 00		      LDA	#NULL
+     65  fd94		       85 0d		      STA	PF0
+     66  fd96
+     67  fd96		       ca		      DEX
+     68  fd97		       d0 a1		      BNE	_dc_w4s0_loop
+     69  fd99
+     70  fd99		       50 99		      BVC	dc_w4s0_switch
+     71  fd9b		       4c c3 fc 	      JMP	dc_w3s2
+     72  fd9e
+     73  fd9e				   _dc_w4s0_noSprite_1
+      0  fd9e					      DELAY	11
+      1  fd9e				   .CYCLES    SET	11
+      2  fd9e
+ C0 $b
+      3  fd9e					      ECHO	"C0",.CYCLES
+      4  fd9e
+      5  fd9e					      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fd9e		       ea		      NOP
+      7  fd9e				   .CYCLES    SET	.CYCLES - 2
+      8  fd9f					      ENDIF
+      9  fd9f
+ C1 $9
+     10  fd9f					      ECHO	"C1",.CYCLES
+     11  fd9f
+     12  fd9f					      IF	[.CYCLES - 2] / 5
+     13  fd9f					      REPEAT	.CYCLES / 5
+     14  fd9f		       e6 c4		      INC	foo
+     15  fda1					      REPEND
+     16  fda1				   .CYCLES    SET	.CYCLES % 5
+     17  fda1					      ENDIF
+     18  fda1
+ C2 $4
+     19  fda1					      ECHO	"C2",.CYCLES
+     20  fda1
+     21  fda1					      IF	.CYCLES % 3 == 1
+     22  fda1		       ea		      NOP
+     23  fda1				   .CYCLES    SET	.CYCLES - 2
+     24  fda2					      ENDIF
+     25  fda2
+ C3 $2
+     26  fda2					      ECHO	"C3",.CYCLES
+     27  fda2
+     28  fda2				  -	      REPEAT	.CYCLES / 3
+     29  fda2				  -	      STA	DUMP
+     30  fda2					      REPEND
+     31  fda2
+     32  fda2				   .CYCLES    SET	.CYCLES % 3
+     33  fda2
+ C4 $2
+     34  fda2					      ECHO	"C4",.CYCLES
+     35  fda2
+     36  fda2					      REPEAT	.CYCLES / 2
+     37  fda2		       ea		      NOP
+     38  fda3					      REPEND
+     39  fda3
+     40  fda3				   .CYCLES    SET	.CYCLES % 2
+     41  fda3
+     42  fda3				  -	      IF	.CYCLES
+     43  fda3				  -	      ERR
+     44  fda3					      ENDIF
+     45  fda3
+     75  fda3		       4c 50 fd 	      JMP	_dc_w4s0_noSprite_ret
+     76  fda6
+     77  fda6				   _dc_w4s0_noSprite_2
+      0  fda6					      DELAY	4
+      1  fda6				   .CYCLES    SET	4
+      2  fda6
+ C0 $4
+      3  fda6					      ECHO	"C0",.CYCLES
+      4  fda6
+      5  fda6				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      6  fda6				  -	      NOP
+      7  fda6				  -.CYCLES    SET	.CYCLES - 2
+      8  fda6					      ENDIF
+      9  fda6
+ C1 $4
+     10  fda6					      ECHO	"C1",.CYCLES
+     11  fda6
+     12  fda6				  -	      IF	[.CYCLES - 2] / 5
+     13  fda6				  -	      REPEAT	.CYCLES / 5
+     14  fda6				  -	      INC	foo
+     15  fda6				  -	      REPEND
+     16  fda6				  -.CYCLES    SET	.CYCLES % 5
+     17  fda6					      ENDIF
+     18  fda6
+ C2 $4
+     19  fda6					      ECHO	"C2",.CYCLES
+     20  fda6
+     21  fda6					      IF	.CYCLES % 3 == 1
+     22  fda6		       ea		      NOP
+     23  fda6				   .CYCLES    SET	.CYCLES - 2
+     24  fda7					      ENDIF
+     25  fda7
+ C3 $2
+     26  fda7					      ECHO	"C3",.CYCLES
+     27  fda7
+     28  fda7				  -	      REPEAT	.CYCLES / 3
+     29  fda7				  -	      STA	DUMP
+     30  fda7					      REPEND
      31  fda7
-     32  fda7		       20 41 fd 	      JSR	mmDraw
-     33  fdaa
-     34  fdaa		       4c ad fd 	      JMP	stop
-     35  fdad
-     36  fdad				   stop
-     37  fdad
-     38  fdad
-     39  fdad		       85 09		      STA	COLUBK
+     32  fda7				   .CYCLES    SET	.CYCLES % 3
+     33  fda7
+ C4 $2
+     34  fda7					      ECHO	"C4",.CYCLES
+     35  fda7
+     36  fda7					      REPEAT	.CYCLES / 2
+     37  fda7		       ea		      NOP
+     38  fda8					      REPEND
+     39  fda8
+     40  fda8				   .CYCLES    SET	.CYCLES % 2
+     41  fda8
+     42  fda8				  -	      IF	.CYCLES
+     43  fda8				  -	      ERR
+     44  fda8					      ENDIF
+     45  fda8
+     79  fda8		       4c 50 fd 	      JMP	_dc_w4s0_noSprite_ret
+------- FILE dispkern.asm
+     30  fdab
+------- FILE drawCode/dc_w1s2.asm LEVEL 3 PASS 2
+      0  fdab					      INCLUDE	"drawCode/dc_w1s2.asm"
+      1  fdab
+------- FILE dispkern.asm
+     32  fdab
+     33  fdab				   jumbo
+     34  fdab
+     35  fdab		       b8		      CLV
+     36  fdac
+     37  fdac				   dc_w2s1_ret
+     38  fdac
+     39  fdac		       a9 00		      LDA	#NULL
+     40  fdae		       85 0e		      STA	PF1
+     41  fdb0		       85 0f		      STA	PF2
+     42  fdb2
+     43  fdb2		       20 85 fa 	      JSR	mmDraw
+     44  fdb5
+     45  fdb5		       4c b8 fd 	      JMP	stop
+     46  fdb8
+     47  fdb8				   stop
+     48  fdb8
+     49  fdb8
+     50  fdb8		       85 09		      STA	COLUBK
 ------- FILE main.asm
-     70  fdaf
-     71  fdaf
-     72  fdaf							; Start VBLANK
-     73  fdaf
-     74  fdaf		       a9 c2		      LDA	#VBLANK_SET
-     75  fdb1		       85 01		      STA	VBLANK
-     76  fdb3
-     77  fdb3							; Process input
-     78  fdb3
+     72  fdba
+     73  fdba
+     74  fdba							; Start VBLANK
+     75  fdba
+     76  fdba		       a9 c2		      LDA	#VBLANK_SET
+     77  fdbc		       85 01		      STA	VBLANK
+     78  fdbe
+     79  fdbe							; Process input
+     80  fdbe
 ------- FILE input.asm LEVEL 2 PASS 2
-      0  fdb3					      INCLUDE	"input.asm"
-      1  fdb3							; VePseu's controller input
-      2  fdb3
-      3  fdb3		       85 02		      STA	WSYNC
-      4  fdb5
-      5  fdb5		       ad 80 02 	      LDA	SWCHA
-      6  fdb8		       29 10		      AND	#FFORD
-      7  fdba		       c9 10		      CMP	#FFORD
-      8  fdbc		       f0 26		      BEQ	CIN1_NOPRESS
-      9  fdbe
-     10  fdbe		       a5 a9		      LDA	playerPos
-     11  fdc0		       38		      SEC
-     12  fdc1		       e5 ae		      SBC	yLoss
-     13  fdc3		       18		      CLC
-     14  fdc4		       65 ad		      ADC	yGain
-     15  fdc6		       a8		      TAY
-     16  fdc7
-     17  fdc7		       b1 bd		      LDA	(mapPtr),Y
-     18  fdc9		       c9 00		      CMP	#NULL
-     19  fdcb		       d0 1b		      BNE	CIN2
-     20  fdcd
-     21  fdcd		       a5 af		      LDA	fordPressed
-     22  fdcf		       c9 00		      CMP	#NULL
-     23  fdd1		       d0 09		      BNE	CIN1_WAIT
-     24  fdd3
-     25  fdd3		       84 a9		      STY	playerPos
-     26  fdd5		       a9 0f		      LDA	#CWAITCNT
-     27  fdd7		       85 af		      STA	fordPressed
-     28  fdd9		       4c e8 fd 	      JMP	CIN2
-     29  fddc
-     30  fddc				   CIN1_WAIT
-      0  fddc					      DEA
-      1  fddc		       38		      SEC
-      2  fddd		       e9 01		      SBC	#1
-     32  fddf		       85 af		      STA	fordPressed
-     33  fde1		       4c e8 fd 	      JMP	CIN2
-     34  fde4
-     35  fde4				   CIN1_NOPRESS
-     36  fde4		       a9 00		      LDA	#NULL
-     37  fde6		       85 af		      STA	fordPressed
-     38  fde8
-     39  fde8				   CIN2
-     40  fde8		       85 02		      STA	WSYNC
-     41  fdea		       ad 80 02 	      LDA	SWCHA
-     42  fded		       29 20		      AND	#FBACK
-     43  fdef		       c9 20		      CMP	#FBACK
-     44  fdf1		       f0 26		      BEQ	CIN2_NOPRESS
-     45  fdf3
-     46  fdf3		       a5 a9		      LDA	playerPos
-     47  fdf5		       38		      SEC
-     48  fdf6		       e5 ad		      SBC	yGain
-     49  fdf8		       18		      CLC
-     50  fdf9		       65 ae		      ADC	yLoss
-     51  fdfb		       a8		      TAY
-     52  fdfc
-     53  fdfc		       b1 bd		      LDA	(mapPtr),Y
-     54  fdfe		       c9 00		      CMP	#NULL
-     55  fe00		       d0 1b		      BNE	CIN3
-     56  fe02
-     57  fe02		       a5 b0		      LDA	backPressed
-     58  fe04		       c9 00		      CMP	#NULL
-     59  fe06		       d0 09		      BNE	CIN2_WAIT
-     60  fe08
-     61  fe08		       84 a9		      STY	playerPos
-     62  fe0a		       a9 0f		      LDA	#CWAITCNT
-     63  fe0c		       85 b0		      STA	backPressed
-     64  fe0e		       4c 1d fe 	      JMP	CIN3
-     65  fe11
-     66  fe11				   CIN2_WAIT
-      0  fe11					      DEA
-      1  fe11		       38		      SEC
-      2  fe12		       e9 01		      SBC	#1
-     68  fe14		       85 b0		      STA	backPressed
-     69  fe16		       4c 1d fe 	      JMP	CIN3
-     70  fe19
-     71  fe19				   CIN2_NOPRESS
-     72  fe19		       a9 00		      LDA	#NULL
-     73  fe1b		       85 b0		      STA	backPressed
-     74  fe1d
-     75  fe1d				   CIN3
-     76  fe1d		       85 02		      STA	WSYNC
-     77  fe1f		       ad 80 02 	      LDA	SWCHA
-     78  fe22		       29 80		      AND	#FLEFT
-     79  fe24		       c9 80		      CMP	#FLEFT
-     80  fe26		       f0 1c		      BEQ	CIN3_NOPRESS
-     81  fe28
-     82  fe28		       a5 b9		      LDA	direction
-      0  fe2a					      INA
-      1  fe2a		       18		      CLC
-      2  fe2b		       69 01		      ADC	#1
-     84  fe2d		       29 03		      AND	#%00000011
-     85  fe2f
-     86  fe2f		       a6 b2		      LDX	rigtPressed
-     87  fe31		       e0 00		      CPX	#NULL
-     88  fe33		       d0 09		      BNE	CIN3_WAIT
-     89  fe35
-     90  fe35		       85 b9		      STA	direction
-     91  fe37
-     92  fe37		       a9 0f		      LDA	#CWAITCNT
-     93  fe39		       85 b2		      STA	rigtPressed
-     94  fe3b		       4c 48 fe 	      JMP	CIN4
-     95  fe3e
-     96  fe3e				   CIN3_WAIT
-     97  fe3e		       ca		      DEX
-     98  fe3f		       86 b2		      STX	rigtPressed
-     99  fe41		       4c 48 fe 	      JMP	CIN4
-    100  fe44
-    101  fe44				   CIN3_NOPRESS
-    102  fe44		       a9 00		      LDA	#NULL
-    103  fe46		       85 b2		      STA	rigtPressed
-    104  fe48
-    105  fe48				   CIN4
-    106  fe48		       85 02		      STA	WSYNC
-    107  fe4a		       ad 80 02 	      LDA	SWCHA
-    108  fe4d		       29 40		      AND	#FRIGT
-    109  fe4f		       c9 40		      CMP	#FRIGT
-    110  fe51		       f0 1c		      BEQ	CIN4_NOPRESS
-    111  fe53
-    112  fe53		       a5 b9		      LDA	direction
-      0  fe55					      DEA
-      1  fe55		       38		      SEC
-      2  fe56		       e9 01		      SBC	#1
-    114  fe58		       29 03		      AND	#%00000011
-    115  fe5a
-    116  fe5a		       a6 b1		      LDX	leftPressed
-    117  fe5c		       e0 00		      CPX	#NULL
-    118  fe5e		       d0 09		      BNE	CIN4_WAIT
-    119  fe60
-    120  fe60		       85 b9		      STA	direction
-    121  fe62
-    122  fe62		       a9 0f		      LDA	#CWAITCNT
-    123  fe64		       85 b1		      STA	leftPressed
-    124  fe66		       4c 73 fe 	      JMP	CDIR1
-    125  fe69
-    126  fe69				   CIN4_WAIT
-    127  fe69		       ca		      DEX
-    128  fe6a		       86 b1		      STX	leftPressed
-    129  fe6c		       4c 73 fe 	      JMP	CDIR1
-    130  fe6f
-    131  fe6f				   CIN4_NOPRESS
-    132  fe6f		       a9 00		      LDA	#NULL
-    133  fe71		       85 b1		      STA	leftPressed
-    134  fe73
-    135  fe73				   CDIR1
-    136  fe73		       85 02		      STA	WSYNC
-    137  fe75		       a5 b9		      LDA	direction
-    138  fe77		       c9 00		      CMP	#DNORTH
-    139  fe79		       d0 16		      BNE	CDIR2
-    140  fe7b
-    141  fe7b		       a5 aa		      LDA	mapWidth
-    142  fe7d		       85 ae		      STA	yLoss
-    143  fe7f		       a9 01		      LDA	#ONE
-    144  fe81		       85 ab		      STA	xGain
-    145  fe83		       a9 86		      LDA	#WCOLU
-    146  fe85		       85 b3		      STA	wallColour
-    147  fe87		       a9 82		      LDA	#SCOLU
-    148  fe89		       85 b4		      STA	shadowColour
-    149  fe8b		       a9 00		      LDA	#NULL
-    150  fe8d		       85 ad		      STA	yGain
-    151  fe8f		       85 ac		      STA	xLoss
-    152  fe91
-    153  fe91				   CDIR2
-    154  fe91		       a5 b9		      LDA	direction
-    155  fe93		       c9 02		      CMP	#DSOUTH
-    156  fe95		       d0 16		      BNE	CDIR3
-    157  fe97
-    158  fe97		       a5 aa		      LDA	mapWidth
-    159  fe99		       85 ad		      STA	yGain
-    160  fe9b		       a9 01		      LDA	#ONE
-    161  fe9d		       85 ac		      STA	xLoss
-    162  fe9f		       a9 86		      LDA	#WCOLU
-    163  fea1		       85 b3		      STA	wallColour
-    164  fea3		       a9 82		      LDA	#SCOLU
-    165  fea5		       85 b4		      STA	shadowColour
-    166  fea7		       a9 00		      LDA	#NULL
-    167  fea9		       85 ae		      STA	yLoss
-    168  feab		       85 ab		      STA	xGain
-    169  fead
-    170  fead				   CDIR3
-    171  fead		       a5 b9		      LDA	direction
-    172  feaf		       c9 01		      CMP	#DWEST
-    173  feb1		       d0 16		      BNE	CDIR4
-    174  feb3
-    175  feb3		       a5 aa		      LDA	mapWidth
-    176  feb5		       85 ab		      STA	xGain
-    177  feb7		       a9 01		      LDA	#ONE
-    178  feb9		       85 ad		      STA	yGain
-    179  febb		       a9 82		      LDA	#SCOLU
-    180  febd		       85 b3		      STA	wallColour
-    181  febf		       a9 86		      LDA	#WCOLU
-    182  fec1		       85 b4		      STA	shadowColour
-    183  fec3		       a9 00		      LDA	#NULL
-    184  fec5		       85 ae		      STA	yLoss
-    185  fec7		       85 ac		      STA	xLoss
-    186  fec9
-    187  fec9				   CDIR4
-    188  fec9		       a5 b9		      LDA	direction
-    189  fecb		       c9 03		      CMP	#DEAST
-    190  fecd		       d0 16		      BNE	CEND
-    191  fecf
-    192  fecf		       a5 aa		      LDA	mapWidth
-    193  fed1		       85 ac		      STA	xLoss
-    194  fed3		       a9 01		      LDA	#ONE
-    195  fed5		       85 ae		      STA	yLoss
-    196  fed7		       a9 82		      LDA	#SCOLU
-    197  fed9		       85 b3		      STA	wallColour
-    198  fedb		       a9 86		      LDA	#WCOLU
-    199  fedd		       85 b4		      STA	shadowColour
-    200  fedf		       a9 00		      LDA	#NULL
-    201  fee1		       85 ad		      STA	yGain
-    202  fee3		       85 ab		      STA	xGain
-    203  fee5
-    204  fee5				   CEND
-    205  fee5		       85 02		      STA	WSYNC
+      0  fdbe					      INCLUDE	"input.asm"
+      1  fdbe							; VePseu's controller input
+      2  fdbe
+      3  fdbe		       85 02		      STA	WSYNC
+      4  fdc0
+      5  fdc0		       ad 80 02 	      LDA	SWCHA
+      6  fdc3		       29 10		      AND	#FFORD
+      7  fdc5		       c9 10		      CMP	#FFORD
+      8  fdc7		       f0 26		      BEQ	CIN1_NOPRESS
+      9  fdc9
+     10  fdc9		       a5 ab		      LDA	playerPos
+     11  fdcb		       38		      SEC
+     12  fdcc		       e5 b0		      SBC	yLoss
+     13  fdce		       18		      CLC
+     14  fdcf		       65 af		      ADC	yGain
+     15  fdd1		       a8		      TAY
+     16  fdd2
+     17  fdd2		       b1 c0		      LDA	(mapPtr),Y
+     18  fdd4		       c9 00		      CMP	#NULL
+     19  fdd6		       d0 1b		      BNE	CIN2
+     20  fdd8
+     21  fdd8		       a5 b1		      LDA	fordPressed
+     22  fdda		       c9 00		      CMP	#NULL
+     23  fddc		       d0 09		      BNE	CIN1_WAIT
+     24  fdde
+     25  fdde		       84 ab		      STY	playerPos
+     26  fde0		       a9 0f		      LDA	#CWAITCNT
+     27  fde2		       85 b1		      STA	fordPressed
+     28  fde4		       4c f3 fd 	      JMP	CIN2
+     29  fde7
+     30  fde7				   CIN1_WAIT
+      0  fde7					      DEA
+      1  fde7		       38		      SEC
+      2  fde8		       e9 01		      SBC	#1
+     32  fdea		       85 b1		      STA	fordPressed
+     33  fdec		       4c f3 fd 	      JMP	CIN2
+     34  fdef
+     35  fdef				   CIN1_NOPRESS
+     36  fdef		       a9 00		      LDA	#NULL
+     37  fdf1		       85 b1		      STA	fordPressed
+     38  fdf3
+     39  fdf3				   CIN2
+     40  fdf3		       85 02		      STA	WSYNC
+     41  fdf5		       ad 80 02 	      LDA	SWCHA
+     42  fdf8		       29 20		      AND	#FBACK
+     43  fdfa		       c9 20		      CMP	#FBACK
+     44  fdfc		       f0 26		      BEQ	CIN2_NOPRESS
+     45  fdfe
+     46  fdfe		       a5 ab		      LDA	playerPos
+     47  fe00		       38		      SEC
+     48  fe01		       e5 af		      SBC	yGain
+     49  fe03		       18		      CLC
+     50  fe04		       65 b0		      ADC	yLoss
+     51  fe06		       a8		      TAY
+     52  fe07
+     53  fe07		       b1 c0		      LDA	(mapPtr),Y
+     54  fe09		       c9 00		      CMP	#NULL
+     55  fe0b		       d0 1b		      BNE	CIN3
+     56  fe0d
+     57  fe0d		       a5 b2		      LDA	backPressed
+     58  fe0f		       c9 00		      CMP	#NULL
+     59  fe11		       d0 09		      BNE	CIN2_WAIT
+     60  fe13
+     61  fe13		       84 ab		      STY	playerPos
+     62  fe15		       a9 0f		      LDA	#CWAITCNT
+     63  fe17		       85 b2		      STA	backPressed
+     64  fe19		       4c 28 fe 	      JMP	CIN3
+     65  fe1c
+     66  fe1c				   CIN2_WAIT
+      0  fe1c					      DEA
+      1  fe1c		       38		      SEC
+      2  fe1d		       e9 01		      SBC	#1
+     68  fe1f		       85 b2		      STA	backPressed
+     69  fe21		       4c 28 fe 	      JMP	CIN3
+     70  fe24
+     71  fe24				   CIN2_NOPRESS
+     72  fe24		       a9 00		      LDA	#NULL
+     73  fe26		       85 b2		      STA	backPressed
+     74  fe28
+     75  fe28				   CIN3
+     76  fe28		       85 02		      STA	WSYNC
+     77  fe2a		       ad 80 02 	      LDA	SWCHA
+     78  fe2d		       29 80		      AND	#FLEFT
+     79  fe2f		       c9 80		      CMP	#FLEFT
+     80  fe31		       f0 1c		      BEQ	CIN3_NOPRESS
+     81  fe33
+     82  fe33		       a5 bb		      LDA	direction
+      0  fe35					      INA
+      1  fe35		       18		      CLC
+      2  fe36		       69 01		      ADC	#1
+     84  fe38		       29 03		      AND	#%00000011
+     85  fe3a
+     86  fe3a		       a6 b4		      LDX	rigtPressed
+     87  fe3c		       e0 00		      CPX	#NULL
+     88  fe3e		       d0 09		      BNE	CIN3_WAIT
+     89  fe40
+     90  fe40		       85 bb		      STA	direction
+     91  fe42
+     92  fe42		       a9 0f		      LDA	#CWAITCNT
+     93  fe44		       85 b4		      STA	rigtPressed
+     94  fe46		       4c 53 fe 	      JMP	CIN4
+     95  fe49
+     96  fe49				   CIN3_WAIT
+     97  fe49		       ca		      DEX
+     98  fe4a		       86 b4		      STX	rigtPressed
+     99  fe4c		       4c 53 fe 	      JMP	CIN4
+    100  fe4f
+    101  fe4f				   CIN3_NOPRESS
+    102  fe4f		       a9 00		      LDA	#NULL
+    103  fe51		       85 b4		      STA	rigtPressed
+    104  fe53
+    105  fe53				   CIN4
+    106  fe53		       85 02		      STA	WSYNC
+    107  fe55		       ad 80 02 	      LDA	SWCHA
+    108  fe58		       29 40		      AND	#FRIGT
+    109  fe5a		       c9 40		      CMP	#FRIGT
+    110  fe5c		       f0 1c		      BEQ	CIN4_NOPRESS
+    111  fe5e
+    112  fe5e		       a5 bb		      LDA	direction
+      0  fe60					      DEA
+      1  fe60		       38		      SEC
+      2  fe61		       e9 01		      SBC	#1
+    114  fe63		       29 03		      AND	#%00000011
+    115  fe65
+    116  fe65		       a6 b3		      LDX	leftPressed
+    117  fe67		       e0 00		      CPX	#NULL
+    118  fe69		       d0 09		      BNE	CIN4_WAIT
+    119  fe6b
+    120  fe6b		       85 bb		      STA	direction
+    121  fe6d
+    122  fe6d		       a9 0f		      LDA	#CWAITCNT
+    123  fe6f		       85 b3		      STA	leftPressed
+    124  fe71		       4c 7e fe 	      JMP	CDIR1
+    125  fe74
+    126  fe74				   CIN4_WAIT
+    127  fe74		       ca		      DEX
+    128  fe75		       86 b3		      STX	leftPressed
+    129  fe77		       4c 7e fe 	      JMP	CDIR1
+    130  fe7a
+    131  fe7a				   CIN4_NOPRESS
+    132  fe7a		       a9 00		      LDA	#NULL
+    133  fe7c		       85 b3		      STA	leftPressed
+    134  fe7e
+    135  fe7e				   CDIR1
+    136  fe7e		       85 02		      STA	WSYNC
+    137  fe80		       a5 bb		      LDA	direction
+    138  fe82		       c9 00		      CMP	#DNORTH
+    139  fe84		       d0 16		      BNE	CDIR2
+    140  fe86
+    141  fe86		       a5 ac		      LDA	mapWidth
+    142  fe88		       85 b0		      STA	yLoss
+    143  fe8a		       a9 01		      LDA	#ONE
+    144  fe8c		       85 ad		      STA	xGain
+    145  fe8e		       a9 86		      LDA	#WCOLU
+    146  fe90		       85 b5		      STA	wallColour
+    147  fe92		       a9 82		      LDA	#SCOLU
+    148  fe94		       85 b6		      STA	shadowColour
+    149  fe96		       a9 00		      LDA	#NULL
+    150  fe98		       85 af		      STA	yGain
+    151  fe9a		       85 ae		      STA	xLoss
+    152  fe9c
+    153  fe9c				   CDIR2
+    154  fe9c		       a5 bb		      LDA	direction
+    155  fe9e		       c9 02		      CMP	#DSOUTH
+    156  fea0		       d0 16		      BNE	CDIR3
+    157  fea2
+    158  fea2		       a5 ac		      LDA	mapWidth
+    159  fea4		       85 af		      STA	yGain
+    160  fea6		       a9 01		      LDA	#ONE
+    161  fea8		       85 ae		      STA	xLoss
+    162  feaa		       a9 86		      LDA	#WCOLU
+    163  feac		       85 b5		      STA	wallColour
+    164  feae		       a9 82		      LDA	#SCOLU
+    165  feb0		       85 b6		      STA	shadowColour
+    166  feb2		       a9 00		      LDA	#NULL
+    167  feb4		       85 b0		      STA	yLoss
+    168  feb6		       85 ad		      STA	xGain
+    169  feb8
+    170  feb8				   CDIR3
+    171  feb8		       a5 bb		      LDA	direction
+    172  feba		       c9 01		      CMP	#DWEST
+    173  febc		       d0 16		      BNE	CDIR4
+    174  febe
+    175  febe		       a5 ac		      LDA	mapWidth
+    176  fec0		       85 ad		      STA	xGain
+    177  fec2		       a9 01		      LDA	#ONE
+    178  fec4		       85 af		      STA	yGain
+    179  fec6		       a9 82		      LDA	#SCOLU
+    180  fec8		       85 b5		      STA	wallColour
+    181  feca		       a9 86		      LDA	#WCOLU
+    182  fecc		       85 b6		      STA	shadowColour
+    183  fece		       a9 00		      LDA	#NULL
+    184  fed0		       85 b0		      STA	yLoss
+    185  fed2		       85 ae		      STA	xLoss
+    186  fed4
+    187  fed4				   CDIR4
+    188  fed4		       a5 bb		      LDA	direction
+    189  fed6		       c9 03		      CMP	#DEAST
+    190  fed8		       d0 16		      BNE	CEND
+    191  feda
+    192  feda		       a5 ac		      LDA	mapWidth
+    193  fedc		       85 ae		      STA	xLoss
+    194  fede		       a9 01		      LDA	#ONE
+    195  fee0		       85 b0		      STA	yLoss
+    196  fee2		       a9 82		      LDA	#SCOLU
+    197  fee4		       85 b5		      STA	wallColour
+    198  fee6		       a9 86		      LDA	#WCOLU
+    199  fee8		       85 b6		      STA	shadowColour
+    200  feea		       a9 00		      LDA	#NULL
+    201  feec		       85 af		      STA	yGain
+    202  feee		       85 ad		      STA	xGain
+    203  fef0
+    204  fef0				   CEND
+    205  fef0		       85 02		      STA	WSYNC
 ------- FILE main.asm
-     80  fee7
-     81  fee7							; Pad again
-     82  fee7
-     83  fee7		       a2 00		      LDX	#INDEXINIT
-     84  fee9
-     85  fee9				   lowerPad
-     86  fee9		       85 02		      STA	WSYNC
-     87  feeb
-     88  feeb		       e8		      INX
-     89  feec		       e0 19		      CPX	#LOPAD_LIMIT
-     90  feee		       d0 f9		      BNE	lowerPad
-     91  fef0
-     92  fef0							; Get everything ready for VSYNC
-     93  fef0
-     94  fef0		       a9 00		      LDA	#NULL
-     95  fef2		       85 01		      STA	VBLANK
-     96  fef4		       a9 02		      LDA	#VSYNC_SET
-     97  fef6		       85 02		      STA	WSYNC
-     98  fef8		       4c 2d f8 	      JMP	screenStart
-     99  fefb
-    100  fffa					      ORG	$FFFA
-    101  fffa
-    102  fffa		       00 f8		      DC.W	start	; Something
-    103  fffc		       00 f8		      DC.W	start	; Entrypoint
-    104  fffe		       2d f8		      DC.W	screenStart	; Something else
-    105  10000
-    106  10000					       END
+     82  fef2
+     83  fef2							; Pad again
+     84  fef2
+     85  fef2		       a2 00		      LDX	#INDEXINIT
+     86  fef4
+     87  fef4				   lowerPad
+     88  fef4		       85 02		      STA	WSYNC
+     89  fef6
+     90  fef6		       e8		      INX
+     91  fef7		       e0 19		      CPX	#LOPAD_LIMIT
+     92  fef9		       d0 f9		      BNE	lowerPad
+     93  fefb
+     94  fefb							; Get everything ready for VSYNC
+     95  fefb
+     96  fefb		       a9 00		      LDA	#NULL
+     97  fefd		       85 01		      STA	VBLANK
+     98  feff		       a9 02		      LDA	#VSYNC_SET
+     99  ff01		       85 02		      STA	WSYNC
+    100  ff03		       4c 2e f8 	      JMP	screenStart
+    101  ff06
+    102  fffa					      ORG	$FFFA
+    103  fffa
+    104  fffa		       01 f8		      DC.W	start	; Something
+    105  fffc		       01 f8		      DC.W	start	; Entrypoint
+    106  fffe		       2e f8		      DC.W	screenStart	; Something else
+    107  10000
+    108  10000					       END

@@ -12,18 +12,29 @@
 ; |
 ; |- Draw-code identifier
 
-    INCLUDE "drawCode/dc_w1s1.asm"
+    INCLUDE "drawCode/mmDraw.asm"
     INCLUDE "drawCode/dc_w1s2.asm"
+
+    ALIGN 256
+
+drawStart:
+
+    CLV
+
+    INCLUDE "drawCode/dc_w1s1.asm"
     INCLUDE "drawCode/dc_w2s1.asm"
     INCLUDE "drawCode/dc_w2s2.asm"
     INCLUDE "drawCode/dc_w3s1.asm"
     INCLUDE "drawCode/dc_w3s2.asm"
     INCLUDE "drawCode/dc_w4s0.asm"
-    INCLUDE "drawCode/mmDraw.asm"
 
-drawStart:
+    INCLUDE "drawCode/dc_w1s2.asm"
 
-    JSR dc_w1s1 ; Draw all the walls and their shadows!
+jumbo:
+
+    CLV
+
+dc_w2s1_ret:
 
     LDA #NULL
     STA PF1

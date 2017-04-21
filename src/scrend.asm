@@ -63,4 +63,12 @@ scrRendLoop: ; Totals at 909 cycles
     CPX #WALLCNT
     BNE scrRendLoop
 
+    LDA #FULLWALL
+    EOR shadow3ab
+    STA wall4a
+
+    LDA #FULLWALL
+    EOR shadow3bb
+    STA wall4b
+
     STA WSYNC ; by the end of this we have used 14 scanlines

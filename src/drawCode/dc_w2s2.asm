@@ -1,21 +1,28 @@
-; The draw code for the 1st wall and shadow
+; The second wall and it's second shadow
 
+dc_w2s2_delayed:
+    DELAY 2
 dc_w2s2:
 
-    LDX #INDEXINIT
-    JMP _dc_w2s2_start
+    LDX #PIXH
 
 _dc_w2s2_loop:
-    STA WSYNC
-    DELAY 10
-_dc_w2s2_start:
     LDA wallColour
+    STA WSYNC
     STA COLUPF
     LDA wall2a
     STA PF1
+    TYA
+    BEQ _dc_w2s2_noSprite_1
+    DEY
+    CPY spriteHeight
+    BCS _dc_w2s2_noSprite_2
+    LDA (sprite),Y
+    STA GRP0
+_dc_w2s2_noSprite_ret:
     LDA wall2b
     STA PF2
-    DELAY 14
+
     LDA wall2c
     STA PF0
     LDA wall2d
@@ -23,11 +30,11 @@ _dc_w2s2_start:
     LDA wall2e
     STA PF2
     LDA #NULL
-    DELAY 2
+    DELAY 10
     STA PF2
     STA PF0
 
-    STA WSYNC
+    STA WSYNC ; Draw the shadow
     LDA shadowColour
     STA COLUPF
     LDA shadow2ab
@@ -47,12 +54,17 @@ _dc_w2s2_start:
     LDA #NULL
     STA PF0
 
-    INX
-    CPX #PIXH
+    DEX
     BNE _dc_w2s2_loop
 
-    LDX #NULL
+    BVC dc_w3s1_delayed
+    DELAY 4
+    JMP dc_w2s1
 
-    DELAY 8
+_dc_w2s2_noSprite_1:
+    DELAY 10
+    JMP _dc_w2s2_noSprite_ret
 
-    RTS
+_dc_w2s2_noSprite_2:
+    DELAY 4
+    JMP _dc_w2s2_noSprite_ret

@@ -9,13 +9,51 @@
     ENDM
 
     MAC DELAY
-        REPEAT {1}/2 - {1}%2
-            NOP
-        REPEND
+.CYCLES SET {1}
 
-        REPEAT {1}%2
+        ECHO "C0",.CYCLES
+
+        IF .CYCLES % 5 == 1 && .CYCLES % 3
+        NOP
+.CYCLES SET .CYCLES - 2
+        ENDIF
+
+        ECHO "C1",.CYCLES
+
+        IF [.CYCLES - 2] / 5
+        REPEAT .CYCLES / 5
+            INC foo
+        REPEND
+.CYCLES SET .CYCLES % 5
+        ENDIF
+
+        ECHO "C2",.CYCLES
+
+        IF .CYCLES % 3 == 1
+        NOP
+.CYCLES SET .CYCLES - 2
+        ENDIF
+
+        ECHO "C3",.CYCLES
+
+        REPEAT .CYCLES / 3
             STA DUMP
         REPEND
+
+.CYCLES SET .CYCLES % 3
+
+        ECHO "C4",.CYCLES
+
+        REPEAT .CYCLES / 2
+        NOP
+        REPEND
+
+.CYCLES SET .CYCLES % 2
+
+        IF .CYCLES
+        ERR
+        ENDIF
+
     ENDM
 
 NULL    = 0 ; The value of NULL
@@ -24,6 +62,8 @@ ONE     = 1 ; The value of one
 WALLCNT = 10 ; The number of walls to render in scrend
 
 PIXH    = 3 ; The height of each pixel, in scanlines (x2)
+
+UPPRWALL_S  = 30
 
 HADJ_A  = $00 ; The horizontal adjustment of each minimap sprite
 HADJ_B  = $10

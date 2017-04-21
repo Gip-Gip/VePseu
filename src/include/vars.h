@@ -15,6 +15,8 @@ wall3b          DC 0
 wall3c          DC 0
 wall3d          DC 0
 wall3e          DC 0
+wall4a          DC 0
+wall4b          DC 0
 
 shadow2aa       DC 0
 shadow2ba       DC 0
@@ -62,6 +64,7 @@ horzPos_plyr    DC 0
 drawingPlyr     DC 0
 direction       DC 0
 spriteHeight    DC 0
+halfJump        DC 0
 miniMapPtr      DC.W 0
 mapPtr          DC.W 0
 sprite          DC.W 0
