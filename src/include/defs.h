@@ -11,14 +11,10 @@
     MAC DELAY
 .CYCLES SET {1}
 
-        ECHO "C0",.CYCLES
-
         IF .CYCLES % 5 == 1 && .CYCLES % 3
         NOP
 .CYCLES SET .CYCLES - 2
         ENDIF
-
-        ECHO "C1",.CYCLES
 
         IF [.CYCLES - 2] / 5
         REPEAT .CYCLES / 5
@@ -27,22 +23,16 @@
 .CYCLES SET .CYCLES % 5
         ENDIF
 
-        ECHO "C2",.CYCLES
-
         IF .CYCLES % 3 == 1
         NOP
 .CYCLES SET .CYCLES - 2
         ENDIF
-
-        ECHO "C3",.CYCLES
 
         REPEAT .CYCLES / 3
             STA DUMP
         REPEND
 
 .CYCLES SET .CYCLES % 3
-
-        ECHO "C4",.CYCLES
 
         REPEAT .CYCLES / 2
         NOP
