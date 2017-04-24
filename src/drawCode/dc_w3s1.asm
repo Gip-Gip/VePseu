@@ -66,5 +66,5 @@ _dc_w3s1_noSprite_1:
     JMP _dc_w3s1_noSprite_ret
 
 _dc_w3s1_noSprite_2:
-    DELAY 3
+    DELAY 4
     JMP _dc_w3s1_noSprite_ret

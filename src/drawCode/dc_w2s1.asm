@@ -56,7 +56,7 @@ _dc_w2s1_noSprite_ret:
     LDA shadow2ca
     STA PF0
     LDA shadow2da
-    ORA shadow1c
+    ORA shadow1d
     STA PF1
     LDA shadow2ea
     ORA shadow1e
@@ -68,4 +68,4 @@ _dc_w2s1_noSprite_ret:
     BNE _dc_w2s1_loop
 
     BVC dc_w2s2_delayed
-    JMP jumbo
+    JMP dc_w1s2

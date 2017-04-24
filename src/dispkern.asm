@@ -13,7 +13,6 @@
 ; |- Draw-code identifier
 
     INCLUDE "drawCode/mmDraw.asm"
-    INCLUDE "drawCode/dc_w1s2.asm"
 
     ALIGN 256
 
@@ -30,11 +29,9 @@ drawStart:
 
     INCLUDE "drawCode/dc_w1s2.asm"
 
-jumbo:
+dc_wallsEnd:
 
     CLV
-
-dc_w2s1_ret:
 
     LDA #NULL
     STA PF1

@@ -66,7 +66,7 @@ upperPad:
 
 ; Draw everything
 
-    LDY #0
+    LDY #30+31
 
     INCLUDE "dispkern.asm" ; 186 scanlines
 

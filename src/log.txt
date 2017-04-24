@@ -260,101 +260,92 @@
      11 U028a					      MAC	delay
      12 U028a				   .CYCLES    SET	{1}
      13 U028a
-     14 U028a					      ECHO	"C0",.CYCLES
-     15 U028a
-     16 U028a					      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-     17 U028a					      NOP
-     18 U028a				   .CYCLES    SET	.CYCLES - 2
-     19 U028a					      ENDIF
-     20 U028a
-     21 U028a					      ECHO	"C1",.CYCLES
-     22 U028a
-     23 U028a					      IF	[.CYCLES - 2] / 5
-     24 U028a					      REPEAT	.CYCLES / 5
-     25 U028a					      INC	foo
-     26 U028a					      REPEND
-     27 U028a				   .CYCLES    SET	.CYCLES % 5
-     28 U028a					      ENDIF
-     29 U028a
-     30 U028a					      ECHO	"C2",.CYCLES
-     31 U028a
-     32 U028a					      IF	.CYCLES % 3 == 1
-     33 U028a					      NOP
-     34 U028a				   .CYCLES    SET	.CYCLES - 2
-     35 U028a					      ENDIF
+     14 U028a					      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+     15 U028a					      NOP
+     16 U028a				   .CYCLES    SET	.CYCLES - 2
+     17 U028a					      ENDIF
+     18 U028a
+     19 U028a					      IF	[.CYCLES - 2] / 5
+     20 U028a					      REPEAT	.CYCLES / 5
+     21 U028a					      INC	foo
+     22 U028a					      REPEND
+     23 U028a				   .CYCLES    SET	.CYCLES % 5
+     24 U028a					      ENDIF
+     25 U028a
+     26 U028a					      IF	.CYCLES % 3 == 1
+     27 U028a					      NOP
+     28 U028a				   .CYCLES    SET	.CYCLES - 2
+     29 U028a					      ENDIF
+     30 U028a
+     31 U028a					      REPEAT	.CYCLES / 3
+     32 U028a					      STA	DUMP
+     33 U028a					      REPEND
+     34 U028a
+     35 U028a				   .CYCLES    SET	.CYCLES % 3
      36 U028a
-     37 U028a					      ECHO	"C3",.CYCLES
-     38 U028a
-     39 U028a					      REPEAT	.CYCLES / 3
-     40 U028a					      STA	DUMP
-     41 U028a					      REPEND
+     37 U028a					      REPEAT	.CYCLES / 2
+     38 U028a					      NOP
+     39 U028a					      REPEND
+     40 U028a
+     41 U028a				   .CYCLES    SET	.CYCLES % 2
      42 U028a
-     43 U028a				   .CYCLES    SET	.CYCLES % 3
-     44 U028a
-     45 U028a					      ECHO	"C4",.CYCLES
+     43 U028a					      IF	.CYCLES
+     44 U028a					      ERR
+     45 U028a					      ENDIF
      46 U028a
-     47 U028a					      REPEAT	.CYCLES / 2
-     48 U028a					      NOP
-     49 U028a					      REPEND
-     50 U028a
-     51 U028a				   .CYCLES    SET	.CYCLES % 2
-     52 U028a
-     53 U028a					      IF	.CYCLES
-     54 U028a					      ERR
-     55 U028a					      ENDIF
-     56 U028a
-     57 U028a					      ENDM
+     47 U028a					      ENDM
+     48 U028a
+     49 U028a		       00 00	   NULL       =	0	; The value of NULL
+     50 U028a		       00 01	   ONE	      =	1	; The value of one
+     51 U028a
+     52 U028a		       00 0a	   WALLCNT    =	10	; The number of walls to render in scrend
+     53 U028a
+     54 U028a		       00 03	   PIXH       =	3	; The height of each pixel, in scanlines (x2)
+     55 U028a
+     56 U028a		       00 1e	   UPPRWALL_S =	30
+     57 U028a		       00 06	   LOWRWALL_S =	6
      58 U028a
-     59 U028a		       00 00	   NULL       =	0	; The value of NULL
-     60 U028a		       00 01	   ONE	      =	1	; The value of one
+     59 U028a		       00 00	   HADJ_A     =	$00	; The horizontal adjustment of each minimap sprite
+     60 U028a		       00 10	   HADJ_B     =	$10
      61 U028a
-     62 U028a		       00 0a	   WALLCNT    =	10	; The number of walls to render in scrend
-     63 U028a
-     64 U028a		       00 03	   PIXH       =	3	; The height of each pixel, in scanlines (x2)
+     62 U028a		       00 05	   HWAIT      =	5	; The horizontal wait for the minimap
+     63 U028a		       00 07	   HDELAY1    =	7	; The amount of clocks for horizontal correction (minimap)
+     64 U028a		       00 0a	   HDELAY2    =	10	; The amount of clocks for horizontal correction (player blip)
      65 U028a
-     66 U028a		       00 1e	   UPPRWALL_S =	30
-     67 U028a
-     68 U028a		       00 00	   HADJ_A     =	$00	; The horizontal adjustment of each minimap sprite
-     69 U028a		       00 10	   HADJ_B     =	$10
+     66 U028a		       00 86	   WCOLU      =	$86	; The initial colour of walls
+     67 U028a		       00 82	   SCOLU      =	$82	; The initial colour of shadows
+     68 U028a		       00 0e	   MAPCOLU    =	$0E	; The colour of the map on the minimap
+     69 U028a		       00 cc	   PLYRCOLU   =	$CC	; The colour of the player on the minimap
      70 U028a
-     71 U028a		       00 05	   HWAIT      =	5	; The horizontal wait for the minimap
-     72 U028a		       00 07	   HDELAY1    =	7	; The amount of clocks for horizontal correction (minimap)
-     73 U028a		       00 0a	   HDELAY2    =	10	; The amount of clocks for horizontal correction (player blip)
-     74 U028a
-     75 U028a		       00 86	   WCOLU      =	$86	; The initial colour of walls
-     76 U028a		       00 82	   SCOLU      =	$82	; The initial colour of shadows
-     77 U028a		       00 0e	   MAPCOLU    =	$0E	; The colour of the map on the minimap
-     78 U028a		       00 cc	   PLYRCOLU   =	$CC	; The colour of the player on the minimap
-     79 U028a
-     80 U028a		       00 c2	   VBLANK_SET =	%11000010	; The value to push to the vblank register
-     81 U028a		       00 02	   VSYNC_SET  =	2	; The value to push to the vsync register
-     82 U028a
-     83 U028a		       00 00	   INDEXINIT  =	0	; The value to initialize indexes to
-     84 U028a
-     85 U028a		       00 0e	   UPPAD_LIMIT =	14	; The upper pad amount
-     86 U028a		       00 19	   LOPAD_LIMIT =	25	; The lower pad amount
-     87 U028a
-     88 U028a		       00 ff	   FULLWALL   =	$FF
-     89 U028a
-     90 U028a		       00 10	   FFORD      =	%00010000	; The bit set when the joystick is in the forward position
-     91 U028a		       00 20	   FBACK      =	%00100000	; The bit set when the joystick is in the backward position
-     92 U028a		       00 80	   FLEFT      =	%10000000	; The bit set when the joystick is in the left position
-     93 U028a		       00 40	   FRIGT      =	%01000000	; The bit set when the joystick is in the right position
-     94 U028a		       00 80	   ITRIG      =	%10000000	; The bit set when the trigger is set
+     71 U028a		       00 c2	   VBLANK_SET =	%11000010	; The value to push to the vblank register
+     72 U028a		       00 02	   VSYNC_SET  =	2	; The value to push to the vsync register
+     73 U028a
+     74 U028a		       00 00	   INDEXINIT  =	0	; The value to initialize indexes to
+     75 U028a
+     76 U028a		       00 0e	   UPPAD_LIMIT =	14	; The upper pad amount
+     77 U028a		       00 1a	   LOPAD_LIMIT =	26	; The lower pad amount
+     78 U028a
+     79 U028a		       00 ff	   FULLWALL   =	$FF
+     80 U028a
+     81 U028a		       00 10	   FFORD      =	%00010000	; The bit set when the joystick is in the forward position
+     82 U028a		       00 20	   FBACK      =	%00100000	; The bit set when the joystick is in the backward position
+     83 U028a		       00 80	   FLEFT      =	%10000000	; The bit set when the joystick is in the left position
+     84 U028a		       00 40	   FRIGT      =	%01000000	; The bit set when the joystick is in the right position
+     85 U028a		       00 80	   ITRIG      =	%10000000	; The bit set when the trigger is set
+     86 U028a
+     87 U028a		       00 01	   LOWSHAD_LIMIT =	1	; The limited size of the shadow at the bottem of the screen
+     88 U028a
+     89 U028a		       00 00	   cleanStart =	0	; The value to initialize X to in clearLoop
+     90 U028a		       00 00	   cleanEnd   =	0	; The value of X to stop the loop at in clearLoop
+     91 U028a
+     92 U028a		       00 ff	   stack      =	$FF	; The address of the stack
+     93 U028a
+     94 U028a		       00 0f	   CWAITCNT   =	#15	; The amount of frames to wait before input is repeated
      95 U028a
-     96 U028a		       00 01	   LOWSHAD_LIMIT =	1	; The limited size of the shadow at the bottem of the screen
-     97 U028a
-     98 U028a		       00 00	   cleanStart =	0	; The value to initialize X to in clearLoop
-     99 U028a		       00 00	   cleanEnd   =	0	; The value of X to stop the loop at in clearLoop
-    100 U028a
-    101 U028a		       00 ff	   stack      =	$FF	; The address of the stack
-    102 U028a
-    103 U028a		       00 0f	   CWAITCNT   =	#15	; The amount of frames to wait before input is repeated
-    104 U028a
-    105 U028a		       00 00	   DNORTH     =	0	; The possible directions
-    106 U028a		       00 02	   DSOUTH     =	2
-    107 U028a		       00 01	   DWEST      =	1
-    108 U028a		       00 03	   DEAST      =	3
+     96 U028a		       00 00	   DNORTH     =	0	; The possible directions
+     97 U028a		       00 02	   DSOUTH     =	2
+     98 U028a		       00 01	   DWEST      =	1
+     99 U028a		       00 03	   DEAST      =	3
 ------- FILE include/vepseu.h
      11 U028a
      12 U028a
@@ -1169,7 +1160,7 @@
      66  fa3e
      67  fa3e							; Draw everything
      68  fa3e
-     69  fa3e		       a0 00		      LDY	#0
+     69  fa3e		       a0 3d		      LDY	#30+31
      70  fa40
 ------- FILE dispkern.asm LEVEL 2 PASS 2
       0  fa40					      INCLUDE	"dispkern.asm"	; 186 scanlines
@@ -1231,54 +1222,39 @@
       0  fa6c					      DELAY	HDELAY1
       1  fa6c				   .CYCLES    SET	HDELAY1
       2  fa6c
- C0 $7
-      3  fa6c					      ECHO	"C0",.CYCLES
-      4  fa6c
-      5  fa6c				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fa6c				  -	      NOP
-      7  fa6c				  -.CYCLES    SET	.CYCLES - 2
-      8  fa6c					      ENDIF
-      9  fa6c
- C1 $7
-     10  fa6c					      ECHO	"C1",.CYCLES
-     11  fa6c
-     12  fa6c					      IF	[.CYCLES - 2] / 5
-     13  fa6c					      REPEAT	.CYCLES / 5
-     14  fa6c		       e6 c4		      INC	foo
-     15  fa6e					      REPEND
-     16  fa6e				   .CYCLES    SET	.CYCLES % 5
-     17  fa6e					      ENDIF
-     18  fa6e
- C2 $2
-     19  fa6e					      ECHO	"C2",.CYCLES
-     20  fa6e
-     21  fa6e				  -	      IF	.CYCLES % 3 == 1
-     22  fa6e				  -	      NOP
-     23  fa6e				  -.CYCLES    SET	.CYCLES - 2
-     24  fa6e					      ENDIF
+      3  fa6c				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fa6c				  -	      NOP
+      5  fa6c				  -.CYCLES    SET	.CYCLES - 2
+      6  fa6c					      ENDIF
+      7  fa6c
+      8  fa6c					      IF	[.CYCLES - 2] / 5
+      9  fa6c					      REPEAT	.CYCLES / 5
+     10  fa6c		       e6 c4		      INC	foo
+     11  fa6e					      REPEND
+     12  fa6e				   .CYCLES    SET	.CYCLES % 5
+     13  fa6e					      ENDIF
+     14  fa6e
+     15  fa6e				  -	      IF	.CYCLES % 3 == 1
+     16  fa6e				  -	      NOP
+     17  fa6e				  -.CYCLES    SET	.CYCLES - 2
+     18  fa6e					      ENDIF
+     19  fa6e
+     20  fa6e				  -	      REPEAT	.CYCLES / 3
+     21  fa6e				  -	      STA	DUMP
+     22  fa6e					      REPEND
+     23  fa6e
+     24  fa6e				   .CYCLES    SET	.CYCLES % 3
      25  fa6e
- C3 $2
-     26  fa6e					      ECHO	"C3",.CYCLES
-     27  fa6e
-     28  fa6e				  -	      REPEAT	.CYCLES / 3
-     29  fa6e				  -	      STA	DUMP
-     30  fa6e					      REPEND
-     31  fa6e
-     32  fa6e				   .CYCLES    SET	.CYCLES % 3
-     33  fa6e
- C4 $2
-     34  fa6e					      ECHO	"C4",.CYCLES
-     35  fa6e
-     36  fa6e					      REPEAT	.CYCLES / 2
-     37  fa6e		       ea		      NOP
-     38  fa6f					      REPEND
-     39  fa6f
-     40  fa6f				   .CYCLES    SET	.CYCLES % 2
-     41  fa6f
-     42  fa6f				  -	      IF	.CYCLES
-     43  fa6f				  -	      ERR
-     44  fa6f					      ENDIF
-     45  fa6f
+     26  fa6e					      REPEAT	.CYCLES / 2
+     27  fa6e		       ea		      NOP
+     28  fa6f					      REPEND
+     29  fa6f
+     30  fa6f				   .CYCLES    SET	.CYCLES % 2
+     31  fa6f
+     32  fa6f				  -	      IF	.CYCLES
+     33  fa6f				  -	      ERR
+     34  fa6f					      ENDIF
+     35  fa6f
      37  fa6f		       85 10		      STA	RESP0
      38  fa71		       85 11		      STA	RESP1
      39  fa73
@@ -1294,56 +1270,41 @@
       0  fa7e					      DELAY	HDELAY2
       1  fa7e				   .CYCLES    SET	HDELAY2
       2  fa7e
- C0 $a
-      3  fa7e					      ECHO	"C0",.CYCLES
-      4  fa7e
-      5  fa7e				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fa7e				  -	      NOP
-      7  fa7e				  -.CYCLES    SET	.CYCLES - 2
-      8  fa7e					      ENDIF
-      9  fa7e
- C1 $a
-     10  fa7e					      ECHO	"C1",.CYCLES
-     11  fa7e
-     12  fa7e					      IF	[.CYCLES - 2] / 5
-     13  fa7e					      REPEAT	.CYCLES / 5
-     14  fa7e		       e6 c4		      INC	foo
-     13  fa7e					      REPEND
-     14  fa80		       e6 c4		      INC	foo
-     15  fa82					      REPEND
-     16  fa82				   .CYCLES    SET	.CYCLES % 5
-     17  fa82					      ENDIF
-     18  fa82
- C2 $0
-     19  fa82					      ECHO	"C2",.CYCLES
-     20  fa82
-     21  fa82				  -	      IF	.CYCLES % 3 == 1
-     22  fa82				  -	      NOP
-     23  fa82				  -.CYCLES    SET	.CYCLES - 2
-     24  fa82					      ENDIF
+      3  fa7e				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fa7e				  -	      NOP
+      5  fa7e				  -.CYCLES    SET	.CYCLES - 2
+      6  fa7e					      ENDIF
+      7  fa7e
+      8  fa7e					      IF	[.CYCLES - 2] / 5
+      9  fa7e					      REPEAT	.CYCLES / 5
+     10  fa7e		       e6 c4		      INC	foo
+      9  fa7e					      REPEND
+     10  fa80		       e6 c4		      INC	foo
+     11  fa82					      REPEND
+     12  fa82				   .CYCLES    SET	.CYCLES % 5
+     13  fa82					      ENDIF
+     14  fa82
+     15  fa82				  -	      IF	.CYCLES % 3 == 1
+     16  fa82				  -	      NOP
+     17  fa82				  -.CYCLES    SET	.CYCLES - 2
+     18  fa82					      ENDIF
+     19  fa82
+     20  fa82				  -	      REPEAT	.CYCLES / 3
+     21  fa82				  -	      STA	DUMP
+     22  fa82					      REPEND
+     23  fa82
+     24  fa82				   .CYCLES    SET	.CYCLES % 3
      25  fa82
- C3 $0
-     26  fa82					      ECHO	"C3",.CYCLES
-     27  fa82
-     28  fa82				  -	      REPEAT	.CYCLES / 3
-     29  fa82				  -	      STA	DUMP
-     30  fa82					      REPEND
+     26  fa82				  -	      REPEAT	.CYCLES / 2
+     27  fa82				  -	      NOP
+     28  fa82					      REPEND
+     29  fa82
+     30  fa82				   .CYCLES    SET	.CYCLES % 2
      31  fa82
-     32  fa82				   .CYCLES    SET	.CYCLES % 3
-     33  fa82
- C4 $0
-     34  fa82					      ECHO	"C4",.CYCLES
+     32  fa82				  -	      IF	.CYCLES
+     33  fa82				  -	      ERR
+     34  fa82					      ENDIF
      35  fa82
-     36  fa82				  -	      REPEAT	.CYCLES / 2
-     37  fa82				  -	      NOP
-     38  fa82					      REPEND
-     39  fa82
-     40  fa82				   .CYCLES    SET	.CYCLES % 2
-     41  fa82
-     42  fa82				  -	      IF	.CYCLES
-     43  fa82				  -	      ERR
-     44  fa82					      ENDIF
-     45  fa82
      50  fa82		       85 14		      STA	RESBL
      51  fa84
      52  fa84		       60		      RTS
@@ -1419,17 +1380,13 @@
      72  fae1
      73  fae1		       60		      RTS
 ------- FILE dispkern.asm
-------- FILE drawCode/dc_w1s2.asm LEVEL 3 PASS 2
-      0  fae2					      INCLUDE	"drawCode/dc_w1s2.asm"
-      1  fae2
-------- FILE dispkern.asm
-     17  fae2
-     18  fb00		       00 00 00 00*	      ALIGN	256
-     19  fb00
-     20  fb00				   drawStart
-     21  fb00
-     22  fb00		       b8		      CLV
-     23  fb01
+     16  fae2
+     17  fb00		       00 00 00 00*	      ALIGN	256
+     18  fb00
+     19  fb00				   drawStart
+     20  fb00
+     21  fb00		       b8		      CLV
+     22  fb01
 ------- FILE drawCode/dc_w1s1.asm LEVEL 3 PASS 2
       0  fb01					      INCLUDE	"drawCode/dc_w1s1.asm"
       1  fb01							; The draw code for the 1st wall and shadow
@@ -1440,108 +1397,78 @@
       0  fb04					      DELAY	11
       1  fb04				   .CYCLES    SET	11
       2  fb04
- C0 $b
-      3  fb04					      ECHO	"C0",.CYCLES
-      4  fb04
-      5  fb04					      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fb04		       ea		      NOP
-      7  fb04				   .CYCLES    SET	.CYCLES - 2
-      8  fb05					      ENDIF
-      9  fb05
- C1 $9
-     10  fb05					      ECHO	"C1",.CYCLES
-     11  fb05
-     12  fb05					      IF	[.CYCLES - 2] / 5
-     13  fb05					      REPEAT	.CYCLES / 5
-     14  fb05		       e6 c4		      INC	foo
-     15  fb07					      REPEND
-     16  fb07				   .CYCLES    SET	.CYCLES % 5
-     17  fb07					      ENDIF
-     18  fb07
- C2 $4
-     19  fb07					      ECHO	"C2",.CYCLES
-     20  fb07
-     21  fb07					      IF	.CYCLES % 3 == 1
-     22  fb07		       ea		      NOP
-     23  fb07				   .CYCLES    SET	.CYCLES - 2
-     24  fb08					      ENDIF
+      3  fb04					      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fb04		       ea		      NOP
+      5  fb04				   .CYCLES    SET	.CYCLES - 2
+      6  fb05					      ENDIF
+      7  fb05
+      8  fb05					      IF	[.CYCLES - 2] / 5
+      9  fb05					      REPEAT	.CYCLES / 5
+     10  fb05		       e6 c4		      INC	foo
+     11  fb07					      REPEND
+     12  fb07				   .CYCLES    SET	.CYCLES % 5
+     13  fb07					      ENDIF
+     14  fb07
+     15  fb07					      IF	.CYCLES % 3 == 1
+     16  fb07		       ea		      NOP
+     17  fb07				   .CYCLES    SET	.CYCLES - 2
+     18  fb08					      ENDIF
+     19  fb08
+     20  fb08				  -	      REPEAT	.CYCLES / 3
+     21  fb08				  -	      STA	DUMP
+     22  fb08					      REPEND
+     23  fb08
+     24  fb08				   .CYCLES    SET	.CYCLES % 3
      25  fb08
- C3 $2
-     26  fb08					      ECHO	"C3",.CYCLES
-     27  fb08
-     28  fb08				  -	      REPEAT	.CYCLES / 3
-     29  fb08				  -	      STA	DUMP
-     30  fb08					      REPEND
-     31  fb08
-     32  fb08				   .CYCLES    SET	.CYCLES % 3
-     33  fb08
- C4 $2
-     34  fb08					      ECHO	"C4",.CYCLES
-     35  fb08
-     36  fb08					      REPEAT	.CYCLES / 2
-     37  fb08		       ea		      NOP
-     38  fb09					      REPEND
-     39  fb09
-     40  fb09				   .CYCLES    SET	.CYCLES % 2
-     41  fb09
-     42  fb09				  -	      IF	.CYCLES
-     43  fb09				  -	      ERR
-     44  fb09					      ENDIF
-     45  fb09
+     26  fb08					      REPEAT	.CYCLES / 2
+     27  fb08		       ea		      NOP
+     28  fb09					      REPEND
+     29  fb09
+     30  fb09				   .CYCLES    SET	.CYCLES % 2
+     31  fb09
+     32  fb09				  -	      IF	.CYCLES
+     33  fb09				  -	      ERR
+     34  fb09					      ENDIF
+     35  fb09
       7  fb09		       4c 29 fb 	      JMP	_dc_w1s1_noSprite_ret
       8  fb0c
       9  fb0c				   _dc_w1s1_noSprite_2
       0  fb0c					      DELAY	4
       1  fb0c				   .CYCLES    SET	4
       2  fb0c
- C0 $4
-      3  fb0c					      ECHO	"C0",.CYCLES
-      4  fb0c
-      5  fb0c				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fb0c				  -	      NOP
-      7  fb0c				  -.CYCLES    SET	.CYCLES - 2
-      8  fb0c					      ENDIF
-      9  fb0c
- C1 $4
-     10  fb0c					      ECHO	"C1",.CYCLES
-     11  fb0c
-     12  fb0c				  -	      IF	[.CYCLES - 2] / 5
-     13  fb0c				  -	      REPEAT	.CYCLES / 5
-     14  fb0c				  -	      INC	foo
-     15  fb0c				  -	      REPEND
-     16  fb0c				  -.CYCLES    SET	.CYCLES % 5
-     17  fb0c					      ENDIF
-     18  fb0c
- C2 $4
-     19  fb0c					      ECHO	"C2",.CYCLES
-     20  fb0c
-     21  fb0c					      IF	.CYCLES % 3 == 1
-     22  fb0c		       ea		      NOP
-     23  fb0c				   .CYCLES    SET	.CYCLES - 2
-     24  fb0d					      ENDIF
+      3  fb0c				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fb0c				  -	      NOP
+      5  fb0c				  -.CYCLES    SET	.CYCLES - 2
+      6  fb0c					      ENDIF
+      7  fb0c
+      8  fb0c				  -	      IF	[.CYCLES - 2] / 5
+      9  fb0c				  -	      REPEAT	.CYCLES / 5
+     10  fb0c				  -	      INC	foo
+     11  fb0c				  -	      REPEND
+     12  fb0c				  -.CYCLES    SET	.CYCLES % 5
+     13  fb0c					      ENDIF
+     14  fb0c
+     15  fb0c					      IF	.CYCLES % 3 == 1
+     16  fb0c		       ea		      NOP
+     17  fb0c				   .CYCLES    SET	.CYCLES - 2
+     18  fb0d					      ENDIF
+     19  fb0d
+     20  fb0d				  -	      REPEAT	.CYCLES / 3
+     21  fb0d				  -	      STA	DUMP
+     22  fb0d					      REPEND
+     23  fb0d
+     24  fb0d				   .CYCLES    SET	.CYCLES % 3
      25  fb0d
- C3 $2
-     26  fb0d					      ECHO	"C3",.CYCLES
-     27  fb0d
-     28  fb0d				  -	      REPEAT	.CYCLES / 3
-     29  fb0d				  -	      STA	DUMP
-     30  fb0d					      REPEND
-     31  fb0d
-     32  fb0d				   .CYCLES    SET	.CYCLES % 3
-     33  fb0d
- C4 $2
-     34  fb0d					      ECHO	"C4",.CYCLES
-     35  fb0d
-     36  fb0d					      REPEAT	.CYCLES / 2
-     37  fb0d		       ea		      NOP
-     38  fb0e					      REPEND
-     39  fb0e
-     40  fb0e				   .CYCLES    SET	.CYCLES % 2
-     41  fb0e
-     42  fb0e				  -	      IF	.CYCLES
-     43  fb0e				  -	      ERR
-     44  fb0e					      ENDIF
-     45  fb0e
+     26  fb0d					      REPEAT	.CYCLES / 2
+     27  fb0d		       ea		      NOP
+     28  fb0e					      REPEND
+     29  fb0e
+     30  fb0e				   .CYCLES    SET	.CYCLES % 2
+     31  fb0e
+     32  fb0e				  -	      IF	.CYCLES
+     33  fb0e				  -	      ERR
+     34  fb0e					      ENDIF
+     35  fb0e
      11  fb0e		       4c 29 fb 	      JMP	_dc_w1s1_noSprite_ret
      12  fb11
      13  fb11				   dc_w1s1
@@ -1567,112 +1494,82 @@
       0  fb2d					      DELAY	6
       1  fb2d				   .CYCLES    SET	6
       2  fb2d
- C0 $6
-      3  fb2d					      ECHO	"C0",.CYCLES
-      4  fb2d
-      5  fb2d				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fb2d				  -	      NOP
-      7  fb2d				  -.CYCLES    SET	.CYCLES - 2
-      8  fb2d					      ENDIF
-      9  fb2d
- C1 $6
-     10  fb2d					      ECHO	"C1",.CYCLES
-     11  fb2d
-     12  fb2d				  -	      IF	[.CYCLES - 2] / 5
-     13  fb2d				  -	      REPEAT	.CYCLES / 5
-     14  fb2d				  -	      INC	foo
-     15  fb2d				  -	      REPEND
-     16  fb2d				  -.CYCLES    SET	.CYCLES % 5
-     17  fb2d					      ENDIF
-     18  fb2d
- C2 $6
-     19  fb2d					      ECHO	"C2",.CYCLES
-     20  fb2d
-     21  fb2d				  -	      IF	.CYCLES % 3 == 1
-     22  fb2d				  -	      NOP
-     23  fb2d				  -.CYCLES    SET	.CYCLES - 2
-     24  fb2d					      ENDIF
-     25  fb2d
- C3 $6
-     26  fb2d					      ECHO	"C3",.CYCLES
-     27  fb2d
-     28  fb2d					      REPEAT	.CYCLES / 3
-     29  fb2d		       85 30		      STA	DUMP
-     28  fb2d					      REPEND
-     29  fb2f		       85 30		      STA	DUMP
-     30  fb31					      REPEND
+      3  fb2d				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fb2d				  -	      NOP
+      5  fb2d				  -.CYCLES    SET	.CYCLES - 2
+      6  fb2d					      ENDIF
+      7  fb2d
+      8  fb2d				  -	      IF	[.CYCLES - 2] / 5
+      9  fb2d				  -	      REPEAT	.CYCLES / 5
+     10  fb2d				  -	      INC	foo
+     11  fb2d				  -	      REPEND
+     12  fb2d				  -.CYCLES    SET	.CYCLES % 5
+     13  fb2d					      ENDIF
+     14  fb2d
+     15  fb2d				  -	      IF	.CYCLES % 3 == 1
+     16  fb2d				  -	      NOP
+     17  fb2d				  -.CYCLES    SET	.CYCLES - 2
+     18  fb2d					      ENDIF
+     19  fb2d
+     20  fb2d					      REPEAT	.CYCLES / 3
+     21  fb2d		       85 30		      STA	DUMP
+     20  fb2d					      REPEND
+     21  fb2f		       85 30		      STA	DUMP
+     22  fb31					      REPEND
+     23  fb31
+     24  fb31				   .CYCLES    SET	.CYCLES % 3
+     25  fb31
+     26  fb31				  -	      REPEAT	.CYCLES / 2
+     27  fb31				  -	      NOP
+     28  fb31					      REPEND
+     29  fb31
+     30  fb31				   .CYCLES    SET	.CYCLES % 2
      31  fb31
-     32  fb31				   .CYCLES    SET	.CYCLES % 3
-     33  fb31
- C4 $0
-     34  fb31					      ECHO	"C4",.CYCLES
+     32  fb31				  -	      IF	.CYCLES
+     33  fb31				  -	      ERR
+     34  fb31					      ENDIF
      35  fb31
-     36  fb31				  -	      REPEAT	.CYCLES / 2
-     37  fb31				  -	      NOP
-     38  fb31					      REPEND
-     39  fb31
-     40  fb31				   .CYCLES    SET	.CYCLES % 2
-     41  fb31
-     42  fb31				  -	      IF	.CYCLES
-     43  fb31				  -	      ERR
-     44  fb31					      ENDIF
-     45  fb31
      34  fb31		       85 0d		      STA	PF0
       0  fb33					      DELAY	19
       1  fb33				   .CYCLES    SET	19
       2  fb33
- C0 $13
-      3  fb33					      ECHO	"C0",.CYCLES
-      4  fb33
-      5  fb33				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fb33				  -	      NOP
-      7  fb33				  -.CYCLES    SET	.CYCLES - 2
-      8  fb33					      ENDIF
-      9  fb33
- C1 $13
-     10  fb33					      ECHO	"C1",.CYCLES
-     11  fb33
-     12  fb33					      IF	[.CYCLES - 2] / 5
-     13  fb33					      REPEAT	.CYCLES / 5
-     14  fb33		       e6 c4		      INC	foo
-     13  fb33					      REPEND
-     14  fb35		       e6 c4		      INC	foo
-     13  fb35					      REPEND
-     14  fb37		       e6 c4		      INC	foo
-     15  fb39					      REPEND
-     16  fb39				   .CYCLES    SET	.CYCLES % 5
-     17  fb39					      ENDIF
-     18  fb39
- C2 $4
-     19  fb39					      ECHO	"C2",.CYCLES
-     20  fb39
-     21  fb39					      IF	.CYCLES % 3 == 1
-     22  fb39		       ea		      NOP
-     23  fb39				   .CYCLES    SET	.CYCLES - 2
-     24  fb3a					      ENDIF
+      3  fb33				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fb33				  -	      NOP
+      5  fb33				  -.CYCLES    SET	.CYCLES - 2
+      6  fb33					      ENDIF
+      7  fb33
+      8  fb33					      IF	[.CYCLES - 2] / 5
+      9  fb33					      REPEAT	.CYCLES / 5
+     10  fb33		       e6 c4		      INC	foo
+      9  fb33					      REPEND
+     10  fb35		       e6 c4		      INC	foo
+      9  fb35					      REPEND
+     10  fb37		       e6 c4		      INC	foo
+     11  fb39					      REPEND
+     12  fb39				   .CYCLES    SET	.CYCLES % 5
+     13  fb39					      ENDIF
+     14  fb39
+     15  fb39					      IF	.CYCLES % 3 == 1
+     16  fb39		       ea		      NOP
+     17  fb39				   .CYCLES    SET	.CYCLES - 2
+     18  fb3a					      ENDIF
+     19  fb3a
+     20  fb3a				  -	      REPEAT	.CYCLES / 3
+     21  fb3a				  -	      STA	DUMP
+     22  fb3a					      REPEND
+     23  fb3a
+     24  fb3a				   .CYCLES    SET	.CYCLES % 3
      25  fb3a
- C3 $2
-     26  fb3a					      ECHO	"C3",.CYCLES
-     27  fb3a
-     28  fb3a				  -	      REPEAT	.CYCLES / 3
-     29  fb3a				  -	      STA	DUMP
-     30  fb3a					      REPEND
-     31  fb3a
-     32  fb3a				   .CYCLES    SET	.CYCLES % 3
-     33  fb3a
- C4 $2
-     34  fb3a					      ECHO	"C4",.CYCLES
-     35  fb3a
-     36  fb3a					      REPEAT	.CYCLES / 2
-     37  fb3a		       ea		      NOP
-     38  fb3b					      REPEND
-     39  fb3b
-     40  fb3b				   .CYCLES    SET	.CYCLES % 2
-     41  fb3b
-     42  fb3b				  -	      IF	.CYCLES
-     43  fb3b				  -	      ERR
-     44  fb3b					      ENDIF
-     45  fb3b
+     26  fb3a					      REPEAT	.CYCLES / 2
+     27  fb3a		       ea		      NOP
+     28  fb3b					      REPEND
+     29  fb3b
+     30  fb3b				   .CYCLES    SET	.CYCLES % 2
+     31  fb3b
+     32  fb3b				  -	      IF	.CYCLES
+     33  fb3b				  -	      ERR
+     34  fb3b					      ENDIF
+     35  fb3b
      36  fb3b		       a9 00		      LDA	#NULL
      37  fb3d		       85 0f		      STA	PF2
      38  fb3f		       85 0d		      STA	PF0
@@ -1689,54 +1586,39 @@
       0  fb55					      DELAY	9
       1  fb55				   .CYCLES    SET	9
       2  fb55
- C0 $9
-      3  fb55					      ECHO	"C0",.CYCLES
-      4  fb55
-      5  fb55				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fb55				  -	      NOP
-      7  fb55				  -.CYCLES    SET	.CYCLES - 2
-      8  fb55					      ENDIF
-      9  fb55
- C1 $9
-     10  fb55					      ECHO	"C1",.CYCLES
-     11  fb55
-     12  fb55					      IF	[.CYCLES - 2] / 5
-     13  fb55					      REPEAT	.CYCLES / 5
-     14  fb55		       e6 c4		      INC	foo
-     15  fb57					      REPEND
-     16  fb57				   .CYCLES    SET	.CYCLES % 5
-     17  fb57					      ENDIF
-     18  fb57
- C2 $4
-     19  fb57					      ECHO	"C2",.CYCLES
-     20  fb57
-     21  fb57					      IF	.CYCLES % 3 == 1
-     22  fb57		       ea		      NOP
-     23  fb57				   .CYCLES    SET	.CYCLES - 2
-     24  fb58					      ENDIF
+      3  fb55				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fb55				  -	      NOP
+      5  fb55				  -.CYCLES    SET	.CYCLES - 2
+      6  fb55					      ENDIF
+      7  fb55
+      8  fb55					      IF	[.CYCLES - 2] / 5
+      9  fb55					      REPEAT	.CYCLES / 5
+     10  fb55		       e6 c4		      INC	foo
+     11  fb57					      REPEND
+     12  fb57				   .CYCLES    SET	.CYCLES % 5
+     13  fb57					      ENDIF
+     14  fb57
+     15  fb57					      IF	.CYCLES % 3 == 1
+     16  fb57		       ea		      NOP
+     17  fb57				   .CYCLES    SET	.CYCLES - 2
+     18  fb58					      ENDIF
+     19  fb58
+     20  fb58				  -	      REPEAT	.CYCLES / 3
+     21  fb58				  -	      STA	DUMP
+     22  fb58					      REPEND
+     23  fb58
+     24  fb58				   .CYCLES    SET	.CYCLES % 3
      25  fb58
- C3 $2
-     26  fb58					      ECHO	"C3",.CYCLES
-     27  fb58
-     28  fb58				  -	      REPEAT	.CYCLES / 3
-     29  fb58				  -	      STA	DUMP
-     30  fb58					      REPEND
-     31  fb58
-     32  fb58				   .CYCLES    SET	.CYCLES % 3
-     33  fb58
- C4 $2
-     34  fb58					      ECHO	"C4",.CYCLES
-     35  fb58
-     36  fb58					      REPEAT	.CYCLES / 2
-     37  fb58		       ea		      NOP
-     38  fb59					      REPEND
-     39  fb59
-     40  fb59				   .CYCLES    SET	.CYCLES % 2
-     41  fb59
-     42  fb59				  -	      IF	.CYCLES
-     43  fb59				  -	      ERR
-     44  fb59					      ENDIF
-     45  fb59
+     26  fb58					      REPEAT	.CYCLES / 2
+     27  fb58		       ea		      NOP
+     28  fb59					      REPEND
+     29  fb59
+     30  fb59				   .CYCLES    SET	.CYCLES % 2
+     31  fb59
+     32  fb59				  -	      IF	.CYCLES
+     33  fb59				  -	      ERR
+     34  fb59					      ENDIF
+     35  fb59
      50  fb59		       a5 9e		      LDA	shadow1d
      51  fb5b		       3d 3c f0 	      AND	and_1c,X
      52  fb5e		       85 0e		      STA	PF1
@@ -1762,162 +1644,117 @@
       0  fb74					      DELAY	2
       1  fb74				   .CYCLES    SET	2
       2  fb74
- C0 $2
-      3  fb74					      ECHO	"C0",.CYCLES
-      4  fb74
-      5  fb74				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fb74				  -	      NOP
-      7  fb74				  -.CYCLES    SET	.CYCLES - 2
-      8  fb74					      ENDIF
-      9  fb74
- C1 $2
-     10  fb74					      ECHO	"C1",.CYCLES
-     11  fb74
-     12  fb74				  -	      IF	[.CYCLES - 2] / 5
-     13  fb74				  -	      REPEAT	.CYCLES / 5
-     14  fb74				  -	      INC	foo
-     15  fb74				  -	      REPEND
-     16  fb74				  -.CYCLES    SET	.CYCLES % 5
-     17  fb74					      ENDIF
-     18  fb74
- C2 $2
-     19  fb74					      ECHO	"C2",.CYCLES
-     20  fb74
-     21  fb74				  -	      IF	.CYCLES % 3 == 1
-     22  fb74				  -	      NOP
-     23  fb74				  -.CYCLES    SET	.CYCLES - 2
-     24  fb74					      ENDIF
+      3  fb74				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fb74				  -	      NOP
+      5  fb74				  -.CYCLES    SET	.CYCLES - 2
+      6  fb74					      ENDIF
+      7  fb74
+      8  fb74				  -	      IF	[.CYCLES - 2] / 5
+      9  fb74				  -	      REPEAT	.CYCLES / 5
+     10  fb74				  -	      INC	foo
+     11  fb74				  -	      REPEND
+     12  fb74				  -.CYCLES    SET	.CYCLES % 5
+     13  fb74					      ENDIF
+     14  fb74
+     15  fb74				  -	      IF	.CYCLES % 3 == 1
+     16  fb74				  -	      NOP
+     17  fb74				  -.CYCLES    SET	.CYCLES - 2
+     18  fb74					      ENDIF
+     19  fb74
+     20  fb74				  -	      REPEAT	.CYCLES / 3
+     21  fb74				  -	      STA	DUMP
+     22  fb74					      REPEND
+     23  fb74
+     24  fb74				   .CYCLES    SET	.CYCLES % 3
      25  fb74
- C3 $2
-     26  fb74					      ECHO	"C3",.CYCLES
-     27  fb74
-     28  fb74				  -	      REPEAT	.CYCLES / 3
-     29  fb74				  -	      STA	DUMP
-     30  fb74					      REPEND
-     31  fb74
-     32  fb74				   .CYCLES    SET	.CYCLES % 3
-     33  fb74
- C4 $2
-     34  fb74					      ECHO	"C4",.CYCLES
-     35  fb74
-     36  fb74					      REPEAT	.CYCLES / 2
-     37  fb74		       ea		      NOP
-     38  fb75					      REPEND
-     39  fb75
-     40  fb75				   .CYCLES    SET	.CYCLES % 2
-     41  fb75
-     42  fb75				  -	      IF	.CYCLES
-     43  fb75				  -	      ERR
-     44  fb75					      ENDIF
-     45  fb75
+     26  fb74					      REPEAT	.CYCLES / 2
+     27  fb74		       ea		      NOP
+     28  fb75					      REPEND
+     29  fb75
+     30  fb75				   .CYCLES    SET	.CYCLES % 2
+     31  fb75
+     32  fb75				  -	      IF	.CYCLES
+     33  fb75				  -	      ERR
+     34  fb75					      ENDIF
+     35  fb75
       8  fb75		       4c 89 fb 	      JMP	_dc_w2s1_joinIn
       9  fb78
      10  fb78				   _dc_w2s1_noSprite_1
       0  fb78					      DELAY	11
       1  fb78				   .CYCLES    SET	11
       2  fb78
- C0 $b
-      3  fb78					      ECHO	"C0",.CYCLES
-      4  fb78
-      5  fb78					      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fb78		       ea		      NOP
-      7  fb78				   .CYCLES    SET	.CYCLES - 2
-      8  fb79					      ENDIF
-      9  fb79
- C1 $9
-     10  fb79					      ECHO	"C1",.CYCLES
-     11  fb79
-     12  fb79					      IF	[.CYCLES - 2] / 5
-     13  fb79					      REPEAT	.CYCLES / 5
-     14  fb79		       e6 c4		      INC	foo
-     15  fb7b					      REPEND
-     16  fb7b				   .CYCLES    SET	.CYCLES % 5
-     17  fb7b					      ENDIF
-     18  fb7b
- C2 $4
-     19  fb7b					      ECHO	"C2",.CYCLES
-     20  fb7b
-     21  fb7b					      IF	.CYCLES % 3 == 1
-     22  fb7b		       ea		      NOP
-     23  fb7b				   .CYCLES    SET	.CYCLES - 2
-     24  fb7c					      ENDIF
+      3  fb78					      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fb78		       ea		      NOP
+      5  fb78				   .CYCLES    SET	.CYCLES - 2
+      6  fb79					      ENDIF
+      7  fb79
+      8  fb79					      IF	[.CYCLES - 2] / 5
+      9  fb79					      REPEAT	.CYCLES / 5
+     10  fb79		       e6 c4		      INC	foo
+     11  fb7b					      REPEND
+     12  fb7b				   .CYCLES    SET	.CYCLES % 5
+     13  fb7b					      ENDIF
+     14  fb7b
+     15  fb7b					      IF	.CYCLES % 3 == 1
+     16  fb7b		       ea		      NOP
+     17  fb7b				   .CYCLES    SET	.CYCLES - 2
+     18  fb7c					      ENDIF
+     19  fb7c
+     20  fb7c				  -	      REPEAT	.CYCLES / 3
+     21  fb7c				  -	      STA	DUMP
+     22  fb7c					      REPEND
+     23  fb7c
+     24  fb7c				   .CYCLES    SET	.CYCLES % 3
      25  fb7c
- C3 $2
-     26  fb7c					      ECHO	"C3",.CYCLES
-     27  fb7c
-     28  fb7c				  -	      REPEAT	.CYCLES / 3
-     29  fb7c				  -	      STA	DUMP
-     30  fb7c					      REPEND
-     31  fb7c
-     32  fb7c				   .CYCLES    SET	.CYCLES % 3
-     33  fb7c
- C4 $2
-     34  fb7c					      ECHO	"C4",.CYCLES
-     35  fb7c
-     36  fb7c					      REPEAT	.CYCLES / 2
-     37  fb7c		       ea		      NOP
-     38  fb7d					      REPEND
-     39  fb7d
-     40  fb7d				   .CYCLES    SET	.CYCLES % 2
-     41  fb7d
-     42  fb7d				  -	      IF	.CYCLES
-     43  fb7d				  -	      ERR
-     44  fb7d					      ENDIF
-     45  fb7d
+     26  fb7c					      REPEAT	.CYCLES / 2
+     27  fb7c		       ea		      NOP
+     28  fb7d					      REPEND
+     29  fb7d
+     30  fb7d				   .CYCLES    SET	.CYCLES % 2
+     31  fb7d
+     32  fb7d				  -	      IF	.CYCLES
+     33  fb7d				  -	      ERR
+     34  fb7d					      ENDIF
+     35  fb7d
      12  fb7d		       4c 9b fb 	      JMP	_dc_w2s1_noSprite_ret
      13  fb80
      14  fb80				   _dc_w2s1_noSprite_2
       0  fb80					      DELAY	4
       1  fb80				   .CYCLES    SET	4
       2  fb80
- C0 $4
-      3  fb80					      ECHO	"C0",.CYCLES
-      4  fb80
-      5  fb80				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fb80				  -	      NOP
-      7  fb80				  -.CYCLES    SET	.CYCLES - 2
-      8  fb80					      ENDIF
-      9  fb80
- C1 $4
-     10  fb80					      ECHO	"C1",.CYCLES
-     11  fb80
-     12  fb80				  -	      IF	[.CYCLES - 2] / 5
-     13  fb80				  -	      REPEAT	.CYCLES / 5
-     14  fb80				  -	      INC	foo
-     15  fb80				  -	      REPEND
-     16  fb80				  -.CYCLES    SET	.CYCLES % 5
-     17  fb80					      ENDIF
-     18  fb80
- C2 $4
-     19  fb80					      ECHO	"C2",.CYCLES
-     20  fb80
-     21  fb80					      IF	.CYCLES % 3 == 1
-     22  fb80		       ea		      NOP
-     23  fb80				   .CYCLES    SET	.CYCLES - 2
-     24  fb81					      ENDIF
+      3  fb80				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fb80				  -	      NOP
+      5  fb80				  -.CYCLES    SET	.CYCLES - 2
+      6  fb80					      ENDIF
+      7  fb80
+      8  fb80				  -	      IF	[.CYCLES - 2] / 5
+      9  fb80				  -	      REPEAT	.CYCLES / 5
+     10  fb80				  -	      INC	foo
+     11  fb80				  -	      REPEND
+     12  fb80				  -.CYCLES    SET	.CYCLES % 5
+     13  fb80					      ENDIF
+     14  fb80
+     15  fb80					      IF	.CYCLES % 3 == 1
+     16  fb80		       ea		      NOP
+     17  fb80				   .CYCLES    SET	.CYCLES - 2
+     18  fb81					      ENDIF
+     19  fb81
+     20  fb81				  -	      REPEAT	.CYCLES / 3
+     21  fb81				  -	      STA	DUMP
+     22  fb81					      REPEND
+     23  fb81
+     24  fb81				   .CYCLES    SET	.CYCLES % 3
      25  fb81
- C3 $2
-     26  fb81					      ECHO	"C3",.CYCLES
-     27  fb81
-     28  fb81				  -	      REPEAT	.CYCLES / 3
-     29  fb81				  -	      STA	DUMP
-     30  fb81					      REPEND
-     31  fb81
-     32  fb81				   .CYCLES    SET	.CYCLES % 3
-     33  fb81
- C4 $2
-     34  fb81					      ECHO	"C4",.CYCLES
-     35  fb81
-     36  fb81					      REPEAT	.CYCLES / 2
-     37  fb81		       ea		      NOP
-     38  fb82					      REPEND
-     39  fb82
-     40  fb82				   .CYCLES    SET	.CYCLES % 2
-     41  fb82
-     42  fb82				  -	      IF	.CYCLES
-     43  fb82				  -	      ERR
-     44  fb82					      ENDIF
-     45  fb82
+     26  fb81					      REPEAT	.CYCLES / 2
+     27  fb81		       ea		      NOP
+     28  fb82					      REPEND
+     29  fb82
+     30  fb82				   .CYCLES    SET	.CYCLES % 2
+     31  fb82
+     32  fb82				  -	      IF	.CYCLES
+     33  fb82				  -	      ERR
+     34  fb82					      ENDIF
+     35  fb82
      16  fb82		       4c 9b fb 	      JMP	_dc_w2s1_noSprite_ret
      17  fb85
      18  fb85				   _dc_w2s1_loop
@@ -1948,56 +1785,41 @@
       0  fbad					      DELAY	10
       1  fbad				   .CYCLES    SET	10
       2  fbad
- C0 $a
-      3  fbad					      ECHO	"C0",.CYCLES
-      4  fbad
-      5  fbad				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fbad				  -	      NOP
-      7  fbad				  -.CYCLES    SET	.CYCLES - 2
-      8  fbad					      ENDIF
-      9  fbad
- C1 $a
-     10  fbad					      ECHO	"C1",.CYCLES
-     11  fbad
-     12  fbad					      IF	[.CYCLES - 2] / 5
-     13  fbad					      REPEAT	.CYCLES / 5
-     14  fbad		       e6 c4		      INC	foo
-     13  fbad					      REPEND
-     14  fbaf		       e6 c4		      INC	foo
-     15  fbb1					      REPEND
-     16  fbb1				   .CYCLES    SET	.CYCLES % 5
-     17  fbb1					      ENDIF
-     18  fbb1
- C2 $0
-     19  fbb1					      ECHO	"C2",.CYCLES
-     20  fbb1
-     21  fbb1				  -	      IF	.CYCLES % 3 == 1
-     22  fbb1				  -	      NOP
-     23  fbb1				  -.CYCLES    SET	.CYCLES - 2
-     24  fbb1					      ENDIF
+      3  fbad				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fbad				  -	      NOP
+      5  fbad				  -.CYCLES    SET	.CYCLES - 2
+      6  fbad					      ENDIF
+      7  fbad
+      8  fbad					      IF	[.CYCLES - 2] / 5
+      9  fbad					      REPEAT	.CYCLES / 5
+     10  fbad		       e6 c4		      INC	foo
+      9  fbad					      REPEND
+     10  fbaf		       e6 c4		      INC	foo
+     11  fbb1					      REPEND
+     12  fbb1				   .CYCLES    SET	.CYCLES % 5
+     13  fbb1					      ENDIF
+     14  fbb1
+     15  fbb1				  -	      IF	.CYCLES % 3 == 1
+     16  fbb1				  -	      NOP
+     17  fbb1				  -.CYCLES    SET	.CYCLES - 2
+     18  fbb1					      ENDIF
+     19  fbb1
+     20  fbb1				  -	      REPEAT	.CYCLES / 3
+     21  fbb1				  -	      STA	DUMP
+     22  fbb1					      REPEND
+     23  fbb1
+     24  fbb1				   .CYCLES    SET	.CYCLES % 3
      25  fbb1
- C3 $0
-     26  fbb1					      ECHO	"C3",.CYCLES
-     27  fbb1
-     28  fbb1				  -	      REPEAT	.CYCLES / 3
-     29  fbb1				  -	      STA	DUMP
-     30  fbb1					      REPEND
+     26  fbb1				  -	      REPEAT	.CYCLES / 2
+     27  fbb1				  -	      NOP
+     28  fbb1					      REPEND
+     29  fbb1
+     30  fbb1				   .CYCLES    SET	.CYCLES % 2
      31  fbb1
-     32  fbb1				   .CYCLES    SET	.CYCLES % 3
-     33  fbb1
- C4 $0
-     34  fbb1					      ECHO	"C4",.CYCLES
+     32  fbb1				  -	      IF	.CYCLES
+     33  fbb1				  -	      ERR
+     34  fbb1					      ENDIF
      35  fbb1
-     36  fbb1				  -	      REPEAT	.CYCLES / 2
-     37  fbb1				  -	      NOP
-     38  fbb1					      REPEND
-     39  fbb1
-     40  fbb1				   .CYCLES    SET	.CYCLES % 2
-     41  fbb1
-     42  fbb1				  -	      IF	.CYCLES
-     43  fbb1				  -	      ERR
-     44  fbb1					      ENDIF
-     45  fbb1
      44  fbb1		       85 0f		      STA	PF2
      45  fbb3		       85 0d		      STA	PF0
      46  fbb5
@@ -2013,7 +1835,7 @@
      56  fbc7		       a5 93		      LDA	shadow2ca
      57  fbc9		       85 0d		      STA	PF0
      58  fbcb		       a5 94		      LDA	shadow2da
-     59  fbcd		       05 9d		      ORA	shadow1c
+     59  fbcd		       05 9e		      ORA	shadow1d
      60  fbcf		       85 0e		      STA	PF1
      61  fbd1		       a5 95		      LDA	shadow2ea
      62  fbd3		       05 9f		      ORA	shadow1e
@@ -2025,7 +1847,7 @@
      68  fbdc		       d0 a7		      BNE	_dc_w2s1_loop
      69  fbde
      70  fbde		       50 03		      BVC	dc_w2s2_delayed
-     71  fbe0		       4c ab fd 	      JMP	jumbo
+     71  fbe0		       4c ab fd 	      JMP	dc_w1s2
 ------- FILE dispkern.asm
 ------- FILE drawCode/dc_w2s2.asm LEVEL 3 PASS 2
       0  fbe3					      INCLUDE	"drawCode/dc_w2s2.asm"
@@ -2035,54 +1857,39 @@
       0  fbe3					      DELAY	2
       1  fbe3				   .CYCLES    SET	2
       2  fbe3
- C0 $2
-      3  fbe3					      ECHO	"C0",.CYCLES
-      4  fbe3
-      5  fbe3				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fbe3				  -	      NOP
-      7  fbe3				  -.CYCLES    SET	.CYCLES - 2
-      8  fbe3					      ENDIF
-      9  fbe3
- C1 $2
-     10  fbe3					      ECHO	"C1",.CYCLES
-     11  fbe3
-     12  fbe3				  -	      IF	[.CYCLES - 2] / 5
-     13  fbe3				  -	      REPEAT	.CYCLES / 5
-     14  fbe3				  -	      INC	foo
-     15  fbe3				  -	      REPEND
-     16  fbe3				  -.CYCLES    SET	.CYCLES % 5
-     17  fbe3					      ENDIF
-     18  fbe3
- C2 $2
-     19  fbe3					      ECHO	"C2",.CYCLES
-     20  fbe3
-     21  fbe3				  -	      IF	.CYCLES % 3 == 1
-     22  fbe3				  -	      NOP
-     23  fbe3				  -.CYCLES    SET	.CYCLES - 2
-     24  fbe3					      ENDIF
+      3  fbe3				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fbe3				  -	      NOP
+      5  fbe3				  -.CYCLES    SET	.CYCLES - 2
+      6  fbe3					      ENDIF
+      7  fbe3
+      8  fbe3				  -	      IF	[.CYCLES - 2] / 5
+      9  fbe3				  -	      REPEAT	.CYCLES / 5
+     10  fbe3				  -	      INC	foo
+     11  fbe3				  -	      REPEND
+     12  fbe3				  -.CYCLES    SET	.CYCLES % 5
+     13  fbe3					      ENDIF
+     14  fbe3
+     15  fbe3				  -	      IF	.CYCLES % 3 == 1
+     16  fbe3				  -	      NOP
+     17  fbe3				  -.CYCLES    SET	.CYCLES - 2
+     18  fbe3					      ENDIF
+     19  fbe3
+     20  fbe3				  -	      REPEAT	.CYCLES / 3
+     21  fbe3				  -	      STA	DUMP
+     22  fbe3					      REPEND
+     23  fbe3
+     24  fbe3				   .CYCLES    SET	.CYCLES % 3
      25  fbe3
- C3 $2
-     26  fbe3					      ECHO	"C3",.CYCLES
-     27  fbe3
-     28  fbe3				  -	      REPEAT	.CYCLES / 3
-     29  fbe3				  -	      STA	DUMP
-     30  fbe3					      REPEND
-     31  fbe3
-     32  fbe3				   .CYCLES    SET	.CYCLES % 3
-     33  fbe3
- C4 $2
-     34  fbe3					      ECHO	"C4",.CYCLES
-     35  fbe3
-     36  fbe3					      REPEAT	.CYCLES / 2
-     37  fbe3		       ea		      NOP
-     38  fbe4					      REPEND
-     39  fbe4
-     40  fbe4				   .CYCLES    SET	.CYCLES % 2
-     41  fbe4
-     42  fbe4				  -	      IF	.CYCLES
-     43  fbe4				  -	      ERR
-     44  fbe4					      ENDIF
-     45  fbe4
+     26  fbe3					      REPEAT	.CYCLES / 2
+     27  fbe3		       ea		      NOP
+     28  fbe4					      REPEND
+     29  fbe4
+     30  fbe4				   .CYCLES    SET	.CYCLES % 2
+     31  fbe4
+     32  fbe4				  -	      IF	.CYCLES
+     33  fbe4				  -	      ERR
+     34  fbe4					      ENDIF
+     35  fbe4
       5  fbe4				   dc_w2s2
       6  fbe4
       7  fbe4		       a2 03		      LDX	#PIXH
@@ -2114,56 +1921,41 @@
       0  fc0e					      DELAY	10
       1  fc0e				   .CYCLES    SET	10
       2  fc0e
- C0 $a
-      3  fc0e					      ECHO	"C0",.CYCLES
-      4  fc0e
-      5  fc0e				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fc0e				  -	      NOP
-      7  fc0e				  -.CYCLES    SET	.CYCLES - 2
-      8  fc0e					      ENDIF
-      9  fc0e
- C1 $a
-     10  fc0e					      ECHO	"C1",.CYCLES
-     11  fc0e
-     12  fc0e					      IF	[.CYCLES - 2] / 5
-     13  fc0e					      REPEAT	.CYCLES / 5
-     14  fc0e		       e6 c4		      INC	foo
-     13  fc0e					      REPEND
-     14  fc10		       e6 c4		      INC	foo
-     15  fc12					      REPEND
-     16  fc12				   .CYCLES    SET	.CYCLES % 5
-     17  fc12					      ENDIF
-     18  fc12
- C2 $0
-     19  fc12					      ECHO	"C2",.CYCLES
-     20  fc12
-     21  fc12				  -	      IF	.CYCLES % 3 == 1
-     22  fc12				  -	      NOP
-     23  fc12				  -.CYCLES    SET	.CYCLES - 2
-     24  fc12					      ENDIF
+      3  fc0e				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fc0e				  -	      NOP
+      5  fc0e				  -.CYCLES    SET	.CYCLES - 2
+      6  fc0e					      ENDIF
+      7  fc0e
+      8  fc0e					      IF	[.CYCLES - 2] / 5
+      9  fc0e					      REPEAT	.CYCLES / 5
+     10  fc0e		       e6 c4		      INC	foo
+      9  fc0e					      REPEND
+     10  fc10		       e6 c4		      INC	foo
+     11  fc12					      REPEND
+     12  fc12				   .CYCLES    SET	.CYCLES % 5
+     13  fc12					      ENDIF
+     14  fc12
+     15  fc12				  -	      IF	.CYCLES % 3 == 1
+     16  fc12				  -	      NOP
+     17  fc12				  -.CYCLES    SET	.CYCLES - 2
+     18  fc12					      ENDIF
+     19  fc12
+     20  fc12				  -	      REPEAT	.CYCLES / 3
+     21  fc12				  -	      STA	DUMP
+     22  fc12					      REPEND
+     23  fc12
+     24  fc12				   .CYCLES    SET	.CYCLES % 3
      25  fc12
- C3 $0
-     26  fc12					      ECHO	"C3",.CYCLES
-     27  fc12
-     28  fc12				  -	      REPEAT	.CYCLES / 3
-     29  fc12				  -	      STA	DUMP
-     30  fc12					      REPEND
+     26  fc12				  -	      REPEAT	.CYCLES / 2
+     27  fc12				  -	      NOP
+     28  fc12					      REPEND
+     29  fc12
+     30  fc12				   .CYCLES    SET	.CYCLES % 2
      31  fc12
-     32  fc12				   .CYCLES    SET	.CYCLES % 3
-     33  fc12
- C4 $0
-     34  fc12					      ECHO	"C4",.CYCLES
+     32  fc12				  -	      IF	.CYCLES
+     33  fc12				  -	      ERR
+     34  fc12					      ENDIF
      35  fc12
-     36  fc12				  -	      REPEAT	.CYCLES / 2
-     37  fc12				  -	      NOP
-     38  fc12					      REPEND
-     39  fc12
-     40  fc12				   .CYCLES    SET	.CYCLES % 2
-     41  fc12
-     42  fc12				  -	      IF	.CYCLES
-     43  fc12				  -	      ERR
-     44  fc12					      ENDIF
-     45  fc12
      34  fc12		       85 0f		      STA	PF2
      35  fc14		       85 0d		      STA	PF0
      36  fc16
@@ -2179,7 +1971,7 @@
      46  fc28		       a5 a2		      LDA	shadow2cb
      47  fc2a		       85 0d		      STA	PF0
      48  fc2c		       a5 a3		      LDA	shadow2db
-     49  fc2e		       05 9d		      ORA	shadow1c
+     49  fc2e		       05 9e		      ORA	shadow1d
      50  fc30		       85 0e		      STA	PF1
      51  fc32		       a5 a4		      LDA	shadow2eb
      52  fc34		       05 9f		      ORA	shadow1e
@@ -2194,164 +1986,119 @@
       0  fc41					      DELAY	4
       1  fc41				   .CYCLES    SET	4
       2  fc41
- C0 $4
-      3  fc41					      ECHO	"C0",.CYCLES
-      4  fc41
-      5  fc41				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fc41				  -	      NOP
-      7  fc41				  -.CYCLES    SET	.CYCLES - 2
-      8  fc41					      ENDIF
-      9  fc41
- C1 $4
-     10  fc41					      ECHO	"C1",.CYCLES
-     11  fc41
-     12  fc41				  -	      IF	[.CYCLES - 2] / 5
-     13  fc41				  -	      REPEAT	.CYCLES / 5
-     14  fc41				  -	      INC	foo
-     15  fc41				  -	      REPEND
-     16  fc41				  -.CYCLES    SET	.CYCLES % 5
-     17  fc41					      ENDIF
-     18  fc41
- C2 $4
-     19  fc41					      ECHO	"C2",.CYCLES
-     20  fc41
-     21  fc41					      IF	.CYCLES % 3 == 1
-     22  fc41		       ea		      NOP
-     23  fc41				   .CYCLES    SET	.CYCLES - 2
-     24  fc42					      ENDIF
+      3  fc41				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fc41				  -	      NOP
+      5  fc41				  -.CYCLES    SET	.CYCLES - 2
+      6  fc41					      ENDIF
+      7  fc41
+      8  fc41				  -	      IF	[.CYCLES - 2] / 5
+      9  fc41				  -	      REPEAT	.CYCLES / 5
+     10  fc41				  -	      INC	foo
+     11  fc41				  -	      REPEND
+     12  fc41				  -.CYCLES    SET	.CYCLES % 5
+     13  fc41					      ENDIF
+     14  fc41
+     15  fc41					      IF	.CYCLES % 3 == 1
+     16  fc41		       ea		      NOP
+     17  fc41				   .CYCLES    SET	.CYCLES - 2
+     18  fc42					      ENDIF
+     19  fc42
+     20  fc42				  -	      REPEAT	.CYCLES / 3
+     21  fc42				  -	      STA	DUMP
+     22  fc42					      REPEND
+     23  fc42
+     24  fc42				   .CYCLES    SET	.CYCLES % 3
      25  fc42
- C3 $2
-     26  fc42					      ECHO	"C3",.CYCLES
-     27  fc42
-     28  fc42				  -	      REPEAT	.CYCLES / 3
-     29  fc42				  -	      STA	DUMP
-     30  fc42					      REPEND
-     31  fc42
-     32  fc42				   .CYCLES    SET	.CYCLES % 3
-     33  fc42
- C4 $2
-     34  fc42					      ECHO	"C4",.CYCLES
-     35  fc42
-     36  fc42					      REPEAT	.CYCLES / 2
-     37  fc42		       ea		      NOP
-     38  fc43					      REPEND
-     39  fc43
-     40  fc43				   .CYCLES    SET	.CYCLES % 2
-     41  fc43
-     42  fc43				  -	      IF	.CYCLES
-     43  fc43				  -	      ERR
-     44  fc43					      ENDIF
-     45  fc43
+     26  fc42					      REPEAT	.CYCLES / 2
+     27  fc42		       ea		      NOP
+     28  fc43					      REPEND
+     29  fc43
+     30  fc43				   .CYCLES    SET	.CYCLES % 2
+     31  fc43
+     32  fc43				  -	      IF	.CYCLES
+     33  fc43				  -	      ERR
+     34  fc43					      ENDIF
+     35  fc43
      62  fc43		       4c 70 fb 	      JMP	dc_w2s1
      63  fc46
      64  fc46				   _dc_w2s2_noSprite_1
       0  fc46					      DELAY	10
       1  fc46				   .CYCLES    SET	10
       2  fc46
- C0 $a
-      3  fc46					      ECHO	"C0",.CYCLES
-      4  fc46
-      5  fc46				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fc46				  -	      NOP
-      7  fc46				  -.CYCLES    SET	.CYCLES - 2
-      8  fc46					      ENDIF
-      9  fc46
- C1 $a
-     10  fc46					      ECHO	"C1",.CYCLES
-     11  fc46
-     12  fc46					      IF	[.CYCLES - 2] / 5
-     13  fc46					      REPEAT	.CYCLES / 5
-     14  fc46		       e6 c4		      INC	foo
-     13  fc46					      REPEND
-     14  fc48		       e6 c4		      INC	foo
-     15  fc4a					      REPEND
-     16  fc4a				   .CYCLES    SET	.CYCLES % 5
-     17  fc4a					      ENDIF
-     18  fc4a
- C2 $0
-     19  fc4a					      ECHO	"C2",.CYCLES
-     20  fc4a
-     21  fc4a				  -	      IF	.CYCLES % 3 == 1
-     22  fc4a				  -	      NOP
-     23  fc4a				  -.CYCLES    SET	.CYCLES - 2
-     24  fc4a					      ENDIF
+      3  fc46				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fc46				  -	      NOP
+      5  fc46				  -.CYCLES    SET	.CYCLES - 2
+      6  fc46					      ENDIF
+      7  fc46
+      8  fc46					      IF	[.CYCLES - 2] / 5
+      9  fc46					      REPEAT	.CYCLES / 5
+     10  fc46		       e6 c4		      INC	foo
+      9  fc46					      REPEND
+     10  fc48		       e6 c4		      INC	foo
+     11  fc4a					      REPEND
+     12  fc4a				   .CYCLES    SET	.CYCLES % 5
+     13  fc4a					      ENDIF
+     14  fc4a
+     15  fc4a				  -	      IF	.CYCLES % 3 == 1
+     16  fc4a				  -	      NOP
+     17  fc4a				  -.CYCLES    SET	.CYCLES - 2
+     18  fc4a					      ENDIF
+     19  fc4a
+     20  fc4a				  -	      REPEAT	.CYCLES / 3
+     21  fc4a				  -	      STA	DUMP
+     22  fc4a					      REPEND
+     23  fc4a
+     24  fc4a				   .CYCLES    SET	.CYCLES % 3
      25  fc4a
- C3 $0
-     26  fc4a					      ECHO	"C3",.CYCLES
-     27  fc4a
-     28  fc4a				  -	      REPEAT	.CYCLES / 3
-     29  fc4a				  -	      STA	DUMP
-     30  fc4a					      REPEND
+     26  fc4a				  -	      REPEAT	.CYCLES / 2
+     27  fc4a				  -	      NOP
+     28  fc4a					      REPEND
+     29  fc4a
+     30  fc4a				   .CYCLES    SET	.CYCLES % 2
      31  fc4a
-     32  fc4a				   .CYCLES    SET	.CYCLES % 3
-     33  fc4a
- C4 $0
-     34  fc4a					      ECHO	"C4",.CYCLES
+     32  fc4a				  -	      IF	.CYCLES
+     33  fc4a				  -	      ERR
+     34  fc4a					      ENDIF
      35  fc4a
-     36  fc4a				  -	      REPEAT	.CYCLES / 2
-     37  fc4a				  -	      NOP
-     38  fc4a					      REPEND
-     39  fc4a
-     40  fc4a				   .CYCLES    SET	.CYCLES % 2
-     41  fc4a
-     42  fc4a				  -	      IF	.CYCLES
-     43  fc4a				  -	      ERR
-     44  fc4a					      ENDIF
-     45  fc4a
      66  fc4a		       4c fc fb 	      JMP	_dc_w2s2_noSprite_ret
      67  fc4d
      68  fc4d				   _dc_w2s2_noSprite_2
-      0  fc4d					      DELAY	4
-      1  fc4d				   .CYCLES    SET	4
+      0  fc4d					      DELAY	3
+      1  fc4d				   .CYCLES    SET	3
       2  fc4d
- C0 $4
-      3  fc4d					      ECHO	"C0",.CYCLES
-      4  fc4d
-      5  fc4d				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fc4d				  -	      NOP
-      7  fc4d				  -.CYCLES    SET	.CYCLES - 2
-      8  fc4d					      ENDIF
-      9  fc4d
- C1 $4
-     10  fc4d					      ECHO	"C1",.CYCLES
-     11  fc4d
-     12  fc4d				  -	      IF	[.CYCLES - 2] / 5
-     13  fc4d				  -	      REPEAT	.CYCLES / 5
-     14  fc4d				  -	      INC	foo
-     15  fc4d				  -	      REPEND
-     16  fc4d				  -.CYCLES    SET	.CYCLES % 5
-     17  fc4d					      ENDIF
-     18  fc4d
- C2 $4
-     19  fc4d					      ECHO	"C2",.CYCLES
-     20  fc4d
-     21  fc4d					      IF	.CYCLES % 3 == 1
-     22  fc4d		       ea		      NOP
-     23  fc4d				   .CYCLES    SET	.CYCLES - 2
-     24  fc4e					      ENDIF
-     25  fc4e
- C3 $2
-     26  fc4e					      ECHO	"C3",.CYCLES
-     27  fc4e
-     28  fc4e				  -	      REPEAT	.CYCLES / 3
-     29  fc4e				  -	      STA	DUMP
-     30  fc4e					      REPEND
-     31  fc4e
-     32  fc4e				   .CYCLES    SET	.CYCLES % 3
-     33  fc4e
- C4 $2
-     34  fc4e					      ECHO	"C4",.CYCLES
-     35  fc4e
-     36  fc4e					      REPEAT	.CYCLES / 2
-     37  fc4e		       ea		      NOP
-     38  fc4f					      REPEND
-     39  fc4f
-     40  fc4f				   .CYCLES    SET	.CYCLES % 2
-     41  fc4f
-     42  fc4f				  -	      IF	.CYCLES
-     43  fc4f				  -	      ERR
-     44  fc4f					      ENDIF
-     45  fc4f
+      3  fc4d				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fc4d				  -	      NOP
+      5  fc4d				  -.CYCLES    SET	.CYCLES - 2
+      6  fc4d					      ENDIF
+      7  fc4d
+      8  fc4d				  -	      IF	[.CYCLES - 2] / 5
+      9  fc4d				  -	      REPEAT	.CYCLES / 5
+     10  fc4d				  -	      INC	foo
+     11  fc4d				  -	      REPEND
+     12  fc4d				  -.CYCLES    SET	.CYCLES % 5
+     13  fc4d					      ENDIF
+     14  fc4d
+     15  fc4d				  -	      IF	.CYCLES % 3 == 1
+     16  fc4d				  -	      NOP
+     17  fc4d				  -.CYCLES    SET	.CYCLES - 2
+     18  fc4d					      ENDIF
+     19  fc4d
+     20  fc4d					      REPEAT	.CYCLES / 3
+     21  fc4d		       85 30		      STA	DUMP
+     22  fc4f					      REPEND
+     23  fc4f
+     24  fc4f				   .CYCLES    SET	.CYCLES % 3
+     25  fc4f
+     26  fc4f				  -	      REPEAT	.CYCLES / 2
+     27  fc4f				  -	      NOP
+     28  fc4f					      REPEND
+     29  fc4f
+     30  fc4f				   .CYCLES    SET	.CYCLES % 2
+     31  fc4f
+     32  fc4f				  -	      IF	.CYCLES
+     33  fc4f				  -	      ERR
+     34  fc4f					      ENDIF
+     35  fc4f
      70  fc4f		       4c fc fb 	      JMP	_dc_w2s2_noSprite_ret
 ------- FILE dispkern.asm
 ------- FILE drawCode/dc_w3s1.asm LEVEL 3 PASS 2
@@ -2362,54 +2109,39 @@
       0  fc52					      DELAY	2
       1  fc52				   .CYCLES    SET	2
       2  fc52
- C0 $2
-      3  fc52					      ECHO	"C0",.CYCLES
-      4  fc52
-      5  fc52				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fc52				  -	      NOP
-      7  fc52				  -.CYCLES    SET	.CYCLES - 2
-      8  fc52					      ENDIF
-      9  fc52
- C1 $2
-     10  fc52					      ECHO	"C1",.CYCLES
-     11  fc52
-     12  fc52				  -	      IF	[.CYCLES - 2] / 5
-     13  fc52				  -	      REPEAT	.CYCLES / 5
-     14  fc52				  -	      INC	foo
-     15  fc52				  -	      REPEND
-     16  fc52				  -.CYCLES    SET	.CYCLES % 5
-     17  fc52					      ENDIF
-     18  fc52
- C2 $2
-     19  fc52					      ECHO	"C2",.CYCLES
-     20  fc52
-     21  fc52				  -	      IF	.CYCLES % 3 == 1
-     22  fc52				  -	      NOP
-     23  fc52				  -.CYCLES    SET	.CYCLES - 2
-     24  fc52					      ENDIF
+      3  fc52				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fc52				  -	      NOP
+      5  fc52				  -.CYCLES    SET	.CYCLES - 2
+      6  fc52					      ENDIF
+      7  fc52
+      8  fc52				  -	      IF	[.CYCLES - 2] / 5
+      9  fc52				  -	      REPEAT	.CYCLES / 5
+     10  fc52				  -	      INC	foo
+     11  fc52				  -	      REPEND
+     12  fc52				  -.CYCLES    SET	.CYCLES % 5
+     13  fc52					      ENDIF
+     14  fc52
+     15  fc52				  -	      IF	.CYCLES % 3 == 1
+     16  fc52				  -	      NOP
+     17  fc52				  -.CYCLES    SET	.CYCLES - 2
+     18  fc52					      ENDIF
+     19  fc52
+     20  fc52				  -	      REPEAT	.CYCLES / 3
+     21  fc52				  -	      STA	DUMP
+     22  fc52					      REPEND
+     23  fc52
+     24  fc52				   .CYCLES    SET	.CYCLES % 3
      25  fc52
- C3 $2
-     26  fc52					      ECHO	"C3",.CYCLES
-     27  fc52
-     28  fc52				  -	      REPEAT	.CYCLES / 3
-     29  fc52				  -	      STA	DUMP
-     30  fc52					      REPEND
-     31  fc52
-     32  fc52				   .CYCLES    SET	.CYCLES % 3
-     33  fc52
- C4 $2
-     34  fc52					      ECHO	"C4",.CYCLES
-     35  fc52
-     36  fc52					      REPEAT	.CYCLES / 2
-     37  fc52		       ea		      NOP
-     38  fc53					      REPEND
-     39  fc53
-     40  fc53				   .CYCLES    SET	.CYCLES % 2
-     41  fc53
-     42  fc53				  -	      IF	.CYCLES
-     43  fc53				  -	      ERR
-     44  fc53					      ENDIF
-     45  fc53
+     26  fc52					      REPEAT	.CYCLES / 2
+     27  fc52		       ea		      NOP
+     28  fc53					      REPEND
+     29  fc53
+     30  fc53				   .CYCLES    SET	.CYCLES % 2
+     31  fc53
+     32  fc53				  -	      IF	.CYCLES
+     33  fc53				  -	      ERR
+     34  fc53					      ENDIF
+     35  fc53
       5  fc53				   dc_w3s1
       6  fc53
       7  fc53		       a2 03		      LDX	#PIXH
@@ -2441,56 +2173,41 @@
       0  fc7d					      DELAY	10
       1  fc7d				   .CYCLES    SET	10
       2  fc7d
- C0 $a
-      3  fc7d					      ECHO	"C0",.CYCLES
-      4  fc7d
-      5  fc7d				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fc7d				  -	      NOP
-      7  fc7d				  -.CYCLES    SET	.CYCLES - 2
-      8  fc7d					      ENDIF
-      9  fc7d
- C1 $a
-     10  fc7d					      ECHO	"C1",.CYCLES
-     11  fc7d
-     12  fc7d					      IF	[.CYCLES - 2] / 5
-     13  fc7d					      REPEAT	.CYCLES / 5
-     14  fc7d		       e6 c4		      INC	foo
-     13  fc7d					      REPEND
-     14  fc7f		       e6 c4		      INC	foo
-     15  fc81					      REPEND
-     16  fc81				   .CYCLES    SET	.CYCLES % 5
-     17  fc81					      ENDIF
-     18  fc81
- C2 $0
-     19  fc81					      ECHO	"C2",.CYCLES
-     20  fc81
-     21  fc81				  -	      IF	.CYCLES % 3 == 1
-     22  fc81				  -	      NOP
-     23  fc81				  -.CYCLES    SET	.CYCLES - 2
-     24  fc81					      ENDIF
+      3  fc7d				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fc7d				  -	      NOP
+      5  fc7d				  -.CYCLES    SET	.CYCLES - 2
+      6  fc7d					      ENDIF
+      7  fc7d
+      8  fc7d					      IF	[.CYCLES - 2] / 5
+      9  fc7d					      REPEAT	.CYCLES / 5
+     10  fc7d		       e6 c4		      INC	foo
+      9  fc7d					      REPEND
+     10  fc7f		       e6 c4		      INC	foo
+     11  fc81					      REPEND
+     12  fc81				   .CYCLES    SET	.CYCLES % 5
+     13  fc81					      ENDIF
+     14  fc81
+     15  fc81				  -	      IF	.CYCLES % 3 == 1
+     16  fc81				  -	      NOP
+     17  fc81				  -.CYCLES    SET	.CYCLES - 2
+     18  fc81					      ENDIF
+     19  fc81
+     20  fc81				  -	      REPEAT	.CYCLES / 3
+     21  fc81				  -	      STA	DUMP
+     22  fc81					      REPEND
+     23  fc81
+     24  fc81				   .CYCLES    SET	.CYCLES % 3
      25  fc81
- C3 $0
-     26  fc81					      ECHO	"C3",.CYCLES
-     27  fc81
-     28  fc81				  -	      REPEAT	.CYCLES / 3
-     29  fc81				  -	      STA	DUMP
-     30  fc81					      REPEND
+     26  fc81				  -	      REPEAT	.CYCLES / 2
+     27  fc81				  -	      NOP
+     28  fc81					      REPEND
+     29  fc81
+     30  fc81				   .CYCLES    SET	.CYCLES % 2
      31  fc81
-     32  fc81				   .CYCLES    SET	.CYCLES % 3
-     33  fc81
- C4 $0
-     34  fc81					      ECHO	"C4",.CYCLES
+     32  fc81				  -	      IF	.CYCLES
+     33  fc81				  -	      ERR
+     34  fc81					      ENDIF
      35  fc81
-     36  fc81				  -	      REPEAT	.CYCLES / 2
-     37  fc81				  -	      NOP
-     38  fc81					      REPEND
-     39  fc81
-     40  fc81				   .CYCLES    SET	.CYCLES % 2
-     41  fc81
-     42  fc81				  -	      IF	.CYCLES
-     43  fc81				  -	      ERR
-     44  fc81					      ENDIF
-     45  fc81
      34  fc81		       85 0f		      STA	PF2
      35  fc83		       85 0d		      STA	PF0
      36  fc85
@@ -2525,108 +2242,78 @@
       0  fcb5					      DELAY	11
       1  fcb5				   .CYCLES    SET	11
       2  fcb5
- C0 $b
-      3  fcb5					      ECHO	"C0",.CYCLES
-      4  fcb5
-      5  fcb5					      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fcb5		       ea		      NOP
-      7  fcb5				   .CYCLES    SET	.CYCLES - 2
-      8  fcb6					      ENDIF
-      9  fcb6
- C1 $9
-     10  fcb6					      ECHO	"C1",.CYCLES
-     11  fcb6
-     12  fcb6					      IF	[.CYCLES - 2] / 5
-     13  fcb6					      REPEAT	.CYCLES / 5
-     14  fcb6		       e6 c4		      INC	foo
-     15  fcb8					      REPEND
-     16  fcb8				   .CYCLES    SET	.CYCLES % 5
-     17  fcb8					      ENDIF
-     18  fcb8
- C2 $4
-     19  fcb8					      ECHO	"C2",.CYCLES
-     20  fcb8
-     21  fcb8					      IF	.CYCLES % 3 == 1
-     22  fcb8		       ea		      NOP
-     23  fcb8				   .CYCLES    SET	.CYCLES - 2
-     24  fcb9					      ENDIF
+      3  fcb5					      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fcb5		       ea		      NOP
+      5  fcb5				   .CYCLES    SET	.CYCLES - 2
+      6  fcb6					      ENDIF
+      7  fcb6
+      8  fcb6					      IF	[.CYCLES - 2] / 5
+      9  fcb6					      REPEAT	.CYCLES / 5
+     10  fcb6		       e6 c4		      INC	foo
+     11  fcb8					      REPEND
+     12  fcb8				   .CYCLES    SET	.CYCLES % 5
+     13  fcb8					      ENDIF
+     14  fcb8
+     15  fcb8					      IF	.CYCLES % 3 == 1
+     16  fcb8		       ea		      NOP
+     17  fcb8				   .CYCLES    SET	.CYCLES - 2
+     18  fcb9					      ENDIF
+     19  fcb9
+     20  fcb9				  -	      REPEAT	.CYCLES / 3
+     21  fcb9				  -	      STA	DUMP
+     22  fcb9					      REPEND
+     23  fcb9
+     24  fcb9				   .CYCLES    SET	.CYCLES % 3
      25  fcb9
- C3 $2
-     26  fcb9					      ECHO	"C3",.CYCLES
-     27  fcb9
-     28  fcb9				  -	      REPEAT	.CYCLES / 3
-     29  fcb9				  -	      STA	DUMP
-     30  fcb9					      REPEND
-     31  fcb9
-     32  fcb9				   .CYCLES    SET	.CYCLES % 3
-     33  fcb9
- C4 $2
-     34  fcb9					      ECHO	"C4",.CYCLES
-     35  fcb9
-     36  fcb9					      REPEAT	.CYCLES / 2
-     37  fcb9		       ea		      NOP
-     38  fcba					      REPEND
-     39  fcba
-     40  fcba				   .CYCLES    SET	.CYCLES % 2
-     41  fcba
-     42  fcba				  -	      IF	.CYCLES
-     43  fcba				  -	      ERR
-     44  fcba					      ENDIF
-     45  fcba
+     26  fcb9					      REPEAT	.CYCLES / 2
+     27  fcb9		       ea		      NOP
+     28  fcba					      REPEND
+     29  fcba
+     30  fcba				   .CYCLES    SET	.CYCLES % 2
+     31  fcba
+     32  fcba				  -	      IF	.CYCLES
+     33  fcba				  -	      ERR
+     34  fcba					      ENDIF
+     35  fcba
      66  fcba		       4c 6b fc 	      JMP	_dc_w3s1_noSprite_ret
      67  fcbd
      68  fcbd				   _dc_w3s1_noSprite_2
-      0  fcbd					      DELAY	3
-      1  fcbd				   .CYCLES    SET	3
+      0  fcbd					      DELAY	4
+      1  fcbd				   .CYCLES    SET	4
       2  fcbd
- C0 $3
-      3  fcbd					      ECHO	"C0",.CYCLES
-      4  fcbd
-      5  fcbd				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fcbd				  -	      NOP
-      7  fcbd				  -.CYCLES    SET	.CYCLES - 2
-      8  fcbd					      ENDIF
-      9  fcbd
- C1 $3
-     10  fcbd					      ECHO	"C1",.CYCLES
-     11  fcbd
-     12  fcbd				  -	      IF	[.CYCLES - 2] / 5
-     13  fcbd				  -	      REPEAT	.CYCLES / 5
-     14  fcbd				  -	      INC	foo
-     15  fcbd				  -	      REPEND
-     16  fcbd				  -.CYCLES    SET	.CYCLES % 5
-     17  fcbd					      ENDIF
-     18  fcbd
- C2 $3
-     19  fcbd					      ECHO	"C2",.CYCLES
-     20  fcbd
-     21  fcbd				  -	      IF	.CYCLES % 3 == 1
-     22  fcbd				  -	      NOP
-     23  fcbd				  -.CYCLES    SET	.CYCLES - 2
-     24  fcbd					      ENDIF
-     25  fcbd
- C3 $3
-     26  fcbd					      ECHO	"C3",.CYCLES
-     27  fcbd
-     28  fcbd					      REPEAT	.CYCLES / 3
-     29  fcbd		       85 30		      STA	DUMP
-     30  fcbf					      REPEND
+      3  fcbd				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fcbd				  -	      NOP
+      5  fcbd				  -.CYCLES    SET	.CYCLES - 2
+      6  fcbd					      ENDIF
+      7  fcbd
+      8  fcbd				  -	      IF	[.CYCLES - 2] / 5
+      9  fcbd				  -	      REPEAT	.CYCLES / 5
+     10  fcbd				  -	      INC	foo
+     11  fcbd				  -	      REPEND
+     12  fcbd				  -.CYCLES    SET	.CYCLES % 5
+     13  fcbd					      ENDIF
+     14  fcbd
+     15  fcbd					      IF	.CYCLES % 3 == 1
+     16  fcbd		       ea		      NOP
+     17  fcbd				   .CYCLES    SET	.CYCLES - 2
+     18  fcbe					      ENDIF
+     19  fcbe
+     20  fcbe				  -	      REPEAT	.CYCLES / 3
+     21  fcbe				  -	      STA	DUMP
+     22  fcbe					      REPEND
+     23  fcbe
+     24  fcbe				   .CYCLES    SET	.CYCLES % 3
+     25  fcbe
+     26  fcbe					      REPEAT	.CYCLES / 2
+     27  fcbe		       ea		      NOP
+     28  fcbf					      REPEND
+     29  fcbf
+     30  fcbf				   .CYCLES    SET	.CYCLES % 2
      31  fcbf
-     32  fcbf				   .CYCLES    SET	.CYCLES % 3
-     33  fcbf
- C4 $0
-     34  fcbf					      ECHO	"C4",.CYCLES
+     32  fcbf				  -	      IF	.CYCLES
+     33  fcbf				  -	      ERR
+     34  fcbf					      ENDIF
      35  fcbf
-     36  fcbf				  -	      REPEAT	.CYCLES / 2
-     37  fcbf				  -	      NOP
-     38  fcbf					      REPEND
-     39  fcbf
-     40  fcbf				   .CYCLES    SET	.CYCLES % 2
-     41  fcbf
-     42  fcbf				  -	      IF	.CYCLES
-     43  fcbf				  -	      ERR
-     44  fcbf					      ENDIF
-     45  fcbf
      70  fcbf		       4c 6b fc 	      JMP	_dc_w3s1_noSprite_ret
 ------- FILE dispkern.asm
 ------- FILE drawCode/dc_w3s2.asm LEVEL 3 PASS 2
@@ -2637,54 +2324,39 @@
       0  fcc2					      DELAY	2
       1  fcc2				   .CYCLES    SET	2
       2  fcc2
- C0 $2
-      3  fcc2					      ECHO	"C0",.CYCLES
-      4  fcc2
-      5  fcc2				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fcc2				  -	      NOP
-      7  fcc2				  -.CYCLES    SET	.CYCLES - 2
-      8  fcc2					      ENDIF
-      9  fcc2
- C1 $2
-     10  fcc2					      ECHO	"C1",.CYCLES
-     11  fcc2
-     12  fcc2				  -	      IF	[.CYCLES - 2] / 5
-     13  fcc2				  -	      REPEAT	.CYCLES / 5
-     14  fcc2				  -	      INC	foo
-     15  fcc2				  -	      REPEND
-     16  fcc2				  -.CYCLES    SET	.CYCLES % 5
-     17  fcc2					      ENDIF
-     18  fcc2
- C2 $2
-     19  fcc2					      ECHO	"C2",.CYCLES
-     20  fcc2
-     21  fcc2				  -	      IF	.CYCLES % 3 == 1
-     22  fcc2				  -	      NOP
-     23  fcc2				  -.CYCLES    SET	.CYCLES - 2
-     24  fcc2					      ENDIF
+      3  fcc2				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fcc2				  -	      NOP
+      5  fcc2				  -.CYCLES    SET	.CYCLES - 2
+      6  fcc2					      ENDIF
+      7  fcc2
+      8  fcc2				  -	      IF	[.CYCLES - 2] / 5
+      9  fcc2				  -	      REPEAT	.CYCLES / 5
+     10  fcc2				  -	      INC	foo
+     11  fcc2				  -	      REPEND
+     12  fcc2				  -.CYCLES    SET	.CYCLES % 5
+     13  fcc2					      ENDIF
+     14  fcc2
+     15  fcc2				  -	      IF	.CYCLES % 3 == 1
+     16  fcc2				  -	      NOP
+     17  fcc2				  -.CYCLES    SET	.CYCLES - 2
+     18  fcc2					      ENDIF
+     19  fcc2
+     20  fcc2				  -	      REPEAT	.CYCLES / 3
+     21  fcc2				  -	      STA	DUMP
+     22  fcc2					      REPEND
+     23  fcc2
+     24  fcc2				   .CYCLES    SET	.CYCLES % 3
      25  fcc2
- C3 $2
-     26  fcc2					      ECHO	"C3",.CYCLES
-     27  fcc2
-     28  fcc2				  -	      REPEAT	.CYCLES / 3
-     29  fcc2				  -	      STA	DUMP
-     30  fcc2					      REPEND
-     31  fcc2
-     32  fcc2				   .CYCLES    SET	.CYCLES % 3
-     33  fcc2
- C4 $2
-     34  fcc2					      ECHO	"C4",.CYCLES
-     35  fcc2
-     36  fcc2					      REPEAT	.CYCLES / 2
-     37  fcc2		       ea		      NOP
-     38  fcc3					      REPEND
-     39  fcc3
-     40  fcc3				   .CYCLES    SET	.CYCLES % 2
-     41  fcc3
-     42  fcc3				  -	      IF	.CYCLES
-     43  fcc3				  -	      ERR
-     44  fcc3					      ENDIF
-     45  fcc3
+     26  fcc2					      REPEAT	.CYCLES / 2
+     27  fcc2		       ea		      NOP
+     28  fcc3					      REPEND
+     29  fcc3
+     30  fcc3				   .CYCLES    SET	.CYCLES % 2
+     31  fcc3
+     32  fcc3				  -	      IF	.CYCLES
+     33  fcc3				  -	      ERR
+     34  fcc3					      ENDIF
+     35  fcc3
       5  fcc3				   dc_w3s2
       6  fcc3
       7  fcc3		       a2 03		      LDX	#PIXH
@@ -2717,56 +2389,41 @@
       0  fced					      DELAY	10
       1  fced				   .CYCLES    SET	10
       2  fced
- C0 $a
-      3  fced					      ECHO	"C0",.CYCLES
-      4  fced
-      5  fced				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fced				  -	      NOP
-      7  fced				  -.CYCLES    SET	.CYCLES - 2
-      8  fced					      ENDIF
-      9  fced
- C1 $a
-     10  fced					      ECHO	"C1",.CYCLES
-     11  fced
-     12  fced					      IF	[.CYCLES - 2] / 5
-     13  fced					      REPEAT	.CYCLES / 5
-     14  fced		       e6 c4		      INC	foo
-     13  fced					      REPEND
-     14  fcef		       e6 c4		      INC	foo
-     15  fcf1					      REPEND
-     16  fcf1				   .CYCLES    SET	.CYCLES % 5
-     17  fcf1					      ENDIF
-     18  fcf1
- C2 $0
-     19  fcf1					      ECHO	"C2",.CYCLES
-     20  fcf1
-     21  fcf1				  -	      IF	.CYCLES % 3 == 1
-     22  fcf1				  -	      NOP
-     23  fcf1				  -.CYCLES    SET	.CYCLES - 2
-     24  fcf1					      ENDIF
+      3  fced				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fced				  -	      NOP
+      5  fced				  -.CYCLES    SET	.CYCLES - 2
+      6  fced					      ENDIF
+      7  fced
+      8  fced					      IF	[.CYCLES - 2] / 5
+      9  fced					      REPEAT	.CYCLES / 5
+     10  fced		       e6 c4		      INC	foo
+      9  fced					      REPEND
+     10  fcef		       e6 c4		      INC	foo
+     11  fcf1					      REPEND
+     12  fcf1				   .CYCLES    SET	.CYCLES % 5
+     13  fcf1					      ENDIF
+     14  fcf1
+     15  fcf1				  -	      IF	.CYCLES % 3 == 1
+     16  fcf1				  -	      NOP
+     17  fcf1				  -.CYCLES    SET	.CYCLES - 2
+     18  fcf1					      ENDIF
+     19  fcf1
+     20  fcf1				  -	      REPEAT	.CYCLES / 3
+     21  fcf1				  -	      STA	DUMP
+     22  fcf1					      REPEND
+     23  fcf1
+     24  fcf1				   .CYCLES    SET	.CYCLES % 3
      25  fcf1
- C3 $0
-     26  fcf1					      ECHO	"C3",.CYCLES
-     27  fcf1
-     28  fcf1				  -	      REPEAT	.CYCLES / 3
-     29  fcf1				  -	      STA	DUMP
-     30  fcf1					      REPEND
+     26  fcf1				  -	      REPEAT	.CYCLES / 2
+     27  fcf1				  -	      NOP
+     28  fcf1					      REPEND
+     29  fcf1
+     30  fcf1				   .CYCLES    SET	.CYCLES % 2
      31  fcf1
-     32  fcf1				   .CYCLES    SET	.CYCLES % 3
-     33  fcf1
- C4 $0
-     34  fcf1					      ECHO	"C4",.CYCLES
+     32  fcf1				  -	      IF	.CYCLES
+     33  fcf1				  -	      ERR
+     34  fcf1					      ENDIF
      35  fcf1
-     36  fcf1				  -	      REPEAT	.CYCLES / 2
-     37  fcf1				  -	      NOP
-     38  fcf1					      REPEND
-     39  fcf1
-     40  fcf1				   .CYCLES    SET	.CYCLES % 2
-     41  fcf1
-     42  fcf1				  -	      IF	.CYCLES
-     43  fcf1				  -	      ERR
-     44  fcf1					      ENDIF
-     45  fcf1
      35  fcf1		       85 0f		      STA	PF2
      36  fcf3		       85 0d		      STA	PF0
      37  fcf5
@@ -2801,110 +2458,80 @@
       0  fd25					      DELAY	10
       1  fd25				   .CYCLES    SET	10
       2  fd25
- C0 $a
-      3  fd25					      ECHO	"C0",.CYCLES
-      4  fd25
-      5  fd25				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fd25				  -	      NOP
-      7  fd25				  -.CYCLES    SET	.CYCLES - 2
-      8  fd25					      ENDIF
-      9  fd25
- C1 $a
-     10  fd25					      ECHO	"C1",.CYCLES
-     11  fd25
-     12  fd25					      IF	[.CYCLES - 2] / 5
-     13  fd25					      REPEAT	.CYCLES / 5
-     14  fd25		       e6 c4		      INC	foo
-     13  fd25					      REPEND
-     14  fd27		       e6 c4		      INC	foo
-     15  fd29					      REPEND
-     16  fd29				   .CYCLES    SET	.CYCLES % 5
-     17  fd29					      ENDIF
-     18  fd29
- C2 $0
-     19  fd29					      ECHO	"C2",.CYCLES
-     20  fd29
-     21  fd29				  -	      IF	.CYCLES % 3 == 1
-     22  fd29				  -	      NOP
-     23  fd29				  -.CYCLES    SET	.CYCLES - 2
-     24  fd29					      ENDIF
+      3  fd25				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fd25				  -	      NOP
+      5  fd25				  -.CYCLES    SET	.CYCLES - 2
+      6  fd25					      ENDIF
+      7  fd25
+      8  fd25					      IF	[.CYCLES - 2] / 5
+      9  fd25					      REPEAT	.CYCLES / 5
+     10  fd25		       e6 c4		      INC	foo
+      9  fd25					      REPEND
+     10  fd27		       e6 c4		      INC	foo
+     11  fd29					      REPEND
+     12  fd29				   .CYCLES    SET	.CYCLES % 5
+     13  fd29					      ENDIF
+     14  fd29
+     15  fd29				  -	      IF	.CYCLES % 3 == 1
+     16  fd29				  -	      NOP
+     17  fd29				  -.CYCLES    SET	.CYCLES - 2
+     18  fd29					      ENDIF
+     19  fd29
+     20  fd29				  -	      REPEAT	.CYCLES / 3
+     21  fd29				  -	      STA	DUMP
+     22  fd29					      REPEND
+     23  fd29
+     24  fd29				   .CYCLES    SET	.CYCLES % 3
      25  fd29
- C3 $0
-     26  fd29					      ECHO	"C3",.CYCLES
-     27  fd29
-     28  fd29				  -	      REPEAT	.CYCLES / 3
-     29  fd29				  -	      STA	DUMP
-     30  fd29					      REPEND
+     26  fd29				  -	      REPEAT	.CYCLES / 2
+     27  fd29				  -	      NOP
+     28  fd29					      REPEND
+     29  fd29
+     30  fd29				   .CYCLES    SET	.CYCLES % 2
      31  fd29
-     32  fd29				   .CYCLES    SET	.CYCLES % 3
-     33  fd29
- C4 $0
-     34  fd29					      ECHO	"C4",.CYCLES
+     32  fd29				  -	      IF	.CYCLES
+     33  fd29				  -	      ERR
+     34  fd29					      ENDIF
      35  fd29
-     36  fd29				  -	      REPEAT	.CYCLES / 2
-     37  fd29				  -	      NOP
-     38  fd29					      REPEND
-     39  fd29
-     40  fd29				   .CYCLES    SET	.CYCLES % 2
-     41  fd29
-     42  fd29				  -	      IF	.CYCLES
-     43  fd29				  -	      ERR
-     44  fd29					      ENDIF
-     45  fd29
      67  fd29		       4c db fc 	      JMP	_dc_w3s2_noSprite_ret
      68  fd2c
      69  fd2c				   _dc_w3s2_noSprite_2
-      0  fd2c					      DELAY	4
-      1  fd2c				   .CYCLES    SET	4
+      0  fd2c					      DELAY	3
+      1  fd2c				   .CYCLES    SET	3
       2  fd2c
- C0 $4
-      3  fd2c					      ECHO	"C0",.CYCLES
-      4  fd2c
-      5  fd2c				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fd2c				  -	      NOP
-      7  fd2c				  -.CYCLES    SET	.CYCLES - 2
-      8  fd2c					      ENDIF
-      9  fd2c
- C1 $4
-     10  fd2c					      ECHO	"C1",.CYCLES
-     11  fd2c
-     12  fd2c				  -	      IF	[.CYCLES - 2] / 5
-     13  fd2c				  -	      REPEAT	.CYCLES / 5
-     14  fd2c				  -	      INC	foo
-     15  fd2c				  -	      REPEND
-     16  fd2c				  -.CYCLES    SET	.CYCLES % 5
-     17  fd2c					      ENDIF
-     18  fd2c
- C2 $4
-     19  fd2c					      ECHO	"C2",.CYCLES
-     20  fd2c
-     21  fd2c					      IF	.CYCLES % 3 == 1
-     22  fd2c		       ea		      NOP
-     23  fd2c				   .CYCLES    SET	.CYCLES - 2
-     24  fd2d					      ENDIF
-     25  fd2d
- C3 $2
-     26  fd2d					      ECHO	"C3",.CYCLES
-     27  fd2d
-     28  fd2d				  -	      REPEAT	.CYCLES / 3
-     29  fd2d				  -	      STA	DUMP
-     30  fd2d					      REPEND
-     31  fd2d
-     32  fd2d				   .CYCLES    SET	.CYCLES % 3
-     33  fd2d
- C4 $2
-     34  fd2d					      ECHO	"C4",.CYCLES
-     35  fd2d
-     36  fd2d					      REPEAT	.CYCLES / 2
-     37  fd2d		       ea		      NOP
-     38  fd2e					      REPEND
-     39  fd2e
-     40  fd2e				   .CYCLES    SET	.CYCLES % 2
-     41  fd2e
-     42  fd2e				  -	      IF	.CYCLES
-     43  fd2e				  -	      ERR
-     44  fd2e					      ENDIF
-     45  fd2e
+      3  fd2c				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fd2c				  -	      NOP
+      5  fd2c				  -.CYCLES    SET	.CYCLES - 2
+      6  fd2c					      ENDIF
+      7  fd2c
+      8  fd2c				  -	      IF	[.CYCLES - 2] / 5
+      9  fd2c				  -	      REPEAT	.CYCLES / 5
+     10  fd2c				  -	      INC	foo
+     11  fd2c				  -	      REPEND
+     12  fd2c				  -.CYCLES    SET	.CYCLES % 5
+     13  fd2c					      ENDIF
+     14  fd2c
+     15  fd2c				  -	      IF	.CYCLES % 3 == 1
+     16  fd2c				  -	      NOP
+     17  fd2c				  -.CYCLES    SET	.CYCLES - 2
+     18  fd2c					      ENDIF
+     19  fd2c
+     20  fd2c					      REPEAT	.CYCLES / 3
+     21  fd2c		       85 30		      STA	DUMP
+     22  fd2e					      REPEND
+     23  fd2e
+     24  fd2e				   .CYCLES    SET	.CYCLES % 3
+     25  fd2e
+     26  fd2e				  -	      REPEAT	.CYCLES / 2
+     27  fd2e				  -	      NOP
+     28  fd2e					      REPEND
+     29  fd2e
+     30  fd2e				   .CYCLES    SET	.CYCLES % 2
+     31  fd2e
+     32  fd2e				  -	      IF	.CYCLES
+     33  fd2e				  -	      ERR
+     34  fd2e					      ENDIF
+     35  fd2e
      71  fd2e		       4c db fc 	      JMP	_dc_w3s2_noSprite_ret
 ------- FILE dispkern.asm
 ------- FILE drawCode/dc_w4s0.asm LEVEL 3 PASS 2
@@ -2953,54 +2580,39 @@
       0  fd68					      DELAY	4
       1  fd68				   .CYCLES    SET	4
       2  fd68
- C0 $4
-      3  fd68					      ECHO	"C0",.CYCLES
-      4  fd68
-      5  fd68				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fd68				  -	      NOP
-      7  fd68				  -.CYCLES    SET	.CYCLES - 2
-      8  fd68					      ENDIF
-      9  fd68
- C1 $4
-     10  fd68					      ECHO	"C1",.CYCLES
-     11  fd68
-     12  fd68				  -	      IF	[.CYCLES - 2] / 5
-     13  fd68				  -	      REPEAT	.CYCLES / 5
-     14  fd68				  -	      INC	foo
-     15  fd68				  -	      REPEND
-     16  fd68				  -.CYCLES    SET	.CYCLES % 5
-     17  fd68					      ENDIF
-     18  fd68
- C2 $4
-     19  fd68					      ECHO	"C2",.CYCLES
-     20  fd68
-     21  fd68					      IF	.CYCLES % 3 == 1
-     22  fd68		       ea		      NOP
-     23  fd68				   .CYCLES    SET	.CYCLES - 2
-     24  fd69					      ENDIF
+      3  fd68				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fd68				  -	      NOP
+      5  fd68				  -.CYCLES    SET	.CYCLES - 2
+      6  fd68					      ENDIF
+      7  fd68
+      8  fd68				  -	      IF	[.CYCLES - 2] / 5
+      9  fd68				  -	      REPEAT	.CYCLES / 5
+     10  fd68				  -	      INC	foo
+     11  fd68				  -	      REPEND
+     12  fd68				  -.CYCLES    SET	.CYCLES % 5
+     13  fd68					      ENDIF
+     14  fd68
+     15  fd68					      IF	.CYCLES % 3 == 1
+     16  fd68		       ea		      NOP
+     17  fd68				   .CYCLES    SET	.CYCLES - 2
+     18  fd69					      ENDIF
+     19  fd69
+     20  fd69				  -	      REPEAT	.CYCLES / 3
+     21  fd69				  -	      STA	DUMP
+     22  fd69					      REPEND
+     23  fd69
+     24  fd69				   .CYCLES    SET	.CYCLES % 3
      25  fd69
- C3 $2
-     26  fd69					      ECHO	"C3",.CYCLES
-     27  fd69
-     28  fd69				  -	      REPEAT	.CYCLES / 3
-     29  fd69				  -	      STA	DUMP
-     30  fd69					      REPEND
-     31  fd69
-     32  fd69				   .CYCLES    SET	.CYCLES % 3
-     33  fd69
- C4 $2
-     34  fd69					      ECHO	"C4",.CYCLES
-     35  fd69
-     36  fd69					      REPEAT	.CYCLES / 2
-     37  fd69		       ea		      NOP
-     38  fd6a					      REPEND
-     39  fd6a
-     40  fd6a				   .CYCLES    SET	.CYCLES % 2
-     41  fd6a
-     42  fd6a				  -	      IF	.CYCLES
-     43  fd6a				  -	      ERR
-     44  fd6a					      ENDIF
-     45  fd6a
+     26  fd69					      REPEAT	.CYCLES / 2
+     27  fd69		       ea		      NOP
+     28  fd6a					      REPEND
+     29  fd6a
+     30  fd6a				   .CYCLES    SET	.CYCLES % 2
+     31  fd6a
+     32  fd6a				  -	      IF	.CYCLES
+     33  fd6a				  -	      ERR
+     34  fd6a					      ENDIF
+     35  fd6a
      43  fd6a		       85 0f		      STA	PF2
      44  fd6c		       85 0d		      STA	PF0
      45  fd6e
@@ -3035,380 +2647,592 @@
       0  fd9e					      DELAY	11
       1  fd9e				   .CYCLES    SET	11
       2  fd9e
- C0 $b
-      3  fd9e					      ECHO	"C0",.CYCLES
-      4  fd9e
-      5  fd9e					      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fd9e		       ea		      NOP
-      7  fd9e				   .CYCLES    SET	.CYCLES - 2
-      8  fd9f					      ENDIF
-      9  fd9f
- C1 $9
-     10  fd9f					      ECHO	"C1",.CYCLES
-     11  fd9f
-     12  fd9f					      IF	[.CYCLES - 2] / 5
-     13  fd9f					      REPEAT	.CYCLES / 5
-     14  fd9f		       e6 c4		      INC	foo
-     15  fda1					      REPEND
-     16  fda1				   .CYCLES    SET	.CYCLES % 5
-     17  fda1					      ENDIF
-     18  fda1
- C2 $4
-     19  fda1					      ECHO	"C2",.CYCLES
-     20  fda1
-     21  fda1					      IF	.CYCLES % 3 == 1
-     22  fda1		       ea		      NOP
-     23  fda1				   .CYCLES    SET	.CYCLES - 2
-     24  fda2					      ENDIF
+      3  fd9e					      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fd9e		       ea		      NOP
+      5  fd9e				   .CYCLES    SET	.CYCLES - 2
+      6  fd9f					      ENDIF
+      7  fd9f
+      8  fd9f					      IF	[.CYCLES - 2] / 5
+      9  fd9f					      REPEAT	.CYCLES / 5
+     10  fd9f		       e6 c4		      INC	foo
+     11  fda1					      REPEND
+     12  fda1				   .CYCLES    SET	.CYCLES % 5
+     13  fda1					      ENDIF
+     14  fda1
+     15  fda1					      IF	.CYCLES % 3 == 1
+     16  fda1		       ea		      NOP
+     17  fda1				   .CYCLES    SET	.CYCLES - 2
+     18  fda2					      ENDIF
+     19  fda2
+     20  fda2				  -	      REPEAT	.CYCLES / 3
+     21  fda2				  -	      STA	DUMP
+     22  fda2					      REPEND
+     23  fda2
+     24  fda2				   .CYCLES    SET	.CYCLES % 3
      25  fda2
- C3 $2
-     26  fda2					      ECHO	"C3",.CYCLES
-     27  fda2
-     28  fda2				  -	      REPEAT	.CYCLES / 3
-     29  fda2				  -	      STA	DUMP
-     30  fda2					      REPEND
-     31  fda2
-     32  fda2				   .CYCLES    SET	.CYCLES % 3
-     33  fda2
- C4 $2
-     34  fda2					      ECHO	"C4",.CYCLES
-     35  fda2
-     36  fda2					      REPEAT	.CYCLES / 2
-     37  fda2		       ea		      NOP
-     38  fda3					      REPEND
-     39  fda3
-     40  fda3				   .CYCLES    SET	.CYCLES % 2
-     41  fda3
-     42  fda3				  -	      IF	.CYCLES
-     43  fda3				  -	      ERR
-     44  fda3					      ENDIF
-     45  fda3
+     26  fda2					      REPEAT	.CYCLES / 2
+     27  fda2		       ea		      NOP
+     28  fda3					      REPEND
+     29  fda3
+     30  fda3				   .CYCLES    SET	.CYCLES % 2
+     31  fda3
+     32  fda3				  -	      IF	.CYCLES
+     33  fda3				  -	      ERR
+     34  fda3					      ENDIF
+     35  fda3
      75  fda3		       4c 50 fd 	      JMP	_dc_w4s0_noSprite_ret
      76  fda6
      77  fda6				   _dc_w4s0_noSprite_2
       0  fda6					      DELAY	4
       1  fda6				   .CYCLES    SET	4
       2  fda6
- C0 $4
-      3  fda6					      ECHO	"C0",.CYCLES
-      4  fda6
-      5  fda6				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
-      6  fda6				  -	      NOP
-      7  fda6				  -.CYCLES    SET	.CYCLES - 2
-      8  fda6					      ENDIF
-      9  fda6
- C1 $4
-     10  fda6					      ECHO	"C1",.CYCLES
-     11  fda6
-     12  fda6				  -	      IF	[.CYCLES - 2] / 5
-     13  fda6				  -	      REPEAT	.CYCLES / 5
-     14  fda6				  -	      INC	foo
-     15  fda6				  -	      REPEND
-     16  fda6				  -.CYCLES    SET	.CYCLES % 5
-     17  fda6					      ENDIF
-     18  fda6
- C2 $4
-     19  fda6					      ECHO	"C2",.CYCLES
-     20  fda6
-     21  fda6					      IF	.CYCLES % 3 == 1
-     22  fda6		       ea		      NOP
-     23  fda6				   .CYCLES    SET	.CYCLES - 2
-     24  fda7					      ENDIF
+      3  fda6				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fda6				  -	      NOP
+      5  fda6				  -.CYCLES    SET	.CYCLES - 2
+      6  fda6					      ENDIF
+      7  fda6
+      8  fda6				  -	      IF	[.CYCLES - 2] / 5
+      9  fda6				  -	      REPEAT	.CYCLES / 5
+     10  fda6				  -	      INC	foo
+     11  fda6				  -	      REPEND
+     12  fda6				  -.CYCLES    SET	.CYCLES % 5
+     13  fda6					      ENDIF
+     14  fda6
+     15  fda6					      IF	.CYCLES % 3 == 1
+     16  fda6		       ea		      NOP
+     17  fda6				   .CYCLES    SET	.CYCLES - 2
+     18  fda7					      ENDIF
+     19  fda7
+     20  fda7				  -	      REPEAT	.CYCLES / 3
+     21  fda7				  -	      STA	DUMP
+     22  fda7					      REPEND
+     23  fda7
+     24  fda7				   .CYCLES    SET	.CYCLES % 3
      25  fda7
- C3 $2
-     26  fda7					      ECHO	"C3",.CYCLES
-     27  fda7
-     28  fda7				  -	      REPEAT	.CYCLES / 3
-     29  fda7				  -	      STA	DUMP
-     30  fda7					      REPEND
-     31  fda7
-     32  fda7				   .CYCLES    SET	.CYCLES % 3
-     33  fda7
- C4 $2
-     34  fda7					      ECHO	"C4",.CYCLES
-     35  fda7
-     36  fda7					      REPEAT	.CYCLES / 2
-     37  fda7		       ea		      NOP
-     38  fda8					      REPEND
-     39  fda8
-     40  fda8				   .CYCLES    SET	.CYCLES % 2
-     41  fda8
-     42  fda8				  -	      IF	.CYCLES
-     43  fda8				  -	      ERR
-     44  fda8					      ENDIF
-     45  fda8
+     26  fda7					      REPEAT	.CYCLES / 2
+     27  fda7		       ea		      NOP
+     28  fda8					      REPEND
+     29  fda8
+     30  fda8				   .CYCLES    SET	.CYCLES % 2
+     31  fda8
+     32  fda8				  -	      IF	.CYCLES
+     33  fda8				  -	      ERR
+     34  fda8					      ENDIF
+     35  fda8
      79  fda8		       4c 50 fd 	      JMP	_dc_w4s0_noSprite_ret
 ------- FILE dispkern.asm
-     30  fdab
+     29  fdab
 ------- FILE drawCode/dc_w1s2.asm LEVEL 3 PASS 2
       0  fdab					      INCLUDE	"drawCode/dc_w1s2.asm"
-      1  fdab
+      1  fdab							; The draw code for the 1st wall and shadow
+      2  fdab
+      3  fdab				   dc_w1s2
+      4  fdab
+      5  fdab		       a2 1d		      LDX	#UPPRWALL_S - 1
+      6  fdad
+      7  fdad				   _dc_w1s2_loop
+      8  fdad		       a5 b5		      LDA	wallColour
+      9  fdaf		       85 02		      STA	WSYNC
+     10  fdb1		       85 08		      STA	COLUPF
+     11  fdb3		       a5 80		      LDA	wall1
+     12  fdb5		       85 0e		      STA	PF1
+     13  fdb7		       98		      TYA
+     14  fdb8		       f0 53		      BEQ	_dc_w1s2_noSprite_1
+     15  fdba		       88		      DEY
+     16  fdbb		       c4 bc		      CPY	spriteHeight
+     17  fdbd		       b0 55		      BCS	_dc_w1s2_noSprite_2
+     18  fdbf		       b1 c2		      LDA	(sprite),Y
+     19  fdc1		       85 1b		      STA	GRP0
+     20  fdc3				   _dc_w1s2_noSprite_ret
+     21  fdc3		       a5 80		      LDA	wall1
+     22  fdc5		       85 0f		      STA	PF2
+      0  fdc7					      DELAY	6
+      1  fdc7				   .CYCLES    SET	6
+      2  fdc7
+      3  fdc7				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fdc7				  -	      NOP
+      5  fdc7				  -.CYCLES    SET	.CYCLES - 2
+      6  fdc7					      ENDIF
+      7  fdc7
+      8  fdc7				  -	      IF	[.CYCLES - 2] / 5
+      9  fdc7				  -	      REPEAT	.CYCLES / 5
+     10  fdc7				  -	      INC	foo
+     11  fdc7				  -	      REPEND
+     12  fdc7				  -.CYCLES    SET	.CYCLES % 5
+     13  fdc7					      ENDIF
+     14  fdc7
+     15  fdc7				  -	      IF	.CYCLES % 3 == 1
+     16  fdc7				  -	      NOP
+     17  fdc7				  -.CYCLES    SET	.CYCLES - 2
+     18  fdc7					      ENDIF
+     19  fdc7
+     20  fdc7					      REPEAT	.CYCLES / 3
+     21  fdc7		       85 30		      STA	DUMP
+     20  fdc7					      REPEND
+     21  fdc9		       85 30		      STA	DUMP
+     22  fdcb					      REPEND
+     23  fdcb
+     24  fdcb				   .CYCLES    SET	.CYCLES % 3
+     25  fdcb
+     26  fdcb				  -	      REPEAT	.CYCLES / 2
+     27  fdcb				  -	      NOP
+     28  fdcb					      REPEND
+     29  fdcb
+     30  fdcb				   .CYCLES    SET	.CYCLES % 2
+     31  fdcb
+     32  fdcb				  -	      IF	.CYCLES
+     33  fdcb				  -	      ERR
+     34  fdcb					      ENDIF
+     35  fdcb
+     24  fdcb		       85 0d		      STA	PF0
+      0  fdcd					      DELAY	19
+      1  fdcd				   .CYCLES    SET	19
+      2  fdcd
+      3  fdcd				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fdcd				  -	      NOP
+      5  fdcd				  -.CYCLES    SET	.CYCLES - 2
+      6  fdcd					      ENDIF
+      7  fdcd
+      8  fdcd					      IF	[.CYCLES - 2] / 5
+      9  fdcd					      REPEAT	.CYCLES / 5
+     10  fdcd		       e6 c4		      INC	foo
+      9  fdcd					      REPEND
+     10  fdcf		       e6 c4		      INC	foo
+      9  fdcf					      REPEND
+     10  fdd1		       e6 c4		      INC	foo
+     11  fdd3					      REPEND
+     12  fdd3				   .CYCLES    SET	.CYCLES % 5
+     13  fdd3					      ENDIF
+     14  fdd3
+     15  fdd3					      IF	.CYCLES % 3 == 1
+     16  fdd3		       ea		      NOP
+     17  fdd3				   .CYCLES    SET	.CYCLES - 2
+     18  fdd4					      ENDIF
+     19  fdd4
+     20  fdd4				  -	      REPEAT	.CYCLES / 3
+     21  fdd4				  -	      STA	DUMP
+     22  fdd4					      REPEND
+     23  fdd4
+     24  fdd4				   .CYCLES    SET	.CYCLES % 3
+     25  fdd4
+     26  fdd4					      REPEAT	.CYCLES / 2
+     27  fdd4		       ea		      NOP
+     28  fdd5					      REPEND
+     29  fdd5
+     30  fdd5				   .CYCLES    SET	.CYCLES % 2
+     31  fdd5
+     32  fdd5				  -	      IF	.CYCLES
+     33  fdd5				  -	      ERR
+     34  fdd5					      ENDIF
+     35  fdd5
+     26  fdd5		       a9 00		      LDA	#NULL
+     27  fdd7		       85 0f		      STA	PF2
+     28  fdd9		       85 0d		      STA	PF0
+     29  fddb
+     30  fddb		       85 02		      STA	WSYNC
+     31  fddd		       a5 b6		      LDA	shadowColour
+     32  fddf		       85 08		      STA	COLUPF
+     33  fde1		       a5 9b		      LDA	shadow1a
+     34  fde3		       3d 00 f0 	      AND	and_1a,X
+     35  fde6		       85 0e		      STA	PF1
+     36  fde8		       a5 9c		      LDA	shadow1b
+     37  fdea		       3d 1e f0 	      AND	and_1b,X
+     38  fded		       85 0f		      STA	PF2
+      0  fdef					      DELAY	9
+      1  fdef				   .CYCLES    SET	9
+      2  fdef
+      3  fdef				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fdef				  -	      NOP
+      5  fdef				  -.CYCLES    SET	.CYCLES - 2
+      6  fdef					      ENDIF
+      7  fdef
+      8  fdef					      IF	[.CYCLES - 2] / 5
+      9  fdef					      REPEAT	.CYCLES / 5
+     10  fdef		       e6 c4		      INC	foo
+     11  fdf1					      REPEND
+     12  fdf1				   .CYCLES    SET	.CYCLES % 5
+     13  fdf1					      ENDIF
+     14  fdf1
+     15  fdf1					      IF	.CYCLES % 3 == 1
+     16  fdf1		       ea		      NOP
+     17  fdf1				   .CYCLES    SET	.CYCLES - 2
+     18  fdf2					      ENDIF
+     19  fdf2
+     20  fdf2				  -	      REPEAT	.CYCLES / 3
+     21  fdf2				  -	      STA	DUMP
+     22  fdf2					      REPEND
+     23  fdf2
+     24  fdf2				   .CYCLES    SET	.CYCLES % 3
+     25  fdf2
+     26  fdf2					      REPEAT	.CYCLES / 2
+     27  fdf2		       ea		      NOP
+     28  fdf3					      REPEND
+     29  fdf3
+     30  fdf3				   .CYCLES    SET	.CYCLES % 2
+     31  fdf3
+     32  fdf3				  -	      IF	.CYCLES
+     33  fdf3				  -	      ERR
+     34  fdf3					      ENDIF
+     35  fdf3
+     40  fdf3		       a5 9e		      LDA	shadow1d
+     41  fdf5		       3d 3c f0 	      AND	and_1c,X
+     42  fdf8		       85 0e		      STA	PF1
+     43  fdfa		       a5 9f		      LDA	shadow1e
+     44  fdfc		       3d 5a f0 	      AND	and_1d,X
+     45  fdff		       85 0f		      STA	PF2
+     46  fe01
+     47  fe01		       a9 00		      LDA	#NULL
+     48  fe03		       85 1b		      STA	GRP0
+     49  fe05
+     50  fe05		       ca		      DEX
+     51  fe06		       e0 06		      CPX	#LOWRWALL_S
+     52  fe08		       d0 a3		      BNE	_dc_w1s2_loop
+     53  fe0a
+     54  fe0a		       4c 19 fe 	      JMP	dc_wallsEnd
+     55  fe0d
+     56  fe0d				   _dc_w1s2_noSprite_1
+      0  fe0d					      DELAY	10
+      1  fe0d				   .CYCLES    SET	10
+      2  fe0d
+      3  fe0d				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fe0d				  -	      NOP
+      5  fe0d				  -.CYCLES    SET	.CYCLES - 2
+      6  fe0d					      ENDIF
+      7  fe0d
+      8  fe0d					      IF	[.CYCLES - 2] / 5
+      9  fe0d					      REPEAT	.CYCLES / 5
+     10  fe0d		       e6 c4		      INC	foo
+      9  fe0d					      REPEND
+     10  fe0f		       e6 c4		      INC	foo
+     11  fe11					      REPEND
+     12  fe11				   .CYCLES    SET	.CYCLES % 5
+     13  fe11					      ENDIF
+     14  fe11
+     15  fe11				  -	      IF	.CYCLES % 3 == 1
+     16  fe11				  -	      NOP
+     17  fe11				  -.CYCLES    SET	.CYCLES - 2
+     18  fe11					      ENDIF
+     19  fe11
+     20  fe11				  -	      REPEAT	.CYCLES / 3
+     21  fe11				  -	      STA	DUMP
+     22  fe11					      REPEND
+     23  fe11
+     24  fe11				   .CYCLES    SET	.CYCLES % 3
+     25  fe11
+     26  fe11				  -	      REPEAT	.CYCLES / 2
+     27  fe11				  -	      NOP
+     28  fe11					      REPEND
+     29  fe11
+     30  fe11				   .CYCLES    SET	.CYCLES % 2
+     31  fe11
+     32  fe11				  -	      IF	.CYCLES
+     33  fe11				  -	      ERR
+     34  fe11					      ENDIF
+     35  fe11
+     58  fe11		       4c c3 fd 	      JMP	_dc_w1s2_noSprite_ret
+     59  fe14
+     60  fe14				   _dc_w1s2_noSprite_2
+      0  fe14					      DELAY	3
+      1  fe14				   .CYCLES    SET	3
+      2  fe14
+      3  fe14				  -	      IF	.CYCLES % 5 == 1 && .CYCLES % 3
+      4  fe14				  -	      NOP
+      5  fe14				  -.CYCLES    SET	.CYCLES - 2
+      6  fe14					      ENDIF
+      7  fe14
+      8  fe14				  -	      IF	[.CYCLES - 2] / 5
+      9  fe14				  -	      REPEAT	.CYCLES / 5
+     10  fe14				  -	      INC	foo
+     11  fe14				  -	      REPEND
+     12  fe14				  -.CYCLES    SET	.CYCLES % 5
+     13  fe14					      ENDIF
+     14  fe14
+     15  fe14				  -	      IF	.CYCLES % 3 == 1
+     16  fe14				  -	      NOP
+     17  fe14				  -.CYCLES    SET	.CYCLES - 2
+     18  fe14					      ENDIF
+     19  fe14
+     20  fe14					      REPEAT	.CYCLES / 3
+     21  fe14		       85 30		      STA	DUMP
+     22  fe16					      REPEND
+     23  fe16
+     24  fe16				   .CYCLES    SET	.CYCLES % 3
+     25  fe16
+     26  fe16				  -	      REPEAT	.CYCLES / 2
+     27  fe16				  -	      NOP
+     28  fe16					      REPEND
+     29  fe16
+     30  fe16				   .CYCLES    SET	.CYCLES % 2
+     31  fe16
+     32  fe16				  -	      IF	.CYCLES
+     33  fe16				  -	      ERR
+     34  fe16					      ENDIF
+     35  fe16
+     62  fe16		       4c c3 fd 	      JMP	_dc_w1s2_noSprite_ret
 ------- FILE dispkern.asm
-     32  fdab
-     33  fdab				   jumbo
-     34  fdab
-     35  fdab		       b8		      CLV
-     36  fdac
-     37  fdac				   dc_w2s1_ret
-     38  fdac
-     39  fdac		       a9 00		      LDA	#NULL
-     40  fdae		       85 0e		      STA	PF1
-     41  fdb0		       85 0f		      STA	PF2
-     42  fdb2
-     43  fdb2		       20 85 fa 	      JSR	mmDraw
-     44  fdb5
-     45  fdb5		       4c b8 fd 	      JMP	stop
-     46  fdb8
-     47  fdb8				   stop
-     48  fdb8
-     49  fdb8
-     50  fdb8		       85 09		      STA	COLUBK
+     31  fe19
+     32  fe19				   dc_wallsEnd
+     33  fe19
+     34  fe19		       b8		      CLV
+     35  fe1a
+     36  fe1a		       a9 00		      LDA	#NULL
+     37  fe1c		       85 0e		      STA	PF1
+     38  fe1e		       85 0f		      STA	PF2
+     39  fe20
+     40  fe20		       20 85 fa 	      JSR	mmDraw
+     41  fe23
+     42  fe23		       4c 26 fe 	      JMP	stop
+     43  fe26
+     44  fe26				   stop
+     45  fe26
+     46  fe26
+     47  fe26		       85 09		      STA	COLUBK
 ------- FILE main.asm
-     72  fdba
-     73  fdba
-     74  fdba							; Start VBLANK
-     75  fdba
-     76  fdba		       a9 c2		      LDA	#VBLANK_SET
-     77  fdbc		       85 01		      STA	VBLANK
-     78  fdbe
-     79  fdbe							; Process input
-     80  fdbe
+     72  fe28
+     73  fe28
+     74  fe28							; Start VBLANK
+     75  fe28
+     76  fe28		       a9 c2		      LDA	#VBLANK_SET
+     77  fe2a		       85 01		      STA	VBLANK
+     78  fe2c
+     79  fe2c							; Process input
+     80  fe2c
 ------- FILE input.asm LEVEL 2 PASS 2
-      0  fdbe					      INCLUDE	"input.asm"
-      1  fdbe							; VePseu's controller input
-      2  fdbe
-      3  fdbe		       85 02		      STA	WSYNC
-      4  fdc0
-      5  fdc0		       ad 80 02 	      LDA	SWCHA
-      6  fdc3		       29 10		      AND	#FFORD
-      7  fdc5		       c9 10		      CMP	#FFORD
-      8  fdc7		       f0 26		      BEQ	CIN1_NOPRESS
-      9  fdc9
-     10  fdc9		       a5 ab		      LDA	playerPos
-     11  fdcb		       38		      SEC
-     12  fdcc		       e5 b0		      SBC	yLoss
-     13  fdce		       18		      CLC
-     14  fdcf		       65 af		      ADC	yGain
-     15  fdd1		       a8		      TAY
-     16  fdd2
-     17  fdd2		       b1 c0		      LDA	(mapPtr),Y
-     18  fdd4		       c9 00		      CMP	#NULL
-     19  fdd6		       d0 1b		      BNE	CIN2
-     20  fdd8
-     21  fdd8		       a5 b1		      LDA	fordPressed
-     22  fdda		       c9 00		      CMP	#NULL
-     23  fddc		       d0 09		      BNE	CIN1_WAIT
-     24  fdde
-     25  fdde		       84 ab		      STY	playerPos
-     26  fde0		       a9 0f		      LDA	#CWAITCNT
-     27  fde2		       85 b1		      STA	fordPressed
-     28  fde4		       4c f3 fd 	      JMP	CIN2
-     29  fde7
-     30  fde7				   CIN1_WAIT
-      0  fde7					      DEA
-      1  fde7		       38		      SEC
-      2  fde8		       e9 01		      SBC	#1
-     32  fdea		       85 b1		      STA	fordPressed
-     33  fdec		       4c f3 fd 	      JMP	CIN2
-     34  fdef
-     35  fdef				   CIN1_NOPRESS
-     36  fdef		       a9 00		      LDA	#NULL
-     37  fdf1		       85 b1		      STA	fordPressed
-     38  fdf3
-     39  fdf3				   CIN2
-     40  fdf3		       85 02		      STA	WSYNC
-     41  fdf5		       ad 80 02 	      LDA	SWCHA
-     42  fdf8		       29 20		      AND	#FBACK
-     43  fdfa		       c9 20		      CMP	#FBACK
-     44  fdfc		       f0 26		      BEQ	CIN2_NOPRESS
-     45  fdfe
-     46  fdfe		       a5 ab		      LDA	playerPos
-     47  fe00		       38		      SEC
-     48  fe01		       e5 af		      SBC	yGain
-     49  fe03		       18		      CLC
-     50  fe04		       65 b0		      ADC	yLoss
-     51  fe06		       a8		      TAY
-     52  fe07
-     53  fe07		       b1 c0		      LDA	(mapPtr),Y
-     54  fe09		       c9 00		      CMP	#NULL
-     55  fe0b		       d0 1b		      BNE	CIN3
-     56  fe0d
-     57  fe0d		       a5 b2		      LDA	backPressed
-     58  fe0f		       c9 00		      CMP	#NULL
-     59  fe11		       d0 09		      BNE	CIN2_WAIT
-     60  fe13
-     61  fe13		       84 ab		      STY	playerPos
-     62  fe15		       a9 0f		      LDA	#CWAITCNT
-     63  fe17		       85 b2		      STA	backPressed
-     64  fe19		       4c 28 fe 	      JMP	CIN3
-     65  fe1c
-     66  fe1c				   CIN2_WAIT
-      0  fe1c					      DEA
-      1  fe1c		       38		      SEC
-      2  fe1d		       e9 01		      SBC	#1
-     68  fe1f		       85 b2		      STA	backPressed
-     69  fe21		       4c 28 fe 	      JMP	CIN3
-     70  fe24
-     71  fe24				   CIN2_NOPRESS
-     72  fe24		       a9 00		      LDA	#NULL
-     73  fe26		       85 b2		      STA	backPressed
-     74  fe28
-     75  fe28				   CIN3
-     76  fe28		       85 02		      STA	WSYNC
-     77  fe2a		       ad 80 02 	      LDA	SWCHA
-     78  fe2d		       29 80		      AND	#FLEFT
-     79  fe2f		       c9 80		      CMP	#FLEFT
-     80  fe31		       f0 1c		      BEQ	CIN3_NOPRESS
-     81  fe33
-     82  fe33		       a5 bb		      LDA	direction
-      0  fe35					      INA
-      1  fe35		       18		      CLC
-      2  fe36		       69 01		      ADC	#1
-     84  fe38		       29 03		      AND	#%00000011
-     85  fe3a
-     86  fe3a		       a6 b4		      LDX	rigtPressed
-     87  fe3c		       e0 00		      CPX	#NULL
-     88  fe3e		       d0 09		      BNE	CIN3_WAIT
-     89  fe40
-     90  fe40		       85 bb		      STA	direction
-     91  fe42
-     92  fe42		       a9 0f		      LDA	#CWAITCNT
-     93  fe44		       85 b4		      STA	rigtPressed
-     94  fe46		       4c 53 fe 	      JMP	CIN4
-     95  fe49
-     96  fe49				   CIN3_WAIT
-     97  fe49		       ca		      DEX
-     98  fe4a		       86 b4		      STX	rigtPressed
-     99  fe4c		       4c 53 fe 	      JMP	CIN4
-    100  fe4f
-    101  fe4f				   CIN3_NOPRESS
-    102  fe4f		       a9 00		      LDA	#NULL
-    103  fe51		       85 b4		      STA	rigtPressed
-    104  fe53
-    105  fe53				   CIN4
-    106  fe53		       85 02		      STA	WSYNC
-    107  fe55		       ad 80 02 	      LDA	SWCHA
-    108  fe58		       29 40		      AND	#FRIGT
-    109  fe5a		       c9 40		      CMP	#FRIGT
-    110  fe5c		       f0 1c		      BEQ	CIN4_NOPRESS
-    111  fe5e
-    112  fe5e		       a5 bb		      LDA	direction
-      0  fe60					      DEA
-      1  fe60		       38		      SEC
-      2  fe61		       e9 01		      SBC	#1
-    114  fe63		       29 03		      AND	#%00000011
-    115  fe65
-    116  fe65		       a6 b3		      LDX	leftPressed
-    117  fe67		       e0 00		      CPX	#NULL
-    118  fe69		       d0 09		      BNE	CIN4_WAIT
-    119  fe6b
-    120  fe6b		       85 bb		      STA	direction
-    121  fe6d
-    122  fe6d		       a9 0f		      LDA	#CWAITCNT
-    123  fe6f		       85 b3		      STA	leftPressed
-    124  fe71		       4c 7e fe 	      JMP	CDIR1
-    125  fe74
-    126  fe74				   CIN4_WAIT
-    127  fe74		       ca		      DEX
-    128  fe75		       86 b3		      STX	leftPressed
-    129  fe77		       4c 7e fe 	      JMP	CDIR1
-    130  fe7a
-    131  fe7a				   CIN4_NOPRESS
-    132  fe7a		       a9 00		      LDA	#NULL
-    133  fe7c		       85 b3		      STA	leftPressed
-    134  fe7e
-    135  fe7e				   CDIR1
-    136  fe7e		       85 02		      STA	WSYNC
-    137  fe80		       a5 bb		      LDA	direction
-    138  fe82		       c9 00		      CMP	#DNORTH
-    139  fe84		       d0 16		      BNE	CDIR2
-    140  fe86
-    141  fe86		       a5 ac		      LDA	mapWidth
-    142  fe88		       85 b0		      STA	yLoss
-    143  fe8a		       a9 01		      LDA	#ONE
-    144  fe8c		       85 ad		      STA	xGain
-    145  fe8e		       a9 86		      LDA	#WCOLU
-    146  fe90		       85 b5		      STA	wallColour
-    147  fe92		       a9 82		      LDA	#SCOLU
-    148  fe94		       85 b6		      STA	shadowColour
-    149  fe96		       a9 00		      LDA	#NULL
-    150  fe98		       85 af		      STA	yGain
-    151  fe9a		       85 ae		      STA	xLoss
-    152  fe9c
-    153  fe9c				   CDIR2
-    154  fe9c		       a5 bb		      LDA	direction
-    155  fe9e		       c9 02		      CMP	#DSOUTH
-    156  fea0		       d0 16		      BNE	CDIR3
-    157  fea2
-    158  fea2		       a5 ac		      LDA	mapWidth
-    159  fea4		       85 af		      STA	yGain
-    160  fea6		       a9 01		      LDA	#ONE
-    161  fea8		       85 ae		      STA	xLoss
-    162  feaa		       a9 86		      LDA	#WCOLU
-    163  feac		       85 b5		      STA	wallColour
-    164  feae		       a9 82		      LDA	#SCOLU
-    165  feb0		       85 b6		      STA	shadowColour
-    166  feb2		       a9 00		      LDA	#NULL
-    167  feb4		       85 b0		      STA	yLoss
-    168  feb6		       85 ad		      STA	xGain
-    169  feb8
-    170  feb8				   CDIR3
-    171  feb8		       a5 bb		      LDA	direction
-    172  feba		       c9 01		      CMP	#DWEST
-    173  febc		       d0 16		      BNE	CDIR4
-    174  febe
-    175  febe		       a5 ac		      LDA	mapWidth
-    176  fec0		       85 ad		      STA	xGain
-    177  fec2		       a9 01		      LDA	#ONE
-    178  fec4		       85 af		      STA	yGain
-    179  fec6		       a9 82		      LDA	#SCOLU
-    180  fec8		       85 b5		      STA	wallColour
-    181  feca		       a9 86		      LDA	#WCOLU
-    182  fecc		       85 b6		      STA	shadowColour
-    183  fece		       a9 00		      LDA	#NULL
-    184  fed0		       85 b0		      STA	yLoss
-    185  fed2		       85 ae		      STA	xLoss
-    186  fed4
-    187  fed4				   CDIR4
-    188  fed4		       a5 bb		      LDA	direction
-    189  fed6		       c9 03		      CMP	#DEAST
-    190  fed8		       d0 16		      BNE	CEND
-    191  feda
-    192  feda		       a5 ac		      LDA	mapWidth
-    193  fedc		       85 ae		      STA	xLoss
-    194  fede		       a9 01		      LDA	#ONE
-    195  fee0		       85 b0		      STA	yLoss
-    196  fee2		       a9 82		      LDA	#SCOLU
-    197  fee4		       85 b5		      STA	wallColour
-    198  fee6		       a9 86		      LDA	#WCOLU
-    199  fee8		       85 b6		      STA	shadowColour
-    200  feea		       a9 00		      LDA	#NULL
-    201  feec		       85 af		      STA	yGain
-    202  feee		       85 ad		      STA	xGain
-    203  fef0
-    204  fef0				   CEND
-    205  fef0		       85 02		      STA	WSYNC
+      0  fe2c					      INCLUDE	"input.asm"
+      1  fe2c							; VePseu's controller input
+      2  fe2c
+      3  fe2c		       85 02		      STA	WSYNC
+      4  fe2e
+      5  fe2e		       ad 80 02 	      LDA	SWCHA
+      6  fe31		       29 10		      AND	#FFORD
+      7  fe33		       c9 10		      CMP	#FFORD
+      8  fe35		       f0 26		      BEQ	CIN1_NOPRESS
+      9  fe37
+     10  fe37		       a5 ab		      LDA	playerPos
+     11  fe39		       38		      SEC
+     12  fe3a		       e5 b0		      SBC	yLoss
+     13  fe3c		       18		      CLC
+     14  fe3d		       65 af		      ADC	yGain
+     15  fe3f		       a8		      TAY
+     16  fe40
+     17  fe40		       b1 c0		      LDA	(mapPtr),Y
+     18  fe42		       c9 00		      CMP	#NULL
+     19  fe44		       d0 1b		      BNE	CIN2
+     20  fe46
+     21  fe46		       a5 b1		      LDA	fordPressed
+     22  fe48		       c9 00		      CMP	#NULL
+     23  fe4a		       d0 09		      BNE	CIN1_WAIT
+     24  fe4c
+     25  fe4c		       84 ab		      STY	playerPos
+     26  fe4e		       a9 0f		      LDA	#CWAITCNT
+     27  fe50		       85 b1		      STA	fordPressed
+     28  fe52		       4c 61 fe 	      JMP	CIN2
+     29  fe55
+     30  fe55				   CIN1_WAIT
+      0  fe55					      DEA
+      1  fe55		       38		      SEC
+      2  fe56		       e9 01		      SBC	#1
+     32  fe58		       85 b1		      STA	fordPressed
+     33  fe5a		       4c 61 fe 	      JMP	CIN2
+     34  fe5d
+     35  fe5d				   CIN1_NOPRESS
+     36  fe5d		       a9 00		      LDA	#NULL
+     37  fe5f		       85 b1		      STA	fordPressed
+     38  fe61
+     39  fe61				   CIN2
+     40  fe61		       85 02		      STA	WSYNC
+     41  fe63		       ad 80 02 	      LDA	SWCHA
+     42  fe66		       29 20		      AND	#FBACK
+     43  fe68		       c9 20		      CMP	#FBACK
+     44  fe6a		       f0 26		      BEQ	CIN2_NOPRESS
+     45  fe6c
+     46  fe6c		       a5 ab		      LDA	playerPos
+     47  fe6e		       38		      SEC
+     48  fe6f		       e5 af		      SBC	yGain
+     49  fe71		       18		      CLC
+     50  fe72		       65 b0		      ADC	yLoss
+     51  fe74		       a8		      TAY
+     52  fe75
+     53  fe75		       b1 c0		      LDA	(mapPtr),Y
+     54  fe77		       c9 00		      CMP	#NULL
+     55  fe79		       d0 1b		      BNE	CIN3
+     56  fe7b
+     57  fe7b		       a5 b2		      LDA	backPressed
+     58  fe7d		       c9 00		      CMP	#NULL
+     59  fe7f		       d0 09		      BNE	CIN2_WAIT
+     60  fe81
+     61  fe81		       84 ab		      STY	playerPos
+     62  fe83		       a9 0f		      LDA	#CWAITCNT
+     63  fe85		       85 b2		      STA	backPressed
+     64  fe87		       4c 96 fe 	      JMP	CIN3
+     65  fe8a
+     66  fe8a				   CIN2_WAIT
+      0  fe8a					      DEA
+      1  fe8a		       38		      SEC
+      2  fe8b		       e9 01		      SBC	#1
+     68  fe8d		       85 b2		      STA	backPressed
+     69  fe8f		       4c 96 fe 	      JMP	CIN3
+     70  fe92
+     71  fe92				   CIN2_NOPRESS
+     72  fe92		       a9 00		      LDA	#NULL
+     73  fe94		       85 b2		      STA	backPressed
+     74  fe96
+     75  fe96				   CIN3
+     76  fe96		       85 02		      STA	WSYNC
+     77  fe98		       ad 80 02 	      LDA	SWCHA
+     78  fe9b		       29 80		      AND	#FLEFT
+     79  fe9d		       c9 80		      CMP	#FLEFT
+     80  fe9f		       f0 1c		      BEQ	CIN3_NOPRESS
+     81  fea1
+     82  fea1		       a5 bb		      LDA	direction
+      0  fea3					      INA
+      1  fea3		       18		      CLC
+      2  fea4		       69 01		      ADC	#1
+     84  fea6		       29 03		      AND	#%00000011
+     85  fea8
+     86  fea8		       a6 b4		      LDX	rigtPressed
+     87  feaa		       e0 00		      CPX	#NULL
+     88  feac		       d0 09		      BNE	CIN3_WAIT
+     89  feae
+     90  feae		       85 bb		      STA	direction
+     91  feb0
+     92  feb0		       a9 0f		      LDA	#CWAITCNT
+     93  feb2		       85 b4		      STA	rigtPressed
+     94  feb4		       4c c1 fe 	      JMP	CIN4
+     95  feb7
+     96  feb7				   CIN3_WAIT
+     97  feb7		       ca		      DEX
+     98  feb8		       86 b4		      STX	rigtPressed
+     99  feba		       4c c1 fe 	      JMP	CIN4
+    100  febd
+    101  febd				   CIN3_NOPRESS
+    102  febd		       a9 00		      LDA	#NULL
+    103  febf		       85 b4		      STA	rigtPressed
+    104  fec1
+    105  fec1				   CIN4
+    106  fec1		       85 02		      STA	WSYNC
+    107  fec3		       ad 80 02 	      LDA	SWCHA
+    108  fec6		       29 40		      AND	#FRIGT
+    109  fec8		       c9 40		      CMP	#FRIGT
+    110  feca		       f0 1c		      BEQ	CIN4_NOPRESS
+    111  fecc
+    112  fecc		       a5 bb		      LDA	direction
+      0  fece					      DEA
+      1  fece		       38		      SEC
+      2  fecf		       e9 01		      SBC	#1
+    114  fed1		       29 03		      AND	#%00000011
+    115  fed3
+    116  fed3		       a6 b3		      LDX	leftPressed
+    117  fed5		       e0 00		      CPX	#NULL
+    118  fed7		       d0 09		      BNE	CIN4_WAIT
+    119  fed9
+    120  fed9		       85 bb		      STA	direction
+    121  fedb
+    122  fedb		       a9 0f		      LDA	#CWAITCNT
+    123  fedd		       85 b3		      STA	leftPressed
+    124  fedf		       4c ec fe 	      JMP	CDIR1
+    125  fee2
+    126  fee2				   CIN4_WAIT
+    127  fee2		       ca		      DEX
+    128  fee3		       86 b3		      STX	leftPressed
+    129  fee5		       4c ec fe 	      JMP	CDIR1
+    130  fee8
+    131  fee8				   CIN4_NOPRESS
+    132  fee8		       a9 00		      LDA	#NULL
+    133  feea		       85 b3		      STA	leftPressed
+    134  feec
+    135  feec				   CDIR1
+    136  feec		       85 02		      STA	WSYNC
+    137  feee		       a5 bb		      LDA	direction
+    138  fef0		       c9 00		      CMP	#DNORTH
+    139  fef2		       d0 16		      BNE	CDIR2
+    140  fef4
+    141  fef4		       a5 ac		      LDA	mapWidth
+    142  fef6		       85 b0		      STA	yLoss
+    143  fef8		       a9 01		      LDA	#ONE
+    144  fefa		       85 ad		      STA	xGain
+    145  fefc		       a9 86		      LDA	#WCOLU
+    146  fefe		       85 b5		      STA	wallColour
+    147  ff00		       a9 82		      LDA	#SCOLU
+    148  ff02		       85 b6		      STA	shadowColour
+    149  ff04		       a9 00		      LDA	#NULL
+    150  ff06		       85 af		      STA	yGain
+    151  ff08		       85 ae		      STA	xLoss
+    152  ff0a
+    153  ff0a				   CDIR2
+    154  ff0a		       a5 bb		      LDA	direction
+    155  ff0c		       c9 02		      CMP	#DSOUTH
+    156  ff0e		       d0 16		      BNE	CDIR3
+    157  ff10
+    158  ff10		       a5 ac		      LDA	mapWidth
+    159  ff12		       85 af		      STA	yGain
+    160  ff14		       a9 01		      LDA	#ONE
+    161  ff16		       85 ae		      STA	xLoss
+    162  ff18		       a9 86		      LDA	#WCOLU
+    163  ff1a		       85 b5		      STA	wallColour
+    164  ff1c		       a9 82		      LDA	#SCOLU
+    165  ff1e		       85 b6		      STA	shadowColour
+    166  ff20		       a9 00		      LDA	#NULL
+    167  ff22		       85 b0		      STA	yLoss
+    168  ff24		       85 ad		      STA	xGain
+    169  ff26
+    170  ff26				   CDIR3
+    171  ff26		       a5 bb		      LDA	direction
+    172  ff28		       c9 01		      CMP	#DWEST
+    173  ff2a		       d0 16		      BNE	CDIR4
+    174  ff2c
+    175  ff2c		       a5 ac		      LDA	mapWidth
+    176  ff2e		       85 ad		      STA	xGain
+    177  ff30		       a9 01		      LDA	#ONE
+    178  ff32		       85 af		      STA	yGain
+    179  ff34		       a9 82		      LDA	#SCOLU
+    180  ff36		       85 b5		      STA	wallColour
+    181  ff38		       a9 86		      LDA	#WCOLU
+    182  ff3a		       85 b6		      STA	shadowColour
+    183  ff3c		       a9 00		      LDA	#NULL
+    184  ff3e		       85 b0		      STA	yLoss
+    185  ff40		       85 ae		      STA	xLoss
+    186  ff42
+    187  ff42				   CDIR4
+    188  ff42		       a5 bb		      LDA	direction
+    189  ff44		       c9 03		      CMP	#DEAST
+    190  ff46		       d0 16		      BNE	CEND
+    191  ff48
+    192  ff48		       a5 ac		      LDA	mapWidth
+    193  ff4a		       85 ae		      STA	xLoss
+    194  ff4c		       a9 01		      LDA	#ONE
+    195  ff4e		       85 b0		      STA	yLoss
+    196  ff50		       a9 82		      LDA	#SCOLU
+    197  ff52		       85 b5		      STA	wallColour
+    198  ff54		       a9 86		      LDA	#WCOLU
+    199  ff56		       85 b6		      STA	shadowColour
+    200  ff58		       a9 00		      LDA	#NULL
+    201  ff5a		       85 af		      STA	yGain
+    202  ff5c		       85 ad		      STA	xGain
+    203  ff5e
+    204  ff5e				   CEND
+    205  ff5e		       85 02		      STA	WSYNC
 ------- FILE main.asm
-     82  fef2
-     83  fef2							; Pad again
-     84  fef2
-     85  fef2		       a2 00		      LDX	#INDEXINIT
-     86  fef4
-     87  fef4				   lowerPad
-     88  fef4		       85 02		      STA	WSYNC
-     89  fef6
-     90  fef6		       e8		      INX
-     91  fef7		       e0 19		      CPX	#LOPAD_LIMIT
-     92  fef9		       d0 f9		      BNE	lowerPad
-     93  fefb
-     94  fefb							; Get everything ready for VSYNC
-     95  fefb
-     96  fefb		       a9 00		      LDA	#NULL
-     97  fefd		       85 01		      STA	VBLANK
-     98  feff		       a9 02		      LDA	#VSYNC_SET
-     99  ff01		       85 02		      STA	WSYNC
-    100  ff03		       4c 2e f8 	      JMP	screenStart
-    101  ff06
+     82  ff60
+     83  ff60							; Pad again
+     84  ff60
+     85  ff60		       a2 00		      LDX	#INDEXINIT
+     86  ff62
+     87  ff62				   lowerPad
+     88  ff62		       85 02		      STA	WSYNC
+     89  ff64
+     90  ff64		       e8		      INX
+     91  ff65		       e0 1a		      CPX	#LOPAD_LIMIT
+     92  ff67		       d0 f9		      BNE	lowerPad
+     93  ff69
+     94  ff69							; Get everything ready for VSYNC
+     95  ff69
+     96  ff69		       a9 00		      LDA	#NULL
+     97  ff6b		       85 01		      STA	VBLANK
+     98  ff6d		       a9 02		      LDA	#VSYNC_SET
+     99  ff6f		       85 02		      STA	WSYNC
+    100  ff71		       4c 2e f8 	      JMP	screenStart
+    101  ff74
     102  fffa					      ORG	$FFFA
     103  fffa
     104  fffa		       01 f8		      DC.W	start	; Something

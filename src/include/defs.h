@@ -54,6 +54,7 @@ WALLCNT = 10 ; The number of walls to render in scrend
 PIXH    = 3 ; The height of each pixel, in scanlines (x2)
 
 UPPRWALL_S  = 30
+LOWRWALL_S  = 6
 
 HADJ_A  = $00 ; The horizontal adjustment of each minimap sprite
 HADJ_B  = $10
@@ -73,7 +74,7 @@ VSYNC_SET   = 2 ; The value to push to the vsync register
 INDEXINIT   = 0 ; The value to initialize indexes to
 
 UPPAD_LIMIT = 14 ; The upper pad amount
-LOPAD_LIMIT = 25 ; The lower pad amount
+LOPAD_LIMIT = 26 ; The lower pad amount
 
 FULLWALL    = $FF
 

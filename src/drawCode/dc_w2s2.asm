@@ -46,7 +46,7 @@ _dc_w2s2_noSprite_ret:
     LDA shadow2cb
     STA PF0
     LDA shadow2db
-    ORA shadow1c
+    ORA shadow1d
     STA PF1
     LDA shadow2eb
     ORA shadow1e
@@ -66,5 +66,5 @@ _dc_w2s2_noSprite_1:
     JMP _dc_w2s2_noSprite_ret
 
 _dc_w2s2_noSprite_2:
-    DELAY 4
+    DELAY 3
     JMP _dc_w2s2_noSprite_ret
