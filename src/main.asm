@@ -13,8 +13,6 @@
 
     ORG $F800
 
-    RTS
-
 start:
 
 ; Initialize everything
@@ -38,12 +36,7 @@ screenStart:
 ; Render everything (23 scanlines) (491 bytes)
 
 
-za:
-
     INCLUDE "walrend.asm" ; 9 scanlines
-
-zb:
-
     INCLUDE "scrend.asm" ; 14 Scanlines
 
     LDA #<jerry
@@ -102,7 +95,7 @@ lowerPad:
 
 ; Tell us how many bytes we have used up
 
-    ECHO [. * 100 / $FFFA]d, "% of your rom has been used up (", [. - $EFFA]d, "/ 4096 bytes)"
+    ECHO [[. - $F000] * 100 / $1000]d, "% of your rom has been used up (", [. - $EFFA]d, "/ 4096 bytes)"
 
     ORG $FFFA
 
