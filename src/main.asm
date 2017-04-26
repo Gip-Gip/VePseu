@@ -11,6 +11,8 @@
     INCLUDE "andtable.asm"
     INCLUDE "map.asm"
 
+    ECHO [[. - $F000] * 100 / $800]d, "% of your map space is used up (", [. - $F000]d, "/ 2048 ) bytes"
+
     ORG $F800
 
 start:
