@@ -585,15 +585,18 @@
      94  f1f0		       ff ff ff 00*	      HEX	FF FF FF 00 00 00 00 00 00 00 00 00 00 FF FF FF
 ------- FILE main.asm
      13  f200
+     14  f200				   PV1	      SET	[[. - $F000] * 100 / $800]d
+     15  f200				   PV2	      SET	[. - $F000]d
+     16  f200
  25 % of your map space is used up ( 512 / 2048 ) bytes
-     14  f200					      ECHO	[[. - $F000] * 100 / $800]d, "% of your map space is used up (", [. - $F000]d, "/ 2048 ) bytes"
-     15  f200
-     16  f800					      ORG	$F800
-     17  f800
-     18  f800				   start
-     19  f800
-     20  f800							; Initialize everything
-     21  f800
+     17  f200					      ECHO	PV1, "% of your map space is used up (", PV2, "/ 2048 ) bytes"
+     18  f200
+     19  f800					      ORG	$F800
+     20  f800
+     21  f800				   start
+     22  f800
+     23  f800							; Initialize everything
+     24  f800
 ------- FILE init.asm LEVEL 2 PASS 4
       0  f800					      INCLUDE	"init.asm"
       1  f800							; VePseu's init file
@@ -633,24 +636,24 @@
      35  f827		       a9 82		      LDA	#SCOLU
      36  f829		       85 b6		      STA	shadowColour
 ------- FILE main.asm
-     23  f82b
-     24  f82b		       a9 02		      LDA	#VSYNC_SET
-     25  f82d
-     26  f82d				   screenStart
-     27  f82d
-     28  f82d							; Start vsync (3 scanlines)
-     29  f82d		       85 00		      STA	VSYNC
-     30  f82f
-     31  f82f		       85 02		      STA	WSYNC
-     32  f831		       85 02		      STA	WSYNC
-     33  f833		       a9 00		      LDA	#NULL
-     34  f835		       85 02		      STA	WSYNC
-     35  f837
-     36  f837		       85 00		      STA	VSYNC
-     37  f839
-     38  f839							; Render everything (23 scanlines) (491 bytes)
-     39  f839
+     26  f82b
+     27  f82b		       a9 02		      LDA	#VSYNC_SET
+     28  f82d
+     29  f82d				   screenStart
+     30  f82d
+     31  f82d							; Start vsync (3 scanlines)
+     32  f82d		       85 00		      STA	VSYNC
+     33  f82f
+     34  f82f		       85 02		      STA	WSYNC
+     35  f831		       85 02		      STA	WSYNC
+     36  f833		       a9 00		      LDA	#NULL
+     37  f835		       85 02		      STA	WSYNC
+     38  f837
+     39  f837		       85 00		      STA	VSYNC
      40  f839
+     41  f839							; Render everything (23 scanlines) (491 bytes)
+     42  f839
+     43  f839
 ------- FILE walrend.asm LEVEL 2 PASS 4
       0  f839					      INCLUDE	"walrend.asm"	; 9 scanlines
       1  f839							; VePseu's wall renderer
@@ -1135,33 +1138,33 @@
      73  fa20
      74  fa20		       85 02		      STA	WSYNC	; by the end of this we have used 14 scanlines
 ------- FILE main.asm
-     43  fa22
-     44  fa22		       a9 78		      LDA	#<jerry
-     45  fa24		       85 c2		      STA	sprite
-     46  fa26		       a9 f0		      LDA	#>jerry
-     47  fa28		       85 c3		      STA	sprite+1
-     48  fa2a		       a9 0c		      LDA	#$0C
-     49  fa2c		       85 06		      STA	COLUP0
-     50  fa2e
-     51  fa2e		       a9 1f		      LDA	#31
-     52  fa30		       85 bc		      STA	spriteHeight
-     53  fa32
-     54  fa32							; Pad!
-     55  fa32
-     56  fa32		       a2 0e		      LDX	#UPPAD_LIMIT
-     57  fa34
-     58  fa34				   upperPad
-     59  fa34		       85 02		      STA	WSYNC
-     60  fa36
-     61  fa36		       ca		      DEX
-     62  fa37		       d0 fb		      BNE	upperPad
-     63  fa39
-     64  fa39		       85 02		      STA	WSYNC
-     65  fa3b
-     66  fa3b							; Draw everything (956 bytes)
-     67  fa3b
-     68  fa3b		       a0 00		      LDY	#0
-     69  fa3d
+     46  fa22
+     47  fa22		       a9 78		      LDA	#<jerry
+     48  fa24		       85 c2		      STA	sprite
+     49  fa26		       a9 f0		      LDA	#>jerry
+     50  fa28		       85 c3		      STA	sprite+1
+     51  fa2a		       a9 0c		      LDA	#$0C
+     52  fa2c		       85 06		      STA	COLUP0
+     53  fa2e
+     54  fa2e		       a9 1f		      LDA	#31
+     55  fa30		       85 bc		      STA	spriteHeight
+     56  fa32
+     57  fa32							; Pad!
+     58  fa32
+     59  fa32		       a2 0e		      LDX	#UPPAD_LIMIT
+     60  fa34
+     61  fa34				   upperPad
+     62  fa34		       85 02		      STA	WSYNC
+     63  fa36
+     64  fa36		       ca		      DEX
+     65  fa37		       d0 fb		      BNE	upperPad
+     66  fa39
+     67  fa39		       85 02		      STA	WSYNC
+     68  fa3b
+     69  fa3b							; Draw everything (956 bytes)
+     70  fa3b
+     71  fa3b		       a0 00		      LDY	#0
+     72  fa3d
 ------- FILE dispkern.asm LEVEL 2 PASS 4
       0  fa3d					      INCLUDE	"dispkern.asm"	; 186 scanlines
       1  fa3d							; VePseu's display kernel
@@ -3043,14 +3046,14 @@
      42  fdf7
      43  fdf7		       85 09		      STA	COLUBK
 ------- FILE main.asm
-     71  fdf9
-     72  fdf9							; Start VBLANK
-     73  fdf9
-     74  fdf9		       a9 c2		      LDA	#VBLANK_SET
-     75  fdfb		       85 01		      STA	VBLANK
-     76  fdfd
-     77  fdfd							; Process input
-     78  fdfd
+     74  fdf9
+     75  fdf9							; Start VBLANK
+     76  fdf9
+     77  fdf9		       a9 c2		      LDA	#VBLANK_SET
+     78  fdfb		       85 01		      STA	VBLANK
+     79  fdfd
+     80  fdfd							; Process input
+     81  fdfd
 ------- FILE input.asm LEVEL 2 PASS 4
       0  fdfd					      INCLUDE	"input.asm"
       1  fdfd							; VePseu's controller input
@@ -3263,33 +3266,36 @@
     200  ff27				   CEND
     201  ff27		       85 02		      STA	WSYNC
 ------- FILE main.asm
-     80  ff29
-     81  ff29							; Pad again
-     82  ff29
-     83  ff29		       a2 1a		      LDX	#LOPAD_LIMIT
-     84  ff2b
-     85  ff2b				   lowerPad
-     86  ff2b		       85 02		      STA	WSYNC
-     87  ff2d
-     88  ff2d		       ca		      DEX
-     89  ff2e		       d0 fb		      BNE	lowerPad
-     90  ff30
-     91  ff30							; Get everything ready for VSYNC
-     92  ff30
-     93  ff30		       86 01		      STX	VBLANK
-     94  ff32		       a9 02		      LDA	#VSYNC_SET
-     95  ff34		       85 02		      STA	WSYNC
-     96  ff36		       4c 2d f8 	      JMP	screenStart
-     97  ff39
-     98  ff39							; Tell us how many bytes we have used up
-     99  ff39
- 95 % of your rom has been used up ( 3903 / 4096 bytes)
-    100  ff39					      ECHO	[[. - $F000] * 100 / $1000]d, "% of your rom has been used up (", [. - $EFFA]d, "/ 4096 bytes)"
-    101  ff39
-    102  fffa					      ORG	$FFFA
-    103  fffa
-    104  fffa		       00 f8		      DC.W	start	; Something
-    105  fffc		       00 f8		      DC.W	start	; Entrypoint
-    106  fffe		       2d f8		      DC.W	screenStart	; Something else
-    107  10000
-    108  10000					       END
+     83  ff29
+     84  ff29							; Pad again
+     85  ff29
+     86  ff29		       a2 1a		      LDX	#LOPAD_LIMIT
+     87  ff2b
+     88  ff2b				   lowerPad
+     89  ff2b		       85 02		      STA	WSYNC
+     90  ff2d
+     91  ff2d		       ca		      DEX
+     92  ff2e		       d0 fb		      BNE	lowerPad
+     93  ff30
+     94  ff30							; Get everything ready for VSYNC
+     95  ff30
+     96  ff30		       86 01		      STX	VBLANK
+     97  ff32		       a9 02		      LDA	#VSYNC_SET
+     98  ff34		       85 02		      STA	WSYNC
+     99  ff36		       4c 2d f8 	      JMP	screenStart
+    100  ff39
+    101  ff39							; Tell us how many bytes we have used up
+    102  ff39
+    103  ff39				   PV1	      SET	[[. - $F000] * 100 / $FFA]d
+    104  ff39				   PV2	      SET	[. - $EFFA]d
+    105  ff39
+ 95 % of your ROM space is used up ( 3903 / 4096 ) bytes
+    106  ff39					      ECHO	PV1, "% of your ROM space is used up (", PV2, "/ 4096 ) bytes"
+    107  ff39
+    108  fffa					      ORG	$FFFA
+    109  fffa
+    110  fffa		       00 f8		      DC.W	start	; Something
+    111  fffc		       00 f8		      DC.W	start	; Entrypoint
+    112  fffe		       2d f8		      DC.W	screenStart	; Something else
+    113  10000
+    114  10000					       END
