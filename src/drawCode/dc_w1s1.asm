@@ -1,33 +1,46 @@
 ; The draw code for the 1st wall and shadow
 
-    JMP dc_w1s1
-
-_dc_w1s1_noSprite_1:
-    DELAY 11
-    JMP _dc_w1s1_noSprite_ret
-
-_dc_w1s1_noSprite_2:
-    DELAY 4
-    JMP _dc_w1s1_noSprite_ret
-
-dc_w1s1:
+dc_w1s1:    SUBROUTINE
 
     LDX #INDEXINIT
+    JMP .loop
 
-_dc_w1s1_loop:
+.noSprite_1:
+    ; Depending on the location in the program the branch here might cross a
+    ; page boundry, causing it to take an extra clock cycle. To choose the right
+    ; delay simply check if the page number (the MSB of the address) is
+    ; different between the branch and it's destination
+    IF >.branchPoint_1 ==  >.noSprite_1
+    DELAY 11
+    ELSE
+    DELAY 10
+    ENDIF
+    JMP .noSprite_ret
+
+.noSprite_2:
+    IF >.branchPoint_2 == >.noSprite_2
+    DELAY 4
+    ELSE
+    DELAY 3
+    ENDIF
+    JMP .noSprite_ret
+
+.loop:
     LDA wallColour
     STA WSYNC
     STA COLUPF
     LDA wall1
     STA PF1
     TYA
-    BEQ _dc_w1s1_noSprite_1
+.branchPoint_1:
+    BEQ .noSprite_1
     DEY
     CPY spriteHeight
-    BCS _dc_w1s1_noSprite_2
+.branchPoint_2:
+    BCS .noSprite_2
     LDA (sprite),Y
     STA GRP0
-_dc_w1s1_noSprite_ret:
+.noSprite_ret:
     LDA wall1
     STA PF2
     DELAY 6
@@ -59,4 +72,4 @@ _dc_w1s1_noSprite_ret:
 
     INX
     CPX #UPPRWALL_S
-    BNE _dc_w1s1_loop
+    BNE .loop

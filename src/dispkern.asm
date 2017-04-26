@@ -10,11 +10,7 @@
 ; |   |
 ; |   |- The wall it draws
 ; |
-; |- Draw-code identifier
-
-    INCLUDE "drawCode/mmDraw.asm"
-
-    ALIGN 256
+; |- Draw-code identifies
 
 drawStart:
 
@@ -37,7 +33,7 @@ dc_wallsEnd:
     STA PF1
     STA PF2
 
-    JSR mmDraw
+    INCLUDE "drawCode/mmDraw.asm"
 
     JMP stop
 

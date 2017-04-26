@@ -1,4 +1,4 @@
-; The second wall and it's second shadow
+; The fourth wall
 
 dc_w4s0_delayed:
     JMP dc_w4s0
@@ -7,25 +7,27 @@ dc_w4s0_switch:
     LDA #$7F
     ADC #$01
 
-dc_w4s0:
+dc_w4s0: SUBROUTINE
 
     LDX #PIXH
 
-_dc_w4s0_loop:
+.loop:
     LDA wallColour
     STA WSYNC
-_dc_w4s0_joinIn:
+.joinIn:
     STA COLUPF
     LDA wall4a
     STA PF1
     TYA
-    BEQ _dc_w4s0_noSprite_1
+.branchPoint_1
+    BEQ .noSprite_1
     DEY
     CPY spriteHeight
-    BCS _dc_w4s0_noSprite_2
+.branchPoint_2
+    BCS .noSprite_2
     LDA (sprite),Y
     STA GRP0
-_dc_w4s0_noSprite_ret:
+.noSprite_ret:
     LDA wall4b
     STA PF2
 
@@ -65,15 +67,23 @@ _dc_w4s0_noSprite_ret:
     STA PF0
 
     DEX
-    BNE _dc_w4s0_loop
+    BNE .loop
 
     BVC dc_w4s0_switch
     JMP dc_w3s2
 
-_dc_w4s0_noSprite_1:
+.noSprite_1:
+    IF >.branchPoint_1 == >.noSprite_1
     DELAY 11
-    JMP _dc_w4s0_noSprite_ret
+    ELSE
+    DELAY 10
+    ENDIF
+    JMP .noSprite_ret
 
-_dc_w4s0_noSprite_2:
+.noSprite_2:
+    IF >.branchPoint_2 == >.noSprite_2
     DELAY 4
-    JMP _dc_w4s0_noSprite_ret
+    ELSE
+    DELAY 3
+    ENDIF
+    JMP .noSprite_ret

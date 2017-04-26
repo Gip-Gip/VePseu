@@ -4,8 +4,7 @@
 
     LDA SWCHA
     AND #FFORD
-    CMP #FFORD
-    BEQ CIN1_NOPRESS
+    BNE CIN1_NOPRESS
 
     LDA playerPos
     SEC
@@ -40,8 +39,7 @@ CIN2:
     STA WSYNC
     LDA SWCHA
     AND #FBACK
-    CMP #FBACK
-    BEQ CIN2_NOPRESS
+    BNE CIN2_NOPRESS
 
     LDA playerPos
     SEC
@@ -76,8 +74,7 @@ CIN3:
     STA WSYNC
     LDA SWCHA
     AND #FLEFT
-    CMP #FLEFT
-    BEQ CIN3_NOPRESS
+    BNE CIN3_NOPRESS
 
     LDA direction
     INA
@@ -106,8 +103,7 @@ CIN4:
     STA WSYNC
     LDA SWCHA
     AND #FRIGT
-    CMP #FRIGT
-    BEQ CIN4_NOPRESS
+    BNE CIN4_NOPRESS
 
     LDA direction
     DEA

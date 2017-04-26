@@ -1,35 +1,45 @@
 ; The second wall and it's first shadow
 
-dc_w2s1:
+dc_w2s1:    SUBROUTINE
 
     LDX #PIXH
     LDA wallColour
     DELAY 2
-    JMP _dc_w2s1_joinIn
+    JMP .joinIn
 
-_dc_w2s1_noSprite_1:
+.noSprite_1:
+    IF >.branchPoint_1 == >.noSprite_1
     DELAY 11
-    JMP _dc_w2s1_noSprite_ret
+    ELSE
+    DELAY 10
+    ENDIF
+    JMP .noSprite_ret
 
-_dc_w2s1_noSprite_2:
+.noSprite_2:
+    IF >.branchPoint_2 == >.noSprite_2
     DELAY 4
-    JMP _dc_w2s1_noSprite_ret
+    ELSE
+    DELAY 3
+    ENDIF
+    JMP .noSprite_ret
 
-_dc_w2s1_loop:
+.loop:
     LDA wallColour
     STA WSYNC
-_dc_w2s1_joinIn:
+.joinIn:
     STA COLUPF
     LDA wall2a
     STA PF1
     TYA
-    BEQ _dc_w2s1_noSprite_1
+.branchPoint_1:
+    BEQ .noSprite_1
     DEY
     CPY spriteHeight
-    BCS _dc_w2s1_noSprite_2
+.branchPoint_2:
+    BCS .noSprite_2
     LDA (sprite),Y
     STA GRP0
-_dc_w2s1_noSprite_ret:
+.noSprite_ret:
     LDA wall2b
     STA PF2
 
@@ -65,7 +75,7 @@ _dc_w2s1_noSprite_ret:
     STA PF0
 
     DEX
-    BNE _dc_w2s1_loop
+    BNE .loop
 
     BVC dc_w2s2_delayed
     JMP dc_w1s2

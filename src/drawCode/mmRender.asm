@@ -1,7 +1,6 @@
 ; Render the minimap
 
-mmRender:
-    STA HMCLR
+mmRender:   SUBROUTINE
     ; Set the colour of the player
     LDA #PLYRCOLU
     STA COLUPF
@@ -27,12 +26,11 @@ mmRender:
     STA horzPos_mB
 
     STA WSYNC
-    LDX #INDEXINIT
+    LDX #HWAIT
 
-_mmRender_wait1:
-    INX
-    CPX #HWAIT
-    BNE _mmRender_wait1
+.wait1:
+    DEX
+    BNE .wait1
     DELAY HDELAY1
     STA RESP0
     STA RESP1
@@ -40,13 +38,10 @@ _mmRender_wait1:
     LDA playerPos
 
     STA WSYNC
-    LDX #INDEXINIT
+    LDX #HWAIT
 
-_mmRender_wait2:
-    INX
-    CPX #HWAIT
-    BNE _mmRender_wait2
+.wait2:
+    DEX
+    BNE .wait2
     DELAY HDELAY2
     STA RESBL
-
-    RTS

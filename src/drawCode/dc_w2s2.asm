@@ -2,24 +2,26 @@
 
 dc_w2s2_delayed:
     DELAY 2
-dc_w2s2:
+dc_w2s2:    SUBROUTINE
 
     LDX #PIXH
 
-_dc_w2s2_loop:
+.loop:
     LDA wallColour
     STA WSYNC
     STA COLUPF
     LDA wall2a
     STA PF1
     TYA
-    BEQ _dc_w2s2_noSprite_1
+.branchPoint_1:
+    BEQ .noSprite_1
     DEY
     CPY spriteHeight
-    BCS _dc_w2s2_noSprite_2
+.branchPoint_2:
+    BCS .noSprite_2
     LDA (sprite),Y
     STA GRP0
-_dc_w2s2_noSprite_ret:
+.noSprite_ret:
     LDA wall2b
     STA PF2
 
@@ -55,16 +57,24 @@ _dc_w2s2_noSprite_ret:
     STA PF0
 
     DEX
-    BNE _dc_w2s2_loop
+    BNE .loop
 
     BVC dc_w3s1_delayed
     DELAY 4
     JMP dc_w2s1
 
-_dc_w2s2_noSprite_1:
+.noSprite_1:
+    IF >.branchPoint_1 == >.noSprite_1
+    DELAY 11
+    ELSE
     DELAY 10
-    JMP _dc_w2s2_noSprite_ret
+    ENDIF
+    JMP .noSprite_ret
 
-_dc_w2s2_noSprite_2:
+.noSprite_2:
+    IF >.branchPoint_2 == >.noSprite_2
+    DELAY 4
+    ELSE
     DELAY 3
-    JMP _dc_w2s2_noSprite_ret
+    ENDIF
+    JMP .noSprite_ret

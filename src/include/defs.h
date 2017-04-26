@@ -59,9 +59,9 @@ LOWRWALL_S  = 6
 HADJ_A  = $00 ; The horizontal adjustment of each minimap sprite
 HADJ_B  = $10
 
-HWAIT   = 5 ; The horizontal wait for the minimap
-HDELAY1 = 7 ; The amount of clocks for horizontal correction (minimap)
-HDELAY2 = 10 ; The amount of clocks for horizontal correction (player blip)
+HWAIT   = 7 ; The horizontal wait for the minimap
+HDELAY1 = 5 ; The amount of clocks for horizontal correction (minimap)
+HDELAY2 = 8 ; The amount of clocks for horizontal correction (player blip)
 
 WCOLU       = $86 ; The initial colour of walls
 SCOLU       = $82 ; The initial colour of shadows

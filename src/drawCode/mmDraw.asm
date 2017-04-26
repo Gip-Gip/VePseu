@@ -1,11 +1,10 @@
 ; Draws the compass to the screen
 
+mmDraw:
+
     INCLUDE "drawCode/mmRender.asm"
 
-mmDraw:
-    LDA #0
-
-    JSR mmRender
+    SUBROUTINE ; The preceeding file declares it's own subroutine
 
 ; Load the player's position
 
@@ -25,7 +24,7 @@ mmDraw:
     LDY #INDEXINIT
     LDX playerPos
 
-_mmLoop:
+.loop:
     STA WSYNC
 
     LDA (miniMapPtr),Y
@@ -42,7 +41,7 @@ _mmLoop:
     AND #%11110000
 
     CMP #0
-    BNE _noDraw
+    BNE .noDraw
 
     LDA #2
     STA ENABL
@@ -50,14 +49,14 @@ _mmLoop:
     LDA #1
     STA VDELBL
 
-_noDraw:
+.noDraw:
 
     LDA drawingPlyr
     STA ENABL
     LDA #0
     STA drawingPlyr
     CPY #32
-    BNE _mmLoop
+    BNE .loop
 
     LDA #0
     STA ENABL
@@ -69,5 +68,3 @@ _noDraw:
     STA GRP1
     STA COLUP0
     STA COLUP1
-
-    RTS

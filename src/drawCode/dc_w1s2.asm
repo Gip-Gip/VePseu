@@ -1,23 +1,25 @@
-; The draw code for the 1st wall and shadow
+; The draw code for the 1st wall and  it's second shadow
 
-dc_w1s2:
+dc_w1s2:    SUBROUTINE
 
     LDX #UPPRWALL_S - 1
 
-_dc_w1s2_loop:
+.loop:
     LDA wallColour
     STA WSYNC
     STA COLUPF
     LDA wall1
     STA PF1
     TYA
-    BEQ _dc_w1s2_noSprite_1
+.branchPoint_1:
+    BEQ .noSprite_1
     DEY
     CPY spriteHeight
-    BCS _dc_w1s2_noSprite_2
+.branchPoint_2:
+    BCS .noSprite_2
     LDA (sprite),Y
     STA GRP0
-_dc_w1s2_noSprite_ret:
+.noSprite_ret:
     LDA wall1
     STA PF2
     DELAY 6
@@ -49,14 +51,22 @@ _dc_w1s2_noSprite_ret:
 
     DEX
     CPX #LOWRWALL_S
-    BNE _dc_w1s2_loop
+    BNE .loop
 
     JMP dc_wallsEnd
 
-_dc_w1s2_noSprite_1:
+.noSprite_1:
+    IF >.branchPoint_1 == >.noSprite_1
+    DELAY 11
+    ELSE
     DELAY 10
-    JMP _dc_w1s2_noSprite_ret
+    ENDIF
+    JMP .noSprite_ret
 
-_dc_w1s2_noSprite_2:
+.noSprite_2:
+    IF >.branchPoint_2 == >.noSprite_2
+    DELAY 4
+    ELSE
     DELAY 3
-    JMP _dc_w1s2_noSprite_ret
+    ENDIF
+    JMP .noSprite_ret

@@ -35,9 +35,14 @@ screenStart:
 
     STA VSYNC
 
-; Render everything (23 scanlines)
+; Render everything (23 scanlines) (491 bytes)
+
+
+za:
 
     INCLUDE "walrend.asm" ; 9 scanlines
+
+zb:
 
     INCLUDE "scrend.asm" ; 14 Scanlines
 
@@ -53,23 +58,21 @@ screenStart:
 
 ; Pad!
 
-    LDX #INDEXINIT
+    LDX #UPPAD_LIMIT
 
 upperPad:
     STA WSYNC
 
-    INX
-    CPX #UPPAD_LIMIT
+    DEX
     BNE upperPad
 
     STA WSYNC
 
-; Draw everything
+; Draw everything (956 bytes)
 
-    LDY #30+31
+    LDY #0
 
     INCLUDE "dispkern.asm" ; 186 scanlines
-
 
 ; Start VBLANK
 
@@ -82,22 +85,24 @@ upperPad:
 
 ; Pad again
 
-    LDX #INDEXINIT
+    LDX #LOPAD_LIMIT
 
 lowerPad:
     STA WSYNC
 
-    INX
-    CPX #LOPAD_LIMIT
+    DEX
     BNE lowerPad
 
 ; Get everything ready for VSYNC
 
-    LDA #NULL
-    STA VBLANK
+    STX VBLANK
     LDA #VSYNC_SET
     STA WSYNC
     JMP screenStart
+
+; Tell us how many bytes we have used up
+
+    ECHO [. * 100 / $FFFA]d, "% of your rom has been used up (", [. - $EFFA]d, "/ 4096 bytes)"
 
     ORG $FFFA
 
