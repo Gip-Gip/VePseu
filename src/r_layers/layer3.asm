@@ -2,9 +2,7 @@
 
     INCLUDE "include/ands_3.h"
 
-    Y_POS_ADV ; 14 cycles
-
-    X_POS_GAN ; 29 cycles
+    Y_POS_ADV_AG ; 35 cycles
     LDA (mapPtr),Y
     AND #AND_W3S2P6
     STA shadow3eb

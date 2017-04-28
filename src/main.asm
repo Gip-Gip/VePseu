@@ -11,10 +11,7 @@
     INCLUDE "andtable.asm"
     INCLUDE "map.asm"
 
-PV1 SET [[. - $F000] * 100 / $800]d
-PV2 SET [. - $F000]d
-
-    ECHO PV1, "% of your map space is used up (", PV2, "/ 2048 ) bytes"
+    USAGE_REPORT "map space", $F000, $F800
 
     ORG $F800
 
@@ -100,10 +97,7 @@ lowerPad:
 
 ; Tell us how many bytes we have used up
 
-PV1 SET [[. - $F000] * 100 / $FFA]d
-PV2 SET [. - $EFFA]d
-
-    ECHO PV1, "% of your ROM space is used up (", PV2, "/ 4096 ) bytes"
+    USAGE_REPORT "ROM", $F800, $FFFA
 
     ORG $FFFA
 

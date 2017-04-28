@@ -2,6 +2,8 @@
 
 ; Remove the shadows incase only 1 wall is drawn
 
+    SUBROUTINE
+
     LDA shadow1a ; 12 cycles
     ORA wall1
     EOR wall1
@@ -30,7 +32,7 @@
 
     LDX #INDEXINIT ; 2 cycles
 
-scrRendLoop: ; Totals at 909 cycles
+.loop: ; Totals at 909 cycles
 
     LDA wall2a,X ; Merge walls (12 cycles)
     ORA wall1,X
@@ -61,13 +63,15 @@ scrRendLoop: ; Totals at 909 cycles
 
     INX ; Loop if we haven't rendered all the walls (6 or 7 cycles)
     CPX #WALLCNT
-    BNE scrRendLoop
+    BNE .loop
 
-    LDA #FULLWALL
+    LDX #FULLWALL
+
+    TXA
     EOR shadow3ab
     STA wall4a
 
-    LDA #FULLWALL
+    TXA
     EOR shadow3bb
     STA wall4b
 

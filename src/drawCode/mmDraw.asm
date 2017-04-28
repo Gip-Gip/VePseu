@@ -6,22 +6,12 @@ mmDraw:
 
     SUBROUTINE ; The preceeding file declares it's own subroutine
 
-; Load the player's position
+    LDY #NULL
+    STY GRP0
+    STY GRP1
+    STY WSYNC
+    STY HMOVE
 
-    LDA horzPos_plyr
-    STA HMBL
-    LDA horzPos_mA
-    STA HMP0
-    LDA horzPos_mB
-    STA HMP1
-
-    LDA #NULL
-    STA GRP0
-    STA GRP1
-    STA WSYNC
-    STA HMOVE
-
-    LDY #INDEXINIT
     LDX playerPos
 
 .loop:
@@ -38,9 +28,8 @@ mmDraw:
     SEC
     SBC mapWidth
     TAX
-    AND #%11110000
+    AND #$F0
 
-    CMP #0
     BNE .noDraw
 
     LDA #2
@@ -53,12 +42,12 @@ mmDraw:
 
     LDA drawingPlyr
     STA ENABL
-    LDA #0
+    LDA #NULL
     STA drawingPlyr
-    CPY #32
+    CPY #MMSIZE
     BNE .loop
 
-    LDA #0
+    LDA #NULL
     STA ENABL
 
     STA WSYNC

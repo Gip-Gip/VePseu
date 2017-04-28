@@ -14,11 +14,9 @@
     TAY
 
     LDA (mapPtr),Y
-    CMP #NULL
     BNE CIN2
 
     LDA fordPressed
-    CMP #NULL
     BNE CIN1_WAIT
 
     STY playerPos
@@ -49,11 +47,9 @@ CIN2:
     TAY
 
     LDA (mapPtr),Y
-    CMP #NULL
     BNE CIN3
 
     LDA backPressed
-    CMP #NULL
     BNE CIN2_WAIT
 
     STY playerPos
@@ -81,7 +77,6 @@ CIN3:
     AND #%00000011
 
     LDX rigtPressed
-    CPX #NULL
     BNE CIN3_WAIT
 
     STA direction
@@ -107,10 +102,9 @@ CIN4:
 
     LDA direction
     DEA
-    AND #%00000011
+    AND #%11
 
     LDX leftPressed
-    CPX #NULL
     BNE CIN4_WAIT
 
     STA direction

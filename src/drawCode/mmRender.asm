@@ -17,13 +17,13 @@ mmRender:   SUBROUTINE
     ASL
     ASL
     ASL
-    STA horzPos_plyr
+    STA HMBL
 
     ; Set the map's position to the right values
     LDA #HADJ_A
-    STA horzPos_mA
+    STA HMP0
     LDA #HADJ_B
-    STA horzPos_mB
+    STA HMP1
 
     STA WSYNC
     LDX #HWAIT

@@ -46,12 +46,29 @@
 
     ENDM
 
+    MAC USAGE_REPORT
+
+NAM    SET {1}
+SPOS    SET {2}
+EPOS    SET {3}
+CPOS    SET .
+
+CAP     SET EPOS - SPOS
+TKUP  SET CPOS - SPOS
+PCNT   SET [TKUP * 100 / CAP]d
+
+    ECHO PCNT, "% of your", NAM, "is used up (", [TKUP]d, "/", [CAP]d, ") bytes"
+
+    ENDM
+
 NULL    = 0 ; The value of NULL
 ONE     = 1 ; The value of one
 
 WALLCNT = 10 ; The number of walls to render in scrend
 
 PIXH    = 3 ; The height of each pixel, in scanlines (x2)
+
+MMSIZE  = 32 ; The size of the minimap in bytes
 
 UPPRWALL_S  = 30
 LOWRWALL_S  = 6

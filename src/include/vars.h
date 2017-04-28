@@ -69,3 +69,5 @@ miniMapPtr      DC.W 0
 mapPtr          DC.W 0
 sprite          DC.W 0
 foo             DC 0
+
+    USAGE_REPORT "RAM", $80, $100

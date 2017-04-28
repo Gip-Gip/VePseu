@@ -35,9 +35,4 @@ dc_wallsEnd:
 
     INCLUDE "drawCode/mmDraw.asm"
 
-    JMP stop
-
-stop:
-
-
     STA COLUBK
