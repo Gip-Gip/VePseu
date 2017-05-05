@@ -4,7 +4,7 @@ mmDraw:
 
     INCLUDE "drawCode/mmRender.asm"
 
-    SUBROUTINE ; The preceeding file declares it's own subroutine
+    SUBROUTINE ; The preceeding code declares it's own subroutine
 
     LDY #NULL
     STY GRP0

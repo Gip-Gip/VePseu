@@ -45,29 +45,26 @@ shadow3cb       DC 0
 shadow3db       DC 0
 shadow3eb       DC 0
 
-shift           DC 0
 playerPos       DC 0
 mapWidth        DC 0
+
 xGain           DC 0
 xLoss           DC 0
 yGain           DC 0
 yLoss           DC 0
+
 fordPressed     DC 0
 backPressed     DC 0
 leftPressed     DC 0
 rigtPressed     DC 0
+
 wallColour      DC 0
 shadowColour    DC 0
-horzPos_mA      DC 0
-horzPos_mB      DC 0
-horzPos_plyr    DC 0
 drawingPlyr     DC 0
 direction       DC 0
 spriteHeight    DC 0
-halfJump        DC 0
 miniMapPtr      DC.W 0
 mapPtr          DC.W 0
 sprite          DC.W 0
-foo             DC 0
 
     USAGE_REPORT "RAM", $80, $100

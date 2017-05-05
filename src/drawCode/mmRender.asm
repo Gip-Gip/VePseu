@@ -1,6 +1,7 @@
 ; Render the minimap
 
 mmRender:   SUBROUTINE
+    LDA #NULL
     ; Set the colour of the player
     LDA #PLYRCOLU
     STA COLUPF

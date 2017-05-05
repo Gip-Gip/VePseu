@@ -1,5 +1,7 @@
 ; VePseu's init file
 
+    SUBROUTINE
+
     LDX #stack
     TXS
 
@@ -10,15 +12,14 @@
     CLI
     CLV
 
-    LDX #INDEXINIT
+    LDX #NULL
 
-cleanLoop:
+.loop:
 
     STA cleanStart,X
-    INX
+    DEX
 
-    CPX #cleanEnd
-    BNE cleanLoop
+    BNE .loop
 
     JSR map_01_load
 
@@ -26,9 +27,6 @@ cleanLoop:
     STA yLoss
     LDA #ONE
     STA xGain
-    LDA #NULL
-    STA yGain
-    STA xLoss
 
     LDA #WCOLU
     STA wallColour

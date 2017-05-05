@@ -60,7 +60,6 @@ dc_w2s2:    SUBROUTINE
     BNE .loop
 
     BVC dc_w3s1_delayed
-    DELAY 4
     JMP dc_w2s1
 
 .noSprite_1:

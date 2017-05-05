@@ -67,9 +67,6 @@ dc_w1s1:    SUBROUTINE
     AND and_1d,X
     STA PF2
 
-    LDA #NULL
-    STA GRP0
-
     INX
     CPX #UPPRWALL_S
     BNE .loop

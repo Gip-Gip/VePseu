@@ -1,6 +1,7 @@
 ; VePseu's header file
 
     INCLUDE "include/defs.h"
+    INCLUDE "include/macros.h"
 
     SEG.U addresses
 

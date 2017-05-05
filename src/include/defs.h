@@ -1,65 +1,4 @@
-    MAC INA
-        CLC
-        ADC #1
-    ENDM
-
-    MAC DEA
-        SEC
-        SBC #1
-    ENDM
-
-    MAC DELAY
-.CYCLES SET {1}
-
-        IF .CYCLES % 5 == 1 && .CYCLES % 3
-        NOP
-.CYCLES SET .CYCLES - 2
-        ENDIF
-
-        IF [.CYCLES - 2] / 5
-        REPEAT .CYCLES / 5
-            INC foo
-        REPEND
-.CYCLES SET .CYCLES % 5
-        ENDIF
-
-        IF .CYCLES % 3 == 1
-        NOP
-.CYCLES SET .CYCLES - 2
-        ENDIF
-
-        REPEAT .CYCLES / 3
-            STA DUMP
-        REPEND
-
-.CYCLES SET .CYCLES % 3
-
-        REPEAT .CYCLES / 2
-        NOP
-        REPEND
-
-.CYCLES SET .CYCLES % 2
-
-        IF .CYCLES
-        ERR
-        ENDIF
-
-    ENDM
-
-    MAC USAGE_REPORT
-
-NAM    SET {1}
-SPOS    SET {2}
-EPOS    SET {3}
-CPOS    SET .
-
-CAP     SET EPOS - SPOS
-TKUP  SET CPOS - SPOS
-PCNT   SET [TKUP * 100 / CAP]d
-
-    ECHO PCNT, "% of your", NAM, "is used up (", [TKUP]d, "/", [CAP]d, ") bytes"
-
-    ENDM
+; VePseu's definitions
 
 NULL    = 0 ; The value of NULL
 ONE     = 1 ; The value of one
@@ -91,7 +30,7 @@ VSYNC_SET   = 2 ; The value to push to the vsync register
 INDEXINIT   = 0 ; The value to initialize indexes to
 
 UPPAD_LIMIT = 14 ; The upper pad amount
-LOPAD_LIMIT = 26 ; The lower pad amount
+LOPAD_LIMIT = 28 ; The lower pad amount
 
 FULLWALL    = $FF
 
@@ -108,9 +47,9 @@ cleanEnd    = 0 ; The value of X to stop the loop at in clearLoop
 
 stack   = $FF ; The address of the stack
 
-CWAITCNT    = #15 ; The amount of frames to wait before input is repeated
+CWAITCNT    = 15 ; The amount of frames to wait before input is repeated
 
-DNORTH = 0 ; The possible directions
-DSOUTH = 2
-DWEST = 1
-DEAST = 3
+DNORTH  = 0 ; The possible directions
+DSOUTH  = 2
+DWEST   = 1
+DEAST   = 3

@@ -3,9 +3,7 @@
 dc_w2s1:    SUBROUTINE
 
     LDX #PIXH
-    LDA wallColour
-    DELAY 2
-    JMP .joinIn
+    JMP .loop
 
 .noSprite_1:
     IF >.branchPoint_1 == >.noSprite_1

@@ -35,20 +35,20 @@ screenStart:
 
     STA VSYNC
 
-; Render everything (23 scanlines) (491 bytes)
+; Render everything
 
 
-    INCLUDE "walrend.asm" ; 9 scanlines
-    INCLUDE "scrend.asm" ; 14 Scanlines
+    INCLUDE "walrend.asm"
+    INCLUDE "scrend.asm"
 
-    LDA #<jerry
+    LDA #<carl
     STA sprite
-    LDA #>jerry
+    LDA #>carl
     STA sprite+1
     LDA #$0C
     STA COLUP0
 
-    LDA #31
+    LDA #11
     STA spriteHeight
 
 ; Pad!
@@ -63,11 +63,11 @@ upperPad:
 
     STA WSYNC
 
-; Draw everything (956 bytes)
+; Draw everything
 
-    LDY #0
+    LDY 0
 
-    INCLUDE "dispkern.asm" ; 186 scanlines
+    INCLUDE "dispkern.asm"
 
 ; Start VBLANK
 
