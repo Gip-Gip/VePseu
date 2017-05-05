@@ -1,3 +1,10 @@
+########################Version II.III.MMXVII Revision 0########################
+
+ * Added horizontal sprite positioning (and our new friend, carl)
+ * Added size indication macros
+ * Moved macros and controls into their own individual files
+ * Performed several optimizations to fit the sprite horizontal positioning
+
 ########################Version II.II.MMXVII, Revision 2########################
 
  * Cleaned up some code regarding the horizontal position of the minimap
