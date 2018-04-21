@@ -1,4 +1,5 @@
 ; The third wall and it's first shadow
+; See GLOSSARY.TXT for definitions of vague words
 
 dc_w3s1_delayed:
     DELAY 2
@@ -73,8 +74,8 @@ dc_w3s1:    SUBROUTINE
 
 .noSprite_2:
     IF >.branchPoint_2 == >.noSprite_2
-    DELAY 3
-    ELSE
     DELAY 4
+    ELSE
+    DELAY 3
     ENDIF
     JMP .noSprite_ret

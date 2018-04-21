@@ -1,3 +1,9 @@
+########################Version II.III.MMXIIX Revision 0########################
+
+ * Fixed a bug pretaining to sprite delay times, resulting in black boxes on the
+   screen
+ * Started the long process of further optimizing and documenting the code
+
 ########################Version II.III.MMXVII Revision 0########################
 
  * Added horizontal sprite positioning (and our new friend, carl)

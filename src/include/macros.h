@@ -1,5 +1,22 @@
 ; VePseu's macros
 
+; Scanline padding macro
+    MAC PAD
+
+.SCANLINES SET {1} ; Scanlines to essentially skip
+
+    LDX .SCANLINES
+
+.loop:
+    STA WSYNC
+
+    DEX
+    BNE .loop
+
+    STA WSYNC
+
+    ENDM
+
     MAC INA
         CLC
         ADC #1
@@ -9,6 +26,8 @@
         SEC
         SBC #1
     ENDM
+
+; Precision delay macro
 
     MAC DELAY
 .CYCLES SET {1}
@@ -48,17 +67,20 @@
 
     ENDM
 
+; Macro used to find the space used up in a certain section of ram
+
     MAC USAGE_REPORT
 
-NAM    SET {1}
-SPOS    SET {2}
-EPOS    SET {3}
-CPOS    SET .
+NAM    SET {1}  ; Name of the section
+SPOS    SET {2} ; Start address of the section
+EPOS    SET {3} ; End address of the section
+CPOS    SET .   ; The current position of the macro in the section
 
-CAP     SET EPOS - SPOS
-TKUP  SET CPOS - SPOS
-PCNT   SET [TKUP * 100 / CAP]d
+CAP     SET [EPOS - SPOS]d ; Space that exists
+TKUP    SET [CPOS - SPOS]d ; Space taken up by data
 
-    ECHO PCNT, "% of your", NAM, "is used up (", [TKUP]d, "/", [CAP]d, ") bytes"
+PCNT   SET [TKUP * 100 / CAP]d ; Percent of space taken by data
+
+    ECHO PCNT, "% of your", NAM, "is used up (", TKUP, "/", CAP, ") bytes"
 
     ENDM

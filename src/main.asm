@@ -41,31 +41,12 @@ screenStart:
     INCLUDE "walrend.asm"
     INCLUDE "scrend.asm"
 
-    LDA #<carl
-    STA sprite
-    LDA #>carl
-    STA sprite+1
-    LDA #$0C
-    STA COLUP0
-
-    LDA #11
-    STA spriteHeight
 
 ; Pad!
 
-    LDX #UPPAD_LIMIT
-
-upperPad:
-    STA WSYNC
-
-    DEX
-    BNE upperPad
-
-    STA WSYNC
+    PAD UPPAD_LIMIT
 
 ; Draw everything
-
-    LDY 0
 
     INCLUDE "dispkern.asm"
 

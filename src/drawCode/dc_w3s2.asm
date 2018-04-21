@@ -1,4 +1,5 @@
 ; The third wall and it's second shadow
+; See GLOSSARY.TXT for definitions of vague words
 
 dc_w3s2_delayed:
     DELAY 2

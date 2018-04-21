@@ -1,4 +1,5 @@
 ; Draws the compass to the screen
+; See GLOSSARY.TXT for definitions of vague words
 
 mmDraw:
 
