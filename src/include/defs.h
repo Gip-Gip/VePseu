@@ -29,7 +29,7 @@ VSYNC_SET   = 2 ; The value to push to the vsync register
 
 INDEXINIT   = 0 ; The value to initialize indexes to
 
-UPPAD_LIMIT = 14 ; The upper pad amount
+UPPAD_LIMIT = 15 ; The upper pad amount
 LOPAD_LIMIT = 28 ; The lower pad amount
 
 FULLWALL    = $FF
@@ -53,3 +53,7 @@ DNORTH  = 0 ; The possible directions
 DSOUTH  = 2
 DWEST   = 1
 DEAST   = 3
+
+PLAYER_STEPV    = 7 ; The volume of the player's steps
+PLAYER_STEPS    = 2
+PLAYER_TURNS    = 6

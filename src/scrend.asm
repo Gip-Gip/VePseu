@@ -1,34 +1,6 @@
 ; VePseu's screen renderer
 
-; Remove the shadows incase only 1 wall is drawn
-
     SUBROUTINE
-
-    LDA shadow1a ; 12 cycles
-    ORA wall1
-    EOR wall1
-    STA shadow1a
-
-    LDA shadow1b ; 12 cycles
-    ORA wall1
-    EOR wall1
-    STA shadow1b
-
-    LDA shadow1d ; 12 cycles
-    ORA wall1
-    EOR wall1
-    STA shadow1d
-
-    LDA shadow1e ; 12 cycles
-    ORA wall1
-    EOR wall1
-    STA shadow1e
-
-    LDA wall1 ; Copy wall one to the four addresses preceding it (15 cycles)
-    STA wall1+1
-    STA wall1+2
-    STA wall1+3
-    STA wall1+4
 
     LDX #INDEXINIT ; 2 cycles
 

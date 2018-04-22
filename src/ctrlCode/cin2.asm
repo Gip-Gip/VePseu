@@ -15,17 +15,24 @@
     LDA (mapPtr),Y
     BNE .end
 
-    LDA backPressed
+    LDX backPressed
     BNE .wait
 
     STY playerPos
     LDA #CWAITCNT
     STA backPressed
+
+    LDA #PLAYER_STEPV
+    ORA stepVol
+    STA stepVol
+    LDA #PLAYER_STEPS
+    STA stepSnd
+
     JMP .end
 
 .wait:
-    DEA
-    STA backPressed
+    DEX
+    STX backPressed
     JMP .end
 
 .noPress:

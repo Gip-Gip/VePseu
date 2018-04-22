@@ -11,14 +11,17 @@ dc_w1s2:    SUBROUTINE
     LDA wall1
     STA PF1
     TYA
-.branchPoint_1:
+
     BEQ .noSprite_1
+.branchPoint_1:
     DEY
     CPY spriteHeight
-.branchPoint_2:
+
     BCS .noSprite_2
+.branchPoint_2:
     LDA (sprite),Y
     STA GRP0
+
 .noSprite_ret:
     LDA wall1
     STA PF2

@@ -18,6 +18,13 @@
 
     LDA #CWAITCNT
     STA leftPressed
+
+    LDA #PLAYER_STEPV
+    ORA stepVol
+    STA stepVol
+    LDA #PLAYER_TURNS
+    STA stepSnd
+
     JMP .end
 
 .wait:

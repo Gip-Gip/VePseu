@@ -17,5 +17,4 @@
     TAY
 
     LDA (mapPtr),Y ; 10 cycles
-    AND #AND_W0S1P2
     STA shadow1e

@@ -1,3 +1,10 @@
+########################Version III.I.MMXIIX Revision 0########################
+
+ * Added walking sounds
+ * Fixed a bug in relation to page-boundry compensation in the drawing code
+ * Added code for carl that's commented out. Uncommenting line 59 in main.asm
+   will allow carl to scroll around the screen somewhat annoyingly
+
 ########################Version II.III.MMXIIX Revision 0########################
 
  * Fixed a bug pretaining to sprite delay times, resulting in black boxes on the

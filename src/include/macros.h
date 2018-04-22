@@ -1,11 +1,11 @@
-; VePseu's macros
+; VePseu's macros & stuff
 
 ; Scanline padding macro
     MAC PAD
 
 .SCANLINES SET {1} ; Scanlines to essentially skip
 
-    LDX .SCANLINES
+    LDX #.SCANLINES
 
 .loop:
     STA WSYNC
@@ -13,18 +13,6 @@
     DEX
     BNE .loop
 
-    STA WSYNC
-
-    ENDM
-
-    MAC INA
-        CLC
-        ADC #1
-    ENDM
-
-    MAC DEA
-        SEC
-        SBC #1
     ENDM
 
 ; Precision delay macro
@@ -76,11 +64,13 @@ SPOS    SET {2} ; Start address of the section
 EPOS    SET {3} ; End address of the section
 CPOS    SET .   ; The current position of the macro in the section
 
-CAP     SET [EPOS - SPOS]d ; Space that exists
-TKUP    SET [CPOS - SPOS]d ; Space taken up by data
+CAP     SET EPOS - SPOS ; Space that exists
+TKUP    SET CPOS - SPOS ; Space taken up by data
 
-PCNT   SET [TKUP * 100 / CAP]d ; Percent of space taken by data
+PCNT   SET [TKUP * 100 / CAP]d ; Percent of space taken by data, converted to
+                               ; a string so the following line doesn't exceed
+                               ; 80 characters
 
-    ECHO PCNT, "% of your", NAM, "is used up (", TKUP, "/", CAP, ") bytes"
+    ECHO PCNT, "% of your", NAM, "is used up (", [TKUP]d, "/", [CAP]d, ") bytes"
 
     ENDM

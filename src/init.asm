@@ -32,3 +32,7 @@
     STA wallColour
     LDA #SCOLU
     STA shadowColour
+
+    LDA #2
+    STA AUDF0
+    STA AUDC0
