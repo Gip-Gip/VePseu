@@ -1,4 +1,10 @@
-########################Version III.I.MMXIIX Revision 0########################
+########################Version III.I.MMXIIX Revision 1#########################
+
+ * Optimized the render code further
+ * Re-partitioned the sections of the ROM used for code and maps, giving more
+   room to the code and only enough space for ~4 maps
+
+########################Version III.I.MMXIIX Revision 0#########################
 
  * Added walking sounds
  * Fixed a bug in relation to page-boundry compensation in the drawing code

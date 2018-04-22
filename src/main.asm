@@ -8,12 +8,14 @@
 
     ORG $F000
 
-    INCLUDE "andtable.asm"
     INCLUDE "map.asm"
 
-    USAGE_REPORT "map space", $F000, $F800
+    USAGE_REPORT "map space", $F000, $F600
 
-    ORG $F800
+    ORG $F600
+
+    INCLUDE "andtable.asm"
+    INCLUDE "gamecode.asm"
 
 start:
 
@@ -60,7 +62,7 @@ screenStart:
 
 ; Pad!
 
-    PAD UPPAD_LIMIT
+    PAD UPPAD_LIMIT + 2
 
 ; Draw everything
 
@@ -90,9 +92,9 @@ screenStart:
     STA WSYNC
     JMP screenStart ; And start all over again!
 
-; Tell us how many bytes we have used up
+; Tell us how many bytes we've used up
 
-    USAGE_REPORT "ROM", $F800, $FFFA
+    USAGE_REPORT "ROM", $F600, $FFFA
 
     ORG $FFFA
 

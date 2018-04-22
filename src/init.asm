@@ -6,13 +6,12 @@
     TXS
 
     LDA #NULL
+    TAX
 
     CLD
     CLC
     CLI
     CLV
-
-    LDX #NULL
 
 .loop:
 
@@ -35,4 +34,3 @@
 
     LDA #2
     STA AUDF0
-    STA AUDC0

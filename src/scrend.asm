@@ -8,27 +8,18 @@
 
     LDA wall2a,X ; Merge walls (12 cycles)
     ORA wall1,X
-    STA wall2a,X
-
-    LDA shadow2aa,X ; Merge A shadows (12 cycles)
-    ORA shadow1a,X
-    STA shadow2aa,X
-
-    LDA shadow2ab,X ; Merge B shadows (12 cycles)
-    ORA shadow1a,X
-    STA shadow2ab,X
-
-    LDA wall2a,X ; Overlap walls (16 cycles)
     ORA shadow1a,X
     EOR shadow1a,X
     STA wall2a,X
 
-    LDA shadow2aa,X ; Overlap A shadows (16 cycles)
+    LDA shadow2aa,X ; Merge A shadows (12 cycles)
+    ORA shadow1a,X
     ORA wall2a,X
     EOR wall2a,X
     STA shadow2aa,X
 
-    LDA shadow2ab,X ; Overlap B shadows (16 cycles)
+    LDA shadow2ab,X ; Merge B shadows (12 cycles)
+    ORA shadow1a,X
     ORA wall2a,X
     EOR wall2a,X
     STA shadow2ab,X

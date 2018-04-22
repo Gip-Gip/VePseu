@@ -1,23 +1,8 @@
 ; VePseu's maps
 
-MAP_01_POS = $D1
-MAP_01_WDTH = $10
-MAP_01_SZ = $100
-
-carl:
-    DC %00000000
-    DC %01100110
-    DC %00100100
-    DC %00111100
-    DC %01000010
-    DC %10111101
-    DC %11000011
-    DC %10000001
-    DC %10100101
-    DC %01000010
-    DC %00111100
-
-carlH   SET . - carl
+MAP_01_POS  = $D1 ; Player's position
+MAP_01_WDTH = $10 ; Map 1's width
+MAP_01_SZ   = $100 ; Map 1's size in bytes
 
 miniMap_01:
     DC.W %0000011111100000
