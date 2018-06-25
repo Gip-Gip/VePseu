@@ -47,7 +47,7 @@ cleanEnd    = 0 ; The value of X to stop the loop at in clearLoop
 
 stack   = $FF ; The address of the stack
 
-CWAITCNT    = 15 ; The amount of frames to wait before input is repeated
+CWAITCNT    = 25 ; The amount of frames to wait before input is repeated
 
 DNORTH  = 0 ; The possible directions
 DSOUTH  = 2

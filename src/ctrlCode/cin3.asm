@@ -9,12 +9,19 @@
     AND #FLEFT
     BNE .noPress
 
-    LDX direction
-    INX
-    TXA
-    AND #%11
+    LDX shadowColour
+    LDA wallColour
+    STX wallColour
+    STA shadowColour
 
-    STA direction
+    LDA yLoss
+    LDX xGain
+    STA xGain
+    LDA yGain
+    STX yGain
+    LDX xLoss
+    STA xLoss
+    STX yLoss
 
     LDA #CWAITCNT
     STA rigtPressed

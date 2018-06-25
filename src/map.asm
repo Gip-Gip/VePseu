@@ -27,6 +27,12 @@ map_01_load:
     STA playerPos
     LDA #MAP_01_WDTH
     STA mapWidth
+    STA yLoss
+    LDA #ONE
+    STA xGain
+    LDA #NULL
+    STA xLoss
+    STA yGain
 
     LDA #<map_01
     STA mapPtr

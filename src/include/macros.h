@@ -71,6 +71,8 @@ PCNT   SET [TKUP * 100 / CAP]d ; Percent of space taken by data, converted to
                                ; a string so the following line doesn't exceed
                                ; 80 characters
 
-    ECHO PCNT, "% of your", NAM, "is used up (", [TKUP]d, "/", [CAP]d, ") bytes"
+    ECHO PCNT, "% of your", NAM, "is used up (", [TKUP]d, "/", [CAP]d, " bytes )"
+    ECHO "    In ", NAM, ", ", [CAP - TKUP]d, "bytes are free"
+    ECHO ""
 
     ENDM

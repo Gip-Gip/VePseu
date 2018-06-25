@@ -9,12 +9,19 @@
     AND #FRIGT
     BNE .noPress
 
-    LDX direction
-    DEX
-    TXA
-    AND #%11
+    LDX shadowColour
+    LDA wallColour
+    STX wallColour
+    STA shadowColour
 
-    STA direction
+    LDA xGain
+    LDX yLoss
+    STA yLoss
+    LDA xLoss
+    STX xLoss
+    LDX yGain
+    STA yGain
+    STX xGain
 
     LDA #CWAITCNT
     STA leftPressed
@@ -30,7 +37,7 @@
 .wait:
     DEX
     STX leftPressed
-    JMP CDIR1
+    JMP .end
 
 .noPress:
     STX leftPressed

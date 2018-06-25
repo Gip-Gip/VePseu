@@ -61,7 +61,6 @@ rigtPressed     DC 0
 wallColour      DC 0
 shadowColour    DC 0
 drawingPlyr     DC 0
-direction       DC 0
 
 miniMapPtr      DC.W 0
 mapPtr          DC.W 0

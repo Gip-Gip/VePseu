@@ -22,11 +22,6 @@
 
     JSR map_01_load
 
-    LDA mapWidth
-    STA yLoss
-    LDA #ONE
-    STA xGain
-
     LDA #WCOLU
     STA wallColour
     LDA #SCOLU
