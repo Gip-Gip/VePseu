@@ -32,6 +32,7 @@ screenStart:
 
     STA WSYNC
     STA WSYNC
+    INC frameNum
     LDA #NULL
     STA WSYNC
 
@@ -42,23 +43,6 @@ screenStart:
 
     INCLUDE "walrend.asm"
     INCLUDE "scrend.asm"
-
-
-; Tell the draw code to draw carl...
-
-    LDA #<carl
-    STA spriteAddrH
-    LDA #>carl
-    STA spriteAddrL
-    LDA #carlH
-    STA spriteHeight
-
-    LDA #14    ; Color him...
-    STA COLUP0
-
-    LDX spritePosY ; And roll him accross the screen for some reason
-    INX
-    ;STX spritePosY
 
 ; Pad!
 

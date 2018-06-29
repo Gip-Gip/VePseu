@@ -53,10 +53,7 @@ xLoss           DC 0
 yGain           DC 0
 yLoss           DC 0
 
-fordPressed     DC 0
-backPressed     DC 0
-leftPressed     DC 0
-rigtPressed     DC 0
+frameNum        DC 0
 
 wallColour      DC 0
 shadowColour    DC 0

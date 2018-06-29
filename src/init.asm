@@ -22,10 +22,5 @@
 
     JSR map_01_load
 
-    LDA #WCOLU
-    STA wallColour
-    LDA #SCOLU
-    STA shadowColour
-
     LDA #2
     STA AUDF0

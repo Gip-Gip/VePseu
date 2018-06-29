@@ -2,7 +2,7 @@
 
     LDA SWCHA
     AND #FFORD
-    BNE .noPress
+    BNE .end
 
     LDA playerPos
     SEC
@@ -13,28 +13,12 @@
 
     LDA (mapPtr),Y
     BNE .end
-
-    LDX fordPressed
-    BNE .wait
     STY playerPos
-    LDA #CWAITCNT
-    STA fordPressed
 
     LDA #PLAYER_STEPV
     ORA stepVol
     STA stepVol
     LDA #PLAYER_STEPS
     STA stepSnd
-
-    JMP .end
-
-.wait:
-    DEX
-    STX fordPressed
-    JMP .end
-
-.noPress:
-    LDA #NULL
-    STA fordPressed
 
 .end:

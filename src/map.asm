@@ -43,6 +43,12 @@ map_01_load:
     STA miniMapPtr
     LDA #>miniMap_01
     STA miniMapPtr + 1
+
+    LDA #WCOLU
+    STA wallColour
+    LDA #SCOLU
+    STA shadowColour
+
     RTS
 
 
